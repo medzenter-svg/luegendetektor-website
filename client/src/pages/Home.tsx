@@ -53,7 +53,7 @@ const allServices = [
     title: "Überprüfung von Jugendlichen ab 14 Jahren",
     price: "ab 749 €",
     short: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen",
-    img: "/manus-storage/img_jugendliche_59b8cec0.jpg",
+    img: "/manus-storage/img_jugendliche_1ebcc631.png",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -498,15 +498,15 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       <div style={{ padding: "24px 28px 16px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
           {svc.features.map(f => (
-            <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: 600 }}>
-              <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "12px" }}></i>{f}
+            <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "6px 16px", borderRadius: "20px", fontSize: "15px", fontWeight: 600 }}>
+              <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "13px" }}></i>{f}
             </span>
           ))}
         </div>
         {svc.sections[0] && (
           <>
-            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
-            <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.85 }}>{svc.sections[0].text}</p>
+            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "19px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
+            <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.9 }}>{svc.sections[0].text}</p>
           </>
         )}
       </div>
@@ -514,13 +514,13 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       {/* Additional sections */}
       {svc.sections.slice(1).map((sec, i) => (
         <div key={i} style={{ padding: "0 28px 24px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none" }}>
-          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
-          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.85, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
+          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "19px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
+          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.9, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
           {sec.bullets && (
             <ul style={{ margin: "0 0 8px", paddingLeft: "0", listStyle: "none" }}>
               {sec.bullets.map((b, bi) => (
-                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "16px", color: TEXT_DARK, lineHeight: 1.7 }}>
-                  <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "15px", marginTop: "3px", flexShrink: 0 }}></i>
+                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "17px", color: TEXT_DARK, lineHeight: 1.75 }}>
+                  <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "16px", marginTop: "3px", flexShrink: 0 }}></i>
                   <span>{b}</span>
                 </li>
               ))}
@@ -573,7 +573,7 @@ function ServicesSection() {
         <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "28px" }}>
           {[["private", "fas fa-user-friends", "Privatpersonen"], ["business", "fas fa-building", "Unternehmen"]].map(([tab, icon, label]) => (
             <button key={tab} onClick={() => { setActiveTab(tab as "private" | "business"); setOpenService(null); }}
-              style={{ padding: "10px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
+              style={{ padding: "12px 30px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
               <i className={`${icon} mr-2`}></i>{label}
             </button>
           ))}
@@ -603,12 +603,12 @@ function ServicesSection() {
                 </div>
                 {/* Text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: openService === svc.id && svc.id === 'untreue' ? "18px" : svc.id === 'untreue' ? "17px" : "15px", marginBottom: "2px" }}>{svc.title}</div>
-                  <div style={{ fontSize: svc.id === 'untreue' ? "13px" : "12px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
+                  <div style={{ fontWeight: 700, fontSize: "18px", marginBottom: "4px" }}>{svc.title}</div>
+                  <div style={{ fontSize: "14px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
                 </div>
                 {/* Price + chevron */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>
-                  <span style={{ color: ORANGE, fontWeight: 700, fontSize: "13px" }}>{svc.price}</span>
+                  <span style={{ color: ORANGE, fontWeight: 700, fontSize: "15px" }}>{svc.price}</span>
                   <i className={`fas fa-chevron-${openService === svc.id ? "up" : "down"}`} style={{ color: openService === svc.id ? "rgba(255,255,255,0.5)" : "#A0AEC0", fontSize: "11px" }}></i>
                 </div>
               </button>

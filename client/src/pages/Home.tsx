@@ -129,7 +129,7 @@ const allServices = [
     title: "Probetest am Polygraphen",
     price: "ab 299 €",
     short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
-    img: "/manus-storage/img_probetest_d228d451.png",
+    img: "/manus-storage/img_probetest_new_e06c54c1.png",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {

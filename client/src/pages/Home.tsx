@@ -490,38 +490,37 @@ function StatsBar() {
 function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onClose: () => void }) {
   return (
     <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
-      {/* Image + intro */}
-      <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "0" }} className="detail-grid">
-        <div style={{ position: "relative", minHeight: "220px", overflow: "hidden" }}>
-          <img src={svc.img} alt={svc.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "220px" }} />
+      {/* Image centered */}
+      <div style={{ display: "flex", justifyContent: "center", padding: "24px 24px 0" }}>
+        <img src={svc.img} alt={svc.title} style={{ width: "100%", maxWidth: "560px", height: "320px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
+      </div>
+      {/* Features + intro */}
+      <div style={{ padding: "24px 28px 16px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
+          {svc.features.map(f => (
+            <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: 600 }}>
+              <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "12px" }}></i>{f}
+            </span>
+          ))}
         </div>
-        <div style={{ padding: "24px 24px 16px" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
-            {svc.features.map(f => (
-              <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "5px", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "4px 12px", borderRadius: "20px", fontSize: "12px", fontWeight: 600 }}>
-                <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "10px" }}></i>{f}
-              </span>
-            ))}
-          </div>
-          {svc.sections[0] && (
-            <>
-              {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "10px" }}>{svc.sections[0].heading}</h3>}
-              <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.75 }}>{svc.sections[0].text}</p>
-            </>
-          )}
-        </div>
+        {svc.sections[0] && (
+          <>
+            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
+            <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.85 }}>{svc.sections[0].text}</p>
+          </>
+        )}
       </div>
 
       {/* Additional sections */}
       {svc.sections.slice(1).map((sec, i) => (
-        <div key={i} style={{ padding: "0 24px 20px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none", marginTop: i === 0 ? "0" : "0" }}>
-          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "16px 0 10px" }}>{sec.heading}</h3>}
-          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.75, marginBottom: "10px", whiteSpace: "pre-line" }}>{sec.text}</p>}
+        <div key={i} style={{ padding: "0 28px 24px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none" }}>
+          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
+          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.85, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
           {sec.bullets && (
             <ul style={{ margin: "0 0 8px", paddingLeft: "0", listStyle: "none" }}>
               {sec.bullets.map((b, bi) => (
-                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "8px", marginBottom: "6px", fontSize: "14px", color: TEXT_DARK, lineHeight: 1.6 }}>
-                  <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "13px", marginTop: "3px", flexShrink: 0 }}></i>
+                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "10px", fontSize: "16px", color: TEXT_DARK, lineHeight: 1.7 }}>
+                  <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "15px", marginTop: "3px", flexShrink: 0 }}></i>
                   <span>{b}</span>
                 </li>
               ))}
@@ -534,17 +533,17 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       <div style={{ padding: "16px 24px 24px", borderTop: `1px solid ${BORDER}`, display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "10px 22px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
             <i className="fas fa-calendar-check"></i> Jetzt anfragen
           </button>
           <a href="tel:01756036003"
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: NAVY, color: WHITE, padding: "10px 22px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: NAVY, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", textDecoration: "none", textTransform: "uppercase" }}>
             <i className="fas fa-phone-alt"></i> 01756036003
           </a>
         </div>
-        <button onClick={onClose} style={{ color: TEXT_MID, fontSize: "13px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
+        <button onClick={onClose} style={{ color: TEXT_MID, fontSize: "15px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
           <i className="fas fa-times"></i> Schließen
         </button>
       </div>

@@ -69,7 +69,7 @@ const allServices = [
     title: "Aufklärung von Diebstählen",
     price: "ab 649 €",
     short: "Klärung von Diebstählen und Verlusten im privaten Umfeld",
-    img: "/manus-storage/img_diebstahl_53ccad87.png",
+    img: "/manus-storage/img_diebstahl_new_d8527ccd.png",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {

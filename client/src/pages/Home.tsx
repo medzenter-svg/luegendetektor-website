@@ -494,7 +494,6 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "0" }} className="detail-grid">
         <div style={{ position: "relative", minHeight: "220px", overflow: "hidden" }}>
           <img src={svc.img} alt={svc.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "220px" }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 70%, white)" }} />
         </div>
         <div style={{ padding: "24px 24px 16px" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>

@@ -33,7 +33,7 @@ const allServices = [
     title: "Überprüfung auf Untreue",
     price: "ab 649 €",
     short: "Klärung bei Verdacht auf Untreue in der Partnerschaft",
-    img: "/manus-storage/img_untreue_3e8434d8.png",
+    img: "/manus-storage/img_untreue_new_6c306b25.png",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
     sections: [
       {
@@ -605,8 +605,8 @@ function ServicesSection() {
                 </div>
                 {/* Text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: "15px", marginBottom: "2px" }}>{svc.title}</div>
-                  <div style={{ fontSize: "12px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
+                  <div style={{ fontWeight: 700, fontSize: openService === svc.id && svc.id === 'untreue' ? "18px" : svc.id === 'untreue' ? "17px" : "15px", marginBottom: "2px" }}>{svc.title}</div>
+                  <div style={{ fontSize: svc.id === 'untreue' ? "13px" : "12px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
                 </div>
                 {/* Price + chevron */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>

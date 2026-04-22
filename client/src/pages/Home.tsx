@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // ============================================================
 // POLYGRAPH – lügendetektortest.com
@@ -21,138 +21,330 @@ const BORDER = "#e2e8f0";
 const BLUE_LINE = "#2563eb";
 
 // ─────────────────────────────────────────────
-// DATA
+// DATA – 12 Buttons mit vollständigen Texten & Fotos
 // ─────────────────────────────────────────────
 
-const privateServices = [
+const allServices = [
+  // ── PRIVAT ──
   {
     id: "untreue",
+    category: "private",
     icon: "fas fa-heart-broken",
     title: "Überprüfung auf Untreue",
     price: "ab 649 €",
     short: "Klärung bei Verdacht auf Untreue in der Partnerschaft",
-    details: "Wenn Sie den Verdacht haben, dass Ihr Partner untreu ist, kann ein Polygraphtest Klarheit schaffen. Der Test hilft dabei, die Wahrheit herauszufinden und die Beziehung auf eine ehrliche Grundlage zu stellen – oder einen Schlussstrich zu ziehen. Wir führen diese Tests mit größter Diskretion und Einfühlungsvermögen durch.",
+    img: "/manus-storage/img_untreue_3e8434d8.png",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
+    sections: [
+      {
+        heading: "TREUETESTS PER LÜGENDETEKTOR: KLARHEIT FÜR DIE BEZIEHUNG",
+        text: `Mit der Eheschließung schwören sich Ehepartner Treue. Doch Beziehungen sind zerbrechlich, und das Leben schreibt oft andere Geschichten. Manchmal ist ein Lügendetektortest auf Untreue der einzige effektive Weg, eine Familie zu retten oder – im Gegenteil – Gewissheit über einen Betrug zu erlangen. In jedem Fall hilft das Ergebnis dabei, quälendes Misstrauen, Zweifel und Unsicherheit gegenüber sich selbst und dem Partner zu überwinden.`,
+      },
+      {
+        heading: "PRÜFUNG DER PARTNERSTREUE MIT DEM POLYGRAPHEN",
+        text: `Wer seinen Partner betrügt, setzt oft alles daran, die Untreue zu verbergen. Solche Partner werden extrem vorsichtig: Sie bemerken Beschattungen oder vermeiden es, am Telefon über sensible Themen zu sprechen. Daher ist der Lügendetektortest oft die einzige schnelle und effektive Möglichkeit, jemanden zu entlarven.\n\nWir stehen beiden Seiten offen: Sowohl dem Partner, der des Betrugs verdächtigt wird, als auch demjenigen, der die Vermutung hegt. Eifersucht und Zweifel sind zerstörerische Gefühle. Durch einen Polygraph-Test können Paare verlorenes Vertrauen wiederherstellen oder entscheiden, ob die Beziehung beendet werden muss. Unbegründete Verdächtigungen können sonst zu Neurosen und unerträglichen Lebensbedingungen für die gesamte Familie führen.\n\nDie Ergebnisse liefern Fakten, die das Risiko drastischer Fehlentscheidungen minimieren. Wenn der Verdacht des Ehebruchs durch den Experten nicht bestätigt wird, können Trennungen, psychische Traumata sowie finanzielle und materielle Verluste verhindert werden.`,
+      },
+    ],
   },
   {
     id: "jugendliche",
+    category: "private",
     icon: "fas fa-child",
     title: "Überprüfung von Jugendlichen ab 14 Jahren",
     price: "ab 749 €",
     short: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen",
-    details: "Machen Sie sich Sorgen um das Verhalten Ihres Kindes? Ob Drogenkonsum, Schuleschwänzen oder andere problematische Verhaltensweisen – ein Polygraphtest kann Klarheit schaffen. Die Untersuchung wird mit besonderer Rücksicht auf das Wohlbefinden des Jugendlichen durchgeführt. Elterliche Zustimmung ist erforderlich.",
+    img: "/manus-storage/img_jugendliche_59b8cec0.jpg",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
+    sections: [
+      {
+        heading: "DIE PUBERTÄT: HERAUSFORDERUNGEN MEISTERN",
+        text: `Die Pubertät ist oft eine Phase der Verunsicherung für Eltern und Lehrkräfte. Jugendliche befinden sich in einem Übergangszustand, in dem sie weder Kind noch vollständig erwachsen sind. Verhaltensweisen können provokant wirken oder durch sozialen Rückzug geprägt sein. Während dies oft Teil der normalen Identitätsfindung ist, können in manchen Fällen auch tiefere Konflikte vorliegen.\n\nAnstatt auf technische Überprüfungsverfahren zu setzen, empfehlen Fachleute in der Regel den Aufbau von Vertrauen und den offenen Dialog. Wenn der Verdacht auf ernsthafte Probleme wie Substanzmissbrauch oder psychische Belastungen besteht, ist die Beratung durch qualifizierte Psychologen oder spezialisierte Beratungsstellen ein bewährter Weg. Diese unterstützen Familien dabei, die Ursachen für Verhaltensänderungen zu verstehen und gemeinsam Lösungen zu erarbeiten.\n\nDie Förderung einer gesunden Entwicklung basiert auf gegenseitigem Respekt und Unterstützung, um Jugendlichen Sicherheit zu geben und Eltern die notwendige Orientierung in dieser herausfordernden Zeit zu ermöglichen.`,
+      },
+    ],
   },
   {
     id: "diebstahl",
+    category: "private",
     icon: "fas fa-search",
     title: "Aufklärung von Diebstählen",
     price: "ab 649 €",
     short: "Klärung von Diebstählen und Verlusten im privaten Umfeld",
-    details: "Vermissen Sie Wertsachen oder Geld aus Ihrem Haushalt? Ein Polygraphtest kann helfen, den Täter zu identifizieren. Wir führen die Untersuchung diskret durch und liefern Ihnen ein offizielles Gutachten, das als Beweismittel verwendet werden kann.",
+    img: "/manus-storage/img_diebstahl_53ccad87.png",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
+    sections: [
+      {
+        heading: "AUFKLÄRUNG VON KRIMINELLEN HANDLUNGEN MIT DEM LÜGENDETEKTOR",
+        text: `Kriminelle Aktivitäten führen unweigerlich zu finanziellen Verlusten. Dabei geht es nicht nur um den Diebstahl von Geld oder Wertsachen aus Privaträumen, sondern auch um den Raub von Datenbanken und vertraulichen Informationen in Unternehmen. Täter innerhalb einer Firma können sich illegal Vermögenswerte aneignen, Betrug, Erpressung oder Korruption betreiben.\n\nDer Einsatz eines Lügendetektors ist der schnellste und effektivste Weg, um Täter zu identifizieren. Unsere erfahrenen Experten helfen Ihnen dabei, Rechtsverletzer ausfindig zu machen und weitere kriminelle Handlungen zu verhindern.`,
+      },
+      {
+        heading: "POLYGRAPHEN-TESTS BEI UNTERSCHLAGUNG, DIEBSTAHL UND VERRAT VON GESCHÄFTSGEHEIMNISSEN",
+        text: `Schwerwiegende Verluste durch Mitarbeiterdiebstahl sind oft die Folge unzureichender Personalkontrolle. Der Polygraph hat seine Wirksamkeit im Rahmen von Ermittlungsmaßnahmen bewiesen. Er dient dazu, Haupttäter und Komplizen zu identifizieren.`,
+        bullets: [
+          "Rollenverteilung: Bestimmung der Rolle jeder beteiligten Person an der Tat",
+          "Informationsfluss: Motivierung von Verdächtigen zur Offenlegung von Informationen",
+          "Rekonstruktion: Feststellung des chronologischen Ablaufs der Ereignisse",
+          "Sachverhaltsaufklärung: Ermittlung der tatsächlichen Umstände des Falls",
+          "Beweissicherung: Sammeln zusätzlicher Erkenntnisse und Details",
+          "Verschwörung: Aufdeckung von Absprachen zwischen mehreren Personen",
+          "Entlastung: Ausschluss unschuldiger Personen aus dem Kreis der Verdächtigen",
+          "Verbleib: Ermittlung des Standorts von gestohlenen Gütern oder Werten",
+        ],
+      },
+    ],
   },
   {
     id: "hauspersonal",
+    category: "private",
     icon: "fas fa-home",
     title: "Überprüfung von Hauspersonal",
     price: "ab 549 €",
     short: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte",
-    details: "Sie vertrauen Ihrem Hauspersonal Ihr Zuhause, Ihre Kinder und Ihre Wertsachen an. Ein Polygraphtest gibt Ihnen die Sicherheit, dass diese Personen vertrauenswürdig sind.",
+    img: "/manus-storage/img_hauspersonal_3f6df5f2.jpg",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
+    sections: [
+      {
+        heading: "ÜBERPRÜFUNG VON HAUSPERSONAL: SICHERHEIT FÜR IHR ZUHAUSE",
+        text: `Ein Test mit dem Polygraphen darf nur mit der freiwilligen Zustimmung des Hauspersonals durchgeführt werden. Es gibt zudem Themenbereiche (wie die Intimsphäre), die nicht Gegenstand der Befragung sein dürfen. Unsere Experten berücksichtigen bei der Erstellung des Fragenkatalogs strikt Ihre individuellen Wünsche.\n\nSeien Sie besonders aufmerksam gegenüber Personen, die einen Test kategorisch ablehnen. Ehrliche und gewissenhafte Mitarbeiter haben in der Regel nichts zu verbergen – für sie ist das Verfahren eine zusätzliche Chance, ihre Loyalität und Integrität unter Beweis zu stellen.`,
+      },
+      {
+        heading: "ASPEKTE, DIE BEI HAUSPERSONAL GEKLÄRT WERDEN KÖNNEN:",
+        text: "",
+        bullets: [
+          "Umgang mit Schutzbefohlenen: Aufdeckung von Misshandlungen an Kindern oder Haustieren",
+          "Qualifikation: Bestätigung der tatsächlichen Berufserfahrung und Echtheit von Empfehlungsschreiben",
+          "Zuverlässigkeit: Prüfung, ob die vereinbarten Aufgaben gewissenhaft erfüllt werden",
+          "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug bei Haushaltsausgaben",
+          "Umgang mit Eigentum: Unachtsamer oder mutwilliger Missbrauch von Möbeln, Geräten oder Fahrzeugen",
+          "Diskretion: Unbefugtes Einladen fremder Personen in die Privaträume des Arbeitgebers",
+          "Hygiene & Sorgfalt: Mängel bei der Lebensmittelzubereitung oder absichtliche Sachbeschädigung",
+          "Geheimhaltung: Weitergabe oder Verkauf von vertraulichen Informationen über die Familie an Dritte",
+        ],
+      },
+    ],
   },
   {
     id: "probetest",
+    category: "private",
     icon: "fas fa-flask",
     title: "Probetest am Polygraphen",
     price: "ab 299 €",
     short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
-    details: "Sie möchten wissen, wie sich ein Polygraphtest anfühlt, bevor Sie sich für eine vollständige Untersuchung entscheiden? Unser Probetest gibt Ihnen die Möglichkeit, das Verfahren kennenzulernen und eventuelle Ängste abzubauen.",
+    img: "/manus-storage/img_probetest_d228d451.png",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
+    sections: [
+      {
+        heading: "DER PROBELAUF: VORBEREITUNG AUF DEN LÜGENDETEKTOR-TEST",
+        text: `Polygraphen-Untersuchungen werden immer häufiger eingesetzt, um Informationen über eine Person zu gewinnen. Sie dienen nicht nur dazu, die Ehrlichkeit zu prüfen, sondern helfen auch dabei, komplexe Situationen ohne offensichtliche Beweise zu klären. Wenn Ihnen ein Test angeboten wurde und Sie mit dem Verfahren nicht vertraut sind, gibt es keinen Grund zur Sorge. Eine sofortige Ablehnung könnte unnötige Zweifel an Ihrer Integrität wecken und Misstrauen schüren.`,
+      },
+      {
+        heading: "ZIELE EINES PROBELAUFS (TEST-CHECK)",
+        text: `Ein Probelauf dient dazu, die zu untersuchende Person an die Atmosphäre und die Bedingungen des Tests zu gewöhnen. Er wird durchgeführt, wenn jemand genau wissen möchte, wie die Prozedur abläuft, welche Fragen gestellt werden und um sich von der Sicherheit des Verfahrens zu überzeugen.`,
+        bullets: [
+          "Detaillierte Einweisung: Umfassende Aufklärung des Teilnehmers über den Ablauf",
+          "Gewöhnung: Anpassung der Testperson an die angelegten Sensoren",
+          "Individuelle Kalibrierung: Feinabstimmung des Geräts auf die spezifischen physiologischen Reaktionen",
+          "Reaktionsanalyse: Erfassung von Mustern bei unterschiedlichen Fragen",
+          "Sicherheitscheck: Feststellung, ob die Ergebnisse durch Alkohol oder Medikamente verfälscht sein könnten",
+        ],
+      },
+    ],
   },
   {
     id: "hochzeit",
+    category: "private",
     icon: "fas fa-ring",
     title: "Überprüfung vor der Hochzeit",
     price: "ab 649 €",
     short: "Sicherheit vor dem wichtigsten Tag Ihres Lebens",
-    details: "Bevor Sie den wichtigsten Schritt Ihres Lebens machen, möchten Sie sicher sein, dass Ihr Partner ehrlich zu Ihnen ist. Ein Polygraphtest vor der Hochzeit kann Ihnen die Gewissheit geben, die Sie für diesen bedeutenden Schritt benötigen.",
+    img: "/manus-storage/img_hochzeit_fd5371b4.jpg",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
+    sections: [
+      {
+        heading: "HOCHZEIT UND VERTRAUEN: DER POLYGRAPH-CHECK VOR DEM JA-WORT",
+        text: `Eine Hochzeit ist ein entscheidender Schritt für jedes Paar. Dieses festliche Ereignis markiert den Beginn eines gemeinsamen Lebensweges, der auf Ehrlichkeit und gegenseitigem Vertrauen basieren sollte. Besteht jedoch auch nur der geringste Zweifel am Partner, bietet ein Lügendetektortest vor der Vermählung Sicherheit. Unsere qualifizierten und erfahrenen Experten setzen modernste, hochpräzise Computertechnik ein. Die Ergebnisse helfen Ihnen dabei, Antworten auf die Fragen zu finden, die Ihre Beziehung belasten.`,
+      },
+      {
+        heading: "LÜGENDETEKTOR VOR DER HOCHZEIT: VORTEILE",
+        text: `Bevor Sie den Bund fürs Leben schließen, ist es ratsam, mögliche Risiken im Vorfeld auszuräumen. So schützen Sie Ihre zukünftige Familie vor Misstrauen, Zweifeln, Verschwiegenheit und anderen belastenden Situationen. Ein Polygraph-Test hilft dabei, Probleme rechtzeitig zu identifizieren und sie für die gemeinsame Zukunft auszuschließen.`,
+        bullets: [
+          "Klarheit: Beseitigung unbegründeter Ängste und Zweifel",
+          "Ehrlichkeit: Bestätigung der Aufrichtigkeit des Partners in Bezug auf die Vergangenheit oder Absichten",
+          "Prävention: Schutz vor unangenehmen Überraschungen nach der Hochzeit",
+        ],
+      },
+    ],
   },
-  {
-    id: "geschaefte",
-    icon: "fas fa-handshake",
-    title: "Überprüfung vor Geschäftsabschlüssen",
-    price: "auf Anfrage",
-    short: "Sicherheit bei privaten Transaktionen und Vereinbarungen",
-    details: "Bei wichtigen privaten Transaktionen, Darlehen oder anderen Vereinbarungen kann ein Polygraphtest sicherstellen, dass alle Parteien ehrlich sind.",
-    features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
-  },
-];
-
-const businessServices = [
+  // ── BUSINESS ──
   {
     id: "einstellung",
+    category: "business",
     icon: "fas fa-user-check",
     title: "Überprüfung bei der Einstellung",
     price: "ab 399 €",
     short: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen",
-    details: "Bei der Einstellung von Mitarbeitern für sensible Positionen kann ein Polygraphtest sicherstellen, dass die Bewerber ehrlich über ihre Vergangenheit und Qualifikationen sind.",
+    img: "/manus-storage/img_einstellung_f43a291d.jpg",
     features: ["Schnelle Abwicklung", "Mehrere Bewerber möglich", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
+    sections: [
+      {
+        heading: "ÜBERPRÜFUNG BEI DER EINSTELLUNG",
+        text: `Bei der Auswahl neuer Mitarbeiter sucht jedes Unternehmen nach Zuverlässigkeit. Wie identifiziert man wirklich verantwortungsbewusste und loyale Profis? Erfahrene Experten sieben mit einer Genauigkeit von 99 % unzuverlässige Kandidaten aus und minimieren so Ihre Geschäftsrisiken.\n\nDie Prüfung bei der Einstellung hilft dabei, folgende Ziele zu erreichen:`,
+        bullets: [
+          "Passgenauigkeit: Auswahl von Spezialisten, deren psychologische und moralische Qualitäten exakt zur Stelle passen",
+          "Wahrheitsgehalt: Aufdeckung verborgener Fakten, Lücken im Lebenslauf oder möglicher Vorstrafen",
+          "Risikoprävention: Identifizierung von Faktoren, die gegen eine Einstellung sprechen",
+          "Effizienz: Senkung von Kosten und Zeitaufwand für mehrstufige Hintergrundchecks",
+          "Ehrlichkeit: Erkennung von Tendenzen zu Diebstahl oder unlauterem Verhalten",
+          "Prognose: Objektive Vorhersage des künftigen Verhaltens des Bewerbers",
+        ],
+      },
+      {
+        heading: "",
+        text: `Die Überprüfung bei der Einstellung wird mit maximaler Genauigkeit durchgeführt, was durch die Korrektur der Themen sichergestellt wird. Häufig möchten Arbeitgeber die Echtheit der vorgelegten Dokumente, Empfehlungen und Registrierungen überprüfen. Der Polygraph hilft auch dabei, die Kredithistorie zu prüfen, verschiedene Risikofaktoren sowie Alkohol-, Drogen- oder Spielsucht zu ermitteln. Das Verfahren deckt kriminelle Hintergründe auf und zeigt, ob gesundheitliche Einschränkungen für die Ausübung der Tätigkeit vorliegen.`,
+      },
+    ],
   },
   {
     id: "routine",
+    category: "business",
     icon: "fas fa-clipboard-check",
     title: "Planmäßige Überprüfung von Mitarbeitern",
     price: "ab 399 €",
     short: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität",
-    details: "Regelmäßige Polygraphtests für Mitarbeiter in sensiblen Positionen können dazu beitragen, Fehlverhalten zu verhindern und die Unternehmenskultur der Integrität zu stärken.",
+    img: "/manus-storage/img_routine_d25f1b36.webp",
     features: ["Maßgeschneiderte Programme", "Gruppenrabatte möglich", "Vertrauliche Berichte", "Regelmäßige Termine"],
+    sections: [
+      {
+        heading: "BRANCHEN, IN DENEN REGELMÄSSIGE POLYGRAPHEN-TESTS FÜR MITARBEITER ERFORDERLICH SIND",
+        text: `Regelmäßige Tests des Personals helfen dabei, zahlreiche potenzielle Probleme zu vermeiden und Risiken im Zusammenhang mit materiellen oder immateriellen Werten erheblich zu senken. Wenn die Geschäftsführung plant, einen Mitarbeiter zu befördern oder seinen Aufgabenbereich zu ändern, ist es wichtig, sich seiner Ehrlichkeit zu vergewissern. Eine planmäßige Überprüfung ist insbesondere dann notwendig, wenn Mitarbeiter Zugang zu schwer kontrollierbaren Finanzen haben.`,
+      },
+      {
+        heading: "GESCHÄFTSBEREICHE, IN DENEN REGELMÄSSIGE LÜGENDETEKTOR-TESTS BESONDERS GEFRAGT SIND:",
+        text: "",
+        bullets: [
+          "Private Sicherheitsdienste: Zum Schutz der Integrität des Wachpersonals",
+          "Einzelhandel: Überall dort, wo Mitarbeiter direkten Zugriff auf Waren und Sachwerte haben",
+          "Logistik und Transport: Insbesondere für Fahrer, Spediteure und Lagerarbeiter",
+          "Geheimnisträger: Unternehmen, deren Tätigkeit mit streng vertraulichen Informationen verbunden ist",
+          "Autohäuser und Werkstätten: Wo Kundenfahrzeuge für die Mitarbeiter frei zugänglich sind",
+          "Produktionsstätten: Betriebe mit wertvollen Rohstoffen und teuren Maschinen",
+          "Finanz- und Bankensektor: Zum Schutz vor Unterschlagung und Finanzdelikten",
+        ],
+      },
+    ],
   },
   {
-    id: "ermittlung",
+    id: "intern",
+    category: "business",
     icon: "fas fa-search",
     title: "Interne Ermittlungen",
     price: "ab 649 €",
     short: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen",
-    details: "Wenn in Ihrem Unternehmen Waren verschwinden, Gelder veruntreut werden oder vertrauliche Informationen nach außen gelangen, kann ein Polygraphtest die Verantwortlichen identifizieren.",
+    img: "/manus-storage/img_intern_3e26b837.jpg",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
+    sections: [
+      {
+        heading: "INTERNE ERMITTLUNGEN: EFFIZIENTE AUFKLÄRUNG DURCH POLYGRAPHEN-TESTS",
+        text: `Wenn in Unternehmen Zwischenfälle mit erheblichem Sachschaden auftreten, sind interne Dienstuntersuchungen unumgänglich. Ziel ist es, Mitarbeiter zu identifizieren, die Straftaten begangen oder ihre Befugnisse zur eigenen Bereicherung missbraucht haben. Qualifizierte Polygraphologen garantieren maximale Präzision und absolute Vertraulichkeit. Nach Abschluss der Tests erhalten Sie objektive und belastbare Informationen über den tatsächlichen Tathergang.\n\nDienstuntersuchungen erzeugen oft Spannungen und Stress innerhalb der Belegschaft. Der Einsatz eines Polygraphen verkürzt die Dauer der Ermittlungen erheblich. Sobald die Schuldigen überführt sind, stabilisiert sich das Mikroklima im Team.`,
+      },
+      {
+        heading: "DURCH EINE POLYGRAPH-UNTERSUCHUNG LASSEN SICH KLÄREN:",
+        text: "",
+        bullets: [
+          "Tathandlungen: Fakten über begangene rechtswidrige Aktivitäten",
+          "Glaubwürdigkeit: Wahrheitsgehalt der Aussagen der befragten Personen",
+          "Hintergrundinformationen: Zusätzliche Daten, die für den Fall relevant sind",
+          "Beteiligte: Identifizierung aller involvierten Personen und ihrer jeweiligen Rollen",
+          "Ursachen: Klärung der Gründe für den außerordentlichen Vorfall",
+          "Schadensausmaß: Ermittlung der Schadenshöhe und Möglichkeiten zur Schadensminimierung",
+          "Prävention: Entwicklung von Gegenmaßnahmen, um ähnliche Vorfälle künftig zu verhindern",
+        ],
+      },
+    ],
   },
   {
     id: "mobil",
+    category: "business",
     icon: "fas fa-car",
     title: "Polygraph mit Hausbesuch",
     price: "auf Anfrage",
     short: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause",
-    details: "Sie möchten die Untersuchung in Ihren eigenen Räumlichkeiten durchführen lassen? Kein Problem – unser Team kommt zu Ihnen. Wir bringen alle notwendigen Geräte mit.",
+    img: "/manus-storage/img_mobil_79ef9417.jpg",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
+    sections: [
+      {
+        heading: "DIE WAHRHEIT ANS LICHT BRINGEN: POLYGRAPH-TESTS VOR ORT",
+        text: `Die Wahrheit lässt sich oft leicht hinter Täuschungen verbergen. Heute gehört der Lügendetektortest zu den gefragtesten Dienstleistungen, um Klarheit zu schaffen – sei es für Ehepartner, Jugendliche, Hauspersonal oder Büroangestellte. Moderne Geräte sind in der Lage, eine Vielzahl chemischer und physiologischer Prozesse im menschlichen Körper präzise zu erfassen. Unsere erfahrenen Experten erstellen Gutachten zu den vom Kunden gewünschten Themen mit einer Genauigkeit von rund 99 %.`,
+      },
+      {
+        heading: "DURCHFÜHRUNG VON MOBILEN POLYGRAPH-TESTS (VOR-ORT-SERVICE)",
+        text: `Wenn Sie Mitarbeiter, Geschäftspartner oder Hauspersonal testen möchten, kommen unsere Experten mit dem erforderlichen Equipment direkt an die von Ihnen angegebene Adresse. Die Durchführung in einer vertrauten und komfortablen Umgebung sorgt dafür, dass sich die Testpersonen natürlicher verhalten und weniger nervös sind.`,
+        bullets: [
+          "Diskretion: Keine Anreise der Testpersonen zu einem externen Institut notwendig",
+          "Komfort: Tests in der gewohnten Umgebung reduzieren Stressfaktoren",
+          "Zeitersparnis: Minimale Ausfallzeiten für Unternehmen und Privatpersonen",
+        ],
+      },
+    ],
   },
   {
     id: "ehre",
+    category: "business",
     icon: "fas fa-balance-scale",
     title: "Schutz von Ehre und Würde",
     price: "auf Anfrage",
     short: "Klärung von Verleumdungen und falschen Anschuldigungen",
-    details: "Wurden Sie fälschlicherweise beschuldigt? Ein Polygraphtest kann Ihre Unschuld beweisen und Ihnen helfen, Ihren Ruf wiederherzustellen.",
+    img: "/manus-storage/img_ehre_e987db40.jpg",
     features: ["Offizielles Gutachten", "Rechtlich verwertbar", "Schnelle Terminvergabe", "Professionelle Beratung"],
+    sections: [
+      {
+        heading: "REPUTATIONSSCHUTZ: DIE EIGENE UNSCHULD MIT DEM LÜGENDETEKTOR BEWEISEN",
+        text: `Menschen, die im Beruf Zugang zu Sachwerten, Finanzen oder geheimen Informationen haben, wissen, wie entscheidend ein tadelloser Ruf für eine erfolgreiche Karriere ist. Dies gilt für alle Ebenen – vom einfachen Angestellten über Führungskräfte bis hin zu Abgeordneten. Der berufliche Aufstieg kann jäh gestoppt werden, wenn unberechtigte Anschuldigungen über Taten laut werden, die man in der Realität nie begangen hat.\n\nDoch wie lassen sich solche haltlosen Behauptungen entkräften? Die Firma bietet Ihnen die Möglichkeit, Ihre Unschuld zu belegen und Nachstellungen oder falsche Verdächtigungen mittels eines Lügendetektortests zu beenden.`,
+      },
+      {
+        heading: "VORTEILE DER ENTLASTUNGSPRÜFUNG:",
+        text: "",
+        bullets: [
+          "Wiederherstellung des Rufes: Effektive Abwehr von Verleumdungen",
+          "Karrieresicherung: Schutz vor beruflichen Nachteilen durch falsche Anschuldigungen",
+          "Offizielles Dokument: Ein fundierter Expertenbericht als Beweismittel für Ihre Integrität",
+        ],
+      },
+    ],
   },
   {
-    id: "partner",
-    icon: "fas fa-building",
-    title: "Überprüfung von Geschäftspartnern",
+    id: "geschaefte",
+    category: "business",
+    icon: "fas fa-handshake",
+    title: "Sicherheit bei großen Geschäften",
     price: "auf Anfrage",
-    short: "Sicherheit bei wichtigen Geschäftspartnerschaften und Investitionen",
-    details: "Bevor Sie eine wichtige Geschäftspartnerschaft eingehen oder eine größere Investition tätigen, kann ein Polygraphtest sicherstellen, dass Ihr potenzieller Partner ehrlich ist.",
-    features: ["Vertrauliche Durchführung", "Offizielles Gutachten", "Rechtlich verwertbar", "Internationale Erfahrung"],
-  },
-  {
-    id: "krypto",
-    icon: "fas fa-coins",
-    title: "Überprüfung im Kryptowährungssektor",
-    price: "auf Anfrage",
-    short: "Spezialisierte Tests für Blockchain- und Kryptounternehmen",
-    details: "Der Kryptowährungssektor ist besonders anfällig für Betrug und Vertrauensmissbrauch. Unsere spezialisierten Tests helfen Ihnen, die Integrität Ihrer Mitarbeiter und Partner zu überprüfen.",
-    features: ["Branchenspezifische Fragen", "Vertrauliche Durchführung", "Offizielles Gutachten", "Internationale Erfahrung"],
+    short: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen",
+    img: "/manus-storage/img_geschaefte_bee62700.jpg",
+    features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
+    sections: [
+      {
+        heading: "SICHERHEIT BEI GROSSEN GESCHÄFTEN: RISIKEN MINIMIEREN MIT DEM POLYGRAPHEN",
+        text: `Bei geplanten Großgeschäften mit Unbekannten ist Vorsicht geboten. Um versteckte Mängel, Unredlichkeit oder Betrug auszuschließen, können Sie Ihrem Geschäftspartner einen Lügendetektortest vorschlagen. Wir garantieren eine schnelle Auswertung, absolute Vertraulichkeit und hochpräzise Ergebnisse.`,
+      },
+      {
+        heading: "HÄUFIGE ANWENDUNGSBEREICHE:",
+        text: `Besonders bei Vereinbarungen „per Handschlag", ohne umfassende rechtliche Absicherung, besteht das Risiko von Täuschungen. Probleme entstehen oft durch verborgene Motive, Falschinformationen oder betrügerische Absichten.`,
+        bullets: [
+          "Große Geldbeträge: Private Darlehen oder Investitionen",
+          "Immobilienkauf/-verkauf: Transaktionen zwischen Privatleuten",
+          "Fahrzeuge und Technik: Übergabe von teuren Autos, Maschinen oder Wertgegenständen",
+          "Finanzielle Verpflichtungen: Absicherung von Rückzahlungen und Schulden",
+        ],
+      },
+      {
+        heading: "WARNSIGNALE, BEI DENEN EIN TEST RATSAM IST:",
+        text: "",
+        bullets: [
+          "Ausweichende Antworten: Der Verkäufer macht unklare Angaben zum Zustand der Ware",
+          "Zu verlockende Angebote: Extrem günstige Preise, die eine hohe Vorabinvestition erfordern",
+          "Erstkontakt: Wenn Sie zum ersten Mal mit dieser Person Geschäfte machen",
+        ],
+      },
+    ],
   },
 ];
 
@@ -175,7 +367,7 @@ const faqItems = [
 ];
 
 // ─────────────────────────────────────────────
-// NAVBAR – exakt wie Screenshot
+// NAVBAR
 // ─────────────────────────────────────────────
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -193,15 +385,12 @@ function Navbar() {
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "32px" }}>
-        {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <div style={{ width: "36px", height: "36px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)" }}>
             <i className="fas fa-wave-square" style={{ color: ORANGE, fontSize: "16px" }}></i>
           </div>
           <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "2px", textTransform: "uppercase" }}>POLYGRAPH</span>
         </div>
-
-        {/* Nav links */}
         <div className="hidden lg:flex" style={{ flex: 1, gap: "28px", alignItems: "center" }}>
           {links.map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)}
@@ -210,21 +399,16 @@ function Navbar() {
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}>{label}</button>
           ))}
         </div>
-
-        {/* CTA Button */}
-        <button onClick={() => scrollTo("contact")}
-          className="hidden md:flex"
+        <button onClick={() => scrollTo("contact")} className="hidden md:flex"
           style={{ alignItems: "center", gap: "6px", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "9px 18px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", cursor: "pointer", whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "0.5px" }}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
           KONTAKTIEREN SIE UNS
         </button>
-
         <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ color: WHITE, background: "none", border: "none", fontSize: "20px", cursor: "pointer", marginLeft: "auto" }}>
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </button>
       </div>
-
       {menuOpen && (
         <div style={{ backgroundColor: NAVY_DARK, padding: "12px 24px 20px", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
           {links.map(([label, id]) => (
@@ -238,53 +422,29 @@ function Navbar() {
 }
 
 // ─────────────────────────────────────────────
-// HERO – exakt wie Screenshot
+// HERO
 // ─────────────────────────────────────────────
 function HeroSection() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 40%", fontFamily: "'Roboto', sans-serif" }}>
-      {/* Dark overlay */}
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,25,50,0.88) 0%, rgba(15,25,50,0.72) 50%, rgba(15,25,50,0.45) 100%)" }} />
-
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "80px 24px 60px", width: "100%" }}>
         <div style={{ maxWidth: "620px" }}>
-          {/* Title */}
           <h1 style={{ color: WHITE, fontSize: "clamp(2.2rem, 5vw, 3.6rem)", fontWeight: 700, lineHeight: 1.15, marginBottom: "14px", textTransform: "uppercase", letterSpacing: "1px" }}>
             LÜGENDETEKTOR-TEST<br />IN MÜNCHEN
           </h1>
-
-          {/* Subtitle */}
-          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>
-            Premium-Prüfung zum fairen Preis
-          </p>
-
-          {/* Accuracy badge */}
-          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>
-            GENAUIGKEIT 98–99%
-          </p>
-
-          {/* Anon note */}
-          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px", marginBottom: "36px" }}>
-            100% anonym, vertraulich und ohne Weitergabe von Anfragedetails
-          </p>
-
-          {/* Feature badges – exactly like screenshot */}
+          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>Premium-Prüfung zum fairen Preis</p>
+          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>GENAUIGKEIT 98–99%</p>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px", marginBottom: "36px" }}>100% anonym, vertraulich und ohne Weitergabe von Anfragedetails</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "32px" }}>
-            {[
-              { icon: "fas fa-lock", label: "Absolute Vertraulichkeit" },
-              { icon: "fas fa-user-tie", label: "Erfahrene Experten" },
-              { icon: "fas fa-desktop", label: "Moderne Ausrüstung" },
-            ].map(b => (
+            {[{ icon: "fas fa-lock", label: "Absolute Vertraulichkeit" }, { icon: "fas fa-user-tie", label: "Erfahrene Experten" }, { icon: "fas fa-desktop", label: "Moderne Ausrüstung" }].map(b => (
               <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "10px", backgroundColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.18)", padding: "12px 20px", borderRadius: "6px", minWidth: "170px" }}>
                 <i className={b.icon} style={{ color: ORANGE, fontSize: "18px" }}></i>
                 <span style={{ color: WHITE, fontSize: "13px", fontWeight: 500 }}>{b.label}</span>
               </div>
             ))}
           </div>
-
-          {/* CTA Buttons */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
             <button onClick={() => scrollTo("contact")}
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
@@ -293,9 +453,7 @@ function HeroSection() {
               <i className="fas fa-paper-plane"></i> Jetzt anfragen
             </button>
             <a href="tel:01756036003"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = WHITE; e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)"; e.currentTarget.style.backgroundColor = "transparent"; }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
               <i className="fas fa-phone-alt"></i> 01756036003
             </a>
           </div>
@@ -310,14 +468,9 @@ function HeroSection() {
 // ─────────────────────────────────────────────
 function StatsBar() {
   return (
-    <div style={{ backgroundColor: NAVY_DARK, padding: "0", fontFamily: "'Roboto', sans-serif" }}>
+    <div style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }} className="stats-grid">
-        {[
-          { val: "98–99%", label: "Genauigkeit", icon: "fas fa-crosshairs" },
-          { val: "20+", label: "Jahre Erfahrung", icon: "fas fa-award" },
-          { val: "500+", label: "Abgeschlossene Fälle", icon: "fas fa-check-double" },
-          { val: "100%", label: "Vertraulich", icon: "fas fa-user-secret" },
-        ].map((s, i) => (
+        {[{ val: "98–99%", label: "Genauigkeit", icon: "fas fa-crosshairs" }, { val: "20+", label: "Jahre Erfahrung", icon: "fas fa-award" }, { val: "500+", label: "Abgeschlossene Fälle", icon: "fas fa-check-double" }, { val: "100%", label: "Vertraulich", icon: "fas fa-user-secret" }].map((s, i) => (
           <div key={i} style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
             <i className={s.icon} style={{ color: ORANGE, fontSize: "22px", flexShrink: 0 }}></i>
             <div>
@@ -332,12 +485,81 @@ function StatsBar() {
 }
 
 // ─────────────────────────────────────────────
-// SERVICES
+// SERVICE DETAIL PANEL
+// ─────────────────────────────────────────────
+function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onClose: () => void }) {
+  return (
+    <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
+      {/* Image + intro */}
+      <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "0" }} className="detail-grid">
+        <div style={{ position: "relative", minHeight: "220px", overflow: "hidden" }}>
+          <img src={svc.img} alt={svc.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "220px" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 70%, white)" }} />
+        </div>
+        <div style={{ padding: "24px 24px 16px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+            {svc.features.map(f => (
+              <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "5px", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "4px 12px", borderRadius: "20px", fontSize: "12px", fontWeight: 600 }}>
+                <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "10px" }}></i>{f}
+              </span>
+            ))}
+          </div>
+          {svc.sections[0] && (
+            <>
+              {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "10px" }}>{svc.sections[0].heading}</h3>}
+              <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.75 }}>{svc.sections[0].text}</p>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Additional sections */}
+      {svc.sections.slice(1).map((sec, i) => (
+        <div key={i} style={{ padding: "0 24px 20px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none", marginTop: i === 0 ? "0" : "0" }}>
+          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "16px 0 10px" }}>{sec.heading}</h3>}
+          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.75, marginBottom: "10px", whiteSpace: "pre-line" }}>{sec.text}</p>}
+          {sec.bullets && (
+            <ul style={{ margin: "0 0 8px", paddingLeft: "0", listStyle: "none" }}>
+              {sec.bullets.map((b, bi) => (
+                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "8px", marginBottom: "6px", fontSize: "14px", color: TEXT_DARK, lineHeight: 1.6 }}>
+                  <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "13px", marginTop: "3px", flexShrink: 0 }}></i>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+
+      {/* CTA */}
+      <div style={{ padding: "16px 24px 24px", borderTop: `1px solid ${BORDER}`, display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "10px 22px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
+            <i className="fas fa-calendar-check"></i> Jetzt anfragen
+          </button>
+          <a href="tel:01756036003"
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: NAVY, color: WHITE, padding: "10px 22px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
+            <i className="fas fa-phone-alt"></i> 01756036003
+          </a>
+        </div>
+        <button onClick={onClose} style={{ color: TEXT_MID, fontSize: "13px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
+          <i className="fas fa-times"></i> Schließen
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────
+// SERVICES SECTION
 // ─────────────────────────────────────────────
 function ServicesSection() {
   const [activeTab, setActiveTab] = useState<"private" | "business">("private");
   const [openService, setOpenService] = useState<string | null>(null);
-  const services = activeTab === "private" ? privateServices : businessServices;
+  const services = allServices.filter(s => s.category === activeTab);
 
   return (
     <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
@@ -353,19 +575,22 @@ function ServicesSection() {
         <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "28px" }}>
           {[["private", "fas fa-user-friends", "Privatpersonen"], ["business", "fas fa-building", "Unternehmen"]].map(([tab, icon, label]) => (
             <button key={tab} onClick={() => { setActiveTab(tab as "private" | "business"); setOpenService(null); }}
-              style={{ padding: "10px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
+              style={{ padding: "10px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
               <i className={`${icon} mr-2`}></i>{label}
             </button>
           ))}
         </div>
 
-        {/* Service Buttons Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: "10px" }}>
+        {/* Service Buttons */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {services.map(svc => (
             <div key={svc.id}>
+              {/* Button */}
               <button onClick={() => setOpenService(openService === svc.id ? null : svc.id)}
                 style={{
-                  width: "100%", textAlign: "left", padding: "16px 20px", borderRadius: openService === svc.id ? "6px 6px 0 0" : "6px", cursor: "pointer", display: "flex", alignItems: "center", gap: "14px", transition: "all 0.2s",
+                  width: "100%", textAlign: "left", padding: "16px 20px",
+                  borderRadius: openService === svc.id ? "6px 6px 0 0" : "6px",
+                  cursor: "pointer", display: "flex", alignItems: "center", gap: "14px",
                   backgroundColor: openService === svc.id ? NAVY : WHITE,
                   color: openService === svc.id ? WHITE : TEXT_DARK,
                   border: openService === svc.id ? `2px solid ${NAVY}` : `2px solid ${BORDER}`,
@@ -374,36 +599,25 @@ function ServicesSection() {
                 onMouseEnter={e => { if (openService !== svc.id) { e.currentTarget.style.borderColor = NAVY; e.currentTarget.style.boxShadow = "0 4px 12px rgba(26,42,74,0.1)"; } }}
                 onMouseLeave={e => { if (openService !== svc.id) { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.04)"; } }}
               >
+                {/* Icon */}
                 <div style={{ width: "42px", height: "42px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, backgroundColor: openService === svc.id ? "rgba(255,140,0,0.15)" : "#EEF2F7", color: openService === svc.id ? ORANGE : NAVY, fontSize: "16px" }}>
                   <i className={svc.icon}></i>
                 </div>
+                {/* Text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: "14px", marginBottom: "2px" }}>{svc.title}</div>
+                  <div style={{ fontWeight: 700, fontSize: "15px", marginBottom: "2px" }}>{svc.title}</div>
                   <div style={{ fontSize: "12px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
                 </div>
+                {/* Price + chevron */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>
                   <span style={{ color: ORANGE, fontWeight: 700, fontSize: "13px" }}>{svc.price}</span>
                   <i className={`fas fa-chevron-${openService === svc.id ? "up" : "down"}`} style={{ color: openService === svc.id ? "rgba(255,255,255,0.5)" : "#A0AEC0", fontSize: "11px" }}></i>
                 </div>
               </button>
 
+              {/* Detail Panel */}
               {openService === svc.id && (
-                <div style={{ backgroundColor: "#EEF2F7", border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 6px 6px", padding: "20px" }}>
-                  <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.75, marginBottom: "14px" }}>{svc.details}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
-                    {svc.features.map(f => (
-                      <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: "5px", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, padding: "4px 12px", borderRadius: "20px", fontSize: "12px", fontWeight: 600 }}>
-                        <i className="fas fa-check" style={{ color: "#22c55e", fontSize: "10px" }}></i>{f}
-                      </span>
-                    ))}
-                  </div>
-                  <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                    style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "9px 20px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
-                    onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
-                    onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-                    <i className="fas fa-calendar-check"></i> Jetzt anfragen
-                  </button>
-                </div>
+                <ServiceDetailPanel svc={svc} onClose={() => setOpenService(null)} />
               )}
             </div>
           ))}
@@ -425,15 +639,9 @@ function AboutSection() {
             <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "10px" }}>Über uns</p>
             <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>POLYGRAPH MÜNCHEN</h2>
             <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, marginBottom: "22px" }} />
-            <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.8, marginBottom: "14px" }}>
-              <strong>POLYGRAPH München</strong> – professionelle Polygraphuntersuchungen für Unternehmen und Privatpersonen.
-            </p>
-            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-              Wir helfen dabei, die Wahrheit dort aufzudecken, wo Worte täuschen können. Unsere Experten mit langjähriger Erfahrung führen präzise und objektive Untersuchungen am Lügendetektor durch.
-            </p>
-            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "28px" }}>
-              Vertrauen Sie den Profis – gewinnen Sie Sicherheit in Menschen und Entscheidungen!
-            </p>
+            <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.8, marginBottom: "14px" }}><strong>POLYGRAPH München</strong> – professionelle Polygraphuntersuchungen für Unternehmen und Privatpersonen.</p>
+            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>Wir helfen dabei, die Wahrheit dort aufzudecken, wo Worte täuschen können. Unsere Experten mit langjähriger Erfahrung führen präzise und objektive Untersuchungen am Lügendetektor durch.</p>
+            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "28px" }}>Vertrauen Sie den Profis – gewinnen Sie Sicherheit in Menschen und Entscheidungen!</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
               {[{ val: "95–99%", label: "Genauigkeit" }, { val: "20+", label: "Jahre Erfahrung" }, { val: "500+", label: "Fälle" }, { val: "100%", label: "Vertraulich" }].map(s => (
                 <div key={s.val} style={{ textAlign: "center" }}>
@@ -542,8 +750,7 @@ function CtaBanner() {
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px" }}>Täglich 08:00 – 20:00 Uhr · Marienstr. 4, München</p>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="tel:01756036003"
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
+          <a href="tel:01756036003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
             <i className="fas fa-phone-alt"></i> 01756036003
           </a>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
@@ -579,9 +786,7 @@ function SpecialistsSection() {
               </div>
               <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "20px", marginBottom: "4px" }}>{s.name}</h3>
               <p style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{s.role}</p>
-              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "13px", marginBottom: "10px" }}>
-                <i className="fas fa-award mr-1"></i>{s.exp}
-              </p>
+              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "13px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
               <p style={{ color: TEXT_MID, fontSize: "13px" }}>{s.edu}</p>
             </div>
           ))}
@@ -609,25 +814,12 @@ function PricesSection() {
             <span style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Leistung</span>
             <span style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Preis</span>
           </div>
-          {[
-            ["Überprüfung auf Untreue", "ab 649 €"],
-            ["Überprüfung von Jugendlichen ab 14 Jahren", "ab 749 €"],
-            ["Aufklärung von Diebstählen", "ab 649 €"],
-            ["Überprüfung von Hauspersonal", "ab 549 €"],
-            ["Probetest am Polygraphen", "ab 299 €"],
-            ["Überprüfung vor der Hochzeit", "ab 649 €"],
-            ["Überprüfung bei der Einstellung", "ab 399 €"],
-            ["Planmäßige Überprüfung von Mitarbeitern", "ab 399 €"],
-            ["Interne Ermittlungen", "ab 649 €"],
-            ["Polygraph mit Hausbesuch", "auf Anfrage"],
-            ["Schutz von Ehre und Würde", "auf Anfrage"],
-            ["Überprüfung von Geschäftspartnern", "auf Anfrage"],
-          ].map(([service, price], i) => (
-            <div key={i} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
+          {allServices.map((svc, i) => (
+            <div key={svc.id} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
               <span style={{ color: TEXT_DARK, fontSize: "14px" }}>
-                <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{service}
+                <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{svc.title}
               </span>
-              <span style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", whiteSpace: "nowrap" }}>{price}</span>
+              <span style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", whiteSpace: "nowrap" }}>{svc.price}</span>
             </div>
           ))}
         </div>
@@ -698,9 +890,7 @@ function ContactSection() {
           <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>KONTAKT AUFNEHMEN</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
-
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", maxWidth: "960px", margin: "0 auto" }} className="grid-2col">
-          {/* Info */}
           <div>
             <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>Kontaktinformationen</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -739,8 +929,6 @@ function ContactSection() {
               </a>
             </div>
           </div>
-
-          {/* Form */}
           <div>
             {sent ? (
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "40px" }}>
@@ -796,7 +984,6 @@ function ContactSection() {
 // ─────────────────────────────────────────────
 function Footer() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <footer style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "48px 24px 24px" }}>
@@ -821,16 +1008,14 @@ function Footer() {
               </a>
             </div>
           </div>
-
           <div>
-            <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Für Kunden</h4>
+            <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Navigation</h4>
             {[["Dienstleistungen", "services"], ["Preise", "prices"], ["Über uns", "about"], ["Ausrüstung", "equipment"], ["Kontakt", "contact"]].map(([label, id]) => (
               <button key={label} onClick={() => scrollTo(id)} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{label}</button>
             ))}
           </div>
-
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Beliebte Leistungen</h4>
             {["Überprüfung auf Untreue", "Überprüfung von Jugendlichen", "Überprüfung bei der Einstellung", "Interne Ermittlungen", "Aufklärung von Diebstählen"].map(s => (
@@ -839,7 +1024,6 @@ function Footer() {
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{s}</button>
             ))}
           </div>
-
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Dokumente</h4>
             {["Freiwillige Einwilligung", "Vertraulichkeitsvereinbarung", "Merkblatt für Probanden", "Datenschutzerklärung", "Impressum"].map(d => (
@@ -849,7 +1033,6 @@ function Footer() {
             ))}
           </div>
         </div>
-
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "18px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
           <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>© 2014 – 2026 POLYGRAPH München. Alle Rechte vorbehalten.</p>
           <div style={{ display: "flex", gap: "18px" }}>
@@ -872,15 +1055,11 @@ function FloatingWidgets() {
   return (
     <div style={{ position: "fixed", bottom: "80px", right: "20px", display: "flex", flexDirection: "column", gap: "12px", zIndex: 1000 }}>
       <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
-        style={{ width: "52px", height: "52px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "24px", textDecoration: "none", boxShadow: "0 4px 14px rgba(37,211,102,0.4)", transition: "transform 0.2s" }}
-        onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.1)")}
-        onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}>
+        style={{ width: "52px", height: "52px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "24px", textDecoration: "none", boxShadow: "0 4px 14px rgba(37,211,102,0.4)" }}>
         <i className="fab fa-whatsapp"></i>
       </a>
       <a href="mailto:detektsiya@yandex.ru"
-        style={{ width: "52px", height: "52px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "20px", textDecoration: "none", boxShadow: "0 4px 14px rgba(255,140,0,0.4)", transition: "transform 0.2s" }}
-        onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.1)")}
-        onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}>
+        style={{ width: "52px", height: "52px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "20px", textDecoration: "none", boxShadow: "0 4px 14px rgba(255,140,0,0.4)" }}>
         <i className="fas fa-envelope"></i>
       </a>
     </div>
@@ -898,10 +1077,10 @@ export default function Home() {
           .grid-2col { grid-template-columns: 1fr !important; }
           .grid-footer { grid-template-columns: 1fr 1fr !important; }
           .stats-grid { grid-template-columns: 1fr 1fr !important; }
+          .detail-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 480px) {
           .grid-footer { grid-template-columns: 1fr !important; }
-          .stats-grid { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
       <Navbar />

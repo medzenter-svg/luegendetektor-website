@@ -129,7 +129,7 @@ const allServices = [
     title: "Probetest am Polygraphen",
     price: "ab 299 €",
     short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
-    img: "/manus-storage/img_probetest_new_e06c54c1.png",
+    img: "/manus-storage/img_probetest2_1221e644.png",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {
@@ -389,18 +389,18 @@ function Navbar() {
           <div style={{ width: "36px", height: "36px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)" }}>
             <i className="fas fa-wave-square" style={{ color: ORANGE, fontSize: "16px" }}></i>
           </div>
-          <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "2px", textTransform: "uppercase" }}>POLYGRAPH</span>
+          <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "2px", textTransform: "uppercase" }}>POLYGRAPH</span>
         </div>
         <div className="hidden lg:flex" style={{ flex: 1, gap: "28px", alignItems: "center" }}>
           {links.map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)}
-              style={{ color: "rgba(255,255,255,0.85)", fontSize: "13px", fontWeight: 500, letterSpacing: "0.3px", background: "none", border: "none", cursor: "pointer", padding: "4px 0", whiteSpace: "nowrap" }}
+              style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 500, letterSpacing: "0.3px", background: "none", border: "none", cursor: "pointer", padding: "4px 0", whiteSpace: "nowrap" }}
               onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}>{label}</button>
           ))}
         </div>
         <button onClick={() => scrollTo("contact")} className="hidden md:flex"
-          style={{ alignItems: "center", gap: "6px", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "9px 18px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", cursor: "pointer", whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "0.5px" }}
+          style={{ alignItems: "center", gap: "6px", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "9px 18px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", cursor: "pointer", whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "0.5px" }}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
           KONTAKTIEREN SIE UNS
@@ -505,8 +505,8 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
         </div>
         {svc.sections[0] && (
           <>
-            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "19px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
-            <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.9 }}>{svc.sections[0].text}</p>
+            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
+            <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9 }}>{svc.sections[0].text}</p>
           </>
         )}
       </div>
@@ -514,12 +514,12 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       {/* Additional sections */}
       {svc.sections.slice(1).map((sec, i) => (
         <div key={i} style={{ padding: "0 28px 24px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none" }}>
-          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "19px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
-          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.9, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
+          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
+          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
           {sec.bullets && (
             <ul style={{ margin: "0 0 8px", paddingLeft: "0", listStyle: "none" }}>
               {sec.bullets.map((b, bi) => (
-                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "17px", color: TEXT_DARK, lineHeight: 1.75 }}>
+                <li key={bi} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "19px", color: TEXT_DARK, lineHeight: 1.75 }}>
                   <i className="fas fa-check-circle" style={{ color: ORANGE, fontSize: "16px", marginTop: "3px", flexShrink: 0 }}></i>
                   <span>{b}</span>
                 </li>
@@ -563,17 +563,17 @@ function ServicesSection() {
     <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unsere Leistungen</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unsere Leistungen</p>
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>EINSATZGEBIETE DES POLYGRAPHEN</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "15px" }}>Klicken Sie auf eine Leistung, um mehr Informationen zu erhalten</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px" }}>Klicken Sie auf eine Leistung, um mehr Informationen zu erhalten</p>
         </div>
 
         {/* Tabs */}
         <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "28px" }}>
           {[["private", "fas fa-user-friends", "Privatpersonen"], ["business", "fas fa-building", "Unternehmen"]].map(([tab, icon, label]) => (
             <button key={tab} onClick={() => { setActiveTab(tab as "private" | "business"); setOpenService(null); }}
-              style={{ padding: "12px 30px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
+              style={{ padding: "12px 30px", borderRadius: "4px", fontWeight: 700, fontSize: "17px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
               <i className={`${icon} mr-2`}></i>{label}
             </button>
           ))}
@@ -603,12 +603,12 @@ function ServicesSection() {
                 </div>
                 {/* Text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: "18px", marginBottom: "4px" }}>{svc.title}</div>
-                  <div style={{ fontSize: "14px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
+                  <div style={{ fontWeight: 700, fontSize: "21px", marginBottom: "4px" }}>{svc.title}</div>
+                  <div style={{ fontSize: "16px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
                 </div>
                 {/* Price + chevron */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>
-                  <span style={{ color: ORANGE, fontWeight: 700, fontSize: "15px" }}>{svc.price}</span>
+                  <span style={{ color: ORANGE, fontWeight: 700, fontSize: "17px" }}>{svc.price}</span>
                   <i className={`fas fa-chevron-${openService === svc.id ? "up" : "down"}`} style={{ color: openService === svc.id ? "rgba(255,255,255,0.5)" : "#A0AEC0", fontSize: "11px" }}></i>
                 </div>
               </button>
@@ -634,12 +634,12 @@ function AboutSection() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="grid-2col">
           <div>
-            <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "10px" }}>Über uns</p>
+            <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Über unss</p>
             <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>POLYGRAPH MÜNCHEN</h2>
             <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, marginBottom: "22px" }} />
-            <p style={{ color: TEXT_DARK, fontSize: "16px", lineHeight: 1.8, marginBottom: "14px" }}><strong>POLYGRAPH München</strong> – professionelle Polygraphuntersuchungen für Unternehmen und Privatpersonen.</p>
-            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>Wir helfen dabei, die Wahrheit dort aufzudecken, wo Worte täuschen können. Unsere Experten mit langjähriger Erfahrung führen präzise und objektive Untersuchungen am Lügendetektor durch.</p>
-            <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, marginBottom: "28px" }}>Vertrauen Sie den Profis – gewinnen Sie Sicherheit in Menschen und Entscheidungen!</p>
+            <p style={{ color: TEXT_DARK, fontSize: "18px", lineHeight: 1.8, marginBottom: "14px" }}><strong>POLYGRAPH München</strong> – professionelle Polygraphuntersuchungen für Unternehmen und Privatpersonen.</p>
+            <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.8, marginBottom: "14px" }}>Wir helfen dabei, die Wahrheit dort aufzudecken, wo Worte täuschen können. Unsere Experten mit langjähriger Erfahrung führen präzise und objektive Untersuchungen am Lügendetektor durch.</p>
+            <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.8, marginBottom: "28px" }}>Vertrauen Sie den Profis – gewinnen Sie Sicherheit in Menschen und Entscheidungen!</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
               {[{ val: "95–99%", label: "Genauigkeit" }, { val: "20+", label: "Jahre Erfahrung" }, { val: "500+", label: "Fälle" }, { val: "100%", label: "Vertraulich" }].map(s => (
                 <div key={s.val} style={{ textAlign: "center" }}>
@@ -662,8 +662,8 @@ function AboutSection() {
                   <i className={item.icon} style={{ color: ORANGE, fontSize: "16px" }}></i>
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, color: NAVY, fontSize: "14px", marginBottom: "2px" }}>{item.title}</div>
-                  <div style={{ color: TEXT_MID, fontSize: "13px", lineHeight: 1.6 }}>{item.desc}</div>
+                  <div style={{ fontWeight: 700, color: NAVY, fontSize: "18px", marginBottom: "8px" }}>{item.title}</div>
+                  <div style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.6 }}>{item.desc}</div>
                 </div>
               </div>
             ))}
@@ -682,7 +682,7 @@ function ProcessSection() {
     <section id="process" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Verfahren</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Verfahren</p>
           <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>WIE LÄUFT DIE PRÜFUNG AB?</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
@@ -691,7 +691,7 @@ function ProcessSection() {
             <div key={i} style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "26px", borderTop: `3px solid ${ORANGE}` }}>
               <div style={{ fontSize: "3.5rem", fontWeight: 700, color: "rgba(255,140,0,0.15)", lineHeight: 1, marginBottom: "12px", fontFamily: "monospace" }}>{step.num}</div>
               <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "15px", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{step.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "13px", lineHeight: 1.75 }}>{step.desc}</p>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: 1.75 }}>{step.desc}</p>
             </div>
           ))}
         </div>
@@ -708,10 +708,10 @@ function EquipmentSection() {
     <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Technologie</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Technologie</p>
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>AUSRÜSTUNG</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 14px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "15px", maxWidth: "600px", margin: "0 auto" }}>Wir verwenden ausschließlich professionelle Computerpolygraphen der neuesten Generation</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px", maxWidth: "600px", margin: "0 auto" }}>Wir verwenden ausschließlich professionelle Computerpolygraphen der neuesten Generation</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
           {[
@@ -726,8 +726,8 @@ function EquipmentSection() {
               <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
                 <i className={item.icon} style={{ color: ORANGE, fontSize: "20px" }}></i>
               </div>
-              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "15px", marginBottom: "8px" }}>{item.title}</h3>
-              <p style={{ color: TEXT_MID, fontSize: "13px", lineHeight: 1.7 }}>{item.desc}</p>
+              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "18px", marginBottom: "8px" }}>{item.title}</h3>
+              <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.7 }}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -745,14 +745,14 @@ function CtaBanner() {
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
         <div>
           <h2 style={{ color: WHITE, fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>BEREIT ANZUFANGEN?</h2>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px" }}>Täglich 08:00 – 20:00 Uhr · Marienstr. 4, München</p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>Täglich 08:00 – 20:00 Uhr · Marienstr. 4, München</p>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="tel:01756036003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
+          <a href="tel:01756036003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", textDecoration: "none", textTransform: "uppercase" }}>
             <i className="fas fa-phone-alt"></i> 01756036003
           </a>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid white", color: WHITE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", cursor: "pointer", textTransform: "uppercase" }}>
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid white", color: WHITE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", cursor: "pointer", textTransform: "uppercase" }}>
             <i className="fas fa-envelope"></i> Nachricht senden
           </button>
         </div>
@@ -769,7 +769,7 @@ function SpecialistsSection() {
     <section id="specialists" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Team</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Team</p>
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>SPEZIALISTEN</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto" }} />
         </div>
@@ -782,10 +782,10 @@ function SpecialistsSection() {
               <div style={{ width: "90px", height: "90px", borderRadius: "50%", backgroundColor: NAVY, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
                 <i className={s.icon} style={{ fontSize: "36px", color: ORANGE }}></i>
               </div>
-              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "20px", marginBottom: "4px" }}>{s.name}</h3>
-              <p style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{s.role}</p>
-              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "13px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
-              <p style={{ color: TEXT_MID, fontSize: "13px" }}>{s.edu}</p>
+              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
+              <p style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{s.role}</p>
+              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "16px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
+              <p style={{ color: TEXT_MID, fontSize: "16px" }}>{s.edu}</p>
             </div>
           ))}
         </div>
@@ -802,32 +802,32 @@ function PricesSection() {
     <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Transparente Preise</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Transparente Preise</p>
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>PREISE</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "15px" }}>Keine versteckten Kosten – transparente und faire Preisgestaltung</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px" }}>Keine versteckten Kosten – transparente und faire Preisgestaltung</p>
         </div>
         <div style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", maxWidth: "800px", margin: "0 auto 24px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
           <div style={{ backgroundColor: NAVY, padding: "14px 24px", display: "grid", gridTemplateColumns: "1fr auto" }}>
-            <span style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Leistung</span>
-            <span style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Preis</span>
+            <span style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Leistung</span>
+            <span style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Preis</span>
           </div>
           {allServices.map((svc, i) => (
             <div key={svc.id} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
-              <span style={{ color: TEXT_DARK, fontSize: "14px" }}>
+              <span style={{ color: TEXT_DARK, fontSize: "16px" }}>
                 <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{svc.title}
               </span>
-              <span style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", whiteSpace: "nowrap" }}>{svc.price}</span>
+              <span style={{ color: ORANGE, fontWeight: 700, fontSize: "17px", whiteSpace: "nowrap" }}>{svc.price}</span>
             </div>
           ))}
         </div>
-        <p style={{ textAlign: "center", fontSize: "13px", color: TEXT_MID, marginBottom: "18px" }}>
+        <p style={{ textAlign: "center", fontSize: "15px", color: TEXT_MID, marginBottom: "18px" }}>
           <i className="fas fa-info-circle mr-1" style={{ color: BLUE_LINE }}></i>
           Der genaue Preis wird nach dem kostenlosen Erstgespräch festgelegt. Gruppenrabatte möglich.
         </p>
         <div style={{ textAlign: "center" }}>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
             <i className="fas fa-paper-plane"></i> Anfrage senden
@@ -847,22 +847,22 @@ function FAQSection() {
     <section id="faq" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>HÄUFIGE FRAGEN</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "15px", maxWidth: "600px", margin: "0 auto" }}>Basierend auf unserer Erfahrung haben wir eine Liste der häufigsten Fragen zusammengestellt</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px", maxWidth: "600px", margin: "0 auto" }}>Basierend auf unserer Erfahrung haben wir eine Liste der häufigsten Fragen zusammengestellt</p>
         </div>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           {faqItems.map((item, i) => (
             <div key={i} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "6px", marginBottom: "8px", overflow: "hidden" }}>
               <button onClick={() => setOpenIdx(openIdx === i ? null : i)}
                 style={{ width: "100%", textAlign: "left", padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", background: "none", border: "none", cursor: "pointer" }}>
-                <span style={{ fontWeight: 700, fontSize: "14px", color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
+                <span style={{ fontWeight: 700, fontSize: "17px", color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
                 <i className={`fas fa-chevron-${openIdx === i ? "up" : "down"}`} style={{ color: ORANGE, flexShrink: 0 }}></i>
               </button>
               {openIdx === i && (
                 <div style={{ padding: "0 20px 16px", borderTop: `1px solid ${BORDER}` }}>
-                  <p style={{ color: TEXT_DARK, fontSize: "14px", lineHeight: 1.8, paddingTop: "12px" }}>{item.a}</p>
+                  <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.8, paddingTop: "12px" }}>{item.a}</p>
                 </div>
               )}
             </div>
@@ -884,7 +884,7 @@ function ContactSection() {
     <section id="contact" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <p style={{ color: ORANGE, fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Kostenlose Erstberatung</p>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Kostenlose Erstberatung</p>
           <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>KONTAKT AUFNEHMEN</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
@@ -904,13 +904,13 @@ function ContactSection() {
                     <i className={c.icon}></i>
                   </div>
                   <div>
-                    <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
+                    <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
                     {c.href ? (
-                      <a href={c.href} style={{ color: WHITE, fontWeight: 700, fontSize: "14px", textDecoration: "none" }}
+                      <a href={c.href} style={{ color: WHITE, fontWeight: 700, fontSize: "17px", textDecoration: "none" }}
                         onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
                         onMouseLeave={e => (e.currentTarget.style.color = WHITE)}>{c.val}</a>
                     ) : (
-                      <span style={{ color: WHITE, fontWeight: 700, fontSize: "14px" }}>{c.val}</span>
+                      <span style={{ color: WHITE, fontWeight: 700, fontSize: "17px" }}>{c.val}</span>
                     )}
                   </div>
                 </div>
@@ -942,30 +942,30 @@ function ContactSection() {
                   { name: "email", label: "E-Mail-Adresse *", type: "email", placeholder: "ihre@email.de", required: true },
                 ].map(f => (
                   <div key={f.name}>
-                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "12px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
+                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
                     <input type={f.type} placeholder={f.placeholder} required={f.required}
                       value={form[f.name as keyof typeof form]}
                       onChange={e => setForm({ ...form, [f.name]: e.target.value })}
-                      style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "14px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, boxSizing: "border-box" }}
+                      style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, boxSizing: "border-box" }}
                       onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
                       onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
                   </div>
                 ))}
                 <div>
-                  <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "12px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Ihre Nachricht</label>
+                  <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Ihre Nachricht</label>
                   <textarea rows={4} placeholder="Beschreiben Sie kurz Ihr Anliegen..."
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                    style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "14px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, resize: "none", boxSizing: "border-box" }}
+                    style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, resize: "none", boxSizing: "border-box" }}
                     onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
                     onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
                 </div>
                 <button type="submit"
-                  style={{ padding: "12px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", border: "none", cursor: "pointer" }}
+                  style={{ padding: "12px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer" }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
                   <i className="fas fa-paper-plane mr-2"></i>Anfrage senden
                 </button>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "11px", textAlign: "center" }}>
+                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center" }}>
                   <i className="fas fa-lock mr-1"></i>Ihre Daten werden vertraulich behandelt
                 </p>
               </form>

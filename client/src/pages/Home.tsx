@@ -156,7 +156,7 @@ const allServices = [
     title: "Überprüfung vor der Hochzeit",
     price: "ab 649 €",
     short: "Sicherheit vor dem wichtigsten Tag Ihres Lebens",
-    img: "/manus-storage/img_hochzeit_fd5371b4.jpg",
+    img: "/manus-storage/img_hochzeit_new_4db145a6.png",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
     sections: [
       {

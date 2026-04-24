@@ -553,9 +553,8 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
 // SERVICES SECTION
 // ─────────────────────────────────────────────
 function ServicesSection() {
-  const [activeTab, setActiveTab] = useState<"private" | "business">("private");
   const [openService, setOpenService] = useState<string | null>(null);
-  const services = allServices.filter(s => s.category === activeTab);
+  const services = allServices;
 
   return (
     <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
@@ -567,15 +566,7 @@ function ServicesSection() {
           <p style={{ color: TEXT_MID, fontSize: "17px" }}>Klicken Sie auf eine Leistung, um mehr Informationen zu erhalten</p>
         </div>
 
-        {/* Tabs */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "28px" }}>
-          {[["private", "fas fa-user-friends", "Privatpersonen"], ["business", "fas fa-building", "Unternehmen"]].map(([tab, icon, label]) => (
-            <button key={tab} onClick={() => { setActiveTab(tab as "private" | "business"); setOpenService(null); }}
-              style={{ padding: "12px 30px", borderRadius: "4px", fontWeight: 700, fontSize: "17px", textTransform: "uppercase", cursor: "pointer", backgroundColor: activeTab === tab ? NAVY : WHITE, color: activeTab === tab ? WHITE : NAVY, border: `2px solid ${NAVY}` }}>
-              <i className={`${icon} mr-2`}></i>{label}
-            </button>
-          ))}
-        </div>
+
 
         {/* Service Buttons */}
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>

@@ -33,7 +33,7 @@ const allServices = [
     title: "Überprüfung auf Untreue",
     price: "ab 649 €",
     short: "Klärung bei Verdacht auf Untreue in der Partnerschaft",
-    img: "/manus-storage/img_untreue_new_6c306b25.png",
+    img: "/manus-storage/img_untreue_new_ec6a03cd.png",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
     sections: [
       {
@@ -53,7 +53,7 @@ const allServices = [
     title: "Überprüfung von Jugendlichen ab 14 Jahren",
     price: "ab 749 €",
     short: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen",
-    img: "/manus-storage/img_jugendliche_1ebcc631.png",
+    img: "/manus-storage/img_jugendliche_71d37249.png",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -69,7 +69,7 @@ const allServices = [
     title: "Aufklärung von Diebstählen",
     price: "ab 649 €",
     short: "Klärung von Diebstählen und Verlusten im privaten Umfeld",
-    img: "/manus-storage/img_diebstahl_new_d8527ccd.png",
+    img: "/manus-storage/img_diebstahl_new_08c72d3b.png",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -99,7 +99,7 @@ const allServices = [
     title: "Überprüfung von Hauspersonal",
     price: "ab 549 €",
     short: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte",
-    img: "/manus-storage/img_hauspersonal_3f6df5f2.jpg",
+    img: "/manus-storage/img_hauspersonal_new_cc672d0c.png",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [
       {
@@ -129,7 +129,7 @@ const allServices = [
     title: "Probetest am Polygraphen",
     price: "ab 299 €",
     short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
-    img: "/manus-storage/img_probetest2_1221e644.png",
+    img: "/manus-storage/img_probetest2_d69e4e5f.png",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {
@@ -156,7 +156,7 @@ const allServices = [
     title: "Überprüfung vor der Hochzeit",
     price: "ab 649 €",
     short: "Sicherheit vor dem wichtigsten Tag Ihres Lebens",
-    img: "/manus-storage/img_hochzeit_new_4db145a6.png",
+    img: "/manus-storage/img_hochzeit_new_1c27e9d7.png",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -182,7 +182,7 @@ const allServices = [
     title: "Überprüfung bei der Einstellung",
     price: "ab 399 €",
     short: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen",
-    img: "/manus-storage/img_einstellung_f43a291d.jpg",
+    img: "/manus-storage/img_einstellung_new_019d6631.png",
     features: ["Schnelle Abwicklung", "Mehrere Bewerber möglich", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
     sections: [
       {
@@ -210,7 +210,7 @@ const allServices = [
     title: "Planmäßige Überprüfung von Mitarbeitern",
     price: "ab 399 €",
     short: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität",
-    img: "/manus-storage/img_routine_d25f1b36.webp",
+    img: "/manus-storage/img_routine_new_ae08702d.png",
     features: ["Maßgeschneiderte Programme", "Gruppenrabatte möglich", "Vertrauliche Berichte", "Regelmäßige Termine"],
     sections: [
       {
@@ -239,7 +239,7 @@ const allServices = [
     title: "Interne Ermittlungen",
     price: "ab 649 €",
     short: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen",
-    img: "/manus-storage/img_intern_3e26b837.jpg",
+    img: "/manus-storage/img_intern_new_cc041727.png",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -268,7 +268,7 @@ const allServices = [
     title: "Polygraph mit Hausbesuch",
     price: "auf Anfrage",
     short: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause",
-    img: "/manus-storage/img_mobil_79ef9417.jpg",
+    img: "/manus-storage/img_mobil_new_786ef233.png",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
     sections: [
       {
@@ -293,7 +293,7 @@ const allServices = [
     title: "Schutz von Ehre und Würde",
     price: "auf Anfrage",
     short: "Klärung von Verleumdungen und falschen Anschuldigungen",
-    img: "/manus-storage/img_ehre_e987db40.jpg",
+    img: "/manus-storage/img_ehre_new_23a0c453.png",
     features: ["Offizielles Gutachten", "Rechtlich verwertbar", "Schnelle Terminvergabe", "Professionelle Beratung"],
     sections: [
       {
@@ -318,7 +318,7 @@ const allServices = [
     title: "Sicherheit bei großen Geschäften",
     price: "auf Anfrage",
     short: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen",
-    img: "/manus-storage/img_geschaefte_bee62700.jpg",
+    img: "/manus-storage/img_geschaefte_new_7e315cd3.png",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {
@@ -386,7 +386,7 @@ function Navbar() {
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "32px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src="/manus-storage/logo_3e7ffd74.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
+          <img src="/manus-storage/logo_new_b5b38517.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
           <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "2px", textTransform: "uppercase" }}>POLYGRAPH</span>
         </div>
         <div className="hidden lg:flex" style={{ flex: 1, gap: "28px", alignItems: "center" }}>

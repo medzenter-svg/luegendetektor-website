@@ -434,7 +434,7 @@ function HeroSection() {
           </h1>
           <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>Premium-Prüfung zum fairen Preis</p>
           <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>GENAUIGKEIT 98–99%</p>
-          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px", marginBottom: "36px" }}>100% anonym, vertraulich und ohne Weitergabe von Anfragedetails</p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "26px", marginBottom: "36px" }}>100% anonym, vertraulich und ohne Weitergabe von Anfragedetails</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "32px" }}>
             {[{ icon: "fas fa-lock", label: "Absolute Vertraulichkeit" }, { icon: "fas fa-user-tie", label: "Erfahrene Experten" }, { icon: "fas fa-desktop", label: "Moderne Ausrüstung" }].map(b => (
               <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "10px", backgroundColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.18)", padding: "12px 20px", borderRadius: "6px", minWidth: "170px" }}>

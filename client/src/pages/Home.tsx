@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { legalDocs } from "../data/legalDocs";
 
 // ============================================================
 // POLYGRAPH – lügendetektortest.com
@@ -969,7 +970,7 @@ function ContactSection() {
 // ─────────────────────────────────────────────
 // FOOTER
 // ─────────────────────────────────────────────
-function Footer() {
+function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void; docKeyMap: Record<string, string> }) {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
     <footer style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
@@ -1013,8 +1014,8 @@ function Footer() {
           </div>
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Dokumente</h4>
-            {["Freiwillige Einwilligung", "Vertraulichkeitsvereinbarung", "Merkblatt für Probanden", "Datenschutzerklärung", "Impressum"].map(d => (
-              <button key={d} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
+            {["Allgemeine Geschäftsbedingungen", "Datenschutzerklärung", "Impressum", "Vertraulichkeitsvereinbarung", "Freiwillige Einwilligung", "Merkblatt für Probanden"].map(d => (
+              <button key={d} onClick={() => onLegalOpen(docKeyMap[d])} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{d}</button>
             ))}
@@ -1023,11 +1024,14 @@ function Footer() {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "18px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
           <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>© 2014 – 2026 POLYGRAPH München. Alle Rechte vorbehalten.</p>
           <div style={{ display: "flex", gap: "18px" }}>
-            {["Datenschutzerklärung", "Impressum", "Sitemap"].map(l => (
-              <button key={l} style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", background: "none", border: "none", cursor: "pointer" }}
-                onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.3)")}>{l}</button>
-            ))}
+            {["Datenschutzerklärung", "Impressum", "AGB"].map(l => {
+              const keyMap: Record<string, string> = { "Datenschutzerklärung": "datenschutz", "Impressum": "impressum", "AGB": "agb" };
+              return (
+                <button key={l} onClick={() => onLegalOpen(keyMap[l])} style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", background: "none", border: "none", cursor: "pointer" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.3)")}>{l}</button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -1056,7 +1060,81 @@ function FloatingWidgets() {
 // ─────────────────────────────────────────────
 // MAIN
 // ─────────────────────────────────────────────
+// ─────────────────────────────────────────────
+// LEGAL MODAL
+// ─────────────────────────────────────────────
+function LegalModal({ docKey, onClose }: { docKey: string; onClose: () => void }) {
+  const doc = legalDocs[docKey as keyof typeof legalDocs];
+  if (!doc) return null;
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 9999,
+        backgroundColor: "rgba(0,0,0,0.75)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        padding: "20px",
+      }}
+    >
+      <div
+        onClick={e => e.stopPropagation()}
+        style={{
+          backgroundColor: "#fff", borderRadius: "10px",
+          maxWidth: "760px", width: "100%",
+          maxHeight: "85vh", display: "flex", flexDirection: "column",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+        }}
+      >
+        {/* Header */}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "20px 28px", borderBottom: "1px solid #e5e7eb",
+          backgroundColor: "#1a2a4a", borderRadius: "10px 10px 0 0",
+        }}>
+          <h2 style={{ color: "#fff", fontSize: "20px", fontWeight: 700, margin: 0 }}>{doc.title}</h2>
+          <button
+            onClick={onClose}
+            style={{
+              background: "none", border: "none", cursor: "pointer",
+              color: "rgba(255,255,255,0.7)", fontSize: "26px", lineHeight: 1,
+              padding: "0 4px",
+            }}
+          >×</button>
+        </div>
+        {/* Scrollable Content */}
+        <div
+          style={{ overflowY: "auto", padding: "28px", flex: 1 }}
+          dangerouslySetInnerHTML={{ __html: doc.content }}
+        />
+        {/* Footer */}
+        <div style={{ padding: "16px 28px", borderTop: "1px solid #e5e7eb", textAlign: "right" }}>
+          <button
+            onClick={onClose}
+            style={{
+              backgroundColor: "#FF8C00", color: "#fff",
+              border: "none", borderRadius: "6px",
+              padding: "10px 28px", fontSize: "15px", fontWeight: 600,
+              cursor: "pointer",
+            }}
+          >Schließen</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
+  const [legalDoc, setLegalDoc] = useState<string | null>(null);
+
+  const docKeyMap: Record<string, string> = {
+    "Allgemeine Geschäftsbedingungen": "agb",
+    "Datenschutzerklärung": "datenschutz",
+    "Impressum": "impressum",
+    "Vertraulichkeitsvereinbarung": "vertraulichkeit",
+    "Freiwillige Einwilligung": "einwilligung",
+    "Merkblatt für Probanden": "merkblatt",
+  };
+
   return (
     <div style={{ fontFamily: "'Roboto', sans-serif" }}>
       <style>{`
@@ -1082,8 +1160,9 @@ export default function Home() {
       <PricesSection />
       <FAQSection />
       <ContactSection />
-      <Footer />
+      <Footer onLegalOpen={(key) => setLegalDoc(key)} docKeyMap={docKeyMap} />
       <FloatingWidgets />
+      {legalDoc && <LegalModal docKey={legalDoc} onClose={() => setLegalDoc(null)} />}
     </div>
   );
 }

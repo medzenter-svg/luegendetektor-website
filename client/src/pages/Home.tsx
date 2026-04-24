@@ -491,7 +491,7 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
     <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
       {/* Image centered */}
       <div style={{ display: "flex", justifyContent: "center", padding: "24px 24px 0" }}>
-        <img src={svc.img} alt={svc.title} style={{ width: "100%", maxWidth: "560px", height: "320px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
+        <img src={svc.img} alt={svc.title} style={{ width: "100%", maxWidth: "784px", height: "448px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
       </div>
       {/* Features + intro */}
       <div style={{ padding: "24px 28px 16px" }}>

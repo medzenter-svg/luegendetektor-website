@@ -321,7 +321,7 @@ const allServices = [
     title: "Sicherheit bei großen Geschäften",
     price: "auf Anfrage",
     short: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen",
-    img: "/manus-storage/img_geschaefte_new_7e315cd3.png",
+    img: "/manus-storage/img_geschaefte_business_dda0e881.png",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {

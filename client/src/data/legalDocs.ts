@@ -122,7 +122,7 @@ Website: lügendetektortest.com</p>
 Berufsrechtliche Regelungen: Es gelten die allgemeinen gesetzlichen Vorschriften der Bundesrepublik Deutschland.</p>
 
 <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-<p>Dimitri Neubauer<br/>
+<p>Dimitri Razarenov<br/>
 Marienstr. 4, 80331 München</p>
 
 <h3>Streitschlichtung</h3>

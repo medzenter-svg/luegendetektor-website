@@ -765,7 +765,7 @@ function SpecialistsSection() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
-            { name: "Dimitri", role: "Polygraphologe", exp: "20 Jahre Erfahrung", edu: "Höhere Bildung, Praktische Psychologie", icon: "fas fa-user-tie" },
+            { name: "Dimitri Razarenov", role: "Polygraphologe", exp: "20 Jahre Erfahrung", edu: "Höhere Bildung, Praktische Psychologie", icon: "fas fa-user-tie" },
             { name: "Tatjana Neubauer", role: "Psychologin", exp: "23 Jahre Erfahrung", edu: "Höhere Bildung, Diplompsychologin", icon: "fas fa-user-graduate" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "36px 28px", textAlign: "center", borderTop: `4px solid ${ORANGE}` }}>

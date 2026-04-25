@@ -992,19 +992,6 @@ function ContactSection() {
         </div>
       </div>
     </section>
-    {/* Google Maps */}
-    <div style={{ width: "100%", lineHeight: 0 }}>
-      <iframe
-        title="Marienstr. 4, München"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.9!2d11.5659!3d48.1374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e75e5b8e3f8a7%3A0x4d6f3b8a2e1c5f9d!2sMarienstra%C3%9Fe+4%2C+80331+M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1745600000000!5m2!1sde!2sde"
-        width="100%"
-        height="380"
-        style={{ border: 0, display: "block" }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
     </>
   );
 }

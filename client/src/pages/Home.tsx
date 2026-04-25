@@ -355,7 +355,7 @@ const allServices = [
     title: "Überprüfung von Hausmädchen",
     price: "ab 350 €",
     short: "Haushälterinnen, Reinigungskräfte und Hauspersonal",
-    img: "",
+    img: "/manus-storage/img_hausmaedchen_1198f2c3.png",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
     sections: [
       {

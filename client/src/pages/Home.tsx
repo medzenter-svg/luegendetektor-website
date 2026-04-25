@@ -387,7 +387,7 @@ function Navbar() {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "32px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <img src="/manus-storage/logo_clean_f9c5298d.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
-          <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "2px", textTransform: "uppercase" }}>POLYGRAPH München</span>
+          <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "1px" }}>lügendetektortest.com</span>
         </div>
         <div className="hidden lg:flex" style={{ flex: 1, gap: "28px", alignItems: "center" }}>
           {links.map(([label, id]) => (

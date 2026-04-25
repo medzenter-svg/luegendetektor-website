@@ -644,7 +644,7 @@ function AboutSection() {
               { icon: "fas fa-user-secret", title: "Anonymität", desc: "Wir unterzeichnen eine Geheimhaltungsvereinbarung und tragen die volle rechtliche Verantwortung" },
               { icon: "fas fa-balance-scale", title: "Objektivität", desc: "Wir arbeiten mit professioneller Hochpräzisionsausrüstung, die Fehler minimiert" },
               { icon: "fas fa-crosshairs", title: "Genauigkeit", desc: "Hohe Genauigkeitsergebnisse helfen Ihnen, die richtigen Schlüsse zu ziehen" },
-              { icon: "fas fa-map-marker-alt", title: "München", desc: "Marienstr. 4, 80331 München – täglich 08:00–20:00 Uhr" },
+              { icon: "fas fa-map-marker-alt", title: "München", desc: "Marienstr. 4, 80331 München – täglich 10:00–22:00 Uhr" },
             ].map(item => (
               <div key={item.title} style={{ display: "flex", gap: "14px", marginBottom: "18px" }}>
                 <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -734,7 +734,7 @@ function CtaBanner() {
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
         <div>
           <h2 style={{ color: WHITE, fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>BEREIT ANZUFANGEN?</h2>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>Täglich 08:00 – 20:00 Uhr · Marienstr. 4, München</p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>Täglich 10:00 – 22:00 Uhr · Marienstr. 4, München</p>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a href="tel:+4917560360003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", textDecoration: "none", textTransform: "uppercase" }}>
@@ -886,7 +886,7 @@ function ContactSection() {
                 { icon: "fas fa-phone-alt", label: "Telefon", val: "+49 175 6036003", href: "tel:+4917560360003" },
                 { icon: "fas fa-envelope", label: "E-Mail", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
                 { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
-                { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 08:00 – 20:00 Uhr", href: undefined },
+                { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 10:00 – 22:00 Uhr", href: undefined },
               ].map(c => (
                 <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>

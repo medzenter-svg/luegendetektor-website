@@ -884,7 +884,7 @@ function ContactSection() {
               {[
                 { icon: "fas fa-map-marker-alt", label: "Adresse", val: "Marienstr. 4, 80331 München", href: undefined },
                 { icon: "fas fa-phone-alt", label: "Telefon", val: "01756036003", href: "tel:01756036003" },
-                { icon: "fas fa-envelope", label: "E-Mail", val: "detektsiya@yandex.ru", href: "mailto:detektsiya@yandex.ru" },
+                { icon: "fas fa-envelope", label: "E-Mail", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
                 { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
                 { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 08:00 – 20:00 Uhr", href: undefined },
               ].map(c => (
@@ -910,7 +910,7 @@ function ContactSection() {
                 style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
                 <i className="fab fa-whatsapp"></i> WhatsApp
               </a>
-              <a href="mailto:detektsiya@yandex.ru"
+              <a href="mailto:beratung@lügendetektortest.com"
                 style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
                 <i className="fas fa-envelope"></i> E-Mail
               </a>
@@ -990,7 +990,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
               <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer" style={{ width: "34px", height: "34px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: WHITE, textDecoration: "none", fontSize: "15px" }}>
                 <i className="fab fa-whatsapp"></i>
               </a>
-              <a href="mailto:detektsiya@yandex.ru" style={{ width: "34px", height: "34px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: WHITE, textDecoration: "none", fontSize: "13px" }}>
+              <a href="mailto:beratung@lügendetektortest.com" style={{ width: "34px", height: "34px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: WHITE, textDecoration: "none", fontSize: "13px" }}>
                 <i className="fas fa-envelope"></i>
               </a>
             </div>
@@ -1048,7 +1048,7 @@ function FloatingWidgets() {
         style={{ width: "52px", height: "52px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "24px", textDecoration: "none", boxShadow: "0 4px 14px rgba(37,211,102,0.4)" }}>
         <i className="fab fa-whatsapp"></i>
       </a>
-      <a href="mailto:detektsiya@yandex.ru"
+      <a href="mailto:beratung@lügendetektortest.com"
         style={{ width: "52px", height: "52px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "20px", textDecoration: "none", boxShadow: "0 4px 14px rgba(255,140,0,0.4)" }}>
         <i className="fas fa-envelope"></i>
       </a>

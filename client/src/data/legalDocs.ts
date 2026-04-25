@@ -8,7 +8,7 @@ export const legalDocs = {
 <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
 <p><strong>POLYGRAPH München – Lügendetektortest</strong><br/>
 Marienstr. 4, 80331 München<br/>
-Telefon: 01756036003 | E-Mail: detektsiya@yandex.ru<br/>
+Telefon: 01756036003 | E-Mail: beratung@lügendetektortest.com<br/>
 Stand: April 2026</p>
 
 <h3>§ 1 Geltungsbereich</h3>
@@ -55,12 +55,12 @@ Stand: April 2026</p>
 <h2>Datenschutzerklärung</h2>
 <p><strong>POLYGRAPH München – Lügendetektortest</strong><br/>
 Marienstr. 4, 80331 München<br/>
-Telefon: 01756036003 | E-Mail: detektsiya@yandex.ru<br/>
+Telefon: 01756036003 | E-Mail: beratung@lügendetektortest.com<br/>
 Stand: April 2026</p>
 
 <h3>1. Verantwortlicher</h3>
 <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br/>
-POLYGRAPH München, Marienstr. 4, 80331 München, detektsiya@yandex.ru</p>
+POLYGRAPH München, Marienstr. 4, 80331 München, beratung@lügendetektortest.com</p>
 
 <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
 <p>Wir erheben und verarbeiten personenbezogene Daten nur, soweit dies zur Erfüllung des Vertrages oder aufgrund Ihrer ausdrücklichen Einwilligung erforderlich ist. Folgende Daten werden verarbeitet:</p>
@@ -90,7 +90,7 @@ POLYGRAPH München, Marienstr. 4, 80331 München, detektsiya@yandex.ru</p>
   <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
   <li>Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
 </ul>
-<p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: detektsiya@yandex.ru</p>
+<p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: beratung@lügendetektortest.com</p>
 
 <h3>7. Beschwerderecht</h3>
 <p>Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren. Zuständige Aufsichtsbehörde in Bayern ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
@@ -114,7 +114,7 @@ Deutschland</p>
 
 <h3>Kontakt</h3>
 <p>Telefon: 01756036003<br/>
-E-Mail: detektsiya@yandex.ru<br/>
+E-Mail: beratung@lügendetektortest.com<br/>
 Website: lügendetektortest.com</p>
 
 <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
@@ -279,7 +279,7 @@ Marienstr. 4, 80331 München</p>
   <li>Alle Ihre Daten werden streng vertraulich behandelt</li>
 </ul>
 
-<p style="margin-top: 24px; padding: 16px; background: rgba(0,0,0,0.05); border-radius: 8px;"><strong>Bei Fragen stehen wir Ihnen gerne zur Verfügung: 01756036003 | detektsiya@yandex.ru</strong></p>
+<p style="margin-top: 24px; padding: 16px; background: rgba(0,0,0,0.05); border-radius: 8px;"><strong>Bei Fragen stehen wir Ihnen gerne zur Verfügung: 01756036003 | beratung@lügendetektortest.com</strong></p>
     `
   }
 };

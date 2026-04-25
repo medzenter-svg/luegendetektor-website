@@ -1148,6 +1148,118 @@ function LegalModal({ docKey, onClose }: { docKey: string; onClose: () => void }
   );
 }
 
+// ── REPORT SECTION ──
+function ReportSection() {
+  const { lang } = useLang();
+  const r = t.report;
+  const L = lang as "de" | "en";
+  const accent = "#f59e0b";
+  const bg = "#0f172a";
+  const cardBg = "#1e293b";
+  return (
+    <div id="report" style={{ background: bg, padding: "80px 0" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <h2 style={{ color: "#fff", fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{r.heading[L]}</h2>
+          <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
+          <p style={{ color: "#94a3b8", marginTop: 12 }}>{r.sub[L]}</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }} className="grid-2col">
+          {/* Left: intro + sections */}
+          <div>
+            <p style={{ color: "#cbd5e1", marginBottom: 24, lineHeight: 1.7 }}>{r.intro[L]}</p>
+            {[
+              { title: r.section1Title[L], items: r.section1Items.map(i => i[L]) },
+              { title: r.section2Title[L], items: r.section2Items.map(i => i[L]) },
+              { title: r.section3Title[L], items: r.section3Items.map(i => i[L]) },
+            ].map((sec, idx) => (
+              <div key={idx} style={{ background: cardBg, borderRadius: 8, padding: "20px 24px", marginBottom: 16 }}>
+                <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 12px", fontSize: 15 }}>{sec.title}</h4>
+                <ul style={{ margin: 0, paddingLeft: 20 }}>
+                  {sec.items.map((item, i) => (
+                    <li key={i} style={{ color: "#cbd5e1", marginBottom: 6, fontSize: 14 }}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              style={{ marginTop: 8, background: accent, color: "#000", border: "none", borderRadius: 6, padding: "14px 32px", fontWeight: 700, fontSize: 14, letterSpacing: 1, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}
+            >
+              {r.btnRequest[L]}
+            </button>
+          </div>
+          {/* Right: visual report card */}
+          <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}22` }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+              <div style={{ background: accent, borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ fontSize: 22 }}>📄</span>
+              </div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
+                <div style={{ color: "#64748b", fontSize: 12 }}>{lang === "de" ? "Offizielles Dokument" : "Official Document"}</div>
+              </div>
+            </div>
+            {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: i < 2 ? "1px solid #334155" : "none" }}>
+                <div style={{ width: 8, height: 8, borderRadius: "50%", background: accent, flexShrink: 0 }} />
+                <span style={{ color: "#e2e8f0", fontSize: 14 }}>{sec}</span>
+              </div>
+            ))}
+            <div style={{ marginTop: 24, padding: "16px", background: "#0f172a", borderRadius: 8, textAlign: "center" }}>
+              <div style={{ color: accent, fontWeight: 700, fontSize: 13, letterSpacing: 1 }}>
+                {lang === "de" ? "✓ RECHTSGÜLTIG" : "✓ LEGALLY VALID"}
+              </div>
+              <div style={{ color: "#64748b", fontSize: 12, marginTop: 4 }}>
+                {lang === "de" ? "Anerkannt von Gerichten und Behörden" : "Recognized by courts and authorities"}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── CASE STUDIES SECTION ──
+function CasesSection() {
+  const { lang } = useLang();
+  const c = t.cases;
+  const L = lang as "de" | "en";
+  const accent = "#f59e0b";
+  const bg = "#1e293b";
+  const cardBg = "#0f172a";
+  return (
+    <div id="cases" style={{ background: bg, padding: "80px 0" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <h2 style={{ color: "#fff", fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{c.heading[L]}</h2>
+          <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
+          <p style={{ color: "#94a3b8", marginTop: 12 }}>{c.sub[L]}</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }} className="detail-grid">
+          {c.items.map((item, idx) => (
+            <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 20px", borderLeft: `4px solid ${accent}`, cursor: "pointer" }}
+              onMouseEnter={e => (e.currentTarget.style.borderLeftColor = "#f59e0b")}
+            >
+              <div style={{ color: "#64748b", fontSize: 12, marginBottom: 8 }}>{c.dates[idx]}</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.6, margin: 0 }}>{item[L]}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: "center", marginTop: 40 }}>
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            style={{ background: "transparent", color: accent, border: `2px solid ${accent}`, borderRadius: 6, padding: "12px 32px", fontWeight: 700, fontSize: 14, letterSpacing: 1, cursor: "pointer" }}
+          >
+            {c.btnAll[L]}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [legalDoc, setLegalDoc] = useState<string | null>(null);
 
@@ -1183,6 +1295,8 @@ export default function Home() {
       <CtaBanner />
       <SpecialistsSection />
       <PricesSection />
+      <ReportSection />
+      <CasesSection />
       <FAQSection />
       <ContactSection />
       <Footer onLegalOpen={(key) => setLegalDoc(key)} docKeyMap={docKeyMap} />

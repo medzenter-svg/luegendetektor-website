@@ -160,6 +160,48 @@ export const t = {
     copyright: { de: "Alle Rechte vorbehalten.", en: "All rights reserved." },
   },
 
+  // ── REPORT SECTION ──
+  report: {
+    heading: { de: "ERGEBNIS DER PRÜFUNG", en: "EXAMINATION RESULT" },
+    sub:     { de: "Ein detaillierter Bericht zu allen Parametern", en: "A detailed report on all parameters" },
+    intro:   { de: "Das Gutachten des Polygraphologen muss mehrere Pflichtabschnitte enthalten:", en: "The polygraph expert's report must contain several mandatory sections:" },
+    section1Title: { de: "1. Allgemeine Informationen", en: "1. General Information" },
+    section1Items: [
+      { de: "Daten der geprüften Person",     en: "Data of the examined person" },
+      { de: "Gründe für die Untersuchung",   en: "Reasons for the examination" },
+      { de: "Datum und Ort der Durchführung", en: "Date and place of examination" },
+    ],
+    section2Title: { de: "2. Methodik der Durchführung", en: "2. Methodology" },
+    section2Items: [
+      { de: "Liste der gestellten Fragen",       en: "List of questions asked" },
+      { de: "Beschreibung des Testverfahrens",   en: "Description of the testing procedure" },
+      { de: "Verwendete Ausrüstung",            en: "Equipment used" },
+    ],
+    section3Title: { de: "3. Analyseergebnisse", en: "3. Analysis Results" },
+    section3Items: [
+      { de: "Reaktionen der geprüften Person auf jede Frage", en: "Reactions of the examined person to each question" },
+      { de: "Interpretation der erhaltenen Ergebnisse",       en: "Interpretation of the results obtained" },
+      { de: "Schlussfolgerungen aus dem Test",                en: "Conclusions from the test" },
+    ],
+    btnRequest: { de: "ANFRAGE SENDEN",  en: "SEND REQUEST" },
+  },
+
+  // ── CASE STUDIES ──
+  cases: {
+    heading: { de: "FALLSTUDIEN", en: "CASE STUDIES" },
+    sub:     { de: "Echte Fälle aus unserer Praxis", en: "Real cases from our practice" },
+    items: [
+      { de: "Fall Nr. 1: Mitarbeiter identifiziert, der die Kundendatenbank an Konkurrenten weitergegeben hat",             en: "Case No. 1: Identified the employee who leaked the customer database to competitors" },
+      { de: "Fall Nr. 2: Festgestellt, wer ein Rückvergütungssystem mit Lieferanten organisiert hat",                    en: "Case No. 2: Determined who organized a kickback scheme with suppliers" },
+      { de: "Fall Nr. 3: Mitarbeiter gefunden, der systematisch Waren aus Internetretouren unterschlagen hat",              en: "Case No. 3: Found the employee who systematically embezzled goods from internet returns" },
+      { de: "Fall Nr. 4: Manager entlarvt, der Unterschriften in Verträgen gefälscht hat",                                en: "Case No. 4: Exposed the manager who forged signatures in contracts" },
+      { de: "Fall Nr. 5: Kassierer ermittelt, der systematisch keine Quittungen ausstellte und Einnahmen stahl",           en: "Case No. 5: Determined which cashier systematically failed to issue receipts and stole revenue" },
+      { de: "Fall Nr. 6: Ermittelt, wer im Team eine falsche anonyme Beschwerde gegen den Vorgesetzten verbreitet hat",   en: "Case No. 6: Determined who in the team spread a false anonymous complaint against the manager" },
+    ],
+    dates: ["13.02.2026", "10.02.2026", "07.02.2026", "04.02.2026", "01.02.2026", "28.01.2026"],
+    btnAll: { de: "ALLE FÄLLE ANSEHEN", en: "VIEW ALL CASES" },
+  },
+
   // ── CTA BANNER ──
   cta: {
     heading: { de: "BEREIT FÜR DIE WAHRHEIT?", en: "READY FOR THE TRUTH?" },

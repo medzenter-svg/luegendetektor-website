@@ -981,12 +981,9 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "40px", marginBottom: "36px" }} className="grid-footer">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-              <div style={{ width: "34px", height: "34px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <i className="fas fa-wave-square" style={{ color: ORANGE, fontSize: "14px" }}></i>
-              </div>
+              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
               <div>
-                <div style={{ color: WHITE, fontWeight: 700, fontSize: "16px", letterSpacing: "2px" }}>POLYGRAPH</div>
-                <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "10px", letterSpacing: "1px" }}>lügendetektortest.com</div>
+                <div style={{ color: WHITE, fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>lügendetektortest.com</div>
               </div>
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", lineHeight: 1.75, marginBottom: "14px" }}>Professionelle Polygraphuntersuchungen in München. Genau. Zuverlässig. Objektiv.</p>

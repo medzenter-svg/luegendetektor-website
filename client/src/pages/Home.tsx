@@ -349,8 +349,157 @@ const allServices = [
       },
     ],
   },
+  {
+    id: "hausmaedchen",
+    icon: "fas fa-broom",
+    title: "Überprüfung von Hausmädchen",
+    price: "ab 350 €",
+    short: "Haushälterinnen, Reinigungskräfte und Hauspersonal",
+    img: "",
+    features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
+    sections: [
+      {
+        heading: "ÜBERPRÜFUNG VON HAUSMÄDCHEN AUF DEM POLYGRAPHEN",
+        text: `Hausmädchen und Haushälterinnen haben Zugang zu Ihrem Zuhause, Ihren Wertsachen und Ihrer Familie. Eine Polygraphenprüfung gibt Ihnen die Gewissheit, dass Sie der richtigen Person vertrauen. Wir überprüfen Ehrlichkeit, Verlässlichkeit und mögliche Risikofaktoren mit einer Genauigkeit von 98–99 %.`,
+      },
+      {
+        heading: "WAS WIRD GEPRÜFT:",
+        text: "",
+        bullets: [
+          "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug",
+          "Zuverlässigkeit: Überprüfung auf Alkohol- oder Drogenprobleme",
+          "Hintergrund: Kriminelle Vergangenheit oder Vorstrafen",
+          "Loyalität: Weitergabe privater Informationen an Dritte",
+        ],
+      },
+    ],
+  },
+  {
+    id: "it-sektor",
+    icon: "fas fa-laptop-code",
+    title: "Überprüfung im IT-Sektor",
+    price: "ab 350 €",
+    short: "Entwickler, Systemadministratoren und IT-Fachkräfte",
+    img: "",
+    features: ["Datenschutz sicherstellen", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
+    sections: [
+      {
+        heading: "POLYGRAPHENPRÜFUNG IM IT-SEKTOR",
+        text: `IT-Mitarbeiter haben Zugang zu sensiblen Unternehmensdaten, Passwörtern und kritischer Infrastruktur. Eine Polygraphenprüfung hilft, Datenlecks, Insider-Bedrohungen und unautorisierten Zugriff aufzudecken. Schützen Sie Ihr Unternehmen vor digitalen Risiken.`,
+      },
+      {
+        heading: "TYPISCHE PRÜFUNGSBEREICHE:",
+        text: "",
+        bullets: [
+          "Datenlecks: Weitergabe vertraulicher Informationen an Wettbewerber",
+          "Sabotage: Absichtliche Beschädigung von Systemen oder Daten",
+          "Insider-Bedrohungen: Missbrauch von Zugriffsrechten",
+          "Loyalität: Nebentätigkeiten für Konkurrenten",
+        ],
+      },
+    ],
+  },
+  {
+    id: "fahrer",
+    icon: "fas fa-car",
+    title: "Überprüfung von Fahrern",
+    price: "ab 350 €",
+    short: "Privat- und Unternehmensfahrer, Kuriere",
+    img: "",
+    features: ["Sicherheit gewährleisten", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
+    sections: [
+      {
+        heading: "POLYGRAPHENPRÜFUNG FÜR FAHRER",
+        text: `Fahrer haben direkten Zugang zu Personen, Fahrzeugen und Gütern. Eine Polygraphenprüfung gibt Ihnen Sicherheit über die Zuverlässigkeit Ihres Fahrers – ob Privatfahrer, Unternehmensfahrer oder Kurier.`,
+      },
+      {
+        heading: "WAS WIRD GEPRÜFT:",
+        text: "",
+        bullets: [
+          "Alkohol- und Drogenprobleme: Risiken im Straßenverkehr",
+          "Kriminelle Vergangenheit: Vorstrafen oder laufende Verfahren",
+          "Ehrlichkeit: Manipulation von Fahrtenbüchern oder Abrechnungen",
+          "Loyalität: Weitergabe von Informationen über Routen und Personen",
+        ],
+      },
+    ],
+  },
+  {
+    id: "sicherheitspersonal",
+    icon: "fas fa-shield-alt",
+    title: "Überprüfung von Sicherheitspersonal",
+    price: "ab 350 €",
+    short: "Wachleute, Sicherheitsbeamte und Bodyguards",
+    img: "",
+    features: ["Höchste Sicherheit", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
+    sections: [
+      {
+        heading: "POLYGRAPHENPRÜFUNG FÜR SICHERHEITSPERSONAL",
+        text: `Sicherheitspersonal trägt besondere Verantwortung für den Schutz von Personen und Eigentum. Eine Polygraphenprüfung stellt sicher, dass Ihre Sicherheitskräfte integer, zuverlässig und vertrauenswürdig sind.`,
+      },
+      {
+        heading: "PRÜFUNGSSCHWERPUNKTE:",
+        text: "",
+        bullets: [
+          "Integrität: Keine Zusammenarbeit mit kriminellen Elementen",
+          "Zuverlässigkeit: Keine Alkohol- oder Drogenprobleme im Dienst",
+          "Loyalität: Weitergabe von Sicherheitsinformationen an Dritte",
+          "Hintergrund: Überprüfung auf kriminelle Vergangenheit",
+        ],
+      },
+    ],
+  },
+  {
+    id: "lagerarbeiter",
+    icon: "fas fa-warehouse",
+    title: "Überprüfung von Lagerarbeitern",
+    price: "ab 350 €",
+    short: "Lagermitarbeiter, Logistik und Versandpersonal",
+    img: "",
+    features: ["Diebstahl verhindern", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
+    sections: [
+      {
+        heading: "POLYGRAPHENPRÜFUNG FÜR LAGERARBEITER",
+        text: `Lagerarbeiter haben direkten Zugang zu Waren, Inventar und Versandgütern. Diebstahl und Unterschlagung im Lager verursachen erhebliche wirtschaftliche Schäden. Eine Polygraphenprüfung hilft, Täter zu identifizieren und präventiv zu wirken.`,
+      },
+      {
+        heading: "TYPISCHE PRÜFUNGSBEREICHE:",
+        text: "",
+        bullets: [
+          "Warendiebstahl: Entwendung von Lagerbeständen",
+          "Manipulation: Fälschung von Lieferscheinen oder Inventarlisten",
+          "Zusammenarbeit: Kooperation mit externen Dieben",
+          "Ehrlichkeit: Überprüfung bei Inventurdifferenzen",
+        ],
+      },
+    ],
+  },
+  {
+    id: "polizeibeamte",
+    icon: "fas fa-user-shield",
+    title: "Probetest für Polizeibeamte",
+    price: "ab 350 €",
+    short: "Vorbereitung auf die offizielle Polygraphenprüfung bei Behörden",
+    img: "",
+    features: ["Optimale Vorbereitung", "Vertraulich", "Professionelle Beratung", "Schnelle Terminvergabe"],
+    sections: [
+      {
+        heading: "PROBETEST FÜR POLIZEIBEAMTE UND BEHÖRDENMITARBEITER",
+        text: `Polizeibeamte und Bewerber für den öffentlichen Dienst müssen häufig eine offizielle Polygraphenprüfung bestehen. Unser Probetest bereitet Sie optimal vor – Sie lernen den Ablauf kennen, reduzieren Prüfungsangst und erhöhen Ihre Chancen auf ein positives Ergebnis.`,
+      },
+      {
+        heading: "VORTEILE DES PROBETESTS:",
+        text: "",
+        bullets: [
+          "Ablauf kennenlernen: Vorbereitung auf die offizielle Prüfungssituation",
+          "Angst reduzieren: Vertrautheit mit dem Verfahren senkt Nervosität",
+          "Beratung: Tipps von erfahrenen Polygraphologen",
+          "Vertraulich: Alle Ergebnisse bleiben streng geheim",
+        ],
+      },
+    ],
+  },
 ];
-
 const processSteps = [
   { num: "01", title: "Anfrage & Beratung", desc: "Sie hinterlassen eine Anfrage auf der Webseite oder kontaktieren uns auf anderem Weg. Wir klären das Anliegen und definieren die Ziele für die bevorstehende Untersuchung." },
   { num: "02", title: "Aufgabenstellung", desc: "Wir konkretisieren das Ziel, stimmen die Fragen ab, klären die Rahmenbedingungen: Anzahl der Personen, Ort der Untersuchung, Zeitplan und Zahlungsmodalitäten." },

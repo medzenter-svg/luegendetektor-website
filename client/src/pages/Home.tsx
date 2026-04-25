@@ -886,7 +886,7 @@ function ContactSection() {
                 { icon: "fas fa-phone-alt", label: "Telefon", val: "+49 175 6036003", href: "tel:+4917560360003" },
                 { icon: "fas fa-envelope", label: "E-Mail", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
                 { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
-                { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 10:00 – 22:00 Uhr", href: undefined },
+                { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 10:00 – 22:00 Uhr", sub: "Termine auch am Wochenende möglich", href: undefined },
               ].map(c => (
                 <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>
@@ -901,6 +901,7 @@ function ContactSection() {
                     ) : (
                       <span style={{ color: WHITE, fontWeight: 700, fontSize: "17px" }}>{c.val}</span>
                     )}
+                    {(c as any).sub && <div style={{ color: "rgba(255,255,255,0.55)", fontSize: "14px", marginTop: "3px" }}>{(c as any).sub}</div>}
                   </div>
                 </div>
               ))}

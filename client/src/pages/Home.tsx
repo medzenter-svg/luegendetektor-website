@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { legalDocs } from "../data/legalDocs";
+import { useLang } from "../contexts/LanguageContext";
+import { t } from "../data/translations";
 
 // ============================================================
 // POLYGRAPH – lügendetektortest.com
@@ -372,36 +374,44 @@ const faqItems = [
 // ─────────────────────────────────────────────
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang } = useLang();
   const scrollTo = (id: string) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); };
 
   const links = [
-    ["DIENSTLEISTUNGEN", "services"],
-    ["PREISE", "prices"],
-    ["ÜBER UNS", "about"],
-    ["AUSRÜSTUNG", "equipment"],
-    ["KONTAKTE", "contact"],
+    [t.nav.services[lang], "services"],
+    [t.nav.prices[lang],   "prices"],
+    [t.nav.about[lang],    "about"],
+    [t.nav.equipment[lang],"equipment"],
+    [t.nav.contact[lang],  "contact"],
   ];
 
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "32px" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <img src="/manus-storage/logo_clean_f9c5298d.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
           <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "1px" }}>lügendetektortest.com</span>
         </div>
-        <div className="hidden lg:flex" style={{ flex: 1, gap: "28px", alignItems: "center" }}>
+        <div className="hidden lg:flex" style={{ flex: 1, gap: "22px", alignItems: "center" }}>
           {links.map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)}
-              style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 500, letterSpacing: "0.3px", background: "none", border: "none", cursor: "pointer", padding: "4px 0", whiteSpace: "nowrap" }}
+              style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", fontWeight: 500, letterSpacing: "0.3px", background: "none", border: "none", cursor: "pointer", padding: "4px 0", whiteSpace: "nowrap" }}
               onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}>{label}</button>
           ))}
         </div>
+        {/* Language switcher */}
+        <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+          <button onClick={() => setLang("de")}
+            style={{ padding: "5px 10px", borderRadius: "3px 0 0 3px", border: "1px solid rgba(255,255,255,0.35)", background: lang === "de" ? ORANGE : "transparent", color: WHITE, fontWeight: 700, fontSize: "13px", cursor: "pointer", letterSpacing: "0.5px" }}>DE</button>
+          <button onClick={() => setLang("en")}
+            style={{ padding: "5px 10px", borderRadius: "0 3px 3px 0", border: "1px solid rgba(255,255,255,0.35)", borderLeft: "none", background: lang === "en" ? ORANGE : "transparent", color: WHITE, fontWeight: 700, fontSize: "13px", cursor: "pointer", letterSpacing: "0.5px" }}>EN</button>
+        </div>
         <button onClick={() => scrollTo("contact")} className="hidden md:flex"
-          style={{ alignItems: "center", gap: "6px", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "9px 18px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", cursor: "pointer", whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "0.5px" }}
+          style={{ alignItems: "center", gap: "6px", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "9px 14px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", cursor: "pointer", whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: "0.5px", flexShrink: 0 }}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-          KONTAKTIEREN SIE UNS
+          {t.nav.cta[lang]}
         </button>
         <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ color: WHITE, background: "none", border: "none", fontSize: "20px", cursor: "pointer", marginLeft: "auto" }}>
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"}></i>
@@ -412,17 +422,21 @@ function Navbar() {
           {links.map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)} style={{ display: "block", width: "100%", textAlign: "left", color: "rgba(255,255,255,0.85)", fontSize: "14px", padding: "10px 0", background: "none", border: "none", cursor: "pointer", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{label}</button>
           ))}
-          <button onClick={() => scrollTo("contact")} style={{ marginTop: "12px", width: "100%", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", cursor: "pointer", textTransform: "uppercase" }}>KONTAKTIEREN SIE UNS</button>
+          <div style={{ display: "flex", gap: "8px", marginTop: "12px", marginBottom: "8px" }}>
+            <button onClick={() => setLang("de")} style={{ flex: 1, padding: "8px", border: "1px solid rgba(255,255,255,0.3)", background: lang === "de" ? ORANGE : "transparent", color: WHITE, fontWeight: 700, fontSize: "13px", cursor: "pointer", borderRadius: "4px" }}>DE – Deutsch</button>
+            <button onClick={() => setLang("en")} style={{ flex: 1, padding: "8px", border: "1px solid rgba(255,255,255,0.3)", background: lang === "en" ? ORANGE : "transparent", color: WHITE, fontWeight: 700, fontSize: "13px", cursor: "pointer", borderRadius: "4px" }}>EN – English</button>
+          </div>
+          <button onClick={() => scrollTo("contact")} style={{ width: "100%", backgroundColor: ORANGE, color: WHITE, border: "none", padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", cursor: "pointer", textTransform: "uppercase" }}>{t.nav.cta[lang]}</button>
         </div>
       )}
     </nav>
   );
 }
-
 // ─────────────────────────────────────────────
 // HERO
 // ─────────────────────────────────────────────
 function HeroSection() {
+  const { lang } = useLang();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
     <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 40%", fontFamily: "'Roboto', sans-serif" }}>
@@ -430,13 +444,13 @@ function HeroSection() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "80px 24px 60px", width: "100%" }}>
         <div style={{ maxWidth: "620px" }}>
           <h1 style={{ color: WHITE, fontSize: "clamp(2.2rem, 5vw, 3.6rem)", fontWeight: 700, lineHeight: 1.15, marginBottom: "14px", textTransform: "uppercase", letterSpacing: "1px" }}>
-            LÜGENDETEKTOR-TEST<br />IN MÜNCHEN
+            {t.hero.title1[lang]}<br />{t.hero.title2[lang]}
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>Premium-Prüfung zum fairen Preis</p>
-          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>GENAUIGKEIT 98–99%</p>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "26px", marginBottom: "36px" }}>100% anonym, vertraulich und ohne Weitergabe von Anfragedetails</p>
+          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>{t.hero.subtitle[lang]}</p>
+          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{t.hero.accuracy[lang]}</p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "26px", marginBottom: "36px" }}>{t.hero.anon[lang]}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "32px" }}>
-            {[{ icon: "fas fa-lock", label: "Absolute Vertraulichkeit" }, { icon: "fas fa-user-tie", label: "Erfahrene Experten" }, { icon: "fas fa-desktop", label: "Moderne Ausrüstung" }].map(b => (
+            {[{ icon: "fas fa-lock", label: t.hero.badge1[lang] }, { icon: "fas fa-user-tie", label: t.hero.badge2[lang] }, { icon: "fas fa-desktop", label: t.hero.badge3[lang] }].map(b => (
               <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "10px", backgroundColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.18)", padding: "12px 20px", borderRadius: "6px", minWidth: "170px" }}>
                 <i className={b.icon} style={{ color: ORANGE, fontSize: "18px" }}></i>
                 <span style={{ color: WHITE, fontSize: "13px", fontWeight: 500 }}>{b.label}</span>
@@ -448,11 +462,11 @@ function HeroSection() {
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
               onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-              <i className="fas fa-paper-plane"></i> Jetzt anfragen
+              <i className="fas fa-paper-plane"></i> {t.hero.btnRequest[lang]}
             </button>
             <a href="tel:+4917560360003"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
-              <i className="fas fa-phone-alt"></i> +49 175 6036003
+              <i className="fas fa-phone-alt"></i> {t.hero.btnPhone[lang]}
             </a>
           </div>
         </div>
@@ -465,10 +479,11 @@ function HeroSection() {
 // STATS BAR
 // ─────────────────────────────────────────────
 function StatsBar() {
+  const { lang } = useLang();
   return (
     <div style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }} className="stats-grid">
-        {[{ val: "98–99%", label: "Genauigkeit", icon: "fas fa-crosshairs" }, { val: "20+", label: "Jahre Erfahrung", icon: "fas fa-award" }, { val: "500+", label: "Abgeschlossene Fälle", icon: "fas fa-check-double" }, { val: "100%", label: "Vertraulich", icon: "fas fa-user-secret" }].map((s, i) => (
+        {[{ val: t.stats.s1v[lang], label: t.stats.s1l[lang], icon: "fas fa-crosshairs" }, { val: t.stats.s2v[lang], label: t.stats.s2l[lang], icon: "fas fa-award" }, { val: t.stats.s3v[lang], label: t.stats.s3l[lang], icon: "fas fa-check-double" }, { val: t.stats.s4v[lang], label: t.stats.s4l[lang], icon: "fas fa-user-secret" }].map((s, i) => (
           <div key={i} style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
             <i className={s.icon} style={{ color: ORANGE, fontSize: "22px", flexShrink: 0 }}></i>
             <div>
@@ -553,6 +568,7 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
 // SERVICES SECTION
 // ─────────────────────────────────────────────
 function ServicesSection() {
+  const { lang } = useLang();
   const [openService, setOpenService] = useState<string | null>(null);
   const services = allServices;
 
@@ -618,6 +634,7 @@ function ServicesSection() {
 // ABOUT
 // ─────────────────────────────────────────────
 function AboutSection() {
+  const { lang } = useLang();
   return (
     <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
@@ -667,12 +684,13 @@ function AboutSection() {
 // PROCESS
 // ─────────────────────────────────────────────
 function ProcessSection() {
+  const { lang } = useLang();
   return (
     <section id="process" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Verfahren</p>
-          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>WIE LÄUFT DIE PRÜFUNG AB?</h2>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Verfahren" : "Our Process"}</p>
+          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.process.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "18px" }}>
@@ -693,14 +711,15 @@ function ProcessSection() {
 // EQUIPMENT
 // ─────────────────────────────────────────────
 function EquipmentSection() {
+  const { lang } = useLang();
   return (
     <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Technologie</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>AUSRÜSTUNG</h2>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.equipment.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 14px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "17px", maxWidth: "600px", margin: "0 auto" }}>Wir verwenden ausschließlich professionelle Computerpolygraphen der neuesten Generation</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px", maxWidth: "600px", margin: "0 auto" }}>{lang === "de" ? "Wir verwenden ausschließlich professionelle Computerpolygraphen der neuesten Generation" : "We use exclusively professional computer polygraphs of the latest generation"}</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
           {[
@@ -729,12 +748,13 @@ function EquipmentSection() {
 // CTA BANNER
 // ─────────────────────────────────────────────
 function CtaBanner() {
+  const { lang } = useLang();
   return (
     <section style={{ backgroundColor: ORANGE, padding: "48px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
         <div>
-          <h2 style={{ color: WHITE, fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>BEREIT ANZUFANGEN?</h2>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>Täglich 10:00 – 22:00 Uhr · Marienstr. 4, München</p>
+          <h2 style={{ color: WHITE, fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{t.cta.heading[lang]}</h2>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>{t.contact.hoursVal[lang]} · Marienstr. 4, München</p>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a href="tel:+4917560360003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", textDecoration: "none", textTransform: "uppercase" }}>
@@ -754,18 +774,19 @@ function CtaBanner() {
 // SPECIALISTS
 // ─────────────────────────────────────────────
 function SpecialistsSection() {
+  const { lang } = useLang();
   return (
     <section id="specialists" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unser Team</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>SPEZIALISTEN</h2>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Team" : "Our Team"}</p>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.specialists.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
-            { name: "Dimitri Razarenov", role: "Polygraphologe", exp: "20 Jahre Erfahrung", edu: "Höhere Bildung, Praktische Psychologie", icon: "fas fa-user-tie" },
-            { name: "Tatjana Neubauer", role: "Psychologin", exp: "23 Jahre Erfahrung", edu: "Höhere Bildung, Diplompsychologin", icon: "fas fa-user-graduate" },
+            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "20 Jahre Erfahrung" : "20 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", icon: "fas fa-user-tie" },
+            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", icon: "fas fa-user-graduate" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "36px 28px", textAlign: "center", borderTop: `4px solid ${ORANGE}` }}>
               <div style={{ width: "90px", height: "90px", borderRadius: "50%", backgroundColor: NAVY, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
@@ -787,12 +808,13 @@ function SpecialistsSection() {
 // PRICES
 // ─────────────────────────────────────────────
 function PricesSection() {
+  const { lang } = useLang();
   return (
     <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Transparente Preise</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>PREISE</h2>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Transparente Preise" : "Transparent Prices"}</p>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.prices.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
           <p style={{ color: TEXT_MID, fontSize: "17px" }}>Keine versteckten Kosten – transparente und faire Preisgestaltung</p>
         </div>
@@ -831,13 +853,14 @@ function PricesSection() {
 // FAQ
 // ─────────────────────────────────────────────
 function FAQSection() {
+  const { lang } = useLang();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
     <section id="faq" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>HÄUFIGE FRAGEN</h2>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.faq.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
           <p style={{ color: TEXT_MID, fontSize: "17px", maxWidth: "600px", margin: "0 auto" }}>Basierend auf unserer Erfahrung haben wir eine Liste der häufigsten Fragen zusammengestellt</p>
         </div>
@@ -866,6 +889,7 @@ function FAQSection() {
 // CONTACT
 // ─────────────────────────────────────────────
 function ContactSection() {
+  const { lang } = useLang();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
 
@@ -873,20 +897,20 @@ function ContactSection() {
     <section id="contact" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Kostenlose Erstberatung</p>
-          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>KONTAKT AUFNEHMEN</h2>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{t.contact.sub[lang]}</p>
+          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.contact.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", maxWidth: "960px", margin: "0 auto", alignItems: "stretch" }} className="grid-2col">
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>Kontaktinformationen</h3>
+            <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
-                { icon: "fas fa-map-marker-alt", label: "Adresse", val: "Marienstr. 4, 80331 München", href: undefined },
-                { icon: "fas fa-phone-alt", label: "Telefon", val: "+49 175 6036003", href: "tel:+4917560360003" },
-                { icon: "fas fa-envelope", label: "E-Mail", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
+                { icon: "fas fa-map-marker-alt", label: lang === "de" ? "Adresse" : "Address", val: "Marienstr. 4, 80331 München", href: undefined },
+                { icon: "fas fa-phone-alt", label: lang === "de" ? "Telefon" : "Phone", val: "+49 175 6036003", href: "tel:+4917560360003" },
+                { icon: "fas fa-envelope", label: lang === "de" ? "E-Mail" : "Email", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
                 { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
-                { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 10:00 – 22:00 Uhr", sub: "Termine auch am Wochenende möglich", href: undefined },
+                { icon: "fas fa-clock", label: lang === "de" ? "Öffnungszeiten" : "Opening Hours", val: t.contact.hoursVal[lang], sub: t.contact.hoursSub[lang], href: undefined },
               ].map(c => (
                 <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>
@@ -909,30 +933,30 @@ function ContactSection() {
             <div style={{ marginTop: "auto", paddingTop: "24px", display: "flex", gap: "10px" }}>
               <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
                 style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fab fa-whatsapp"></i> WhatsApp
+                <i className="fab fa-whatsapp"></i> {t.contact.btnWA[lang]}
               </a>
               <a href="mailto:beratung@lügendetektortest.com"
                 style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fas fa-envelope"></i> E-Mail
+                <i className="fas fa-envelope"></i> {t.contact.btnEmail[lang]}
               </a>
             </div>
             <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
-              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>Ihre Daten werden vertraulich behandelt
+              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
             </p>
           </div>
           <div>
             {sent ? (
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "40px" }}>
                 <i className="fas fa-check-circle" style={{ fontSize: "52px", color: "#22c55e", marginBottom: "16px" }}></i>
-                <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>Vielen Dank!</h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", lineHeight: 1.7 }}>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns schnellstmöglich bei Ihnen.</p>
+                <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>{t.contact.thankYou[lang]}</h3>
+                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", lineHeight: 1.7 }}>{t.contact.thankMsg[lang]}</p>
               </div>
             ) : (
               <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {[
-                  { name: "name", label: "Ihr Name *", type: "text", placeholder: "Max Mustermann", required: true },
-                  { name: "phone", label: "Telefonnummer", type: "tel", placeholder: "+49 ...", required: false },
-                  { name: "email", label: "E-Mail-Adresse *", type: "email", placeholder: "ihre@email.de", required: true },
+                  { name: "name", label: t.contact.formName[lang], type: "text", placeholder: t.contact.formPh1[lang], required: true },
+                  { name: "phone", label: t.contact.formPhone[lang], type: "tel", placeholder: t.contact.formPh2[lang], required: false },
+                  { name: "email", label: t.contact.formEmail[lang], type: "email", placeholder: t.contact.formPh3[lang], required: true },
                 ].map(f => (
                   <div key={f.name}>
                     <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
@@ -945,8 +969,8 @@ function ContactSection() {
                   </div>
                 ))}
                 <div>
-                  <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Ihre Nachricht</label>
-                  <textarea rows={4} placeholder="Beschreiben Sie kurz Ihr Anliegen..."
+                  <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
+                  <textarea rows={4} placeholder={t.contact.formPh4[lang]}
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
                     style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, resize: "none", boxSizing: "border-box" }}
                     onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
@@ -956,10 +980,10 @@ function ContactSection() {
                   style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "16px" }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-                  <i className="fas fa-paper-plane mr-2"></i>Anfrage senden
+                  <i className="fas fa-paper-plane mr-2"></i>{t.contact.btnSend[lang]}
                 </button>
                 <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center" }}>
-                  <i className="fas fa-lock mr-1"></i>Ihre Daten werden vertraulich behandelt
+                  <i className="fas fa-lock mr-1"></i>{t.contact.privacy[lang]}
                 </p>
               </form>
             )}
@@ -974,6 +998,7 @@ function ContactSection() {
 // FOOTER
 // ─────────────────────────────────────────────
 function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void; docKeyMap: Record<string, string> }) {
+  const { lang } = useLang();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
     <footer style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
@@ -986,7 +1011,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
                 <div style={{ color: WHITE, fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>lügendetektortest.com</div>
               </div>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", lineHeight: 1.75, marginBottom: "14px" }}>Professionelle Polygraphuntersuchungen in München. Genau. Zuverlässig. Objektiv.</p>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", lineHeight: 1.75, marginBottom: "14px" }}>{t.footer.desc[lang]}</p>
             <div style={{ display: "flex", gap: "10px" }}>
               <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer" style={{ width: "34px", height: "34px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: WHITE, textDecoration: "none", fontSize: "15px" }}>
                 <i className="fab fa-whatsapp"></i>
@@ -997,11 +1022,11 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
             </div>
           </div>
           <div>
-            <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Navigation</h4>
-            {[["Dienstleistungen", "services"], ["Preise", "prices"], ["Über uns", "about"], ["Ausrüstung", "equipment"], ["Kontakt", "contact"]].map(([label, id]) => (
-              <button key={label} onClick={() => scrollTo(id)} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
+            <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>{t.footer.navTitle[lang]}</h4>
+            {t.footer.nav.map(item => (
+              <button key={item.id} onClick={() => scrollTo(item.id)} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{label}</button>
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{item[lang]}</button>
             ))}
           </div>
           <div>
@@ -1022,7 +1047,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "18px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
-          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>© 2014 – 2026 POLYGRAPH München. Alle Rechte vorbehalten.</p>
+          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>© 2014 – 2026 POLYGRAPH München. {t.footer.copyright[lang]}</p>
           <div style={{ display: "flex", gap: "18px" }}>
             {["Datenschutzerklärung", "Impressum", "AGB"].map(l => {
               const keyMap: Record<string, string> = { "Datenschutzerklärung": "datenschutz", "Impressum": "impressum", "AGB": "agb" };

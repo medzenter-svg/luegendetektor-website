@@ -450,9 +450,9 @@ function HeroSection() {
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
               <i className="fas fa-paper-plane"></i> Jetzt anfragen
             </button>
-            <a href="tel:01756036003"
+            <a href="tel:+4917560360003"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
-              <i className="fas fa-phone-alt"></i> 01756036003
+              <i className="fas fa-phone-alt"></i> +49 175 6036003
             </a>
           </div>
         </div>
@@ -536,9 +536,9 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
             <i className="fas fa-calendar-check"></i> Jetzt anfragen
           </button>
-          <a href="tel:01756036003"
+          <a href="tel:+4917560360003"
             style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: NAVY, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "15px", textDecoration: "none", textTransform: "uppercase" }}>
-            <i className="fas fa-phone-alt"></i> 01756036003
+            <i className="fas fa-phone-alt"></i> +49 175 6036003
           </a>
         </div>
         <button onClick={onClose} style={{ color: TEXT_MID, fontSize: "15px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
@@ -737,8 +737,8 @@ function CtaBanner() {
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "17px" }}>Täglich 08:00 – 20:00 Uhr · Marienstr. 4, München</p>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="tel:01756036003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", textDecoration: "none", textTransform: "uppercase" }}>
-            <i className="fas fa-phone-alt"></i> 01756036003
+          <a href="tel:+4917560360003" style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: WHITE, color: ORANGE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", textDecoration: "none", textTransform: "uppercase" }}>
+            <i className="fas fa-phone-alt"></i> +49 175 6036003
           </a>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid white", color: WHITE, padding: "12px 24px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", cursor: "pointer", textTransform: "uppercase" }}>
@@ -883,7 +883,7 @@ function ContactSection() {
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
                 { icon: "fas fa-map-marker-alt", label: "Adresse", val: "Marienstr. 4, 80331 München", href: undefined },
-                { icon: "fas fa-phone-alt", label: "Telefon", val: "01756036003", href: "tel:01756036003" },
+                { icon: "fas fa-phone-alt", label: "Telefon", val: "+49 175 6036003", href: "tel:+4917560360003" },
                 { icon: "fas fa-envelope", label: "E-Mail", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
                 { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
                 { icon: "fas fa-clock", label: "Öffnungszeiten", val: "Täglich 08:00 – 20:00 Uhr", href: undefined },

@@ -8,7 +8,7 @@ export const legalDocs = {
 <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
 <p><strong>POLYGRAPH München – Lügendetektortest</strong><br/>
 Marienstr. 4, 80331 München<br/>
-Telefon: 01756036003 | E-Mail: beratung@lügendetektortest.com<br/>
+Telefon: +49 175 6036003 | E-Mail: beratung@lügendetektortest.com<br/>
 Stand: April 2026</p>
 
 <h3>§ 1 Geltungsbereich</h3>
@@ -55,7 +55,7 @@ Stand: April 2026</p>
 <h2>Datenschutzerklärung</h2>
 <p><strong>POLYGRAPH München – Lügendetektortest</strong><br/>
 Marienstr. 4, 80331 München<br/>
-Telefon: 01756036003 | E-Mail: beratung@lügendetektortest.com<br/>
+Telefon: +49 175 6036003 | E-Mail: beratung@lügendetektortest.com<br/>
 Stand: April 2026</p>
 
 <h3>1. Verantwortlicher</h3>
@@ -113,7 +113,7 @@ Marienstr. 4<br/>
 Deutschland</p>
 
 <h3>Kontakt</h3>
-<p>Telefon: 01756036003<br/>
+<p>Telefon: +49 175 6036003<br/>
 E-Mail: beratung@lügendetektortest.com<br/>
 Website: lügendetektortest.com</p>
 
@@ -229,7 +229,7 @@ Marienstr. 4, 80331 München</p>
     content: `
 <h2>Merkblatt für Probanden</h2>
 <h3>Wichtige Informationen vor Ihrer Polygraphuntersuchung</h3>
-<p><strong>POLYGRAPH München</strong> | Marienstr. 4, 80331 München | 01756036003</p>
+<p><strong>POLYGRAPH München</strong> | Marienstr. 4, 80331 München | +49 175 6036003</p>
 
 <h3>Was ist ein Polygraph?</h3>
 <p>Ein Polygraph (Lügendetektor) ist ein wissenschaftliches Messgerät, das gleichzeitig mehrere physiologische Parameter erfasst: Atemaktivität, Herzfrequenz, Blutdruck, Hautleitwert (Schweiß) und Körperbewegungen. Das Gerät misst keine „Lügen" direkt, sondern die physiologischen Reaktionen des Körpers auf bestimmte Fragen. Erfahrene Experten werten diese Reaktionen aus und erstellen ein Gutachten.</p>
@@ -279,7 +279,7 @@ Marienstr. 4, 80331 München</p>
   <li>Alle Ihre Daten werden streng vertraulich behandelt</li>
 </ul>
 
-<p style="margin-top: 24px; padding: 16px; background: rgba(0,0,0,0.05); border-radius: 8px;"><strong>Bei Fragen stehen wir Ihnen gerne zur Verfügung: 01756036003 | beratung@lügendetektortest.com</strong></p>
+<p style="margin-top: 24px; padding: 16px; background: rgba(0,0,0,0.05); border-radius: 8px;"><strong>Bei Fragen stehen wir Ihnen gerne zur Verfügung: +49 175 6036003 | beratung@lügendetektortest.com</strong></p>
     `
   }
 };

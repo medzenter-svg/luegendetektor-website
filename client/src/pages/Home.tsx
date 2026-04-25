@@ -916,6 +916,9 @@ function ContactSection() {
                 <i className="fas fa-envelope"></i> E-Mail
               </a>
             </div>
+            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
+              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>Ihre Daten werden vertraulich behandelt
+            </p>
           </div>
           <div>
             {sent ? (

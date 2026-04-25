@@ -978,7 +978,7 @@ function ContactSection() {
                     onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
                 </div>
                 <button type="submit"
-                  style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "16px" }}
+                  style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "28px" }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
                   <i className="fas fa-paper-plane mr-2"></i>{t.contact.btnSend[lang]}

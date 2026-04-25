@@ -878,7 +878,7 @@ function ContactSection() {
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", maxWidth: "960px", margin: "0 auto", alignItems: "end" }} className="grid-2col">
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>Kontaktinformationen</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
@@ -906,7 +906,7 @@ function ContactSection() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: "24px", display: "flex", gap: "10px" }}>
+            <div style={{ marginTop: "24px", display: "flex", gap: "10px", paddingTop: "8px" }}>
               <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
                 style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
                 <i className="fab fa-whatsapp"></i> WhatsApp
@@ -950,7 +950,7 @@ function ContactSection() {
                     onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
                 </div>
                 <button type="submit"
-                  style={{ padding: "12px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer" }}
+                  style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer" }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
                   <i className="fas fa-paper-plane mr-2"></i>Anfrage senden

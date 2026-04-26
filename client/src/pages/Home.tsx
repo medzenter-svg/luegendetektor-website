@@ -33,18 +33,18 @@ const allServices = [
     id: "untreue",
     category: "private",
     icon: "fas fa-heart-broken",
-    title: "Überprüfung auf Untreue",
+    title: { de: "Überprüfung auf Untreue", en: "Infidelity Check" },
     price: "ab 649 €",
-    short: "Klärung bei Verdacht auf Untreue in der Partnerschaft",
+    short: { de: "Klärung bei Verdacht auf Untreue in der Partnerschaft", en: "Clarification when infidelity is suspected in a relationship" },
     img: "/manus-storage/img_untreue_new_opt_aa63860c.jpg",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
     sections: [
       {
-        heading: "TREUETESTS PER LÜGENDETEKTOR: KLARHEIT FÜR DIE BEZIEHUNG",
+        heading: { de: "TREUETESTS PER LÜGENDETEKTOR: KLARHEIT FÜR DIE BEZIEHUNG", en: "FIDELITY TESTS WITH LIE DETECTOR: CLARITY FOR YOUR RELATIONSHIP" },
         text: `Mit der Eheschließung schwören sich Ehepartner Treue. Doch Beziehungen sind zerbrechlich, und das Leben schreibt oft andere Geschichten. Manchmal ist ein Lügendetektortest auf Untreue der einzige effektive Weg, eine Familie zu retten oder – im Gegenteil – Gewissheit über einen Betrug zu erlangen. In jedem Fall hilft das Ergebnis dabei, quälendes Misstrauen, Zweifel und Unsicherheit gegenüber sich selbst und dem Partner zu überwinden.`,
       },
       {
-        heading: "PRÜFUNG DER PARTNERSTREUE MIT DEM POLYGRAPHEN",
+        heading: { de: "PRÜFUNG DER PARTNERSTREUE MIT DEM POLYGRAPHEN", en: "TESTING PARTNER FIDELITY WITH THE POLYGRAPH" },
         text: `Wer seinen Partner betrügt, setzt oft alles daran, die Untreue zu verbergen. Solche Partner werden extrem vorsichtig: Sie bemerken Beschattungen oder vermeiden es, am Telefon über sensible Themen zu sprechen. Daher ist der Lügendetektortest oft die einzige schnelle und effektive Möglichkeit, jemanden zu entlarven.\n\nWir stehen beiden Seiten offen: Sowohl dem Partner, der des Betrugs verdächtigt wird, als auch demjenigen, der die Vermutung hegt. Eifersucht und Zweifel sind zerstörerische Gefühle. Durch einen Polygraph-Test können Paare verlorenes Vertrauen wiederherstellen oder entscheiden, ob die Beziehung beendet werden muss. Unbegründete Verdächtigungen können sonst zu Neurosen und unerträglichen Lebensbedingungen für die gesamte Familie führen.\n\nDie Ergebnisse liefern Fakten, die das Risiko drastischer Fehlentscheidungen minimieren. Wenn der Verdacht des Ehebruchs durch den Experten nicht bestätigt wird, können Trennungen, psychische Traumata sowie finanzielle und materielle Verluste verhindert werden.`,
       },
     ],
@@ -53,14 +53,14 @@ const allServices = [
     id: "jugendliche",
     category: "private",
     icon: "fas fa-child",
-    title: "Überprüfung von Jugendlichen ab 14 Jahren",
+    title: { de: "Überprüfung von Jugendlichen ab 14 Jahren", en: "Testing of Minors (14+)" },
     price: "ab 749 €",
-    short: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen",
+    short: { de: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen", en: "Clarification of behavioral issues in adolescents" },
     img: "/manus-storage/img_jugendliche_71d37249.png",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
     sections: [
       {
-        heading: "DIE PUBERTÄT: HERAUSFORDERUNGEN MEISTERN",
+        heading: { de: "DIE PUBERTÄT: HERAUSFORDERUNGEN MEISTERN", en: "ADOLESCENCE: OVERCOMING CHALLENGES" },
         text: `Die Pubertät ist oft eine Phase der Verunsicherung für Eltern und Lehrkräfte. Jugendliche befinden sich in einem Übergangszustand, in dem sie weder Kind noch vollständig erwachsen sind. Verhaltensweisen können provokant wirken oder durch sozialen Rückzug geprägt sein. Während dies oft Teil der normalen Identitätsfindung ist, können in manchen Fällen auch tiefere Konflikte vorliegen.\n\nAnstatt auf technische Überprüfungsverfahren zu setzen, empfehlen Fachleute in der Regel den Aufbau von Vertrauen und den offenen Dialog. Wenn der Verdacht auf ernsthafte Probleme wie Substanzmissbrauch oder psychische Belastungen besteht, ist die Beratung durch qualifizierte Psychologen oder spezialisierte Beratungsstellen ein bewährter Weg. Diese unterstützen Familien dabei, die Ursachen für Verhaltensänderungen zu verstehen und gemeinsam Lösungen zu erarbeiten.\n\nDie Förderung einer gesunden Entwicklung basiert auf gegenseitigem Respekt und Unterstützung, um Jugendlichen Sicherheit zu geben und Eltern die notwendige Orientierung in dieser herausfordernden Zeit zu ermöglichen.`,
       },
     ],
@@ -69,18 +69,18 @@ const allServices = [
     id: "diebstahl",
     category: "private",
     icon: "fas fa-search",
-    title: "Aufklärung von Diebstählen",
+    title: { de: "Aufklärung von Diebstählen", en: "Theft Investigation" },
     price: "ab 649 €",
-    short: "Klärung von Diebstählen und Verlusten im privaten Umfeld",
+    short: { de: "Klärung von Diebstählen und Verlusten im privaten Umfeld", en: "Clarification of thefts and losses in the private environment" },
     img: "/manus-storage/img_diebstahl_new_opt_d8da6fb7.jpg",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
-        heading: "AUFKLÄRUNG VON KRIMINELLEN HANDLUNGEN MIT DEM LÜGENDETEKTOR",
+        heading: { de: "AUFKLÄRUNG VON KRIMINELLEN HANDLUNGEN MIT DEM LÜGENDETEKTOR", en: "INVESTIGATING CRIMINAL ACTS WITH THE LIE DETECTOR" },
         text: `Kriminelle Aktivitäten führen unweigerlich zu finanziellen Verlusten. Dabei geht es nicht nur um den Diebstahl von Geld oder Wertsachen aus Privaträumen, sondern auch um den Raub von Datenbanken und vertraulichen Informationen in Unternehmen. Täter innerhalb einer Firma können sich illegal Vermögenswerte aneignen, Betrug, Erpressung oder Korruption betreiben.\n\nDer Einsatz eines Lügendetektors ist der schnellste und effektivste Weg, um Täter zu identifizieren. Unsere erfahrenen Experten helfen Ihnen dabei, Rechtsverletzer ausfindig zu machen und weitere kriminelle Handlungen zu verhindern.`,
       },
       {
-        heading: "POLYGRAPHEN-TESTS BEI UNTERSCHLAGUNG, DIEBSTAHL UND VERRAT VON GESCHÄFTSGEHEIMNISSEN",
+        heading: { de: "POLYGRAPHEN-TESTS BEI UNTERSCHLAGUNG, DIEBSTAHL UND VERRAT VON GESCHÄFTSGEHEIMNISSEN", en: "POLYGRAPH TESTS FOR EMBEZZLEMENT, THEFT AND TRADE SECRET VIOLATIONS" },
         text: `Schwerwiegende Verluste durch Mitarbeiterdiebstahl sind oft die Folge unzureichender Personalkontrolle. Der Polygraph hat seine Wirksamkeit im Rahmen von Ermittlungsmaßnahmen bewiesen. Er dient dazu, Haupttäter und Komplizen zu identifizieren.`,
         bullets: [
           "Rollenverteilung: Bestimmung der Rolle jeder beteiligten Person an der Tat",
@@ -99,18 +99,18 @@ const allServices = [
     id: "hauspersonal",
     category: "private",
     icon: "fas fa-home",
-    title: "Überprüfung von Hauspersonal",
+    title: { de: "Überprüfung von Hauspersonal", en: "Domestic Staff Screening" },
     price: "ab 549 €",
-    short: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte",
+    short: { de: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte", en: "Nannies, housekeepers, drivers and other household employees" },
     img: "/manus-storage/img_hauspersonal_new_opt_e4782285.jpg",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [
       {
-        heading: "ÜBERPRÜFUNG VON HAUSPERSONAL: SICHERHEIT FÜR IHR ZUHAUSE",
+        heading: { de: "ÜBERPRÜFUNG VON HAUSPERSONAL: SICHERHEIT FÜR IHR ZUHAUSE", en: "DOMESTIC STAFF SCREENING: SECURITY FOR YOUR HOME" },
         text: `Ein Test mit dem Polygraphen darf nur mit der freiwilligen Zustimmung des Hauspersonals durchgeführt werden. Es gibt zudem Themenbereiche (wie die Intimsphäre), die nicht Gegenstand der Befragung sein dürfen. Unsere Experten berücksichtigen bei der Erstellung des Fragenkatalogs strikt Ihre individuellen Wünsche.\n\nSeien Sie besonders aufmerksam gegenüber Personen, die einen Test kategorisch ablehnen. Ehrliche und gewissenhafte Mitarbeiter haben in der Regel nichts zu verbergen – für sie ist das Verfahren eine zusätzliche Chance, ihre Loyalität und Integrität unter Beweis zu stellen.`,
       },
       {
-        heading: "ASPEKTE, DIE BEI HAUSPERSONAL GEKLÄRT WERDEN KÖNNEN:",
+        heading: { de: "ASPEKTE, DIE BEI HAUSPERSONAL GEKLÄRT WERDEN KÖNNEN:", en: "ASPECTS THAT CAN BE CLARIFIED FOR DOMESTIC STAFF:" },
         text: "",
         bullets: [
           "Umgang mit Schutzbefohlenen: Aufdeckung von Misshandlungen an Kindern oder Haustieren",
@@ -129,18 +129,18 @@ const allServices = [
     id: "probetest",
     category: "private",
     icon: "fas fa-flask",
-    title: "Probetest am Polygraphen",
+    title: { de: "Probetest am Polygraphen", en: "Trial Polygraph Test" },
     price: "ab 299 €",
-    short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
+    short: { de: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung", en: "Getting familiar with the procedure before the actual examination" },
     img: "/manus-storage/img_probetest2_opt_ebca96e5.jpg",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {
-        heading: "DER PROBELAUF: VORBEREITUNG AUF DEN LÜGENDETEKTOR-TEST",
+        heading: { de: "DER PROBELAUF: VORBEREITUNG AUF DEN LÜGENDETEKTOR-TEST", en: "THE TRIAL RUN: PREPARATION FOR THE LIE DETECTOR TEST" },
         text: `Polygraphen-Untersuchungen werden immer häufiger eingesetzt, um Informationen über eine Person zu gewinnen. Sie dienen nicht nur dazu, die Ehrlichkeit zu prüfen, sondern helfen auch dabei, komplexe Situationen ohne offensichtliche Beweise zu klären. Wenn Ihnen ein Test angeboten wurde und Sie mit dem Verfahren nicht vertraut sind, gibt es keinen Grund zur Sorge. Eine sofortige Ablehnung könnte unnötige Zweifel an Ihrer Integrität wecken und Misstrauen schüren.`,
       },
       {
-        heading: "ZIELE EINES PROBELAUFS (TEST-CHECK)",
+        heading: { de: "ZIELE EINES PROBELAUFS (TEST-CHECK)", en: "GOALS OF A TRIAL RUN (TEST-CHECK)" },
         text: `Ein Probelauf dient dazu, die zu untersuchende Person an die Atmosphäre und die Bedingungen des Tests zu gewöhnen. Er wird durchgeführt, wenn jemand genau wissen möchte, wie die Prozedur abläuft, welche Fragen gestellt werden und um sich von der Sicherheit des Verfahrens zu überzeugen.`,
         bullets: [
           "Detaillierte Einweisung: Umfassende Aufklärung des Teilnehmers über den Ablauf",
@@ -156,18 +156,18 @@ const allServices = [
     id: "hochzeit",
     category: "private",
     icon: "fas fa-ring",
-    title: "Überprüfung vor der Hochzeit",
+    title: { de: "Überprüfung vor der Hochzeit", en: "Pre-Wedding Check" },
     price: "ab 649 €",
-    short: "Sicherheit vor dem wichtigsten Tag Ihres Lebens",
+    short: { de: "Sicherheit vor dem wichtigsten Tag Ihres Lebens", en: "Security before the most important day of your life" },
     img: "/manus-storage/img_hochzeit_new_opt_6c3351a2.jpg",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
     sections: [
       {
-        heading: "HOCHZEIT UND VERTRAUEN: DER POLYGRAPH-CHECK VOR DEM JA-WORT",
+        heading: { de: "HOCHZEIT UND VERTRAUEN: DER POLYGRAPH-CHECK VOR DEM JA-WORT", en: "WEDDING AND TRUST: THE POLYGRAPH CHECK BEFORE SAYING YES" },
         text: `Eine Hochzeit ist ein entscheidender Schritt für jedes Paar. Dieses festliche Ereignis markiert den Beginn eines gemeinsamen Lebensweges, der auf Ehrlichkeit und gegenseitigem Vertrauen basieren sollte. Besteht jedoch auch nur der geringste Zweifel am Partner, bietet ein Lügendetektortest vor der Vermählung Sicherheit. Unsere qualifizierten und erfahrenen Experten setzen modernste, hochpräzise Computertechnik ein. Die Ergebnisse helfen Ihnen dabei, Antworten auf die Fragen zu finden, die Ihre Beziehung belasten.`,
       },
       {
-        heading: "LÜGENDETEKTOR VOR DER HOCHZEIT: VORTEILE",
+        heading: { de: "LÜGENDETEKTOR VOR DER HOCHZEIT: VORTEILE", en: "LIE DETECTOR BEFORE THE WEDDING: ADVANTAGES" },
         text: `Bevor Sie den Bund fürs Leben schließen, ist es ratsam, mögliche Risiken im Vorfeld auszuräumen. So schützen Sie Ihre zukünftige Familie vor Misstrauen, Zweifeln, Verschwiegenheit und anderen belastenden Situationen. Ein Polygraph-Test hilft dabei, Probleme rechtzeitig zu identifizieren und sie für die gemeinsame Zukunft auszuschließen.`,
         bullets: [
           "Klarheit: Beseitigung unbegründeter Ängste und Zweifel",
@@ -182,14 +182,14 @@ const allServices = [
     id: "einstellung",
     category: "business",
     icon: "fas fa-user-check",
-    title: "Überprüfung bei der Einstellung",
+    title: { de: "Überprüfung bei der Einstellung", en: "Pre-Employment Screening" },
     price: "ab 399 €",
-    short: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen",
+    short: { de: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen", en: "Security when selecting new employees for sensitive positions" },
     img: "/manus-storage/img_einstellung_new_opt_640c0e16.jpg",
     features: ["Schnelle Abwicklung", "Mehrere Bewerber möglich", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
     sections: [
       {
-        heading: "ÜBERPRÜFUNG BEI DER EINSTELLUNG",
+        heading: { de: "ÜBERPRÜFUNG BEI DER EINSTELLUNG", en: "PRE-EMPLOYMENT SCREENING" },
         text: `Bei der Auswahl neuer Mitarbeiter sucht jedes Unternehmen nach Zuverlässigkeit. Wie identifiziert man wirklich verantwortungsbewusste und loyale Profis? Erfahrene Experten sieben mit einer Genauigkeit von 99 % unzuverlässige Kandidaten aus und minimieren so Ihre Geschäftsrisiken.\n\nDie Prüfung bei der Einstellung hilft dabei, folgende Ziele zu erreichen:`,
         bullets: [
           "Passgenauigkeit: Auswahl von Spezialisten, deren psychologische und moralische Qualitäten exakt zur Stelle passen",
@@ -210,18 +210,18 @@ const allServices = [
     id: "routine",
     category: "business",
     icon: "fas fa-clipboard-check",
-    title: "Planmäßige Überprüfung von Mitarbeitern",
+    title: { de: "Planmäßige Überprüfung von Mitarbeitern", en: "Scheduled Employee Screening" },
     price: "ab 399 €",
-    short: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität",
+    short: { de: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität", en: "Regular screenings to ensure corporate integrity" },
     img: "/manus-storage/img_routine_new_opt_5e44dc06.jpg",
     features: ["Maßgeschneiderte Programme", "Gruppenrabatte möglich", "Vertrauliche Berichte", "Regelmäßige Termine"],
     sections: [
       {
-        heading: "BRANCHEN, IN DENEN REGELMÄSSIGE POLYGRAPHEN-TESTS FÜR MITARBEITER ERFORDERLICH SIND",
+        heading: { de: "BRANCHEN, IN DENEN REGELMÄSSIGE POLYGRAPHEN-TESTS FÜR MITARBEITER ERFORDERLICH SIND", en: "INDUSTRIES WHERE REGULAR POLYGRAPH TESTS FOR EMPLOYEES ARE REQUIRED" },
         text: `Regelmäßige Tests des Personals helfen dabei, zahlreiche potenzielle Probleme zu vermeiden und Risiken im Zusammenhang mit materiellen oder immateriellen Werten erheblich zu senken. Wenn die Geschäftsführung plant, einen Mitarbeiter zu befördern oder seinen Aufgabenbereich zu ändern, ist es wichtig, sich seiner Ehrlichkeit zu vergewissern. Eine planmäßige Überprüfung ist insbesondere dann notwendig, wenn Mitarbeiter Zugang zu schwer kontrollierbaren Finanzen haben.`,
       },
       {
-        heading: "GESCHÄFTSBEREICHE, IN DENEN REGELMÄSSIGE LÜGENDETEKTOR-TESTS BESONDERS GEFRAGT SIND:",
+        heading: { de: "GESCHÄFTSBEREICHE, IN DENEN REGELMÄSSIGE LÜGENDETEKTOR-TESTS BESONDERS GEFRAGT SIND:", en: "BUSINESS AREAS WHERE REGULAR LIE DETECTOR TESTS ARE PARTICULARLY IN DEMAND:" },
         text: "",
         bullets: [
           "Private Sicherheitsdienste: Zum Schutz der Integrität des Wachpersonals",
@@ -239,18 +239,18 @@ const allServices = [
     id: "intern",
     category: "business",
     icon: "fas fa-search",
-    title: "Interne Ermittlungen",
+    title: { de: "Interne Ermittlungen", en: "Internal Investigations" },
     price: "ab 649 €",
-    short: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen",
+    short: { de: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen", en: "Investigation of incidents and misconduct within the company" },
     img: "/manus-storage/img_intern_new_cc041727.png",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
-        heading: "INTERNE ERMITTLUNGEN: EFFIZIENTE AUFKLÄRUNG DURCH POLYGRAPHEN-TESTS",
+        heading: { de: "INTERNE ERMITTLUNGEN: EFFIZIENTE AUFKLÄRUNG DURCH POLYGRAPHEN-TESTS", en: "INTERNAL INVESTIGATIONS: EFFICIENT RESOLUTION THROUGH POLYGRAPH TESTS" },
         text: `Wenn in Unternehmen Zwischenfälle mit erheblichem Sachschaden auftreten, sind interne Dienstuntersuchungen unumgänglich. Ziel ist es, Mitarbeiter zu identifizieren, die Straftaten begangen oder ihre Befugnisse zur eigenen Bereicherung missbraucht haben. Qualifizierte Polygraphologen garantieren maximale Präzision und absolute Vertraulichkeit. Nach Abschluss der Tests erhalten Sie objektive und belastbare Informationen über den tatsächlichen Tathergang.\n\nDienstuntersuchungen erzeugen oft Spannungen und Stress innerhalb der Belegschaft. Der Einsatz eines Polygraphen verkürzt die Dauer der Ermittlungen erheblich. Sobald die Schuldigen überführt sind, stabilisiert sich das Mikroklima im Team.`,
       },
       {
-        heading: "DURCH EINE POLYGRAPH-UNTERSUCHUNG LASSEN SICH KLÄREN:",
+        heading: { de: "DURCH EINE POLYGRAPH-UNTERSUCHUNG LASSEN SICH KLÄREN:", en: "ISSUES THAT CAN BE RESOLVED THROUGH A POLYGRAPH EXAMINATION:" },
         text: "",
         bullets: [
           "Tathandlungen: Fakten über begangene rechtswidrige Aktivitäten",
@@ -268,18 +268,18 @@ const allServices = [
     id: "mobil",
     category: "business",
     icon: "fas fa-car",
-    title: "Polygraph mit Hausbesuch",
+    title: { de: "Polygraph mit Hausbesuch", en: "Mobile Polygraph Service" },
     price: "auf Anfrage",
-    short: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause",
+    short: { de: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause", en: "We come to you – to your office or home" },
     img: "/manus-storage/img_mobil_new_786ef233.png",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
     sections: [
       {
-        heading: "DIE WAHRHEIT ANS LICHT BRINGEN: POLYGRAPH-TESTS VOR ORT",
+        heading: { de: "DIE WAHRHEIT ANS LICHT BRINGEN: POLYGRAPH-TESTS VOR ORT", en: "BRINGING TRUTH TO LIGHT: ON-SITE POLYGRAPH TESTS" },
         text: `Die Wahrheit lässt sich oft leicht hinter Täuschungen verbergen. Heute gehört der Lügendetektortest zu den gefragtesten Dienstleistungen, um Klarheit zu schaffen – sei es für Ehepartner, Jugendliche, Hauspersonal oder Büroangestellte. Moderne Geräte sind in der Lage, eine Vielzahl chemischer und physiologischer Prozesse im menschlichen Körper präzise zu erfassen. Unsere erfahrenen Experten erstellen Gutachten zu den vom Kunden gewünschten Themen mit einer Genauigkeit von rund 99 %.`,
       },
       {
-        heading: "DURCHFÜHRUNG VON MOBILEN POLYGRAPH-TESTS (VOR-ORT-SERVICE)",
+        heading: { de: "DURCHFÜHRUNG VON MOBILEN POLYGRAPH-TESTS (VOR-ORT-SERVICE)", en: "CONDUCTING MOBILE POLYGRAPH TESTS (ON-SITE SERVICE)" },
         text: `Wenn Sie Mitarbeiter, Geschäftspartner oder Hauspersonal testen möchten, kommen unsere Experten mit dem erforderlichen Equipment direkt an die von Ihnen angegebene Adresse. Die Durchführung in einer vertrauten und komfortablen Umgebung sorgt dafür, dass sich die Testpersonen natürlicher verhalten und weniger nervös sind.`,
         bullets: [
           "Diskretion: Keine Anreise der Testpersonen zu einem externen Institut notwendig",
@@ -293,18 +293,18 @@ const allServices = [
     id: "ehre",
     category: "business",
     icon: "fas fa-balance-scale",
-    title: "Schutz von Ehre und Würde",
+    title: { de: "Schutz von Ehre und Würde", en: "Protection of Honor and Dignity" },
     price: "auf Anfrage",
-    short: "Klärung von Verleumdungen und falschen Anschuldigungen",
+    short: { de: "Klärung von Verleumdungen und falschen Anschuldigungen", en: "Clarification of defamation and false accusations" },
     img: "/manus-storage/img_ehre_new_opt_28a5f364.jpg",
     features: ["Offizielles Gutachten", "Rechtlich verwertbar", "Schnelle Terminvergabe", "Professionelle Beratung"],
     sections: [
       {
-        heading: "REPUTATIONSSCHUTZ: DIE EIGENE UNSCHULD MIT DEM LÜGENDETEKTOR BEWEISEN",
+        heading: { de: "REPUTATIONSSCHUTZ: DIE EIGENE UNSCHULD MIT DEM LÜGENDETEKTOR BEWEISEN", en: "REPUTATION PROTECTION: PROVING YOUR INNOCENCE WITH THE LIE DETECTOR" },
         text: `Menschen, die im Beruf Zugang zu Sachwerten, Finanzen oder geheimen Informationen haben, wissen, wie entscheidend ein tadelloser Ruf für eine erfolgreiche Karriere ist. Dies gilt für alle Ebenen – vom einfachen Angestellten über Führungskräfte bis hin zu Abgeordneten. Der berufliche Aufstieg kann jäh gestoppt werden, wenn unberechtigte Anschuldigungen über Taten laut werden, die man in der Realität nie begangen hat.\n\nDoch wie lassen sich solche haltlosen Behauptungen entkräften? Die Firma bietet Ihnen die Möglichkeit, Ihre Unschuld zu belegen und Nachstellungen oder falsche Verdächtigungen mittels eines Lügendetektortests zu beenden.`,
       },
       {
-        heading: "VORTEILE DER ENTLASTUNGSPRÜFUNG:",
+        heading: { de: "VORTEILE DER ENTLASTUNGSPRÜFUNG:", en: "ADVANTAGES OF THE EXONERATION EXAMINATION:" },
         text: "",
         bullets: [
           "Wiederherstellung des Rufes: Effektive Abwehr von Verleumdungen",
@@ -318,18 +318,18 @@ const allServices = [
     id: "geschaefte",
     category: "business",
     icon: "fas fa-handshake",
-    title: "Sicherheit bei großen Geschäften",
+    title: { de: "Sicherheit bei großen Geschäften", en: "Security in Major Transactions" },
     price: "auf Anfrage",
-    short: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen",
+    short: { de: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen", en: "Minimizing risks in private transactions and agreements" },
     img: "/manus-storage/img_geschaefte_business_opt_1f5c005b.jpg",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {
-        heading: "SICHERHEIT BEI GROSSEN GESCHÄFTEN: RISIKEN MINIMIEREN MIT DEM POLYGRAPHEN",
+        heading: { de: "SICHERHEIT BEI GROSSEN GESCHÄFTEN: RISIKEN MINIMIEREN MIT DEM POLYGRAPHEN", en: "SECURITY IN MAJOR TRANSACTIONS: MINIMIZING RISKS WITH THE POLYGRAPH" },
         text: `Bei geplanten Großgeschäften mit Unbekannten ist Vorsicht geboten. Um versteckte Mängel, Unredlichkeit oder Betrug auszuschließen, können Sie Ihrem Geschäftspartner einen Lügendetektortest vorschlagen. Wir garantieren eine schnelle Auswertung, absolute Vertraulichkeit und hochpräzise Ergebnisse.`,
       },
       {
-        heading: "HÄUFIGE ANWENDUNGSBEREICHE:",
+        heading: { de: "HÄUFIGE ANWENDUNGSBEREICHE:", en: "COMMON AREAS OF APPLICATION:" },
         text: `Besonders bei Vereinbarungen „per Handschlag", ohne umfassende rechtliche Absicherung, besteht das Risiko von Täuschungen. Probleme entstehen oft durch verborgene Motive, Falschinformationen oder betrügerische Absichten.`,
         bullets: [
           "Große Geldbeträge: Private Darlehen oder Investitionen",
@@ -339,7 +339,7 @@ const allServices = [
         ],
       },
       {
-        heading: "WARNSIGNALE, BEI DENEN EIN TEST RATSAM IST:",
+        heading: { de: "WARNSIGNALE, BEI DENEN EIN TEST RATSAM IST:", en: "WARNING SIGNS WHERE A TEST IS ADVISABLE:" },
         text: "",
         bullets: [
           "Ausweichende Antworten: Der Verkäufer macht unklare Angaben zum Zustand der Ware",
@@ -352,18 +352,18 @@ const allServices = [
   {
     id: "hausmaedchen",
     icon: "fas fa-broom",
-    title: "Überprüfung von Hausmädchen",
+    title: { de: "Überprüfung von Hausmädchen", en: "Housemaid Screening" },
     price: "ab 350 €",
-    short: "Haushälterinnen, Reinigungskräfte und Hauspersonal",
+    short: { de: "Haushälterinnen, Reinigungskräfte und Hauspersonal", en: "Housekeepers, cleaning staff and domestic personnel" },
     img: "/manus-storage/img_hausmaedchen_opt_f3866fbb.jpg",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
     sections: [
       {
-        heading: "ÜBERPRÜFUNG VON HAUSMÄDCHEN AUF DEM POLYGRAPHEN",
+        heading: { de: "ÜBERPRÜFUNG VON HAUSMÄDCHEN AUF DEM POLYGRAPHEN", en: "POLYGRAPH SCREENING OF HOUSEMAIDS" },
         text: `Hausmädchen und Haushälterinnen haben Zugang zu Ihrem Zuhause, Ihren Wertsachen und Ihrer Familie. Eine Polygraphenprüfung gibt Ihnen die Gewissheit, dass Sie der richtigen Person vertrauen. Wir überprüfen Ehrlichkeit, Verlässlichkeit und mögliche Risikofaktoren mit einer Genauigkeit von 98–99 %.`,
       },
       {
-        heading: "WAS WIRD GEPRÜFT:",
+        heading: { de: "WAS WIRD GEPRÜFT:", en: "WHAT IS BEING CHECKED:" },
         text: "",
         bullets: [
           "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug",
@@ -377,18 +377,18 @@ const allServices = [
   {
     id: "it-sektor",
     icon: "fas fa-laptop-code",
-    title: "Überprüfung im IT-Sektor",
+    title: { de: "Überprüfung im IT-Sektor", en: "IT Sector Screening" },
     price: "ab 350 €",
-    short: "Entwickler, Systemadministratoren und IT-Fachkräfte",
+    short: { de: "Entwickler, Systemadministratoren und IT-Fachkräfte", en: "Developers, system administrators and IT professionals" },
     img: "/manus-storage/img_it_sektor_opt_435b1468.jpg",
     features: ["Datenschutz sicherstellen", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {
-        heading: "POLYGRAPHENPRÜFUNG IM IT-SEKTOR",
+        heading: { de: "POLYGRAPHENPRÜFUNG IM IT-SEKTOR", en: "POLYGRAPH EXAMINATION IN THE IT SECTOR" },
         text: `IT-Mitarbeiter haben Zugang zu sensiblen Unternehmensdaten, Passwörtern und kritischer Infrastruktur. Eine Polygraphenprüfung hilft, Datenlecks, Insider-Bedrohungen und unautorisierten Zugriff aufzudecken. Schützen Sie Ihr Unternehmen vor digitalen Risiken.`,
       },
       {
-        heading: "TYPISCHE PRÜFUNGSBEREICHE:",
+        heading: { de: "TYPISCHE PRÜFUNGSBEREICHE:", en: "TYPICAL SCREENING AREAS:" },
         text: "",
         bullets: [
           "Datenlecks: Weitergabe vertraulicher Informationen an Wettbewerber",
@@ -402,18 +402,18 @@ const allServices = [
   {
     id: "fahrer",
     icon: "fas fa-car",
-    title: "Überprüfung von Fahrern",
+    title: { de: "Überprüfung von Fahrern", en: "Driver Screening" },
     price: "ab 350 €",
-    short: "Privat- und Unternehmensfahrer, Kuriere",
+    short: { de: "Privat- und Unternehmensfahrer, Kuriere", en: "Private and corporate drivers, couriers" },
     img: "/manus-storage/img_lagerarbeiter_ad34a120.jpg",
     features: ["Sicherheit gewährleisten", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {
-        heading: "POLYGRAPHENPRÜFUNG FÜR FAHRER",
+        heading: { de: "POLYGRAPHENPRÜFUNG FÜR FAHRER", en: "POLYGRAPH EXAMINATION FOR DRIVERS" },
         text: `Fahrer haben direkten Zugang zu Personen, Fahrzeugen und Gütern. Eine Polygraphenprüfung gibt Ihnen Sicherheit über die Zuverlässigkeit Ihres Fahrers – ob Privatfahrer, Unternehmensfahrer oder Kurier.`,
       },
       {
-        heading: "WAS WIRD GEPRÜFT:",
+        heading: { de: "WAS WIRD GEPRÜFT:", en: "WHAT IS BEING CHECKED:" },
         text: "",
         bullets: [
           "Alkohol- und Drogenprobleme: Risiken im Straßenverkehr",
@@ -427,18 +427,18 @@ const allServices = [
   {
     id: "sicherheitspersonal",
     icon: "fas fa-shield-alt",
-    title: "Überprüfung von Sicherheitspersonal",
+    title: { de: "Überprüfung von Sicherheitspersonal", en: "Security Personnel Screening" },
     price: "ab 350 €",
-    short: "Wachleute, Sicherheitsbeamte und Bodyguards",
+    short: { de: "Wachleute, Sicherheitsbeamte und Bodyguards", en: "Guards, security officers and bodyguards" },
     img: "/manus-storage/img_sicherheit_1fdb025d.gif",
     features: ["Höchste Sicherheit", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {
-        heading: "POLYGRAPHENPRÜFUNG FÜR SICHERHEITSPERSONAL",
+        heading: { de: "POLYGRAPHENPRÜFUNG FÜR SICHERHEITSPERSONAL", en: "POLYGRAPH EXAMINATION FOR SECURITY PERSONNEL" },
         text: `Sicherheitspersonal trägt besondere Verantwortung für den Schutz von Personen und Eigentum. Eine Polygraphenprüfung stellt sicher, dass Ihre Sicherheitskräfte integer, zuverlässig und vertrauenswürdig sind.`,
       },
       {
-        heading: "PRÜFUNGSSCHWERPUNKTE:",
+        heading: { de: "PRÜFUNGSSCHWERPUNKTE:", en: "EXAMINATION FOCUS AREAS:" },
         text: "",
         bullets: [
           "Integrität: Keine Zusammenarbeit mit kriminellen Elementen",
@@ -452,18 +452,18 @@ const allServices = [
   {
     id: "lagerarbeiter",
     icon: "fas fa-warehouse",
-    title: "Überprüfung von Lagerarbeitern",
+    title: { de: "Überprüfung von Lagerarbeitern", en: "Warehouse Worker Screening" },
     price: "ab 350 €",
-    short: "Lagermitarbeiter, Logistik und Versandpersonal",
+    short: { de: "Lagermitarbeiter, Logistik und Versandpersonal", en: "Warehouse staff, logistics and shipping personnel" },
     img: "/manus-storage/img_lagerarbeiter2_715773fd.jpg",
     features: ["Diebstahl verhindern", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {
-        heading: "POLYGRAPHENPRÜFUNG FÜR LAGERARBEITER",
+        heading: { de: "POLYGRAPHENPRÜFUNG FÜR LAGERARBEITER", en: "POLYGRAPH EXAMINATION FOR WAREHOUSE WORKERS" },
         text: `Lagerarbeiter haben direkten Zugang zu Waren, Inventar und Versandgütern. Diebstahl und Unterschlagung im Lager verursachen erhebliche wirtschaftliche Schäden. Eine Polygraphenprüfung hilft, Täter zu identifizieren und präventiv zu wirken.`,
       },
       {
-        heading: "TYPISCHE PRÜFUNGSBEREICHE:",
+        heading: { de: "TYPISCHE PRÜFUNGSBEREICHE:", en: "TYPICAL SCREENING AREAS:" },
         text: "",
         bullets: [
           "Warendiebstahl: Entwendung von Lagerbeständen",
@@ -476,21 +476,21 @@ const allServices = [
   },
 ];
 const processSteps = [
-  { num: "01", title: "Anfrage & Beratung", desc: "Sie hinterlassen eine Anfrage auf der Webseite oder kontaktieren uns auf anderem Weg. Wir klären das Anliegen und definieren die Ziele für die bevorstehende Untersuchung." },
-  { num: "02", title: "Aufgabenstellung", desc: "Wir konkretisieren das Ziel, stimmen die Fragen ab, klären die Rahmenbedingungen: Anzahl der Personen, Ort der Untersuchung, Zeitplan und Zahlungsmodalitäten." },
-  { num: "03", title: "Testerstellung nach Methodik", desc: "Basierend auf Ihrer Aufgabe erstellen wir spezielle Tests für die zu prüfende Person. Genau nach diesen Tests wird die Untersuchung durchgeführt." },
-  { num: "04", title: "Durchführung der Prüfung", desc: "Die durchschnittliche Testdauer beträgt 1,5–2,5 Stunden. Die zu prüfende Person antwortet nur mit Ja oder Nein. Das Verfahren ist vollständig sicher." },
-  { num: "05", title: "Gutachten erstellen", desc: "Es wird ein schriftliches Gutachten erstellt und an Ihre angegebene E-Mail-Adresse gesendet. Alle Informationen sind streng vertraulich." },
-  { num: "06", title: "Polygraph & Sensoren", desc: "Wir verwenden einen professionellen Computerpolygraphen der neuesten Generation mit Pneumo-Atemgurt, FPG-Sensor, GSR-Sensor, Blutdrucksensor und Aktivitätssensor." },
+  { num: "01", title: { de: "Anfrage & Beratung", en: "Request & Consultation" }, desc: { de: "Sie hinterlassen eine Anfrage auf der Webseite oder kontaktieren uns auf anderem Weg. Wir klären das Anliegen und definieren die Ziele für die bevorstehende Untersuchung.", en: "You submit a request on the website or contact us by another means. We clarify your concern and define the objectives for the upcoming examination." } },
+  { num: "02", title: { de: "Aufgabenstellung", en: "Task Definition" }, desc: { de: "Wir konkretisieren das Ziel, stimmen die Fragen ab, klären die Rahmenbedingungen: Anzahl der Personen, Ort der Untersuchung, Zeitplan und Zahlungsmodalitäten.", en: "We specify the objective, agree on the questions, and clarify the framework: number of persons, location, schedule and payment terms." } },
+  { num: "03", title: { de: "Testerstellung nach Methodik", en: "Test Design" }, desc: { de: "Basierend auf Ihrer Aufgabe erstellen wir spezielle Tests für die zu prüfende Person. Genau nach diesen Tests wird die Untersuchung durchgeführt.", en: "Based on your task, we create specific tests for the person to be examined. The examination is conducted exactly according to these tests." } },
+  { num: "04", title: { de: "Durchführung der Prüfung", en: "Examination" }, desc: { de: "Die durchschnittliche Testdauer beträgt 1,5–2,5 Stunden. Die zu prüfende Person antwortet nur mit Ja oder Nein. Das Verfahren ist vollständig sicher.", en: "The average test duration is 1.5–2.5 hours. The person being tested answers only yes or no. The procedure is completely safe." } },
+  { num: "05", title: { de: "Gutachten erstellen", en: "Report Preparation" }, desc: { de: "Es wird ein schriftliches Gutachten erstellt und an Ihre angegebene E-Mail-Adresse gesendet. Alle Informationen sind streng vertraulich.", en: "A written report is prepared and sent to your specified email address. All information is strictly confidential." } },
+  { num: "06", title: { de: "Polygraph & Sensoren", en: "Polygraph & Sensors" }, desc: { de: "Wir verwenden einen professionellen Computerpolygraphen der neuesten Generation mit Pneumo-Atemgurt, FPG-Sensor, GSR-Sensor, Blutdrucksensor und Aktivitätssensor.", en: "We use a professional computer polygraph of the latest generation with pneumo breathing belt, FPG sensor, GSR sensor, blood pressure sensor and activity sensor." } },
 ];
 
 const faqItems = [
-  { q: "Wer kann NICHT am Polygraphtest teilnehmen?", a: "Die Teilnahme wird nicht empfohlen für: schwangere Frauen, Kinder unter 14 Jahren, Personen mit psychischen Erkrankungen oder schweren Herzerkrankungen, Personen unter Alkohol- oder Drogeneinfluss sowie Personen, die Beruhigungsmittel oder Medikamente einnehmen, die das Nervensystem beeinflussen." },
-  { q: "Welche Vor- und Nachteile hat der Einsatz eines Lügendetektors?", a: "Vorteile: Hohe Genauigkeit (98–99%), objektive Ergebnisse, offizielles Gutachten als Beweismittel, schnelle Klärung von Sachverhalten. Nachteile: Ergebnisse können durch bestimmte Medikamente oder Erkrankungen beeinflusst werden, nicht alle Fragen können getestet werden, die Teilnahme muss freiwillig sein." },
-  { q: "Ist es möglich, den Lügendetektor zu täuschen?", a: "Moderne Polygraphtechnologie erkennt Versuche, den Test zu manipulieren. Unsere Experten sind speziell geschult, solche Versuche zu identifizieren. Techniken wie kontrolliertes Atmen oder Muskelanspannung werden durch die Kombination mehrerer Sensoren zuverlässig erkannt." },
-  { q: "Wie bereitet man sich richtig auf einen Polygraphtest vor?", a: "Für eine optimale Vorbereitung empfehlen wir: Ausreichend schlafen (mindestens 7–8 Stunden), keinen Alkohol 24 Stunden vor dem Test, keine Beruhigungsmittel ohne ärztliche Notwendigkeit, normale Mahlzeiten einnehmen, bequeme Kleidung tragen und pünktlich erscheinen." },
-  { q: "Wie genau ist ein Polygraphtest?", a: "Moderne Polygraphtests, die von zertifizierten Experten durchgeführt werden, erreichen eine Genauigkeit von 95–99%. Unsere Spezialisten verfügen über jahrzehntelange Erfahrung und nutzen modernste Geräte der neuesten Generation." },
-  { q: "Ist der Polygraphtest legal in Deutschland?", a: "Ja, Polygraphtests sind in Deutschland legal, wenn die Teilnahme freiwillig ist. Das Ergebnis kann als Beweismittel in Zivilverfahren verwendet werden. Wir erstellen ein offizielles Gutachten, das rechtlich verwertbar ist." },
+  { q: { de: "Wer kann NICHT am Polygraphtest teilnehmen?", en: "Who CANNOT participate in a polygraph test?" }, a: { de: "Die Teilnahme wird nicht empfohlen für: schwangere Frauen, Kinder unter 14 Jahren, Personen mit psychischen Erkrankungen oder schweren Herzerkrankungen, Personen unter Alkohol- oder Drogeneinfluss sowie Personen, die Beruhigungsmittel oder Medikamente einnehmen, die das Nervensystem beeinflussen.", en: "Participation is not recommended for: pregnant women, children under 14 years, persons with mental illnesses or severe heart conditions, persons under the influence of alcohol or drugs, and persons taking sedatives or medications that affect the nervous system." } },
+  { q: { de: "Welche Vor- und Nachteile hat der Einsatz eines Lügendetektors?", en: "What are the advantages and disadvantages of using a lie detector?" }, a: { de: "Vorteile: Hohe Genauigkeit (98–99%), objektive Ergebnisse, offizielles Gutachten als Beweismittel, schnelle Klärung von Sachverhalten. Nachteile: Ergebnisse können durch bestimmte Medikamente oder Erkrankungen beeinflusst werden, nicht alle Fragen können getestet werden, die Teilnahme muss freiwillig sein.", en: "Advantages: High accuracy (98–99%), objective results, official report as evidence, quick clarification of facts. Disadvantages: Results can be influenced by certain medications or conditions, not all questions can be tested, participation must be voluntary." } },
+  { q: { de: "Ist es möglich, den Lügendetektor zu täuschen?", en: "Is it possible to fool the lie detector?" }, a: { de: "Moderne Polygraphtechnologie erkennt Versuche, den Test zu manipulieren. Unsere Experten sind speziell geschult, solche Versuche zu identifizieren. Techniken wie kontrolliertes Atmen oder Muskelanspannung werden durch die Kombination mehrerer Sensoren zuverlässig erkannt.", en: "Modern polygraph technology detects attempts to manipulate the test. Our experts are specially trained to identify such attempts. Techniques such as controlled breathing or muscle tension are reliably detected through the combination of multiple sensors." } },
+  { q: { de: "Wie bereitet man sich richtig auf einen Polygraphtest vor?", en: "How do you properly prepare for a polygraph test?" }, a: { de: "Für eine optimale Vorbereitung empfehlen wir: Ausreichend schlafen (mindestens 7–8 Stunden), keinen Alkohol 24 Stunden vor dem Test, keine Beruhigungsmittel ohne ärztliche Notwendigkeit, normale Mahlzeiten einnehmen, bequeme Kleidung tragen und pünktlich erscheinen.", en: "For optimal preparation we recommend: Get sufficient sleep (at least 7–8 hours), no alcohol 24 hours before the test, no sedatives unless medically necessary, eat normal meals, wear comfortable clothing and arrive on time." } },
+  { q: { de: "Wie genau ist ein Polygraphtest?", en: "How accurate is a polygraph test?" }, a: { de: "Moderne Polygraphtests, die von zertifizierten Experten durchgeführt werden, erreichen eine Genauigkeit von 95–99%. Unsere Spezialisten verfügen über jahrzehntelange Erfahrung und nutzen modernste Geräte der neuesten Generation.", en: "Modern polygraph tests conducted by certified experts achieve an accuracy of 95–99%. Our specialists have decades of experience and use state-of-the-art equipment of the latest generation." } },
+  { q: { de: "Ist der Polygraphtest legal in Deutschland?", en: "Is the polygraph test legal in Germany?" }, a: { de: "Ja, Polygraphtests sind in Deutschland legal, wenn die Teilnahme freiwillig ist. Das Ergebnis kann als Beweismittel in Zivilverfahren verwendet werden. Wir erstellen ein offizielles Gutachten, das rechtlich verwertbar ist.", en: "Yes, polygraph tests are legal in Germany when participation is voluntary. The result can be used as evidence in civil proceedings. We prepare an official report that is legally admissible." } },
 ];
 
 // ─────────────────────────────────────────────
@@ -625,11 +625,12 @@ function StatsBar() {
 // SERVICE DETAIL PANEL
 // ─────────────────────────────────────────────
 function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onClose: () => void }) {
+  const { lang } = useLang();
   return (
     <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
       {/* Image centered */}
       <div style={{ display: "flex", justifyContent: "center", padding: "24px 24px 0" }}>
-        <img src={svc.img} alt={svc.title} style={{ width: "100%", maxWidth: "784px", height: "448px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
+        <img src={svc.img} alt={typeof svc.title === "object" ? svc.title[lang] : svc.title} style={{ width: "100%", maxWidth: "784px", height: "448px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
       </div>
       {/* Features + intro */}
       <div style={{ padding: "24px 28px 16px" }}>
@@ -642,8 +643,8 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
         </div>
         {svc.sections[0] && (
           <>
-            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{svc.sections[0].heading}</h3>}
-            <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9 }}>{svc.sections[0].text}</p>
+            {svc.sections[0].heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "12px" }}>{typeof svc.sections[0].heading === "object" ? (svc.sections[0].heading as any)[lang] : svc.sections[0].heading}</h3>}
+            <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9 }}>{typeof svc.sections[0].text === "object" ? (svc.sections[0].text as any)[lang] : svc.sections[0].text}</p>
           </>
         )}
       </div>
@@ -651,8 +652,8 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
       {/* Additional sections */}
       {svc.sections.slice(1).map((sec, i) => (
         <div key={i} style={{ padding: "0 28px 24px", borderTop: i === 0 ? `1px solid ${BORDER}` : "none" }}>
-          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{sec.heading}</h3>}
-          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9, marginBottom: "12px", whiteSpace: "pre-line" }}>{sec.text}</p>}
+          {sec.heading && <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", textTransform: "uppercase", letterSpacing: "0.5px", margin: "20px 0 12px" }}>{typeof sec.heading === "object" ? (sec.heading as any)[lang] : sec.heading}</h3>}
+          {sec.text && <p style={{ color: TEXT_DARK, fontSize: "19px", lineHeight: 1.9, marginBottom: "12px", whiteSpace: "pre-line" }}>{typeof sec.text === "object" ? (sec.text as any)[lang] : sec.text}</p>}
           {sec.bullets && (
             <ul style={{ margin: "0 0 8px", paddingLeft: "0", listStyle: "none" }}>
               {sec.bullets.map((b, bi) => (
@@ -732,8 +733,8 @@ function ServicesSection() {
                 </div>
                 {/* Text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: "21px", marginBottom: "4px" }}>{svc.title}</div>
-                  <div style={{ fontSize: "16px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{svc.short}</div>
+                  <div style={{ fontWeight: 700, fontSize: "21px", marginBottom: "4px" }}>{typeof svc.title === "object" ? svc.title[lang] : svc.title}</div>
+                  <div style={{ fontSize: "16px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{typeof svc.short === "object" ? svc.short[lang] : svc.short}</div>
                 </div>
                 {/* Price + chevron */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>
@@ -821,8 +822,8 @@ function ProcessSection() {
           {processSteps.map((step, i) => (
             <div key={i} style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "26px", borderTop: `3px solid ${ORANGE}` }}>
               <div style={{ fontSize: "3.5rem", fontWeight: 700, color: "rgba(255,140,0,0.15)", lineHeight: 1, marginBottom: "12px", fontFamily: "monospace" }}>{step.num}</div>
-              <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "15px", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{step.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: 1.75 }}>{step.desc}</p>
+              <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "15px", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{typeof step.title === "object" ? (step.title as any)[lang] : step.title}</h3>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: 1.75 }}>{typeof step.desc === "object" ? (step.desc as any)[lang] : step.desc}</p>
             </div>
           ))}
         </div>
@@ -950,7 +951,7 @@ function PricesSection() {
           {allServices.map((svc, i) => (
             <div key={svc.id} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
               <span style={{ color: TEXT_DARK, fontSize: "16px" }}>
-                <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{svc.title}
+                <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{typeof svc.title === "object" ? (svc.title as any)[lang] : svc.title}
               </span>
               <span style={{ color: ORANGE, fontWeight: 700, fontSize: "17px", whiteSpace: "nowrap" }}>{svc.price}</span>
             </div>
@@ -993,12 +994,12 @@ function FAQSection() {
             <div key={i} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "6px", marginBottom: "8px", overflow: "hidden" }}>
               <button onClick={() => setOpenIdx(openIdx === i ? null : i)}
                 style={{ width: "100%", textAlign: "left", padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", background: "none", border: "none", cursor: "pointer" }}>
-                <span style={{ fontWeight: 700, fontSize: "17px", color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
+                <span style={{ fontWeight: 700, fontSize: "17px", color: NAVY, lineHeight: 1.4 }}>{typeof item.q === "object" ? (item.q as any)[lang] : item.q}</span>
                 <i className={`fas fa-chevron-${openIdx === i ? "up" : "down"}`} style={{ color: ORANGE, flexShrink: 0 }}></i>
               </button>
               {openIdx === i && (
                 <div style={{ padding: "0 20px 16px", borderTop: `1px solid ${BORDER}` }}>
-                  <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.8, paddingTop: "12px" }}>{item.a}</p>
+                  <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.8, paddingTop: "12px" }}>{typeof item.a === "object" ? (item.a as any)[lang] : item.a}</p>
                 </div>
               )}
             </div>

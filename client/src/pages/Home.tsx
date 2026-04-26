@@ -430,7 +430,7 @@ const allServices = [
     title: "Überprüfung von Sicherheitspersonal",
     price: "ab 350 €",
     short: "Wachleute, Sicherheitsbeamte und Bodyguards",
-    img: "",
+    img: "/manus-storage/img_sicherheit_1fdb025d.gif",
     features: ["Höchste Sicherheit", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {

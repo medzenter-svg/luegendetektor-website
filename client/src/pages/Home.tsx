@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { legalDocs } from "../data/legalDocs";
 import { useLang } from "../contexts/LanguageContext";
 import { t } from "../data/translations";
@@ -696,6 +696,17 @@ function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServic
 function ServicesSection() {
   const { lang } = useLang();
   const [openService, setOpenService] = useState<string | null>(null);
+  const panelRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const handleToggle = (id: string) => {
+    const next = openService === id ? null : id;
+    setOpenService(next);
+    if (next) {
+      setTimeout(() => {
+        panelRefs.current[next]?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
+  };
   const services = getServices(lang);
 
   return (
@@ -715,7 +726,7 @@ function ServicesSection() {
           {services.map(svc => (
             <div key={svc.id}>
               {/* Button */}
-              <button onClick={() => setOpenService(openService === svc.id ? null : svc.id)}
+              <button onClick={() => handleToggle(svc.id)}
                 style={{
                   width: "100%", textAlign: "left", padding: "16px 20px",
                   borderRadius: openService === svc.id ? "6px 6px 0 0" : "6px",
@@ -746,7 +757,9 @@ function ServicesSection() {
 
               {/* Detail Panel */}
               {openService === svc.id && (
-                <ServiceDetailPanel svc={svc} onClose={() => setOpenService(null)} />
+                <div ref={el => { panelRefs.current[svc.id] = el; }}>
+                  <ServiceDetailPanel svc={svc} onClose={() => setOpenService(null)} />
+                </div>
               )}
             </div>
           ))}

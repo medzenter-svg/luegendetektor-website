@@ -455,7 +455,7 @@ const allServices = [
     title: "Überprüfung von Lagerarbeitern",
     price: "ab 350 €",
     short: "Lagermitarbeiter, Logistik und Versandpersonal",
-    img: "/manus-storage/img_lagerarbeiter_ad34a120.jpg",
+    img: "/manus-storage/img_lagerarbeiter2_715773fd.jpg",
     features: ["Diebstahl verhindern", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {

@@ -380,7 +380,7 @@ const allServices = [
     title: "Überprüfung im IT-Sektor",
     price: "ab 350 €",
     short: "Entwickler, Systemadministratoren und IT-Fachkräfte",
-    img: "",
+    img: "/manus-storage/img_it_sektor_afc284f2.png",
     features: ["Datenschutz sicherstellen", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {
@@ -470,31 +470,6 @@ const allServices = [
           "Manipulation: Fälschung von Lieferscheinen oder Inventarlisten",
           "Zusammenarbeit: Kooperation mit externen Dieben",
           "Ehrlichkeit: Überprüfung bei Inventurdifferenzen",
-        ],
-      },
-    ],
-  },
-  {
-    id: "polizeibeamte",
-    icon: "fas fa-user-shield",
-    title: "Probetest für Polizeibeamte",
-    price: "ab 350 €",
-    short: "Vorbereitung auf die offizielle Polygraphenprüfung bei Behörden",
-    img: "",
-    features: ["Optimale Vorbereitung", "Vertraulich", "Professionelle Beratung", "Schnelle Terminvergabe"],
-    sections: [
-      {
-        heading: "PROBETEST FÜR POLIZEIBEAMTE UND BEHÖRDENMITARBEITER",
-        text: `Polizeibeamte und Bewerber für den öffentlichen Dienst müssen häufig eine offizielle Polygraphenprüfung bestehen. Unser Probetest bereitet Sie optimal vor – Sie lernen den Ablauf kennen, reduzieren Prüfungsangst und erhöhen Ihre Chancen auf ein positives Ergebnis.`,
-      },
-      {
-        heading: "VORTEILE DES PROBETESTS:",
-        text: "",
-        bullets: [
-          "Ablauf kennenlernen: Vorbereitung auf die offizielle Prüfungssituation",
-          "Angst reduzieren: Vertrautheit mit dem Verfahren senkt Nervosität",
-          "Beratung: Tipps von erfahrenen Polygraphologen",
-          "Vertraulich: Alle Ergebnisse bleiben streng geheim",
         ],
       },
     ],

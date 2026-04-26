@@ -102,7 +102,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Hauspersonal", en: "Domestic Staff Screening" },
     price: "ab 549 €",
     short: { de: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte", en: "Nannies, housekeepers, drivers and other household employees" },
-    img: "/manus-storage/img_hauspersonal_new_opt_e4782285.jpg",
+    img: "/manus-storage/hauspersonal_new_3f0d7b62.jpg",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [
       {
@@ -606,10 +606,10 @@ function HeroSection() {
 function StatsBar() {
   const { lang } = useLang();
   return (
-    <div style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
+    <div style={{ backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }} className="stats-grid">
         {[{ val: t.stats.s1v[lang], label: t.stats.s1l[lang], icon: "fas fa-crosshairs" }, { val: t.stats.s2v[lang], label: t.stats.s2l[lang], icon: "fas fa-award" }, { val: t.stats.s3v[lang], label: t.stats.s3l[lang], icon: "fas fa-check-double" }, { val: t.stats.s4v[lang], label: t.stats.s4l[lang], icon: "fas fa-user-secret" }].map((s, i) => (
-          <div key={i} style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
+          <div key={i} style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
             <i className={s.icon} style={{ color: ORANGE, fontSize: "22px", flexShrink: 0 }}></i>
             <div>
               <div style={{ color: WHITE, fontWeight: 700, fontSize: "20px", lineHeight: 1 }}>{s.val}</div>
@@ -835,19 +835,19 @@ function AboutSection() {
 function ProcessSection() {
   const { lang } = useLang();
   return (
-    <section id="process" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "80px 0", fontFamily: "'Roboto', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Verfahren" : "Our Process"}</p>
-          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.process.heading[lang]}</h2>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.process.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "18px" }}>
           {processSteps.map((step, i) => (
-            <div key={i} style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "26px", borderTop: `3px solid ${ORANGE}` }}>
-              <div style={{ fontSize: "3.5rem", fontWeight: 700, color: "rgba(255,140,0,0.15)", lineHeight: 1, marginBottom: "12px", fontFamily: "monospace" }}>{step.num}</div>
-              <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "15px", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{typeof step.title === "object" ? (step.title as any)[lang] : step.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: 1.75 }}>{typeof step.desc === "object" ? (step.desc as any)[lang] : step.desc}</p>
+            <div key={i} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "26px", borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+              <div style={{ fontSize: "3.5rem", fontWeight: 700, color: "rgba(255,140,0,0.2)", lineHeight: 1, marginBottom: "12px", fontFamily: "monospace" }}>{step.num}</div>
+              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "15px", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{typeof step.title === "object" ? (step.title as any)[lang] : step.title}</h3>
+              <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.75 }}>{typeof step.desc === "object" ? (step.desc as any)[lang] : step.desc}</p>
             </div>
           ))}
         </div>
@@ -1044,16 +1044,16 @@ function ContactSection() {
 
   return (
     <>
-    <section id="contact" style={{ backgroundColor: NAVY, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="contact" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{t.contact.sub[lang]}</p>
-          <h2 style={{ color: WHITE, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.contact.heading[lang]}</h2>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.contact.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", maxWidth: "960px", margin: "0 auto", alignItems: "stretch" }} className="grid-2col">
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
+            <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
                 { icon: "fas fa-map-marker-alt", label: lang === "de" ? "Adresse" : "Address", val: "Marienstr. 4, 80331 München", href: undefined },
@@ -1067,15 +1067,14 @@ function ContactSection() {
                     <i className={c.icon}></i>
                   </div>
                   <div>
-                    <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
+                    <div style={{ color: TEXT_MID, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
                     {c.href ? (
-                      <a href={c.href} style={{ color: WHITE, fontWeight: 700, fontSize: "17px", textDecoration: "none" }}
+                      <a href={c.href} style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textDecoration: "none" }}
                         onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                        onMouseLeave={e => (e.currentTarget.style.color = WHITE)}>{c.val}</a>
-                    ) : (
-                      <span style={{ color: WHITE, fontWeight: 700, fontSize: "17px" }}>{c.val}</span>
+                        onMouseLeave={e => (e.currentTarget.style.color = NAVY)}>{c.val}</a>                    ) : (
+                      <span style={{ color: NAVY, fontWeight: 700, fontSize: "17px" }}>{c.val}</span>
                     )}
-                    {(c as any).sub && <div style={{ color: "rgba(255,255,255,0.55)", fontSize: "14px", marginTop: "3px" }}>{(c as any).sub}</div>}
+                    {(c as any).sub && <div style={{ color: TEXT_MID, fontSize: "14px", marginTop: "3px" }}>{(c as any).sub}</div>}
                   </div>
                 </div>
               ))}
@@ -1090,16 +1089,16 @@ function ContactSection() {
                 <i className="fas fa-envelope"></i> {t.contact.btnEmail[lang]}
               </a>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
+            <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
               <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
             </p>
           </div>
           <div>
             {sent ? (
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", padding: "40px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "40px" }}>
                 <i className="fas fa-check-circle" style={{ fontSize: "52px", color: "#22c55e", marginBottom: "16px" }}></i>
-                <h3 style={{ color: WHITE, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>{t.contact.thankYou[lang]}</h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", lineHeight: 1.7 }}>{t.contact.thankMsg[lang]}</p>
+                <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>{t.contact.thankYou[lang]}</h3>
+                <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.7 }}>{t.contact.thankMsg[lang]}</p>
               </div>
             ) : (
               <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -1109,22 +1108,22 @@ function ContactSection() {
                   { name: "email", label: t.contact.formEmail[lang], type: "email", placeholder: t.contact.formPh3[lang], required: true },
                 ].map(f => (
                   <div key={f.name}>
-                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
+                    <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
                     <input type={f.type} placeholder={f.placeholder} required={f.required}
                       value={form[f.name as keyof typeof form]}
                       onChange={e => setForm({ ...form, [f.name]: e.target.value })}
-                      style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, boxSizing: "border-box" }}
+                      style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, boxSizing: "border-box" }}
                       onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
-                      onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
+                      onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
                   </div>
                 ))}
                 <div>
-                  <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
+                   <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
                   <textarea rows={4} placeholder={t.contact.formPh4[lang]}
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                    style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: WHITE, resize: "none", boxSizing: "border-box" }}
+                     style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, resize: "none", boxSizing: "border-box" }}
                     onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
-                    onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")} />
+                     onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
                 </div>
                 <button type="submit"
                   style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "28px" }}
@@ -1132,7 +1131,7 @@ function ContactSection() {
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
                   <i className="fas fa-paper-plane mr-2"></i>{t.contact.btnSend[lang]}
                 </button>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "14px", textAlign: "center" }}>
+                 <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center" }}>
                   <i className="fas fa-lock mr-1"></i>{t.contact.privacy[lang]}
                 </p>
               </form>
@@ -1304,30 +1303,30 @@ function ReportSection() {
   const r = t.report;
   const L = lang as "de" | "en";
   const accent = "#f59e0b";
-  const bg = "#0f172a";
-  const cardBg = "#1e293b";
+  const bg = "#f8fafc";
+  const cardBg = WHITE;
   return (
-    <div id="report" style={{ background: bg, padding: "80px 0" }}>
+    <div id="report" style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{ color: "#fff", fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{r.heading[L]}</h2>
+          <h2 style={{ color: NAVY, fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{r.heading[L]}</h2>
           <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
-          <p style={{ color: "#94a3b8", marginTop: 12 }}>{r.sub[L]}</p>
+          <p style={{ color: TEXT_MID, marginTop: 12 }}>{r.sub[L]}</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }} className="grid-2col">
           {/* Left: intro + sections */}
           <div>
-            <p style={{ color: "#cbd5e1", marginBottom: 24, lineHeight: 1.7 }}>{r.intro[L]}</p>
+            <p style={{ color: TEXT_MID, marginBottom: 24, lineHeight: 1.7 }}>{r.intro[L]}</p>
             {[
               { title: r.section1Title[L], items: r.section1Items.map(i => i[L]) },
               { title: r.section2Title[L], items: r.section2Items.map(i => i[L]) },
               { title: r.section3Title[L], items: r.section3Items.map(i => i[L]) },
             ].map((sec, idx) => (
-              <div key={idx} style={{ background: cardBg, borderRadius: 8, padding: "20px 24px", marginBottom: 16 }}>
+              <div key={idx} style={{ background: cardBg, borderRadius: 8, padding: "20px 24px", marginBottom: 16, border: `1px solid ${BORDER}`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
                 <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 12px", fontSize: 15 }}>{sec.title}</h4>
                 <ul style={{ margin: 0, paddingLeft: 20 }}>
                   {sec.items.map((item, i) => (
-                    <li key={i} style={{ color: "#cbd5e1", marginBottom: 6, fontSize: 14 }}>{item}</li>
+                    <li key={i} style={{ color: TEXT_MID, marginBottom: 6, fontSize: 14 }}>{item}</li>
                   ))}
                 </ul>
               </div>
@@ -1340,27 +1339,27 @@ function ReportSection() {
             </button>
           </div>
           {/* Right: visual report card */}
-          <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}22` }}>
+          <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}44`, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
               <div style={{ background: accent, borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: 22 }}>📄</span>
               </div>
               <div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
-                <div style={{ color: "#64748b", fontSize: 12 }}>{lang === "de" ? "Offizielles Dokument" : "Official Document"}</div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: 16 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
+                <div style={{ color: TEXT_MID, fontSize: 12 }}>{lang === "de" ? "Offizielles Dokument" : "Official Document"}</div>
               </div>
             </div>
             {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: i < 2 ? "1px solid #334155" : "none" }}>
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: i < 2 ? `1px solid ${BORDER}` : "none" }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: accent, flexShrink: 0 }} />
-                <span style={{ color: "#e2e8f0", fontSize: 14 }}>{sec}</span>
+                <span style={{ color: TEXT_DARK, fontSize: 14 }}>{sec}</span>
               </div>
             ))}
-            <div style={{ marginTop: 24, padding: "16px", background: "#0f172a", borderRadius: 8, textAlign: "center" }}>
+                <div style={{ marginTop: 24, padding: "16px", background: LIGHT_BG, borderRadius: 8, textAlign: "center", border: `1px solid ${BORDER}` }}>
               <div style={{ color: accent, fontWeight: 700, fontSize: 13, letterSpacing: 1 }}>
                 {lang === "de" ? "✓ RECHTSGÜLTIG" : "✓ LEGALLY VALID"}
               </div>
-              <div style={{ color: "#64748b", fontSize: 12, marginTop: 4 }}>
+                <div style={{ color: TEXT_MID, fontSize: 12, marginTop: 4 }}>
                 {lang === "de" ? "Anerkannt von Gerichten und Behörden" : "Recognized by courts and authorities"}
               </div>
             </div>
@@ -1377,23 +1376,23 @@ function CasesSection() {
   const c = t.cases;
   const L = lang as "de" | "en";
   const accent = "#f59e0b";
-  const bg = "#1e293b";
-  const cardBg = "#0f172a";
+  const bg = WHITE;
+  const cardBg = "#f8fafc";
   return (
-    <div id="cases" style={{ background: bg, padding: "80px 0" }}>
+    <div id="cases" style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{ color: "#fff", fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{c.heading[L]}</h2>
+          <h2 style={{ color: NAVY, fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{c.heading[L]}</h2>
           <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
-          <p style={{ color: "#94a3b8", marginTop: 12 }}>{c.sub[L]}</p>
+          <p style={{ color: TEXT_MID, marginTop: 12 }}>{c.sub[L]}</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }} className="detail-grid">
           {c.items.map((item, idx) => (
-            <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 20px", borderLeft: `4px solid ${accent}`, cursor: "pointer" }}
+            <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 20px", borderLeft: `4px solid ${accent}`, cursor: "pointer", border: `1px solid ${BORDER}`, borderLeftWidth: 4, boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}
               onMouseEnter={e => (e.currentTarget.style.borderLeftColor = "#f59e0b")}
             >
-              <div style={{ color: "#64748b", fontSize: 12, marginBottom: 8 }}>{c.dates[idx]}</div>
-              <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.6, margin: 0 }}>{item[L]}</p>
+              <div style={{ color: TEXT_MID, fontSize: 12, marginBottom: 8 }}>{c.dates[idx]}</div>
+              <p style={{ color: TEXT_DARK, fontSize: 14, lineHeight: 1.6, margin: 0 }}>{item[L]}</p>
             </div>
           ))}
         </div>

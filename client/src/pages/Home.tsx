@@ -405,7 +405,7 @@ const allServices = [
     title: "Überprüfung von Fahrern",
     price: "ab 350 €",
     short: "Privat- und Unternehmensfahrer, Kuriere",
-    img: "",
+    img: "/manus-storage/img_lagerarbeiter_ad34a120.jpg",
     features: ["Sicherheit gewährleisten", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {

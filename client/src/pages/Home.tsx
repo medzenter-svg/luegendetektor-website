@@ -36,7 +36,7 @@ const allServices = [
     title: "Überprüfung auf Untreue",
     price: "ab 649 €",
     short: "Klärung bei Verdacht auf Untreue in der Partnerschaft",
-    img: "/manus-storage/img_untreue_new_ec6a03cd.png",
+    img: "/manus-storage/img_untreue_new_opt_aa63860c.jpg",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
     sections: [
       {
@@ -72,7 +72,7 @@ const allServices = [
     title: "Aufklärung von Diebstählen",
     price: "ab 649 €",
     short: "Klärung von Diebstählen und Verlusten im privaten Umfeld",
-    img: "/manus-storage/img_diebstahl_new_08c72d3b.png",
+    img: "/manus-storage/img_diebstahl_new_opt_d8da6fb7.jpg",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -102,7 +102,7 @@ const allServices = [
     title: "Überprüfung von Hauspersonal",
     price: "ab 549 €",
     short: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte",
-    img: "/manus-storage/img_hauspersonal_new_cc672d0c.png",
+    img: "/manus-storage/img_hauspersonal_new_opt_e4782285.jpg",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [
       {
@@ -132,7 +132,7 @@ const allServices = [
     title: "Probetest am Polygraphen",
     price: "ab 299 €",
     short: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung",
-    img: "/manus-storage/img_probetest2_d69e4e5f.png",
+    img: "/manus-storage/img_probetest2_opt_ebca96e5.jpg",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {
@@ -159,7 +159,7 @@ const allServices = [
     title: "Überprüfung vor der Hochzeit",
     price: "ab 649 €",
     short: "Sicherheit vor dem wichtigsten Tag Ihres Lebens",
-    img: "/manus-storage/img_hochzeit_new_1c27e9d7.png",
+    img: "/manus-storage/img_hochzeit_new_opt_6c3351a2.jpg",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -185,7 +185,7 @@ const allServices = [
     title: "Überprüfung bei der Einstellung",
     price: "ab 399 €",
     short: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen",
-    img: "/manus-storage/img_einstellung_new_019d6631.png",
+    img: "/manus-storage/img_einstellung_new_opt_640c0e16.jpg",
     features: ["Schnelle Abwicklung", "Mehrere Bewerber möglich", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
     sections: [
       {
@@ -213,7 +213,7 @@ const allServices = [
     title: "Planmäßige Überprüfung von Mitarbeitern",
     price: "ab 399 €",
     short: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität",
-    img: "/manus-storage/img_routine_new_ae08702d.png",
+    img: "/manus-storage/img_routine_new_opt_5e44dc06.jpg",
     features: ["Maßgeschneiderte Programme", "Gruppenrabatte möglich", "Vertrauliche Berichte", "Regelmäßige Termine"],
     sections: [
       {
@@ -296,7 +296,7 @@ const allServices = [
     title: "Schutz von Ehre und Würde",
     price: "auf Anfrage",
     short: "Klärung von Verleumdungen und falschen Anschuldigungen",
-    img: "/manus-storage/img_ehre_new_23a0c453.png",
+    img: "/manus-storage/img_ehre_new_opt_28a5f364.jpg",
     features: ["Offizielles Gutachten", "Rechtlich verwertbar", "Schnelle Terminvergabe", "Professionelle Beratung"],
     sections: [
       {
@@ -321,7 +321,7 @@ const allServices = [
     title: "Sicherheit bei großen Geschäften",
     price: "auf Anfrage",
     short: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen",
-    img: "/manus-storage/img_geschaefte_business_dda0e881.png",
+    img: "/manus-storage/img_geschaefte_business_opt_1f5c005b.jpg",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {
@@ -355,7 +355,7 @@ const allServices = [
     title: "Überprüfung von Hausmädchen",
     price: "ab 350 €",
     short: "Haushälterinnen, Reinigungskräfte und Hauspersonal",
-    img: "/manus-storage/img_hausmaedchen_1198f2c3.png",
+    img: "/manus-storage/img_hausmaedchen_opt_f3866fbb.jpg",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
     sections: [
       {
@@ -380,7 +380,7 @@ const allServices = [
     title: "Überprüfung im IT-Sektor",
     price: "ab 350 €",
     short: "Entwickler, Systemadministratoren und IT-Fachkräfte",
-    img: "/manus-storage/img_it_sektor_afc284f2.png",
+    img: "/manus-storage/img_it_sektor_opt_435b1468.jpg",
     features: ["Datenschutz sicherstellen", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {

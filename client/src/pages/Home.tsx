@@ -27,7 +27,7 @@ const BLUE_LINE = "#2563eb";
 // DATA – 12 Buttons mit vollständigen Texten & Fotos
 // ─────────────────────────────────────────────
 
-const allServices = [
+const getServices = (lang: string) => [
   // ── PRIVAT ──
   {
     id: "untreue",
@@ -41,11 +41,11 @@ const allServices = [
     sections: [
       {
         heading: { de: "TREUETESTS PER LÜGENDETEKTOR: KLARHEIT FÜR DIE BEZIEHUNG", en: "FIDELITY TESTS WITH LIE DETECTOR: CLARITY FOR YOUR RELATIONSHIP" },
-        text: `Mit der Eheschließung schwören sich Ehepartner Treue. Doch Beziehungen sind zerbrechlich, und das Leben schreibt oft andere Geschichten. Manchmal ist ein Lügendetektortest auf Untreue der einzige effektive Weg, eine Familie zu retten oder – im Gegenteil – Gewissheit über einen Betrug zu erlangen. In jedem Fall hilft das Ergebnis dabei, quälendes Misstrauen, Zweifel und Unsicherheit gegenüber sich selbst und dem Partner zu überwinden.`,
+        text: lang === "en" ? "When couples marry, they vow fidelity. But relationships are fragile, and life often tells different stories. Sometimes a lie detector test for infidelity is the only effective way to save a family – or, on the contrary, to gain certainty about a betrayal. In any case, the result helps overcome tormenting mistrust, doubt and insecurity toward oneself and one's partner." : `Mit der Eheschließung schwören sich Ehepartner Treue. Doch Beziehungen sind zerbrechlich, und das Leben schreibt oft andere Geschichten. Manchmal ist ein Lügendetektortest auf Untreue der einzige effektive Weg, eine Familie zu retten oder – im Gegenteil – Gewissheit über einen Betrug zu erlangen. In jedem Fall hilft das Ergebnis dabei, quälendes Misstrauen, Zweifel und Unsicherheit gegenüber sich selbst und dem Partner zu überwinden.`,
       },
       {
         heading: { de: "PRÜFUNG DER PARTNERSTREUE MIT DEM POLYGRAPHEN", en: "TESTING PARTNER FIDELITY WITH THE POLYGRAPH" },
-        text: `Wer seinen Partner betrügt, setzt oft alles daran, die Untreue zu verbergen. Solche Partner werden extrem vorsichtig: Sie bemerken Beschattungen oder vermeiden es, am Telefon über sensible Themen zu sprechen. Daher ist der Lügendetektortest oft die einzige schnelle und effektive Möglichkeit, jemanden zu entlarven.\n\nWir stehen beiden Seiten offen: Sowohl dem Partner, der des Betrugs verdächtigt wird, als auch demjenigen, der die Vermutung hegt. Eifersucht und Zweifel sind zerstörerische Gefühle. Durch einen Polygraph-Test können Paare verlorenes Vertrauen wiederherstellen oder entscheiden, ob die Beziehung beendet werden muss. Unbegründete Verdächtigungen können sonst zu Neurosen und unerträglichen Lebensbedingungen für die gesamte Familie führen.\n\nDie Ergebnisse liefern Fakten, die das Risiko drastischer Fehlentscheidungen minimieren. Wenn der Verdacht des Ehebruchs durch den Experten nicht bestätigt wird, können Trennungen, psychische Traumata sowie finanzielle und materielle Verluste verhindert werden.`,
+        text: lang === "en" ? "Those who cheat on their partner often do everything to conceal the infidelity. Such partners become extremely cautious: they notice surveillance or avoid discussing sensitive topics on the phone. Therefore, the lie detector test is often the only quick and effective way to expose someone.\n\nWe are open to both sides: both the partner suspected of cheating and the one who has suspicions. Jealousy and doubt are destructive feelings. Through a polygraph test, couples can restore lost trust or decide whether the relationship must end. Unfounded suspicions can otherwise lead to neuroses and unbearable living conditions for the entire family.\n\nThe results provide facts that minimize the risk of drastic wrong decisions. If the suspicion of infidelity is not confirmed by the expert, separations, psychological trauma and financial losses can be prevented." : `Wer seinen Partner betrügt, setzt oft alles daran, die Untreue zu verbergen. Solche Partner werden extrem vorsichtig: Sie bemerken Beschattungen oder vermeiden es, am Telefon über sensible Themen zu sprechen. Daher ist der Lügendetektortest oft die einzige schnelle und effektive Möglichkeit, jemanden zu entlarven.\n\nWir stehen beiden Seiten offen: Sowohl dem Partner, der des Betrugs verdächtigt wird, als auch demjenigen, der die Vermutung hegt. Eifersucht und Zweifel sind zerstörerische Gefühle. Durch einen Polygraph-Test können Paare verlorenes Vertrauen wiederherstellen oder entscheiden, ob die Beziehung beendet werden muss. Unbegründete Verdächtigungen können sonst zu Neurosen und unerträglichen Lebensbedingungen für die gesamte Familie führen.\n\nDie Ergebnisse liefern Fakten, die das Risiko drastischer Fehlentscheidungen minimieren. Wenn der Verdacht des Ehebruchs durch den Experten nicht bestätigt wird, können Trennungen, psychische Traumata sowie finanzielle und materielle Verluste verhindert werden.`,
       },
     ],
   },
@@ -61,7 +61,7 @@ const allServices = [
     sections: [
       {
         heading: { de: "DIE PUBERTÄT: HERAUSFORDERUNGEN MEISTERN", en: "ADOLESCENCE: OVERCOMING CHALLENGES" },
-        text: `Die Pubertät ist oft eine Phase der Verunsicherung für Eltern und Lehrkräfte. Jugendliche befinden sich in einem Übergangszustand, in dem sie weder Kind noch vollständig erwachsen sind. Verhaltensweisen können provokant wirken oder durch sozialen Rückzug geprägt sein. Während dies oft Teil der normalen Identitätsfindung ist, können in manchen Fällen auch tiefere Konflikte vorliegen.\n\nAnstatt auf technische Überprüfungsverfahren zu setzen, empfehlen Fachleute in der Regel den Aufbau von Vertrauen und den offenen Dialog. Wenn der Verdacht auf ernsthafte Probleme wie Substanzmissbrauch oder psychische Belastungen besteht, ist die Beratung durch qualifizierte Psychologen oder spezialisierte Beratungsstellen ein bewährter Weg. Diese unterstützen Familien dabei, die Ursachen für Verhaltensänderungen zu verstehen und gemeinsam Lösungen zu erarbeiten.\n\nDie Förderung einer gesunden Entwicklung basiert auf gegenseitigem Respekt und Unterstützung, um Jugendlichen Sicherheit zu geben und Eltern die notwendige Orientierung in dieser herausfordernden Zeit zu ermöglichen.`,
+        text: lang === "en" ? "Adolescence is often a phase of uncertainty for parents and teachers. Teenagers are in a transitional state, being neither children nor fully adults. Behaviors can seem provocative or be marked by social withdrawal. While this is often part of normal identity formation, deeper conflicts may sometimes be present.\n\nRather than relying on technical verification procedures, experts generally recommend building trust and open dialogue. If there is suspicion of serious problems such as substance abuse or psychological stress, consultation with qualified psychologists or specialized counseling centers is a proven approach. These support families in understanding the causes of behavioral changes and developing solutions together.\n\nPromoting healthy development is based on mutual respect and support, to give young people security and enable parents to find the necessary orientation during this challenging time." : `Die Pubertät ist oft eine Phase der Verunsicherung für Eltern und Lehrkräfte. Jugendliche befinden sich in einem Übergangszustand, in dem sie weder Kind noch vollständig erwachsen sind. Verhaltensweisen können provokant wirken oder durch sozialen Rückzug geprägt sein. Während dies oft Teil der normalen Identitätsfindung ist, können in manchen Fällen auch tiefere Konflikte vorliegen.\n\nAnstatt auf technische Überprüfungsverfahren zu setzen, empfehlen Fachleute in der Regel den Aufbau von Vertrauen und den offenen Dialog. Wenn der Verdacht auf ernsthafte Probleme wie Substanzmissbrauch oder psychische Belastungen besteht, ist die Beratung durch qualifizierte Psychologen oder spezialisierte Beratungsstellen ein bewährter Weg. Diese unterstützen Familien dabei, die Ursachen für Verhaltensänderungen zu verstehen und gemeinsam Lösungen zu erarbeiten.\n\nDie Förderung einer gesunden Entwicklung basiert auf gegenseitigem Respekt und Unterstützung, um Jugendlichen Sicherheit zu geben und Eltern die notwendige Orientierung in dieser herausfordernden Zeit zu ermöglichen.`,
       },
     ],
   },
@@ -77,20 +77,20 @@ const allServices = [
     sections: [
       {
         heading: { de: "AUFKLÄRUNG VON KRIMINELLEN HANDLUNGEN MIT DEM LÜGENDETEKTOR", en: "INVESTIGATING CRIMINAL ACTS WITH THE LIE DETECTOR" },
-        text: `Kriminelle Aktivitäten führen unweigerlich zu finanziellen Verlusten. Dabei geht es nicht nur um den Diebstahl von Geld oder Wertsachen aus Privaträumen, sondern auch um den Raub von Datenbanken und vertraulichen Informationen in Unternehmen. Täter innerhalb einer Firma können sich illegal Vermögenswerte aneignen, Betrug, Erpressung oder Korruption betreiben.\n\nDer Einsatz eines Lügendetektors ist der schnellste und effektivste Weg, um Täter zu identifizieren. Unsere erfahrenen Experten helfen Ihnen dabei, Rechtsverletzer ausfindig zu machen und weitere kriminelle Handlungen zu verhindern.`,
+        text: lang === "en" ? "Criminal activities inevitably lead to financial losses. This involves not only the theft of money or valuables from private premises, but also the theft of databases and confidential information within companies. Perpetrators inside a company can illegally appropriate assets, commit fraud, extortion or corruption.\n\nUsing a lie detector is the fastest and most effective way to identify perpetrators. Our experienced experts help you track down offenders and prevent further criminal acts." : `Kriminelle Aktivitäten führen unweigerlich zu finanziellen Verlusten. Dabei geht es nicht nur um den Diebstahl von Geld oder Wertsachen aus Privaträumen, sondern auch um den Raub von Datenbanken und vertraulichen Informationen in Unternehmen. Täter innerhalb einer Firma können sich illegal Vermögenswerte aneignen, Betrug, Erpressung oder Korruption betreiben.\n\nDer Einsatz eines Lügendetektors ist der schnellste und effektivste Weg, um Täter zu identifizieren. Unsere erfahrenen Experten helfen Ihnen dabei, Rechtsverletzer ausfindig zu machen und weitere kriminelle Handlungen zu verhindern.`,
       },
       {
         heading: { de: "POLYGRAPHEN-TESTS BEI UNTERSCHLAGUNG, DIEBSTAHL UND VERRAT VON GESCHÄFTSGEHEIMNISSEN", en: "POLYGRAPH TESTS FOR EMBEZZLEMENT, THEFT AND TRADE SECRET VIOLATIONS" },
-        text: `Schwerwiegende Verluste durch Mitarbeiterdiebstahl sind oft die Folge unzureichender Personalkontrolle. Der Polygraph hat seine Wirksamkeit im Rahmen von Ermittlungsmaßnahmen bewiesen. Er dient dazu, Haupttäter und Komplizen zu identifizieren.`,
+        text: lang === "en" ? "Serious losses due to employee theft are often the result of inadequate personnel control. The polygraph has proven its effectiveness in the context of investigative measures. It serves to identify main perpetrators and accomplices." : `Schwerwiegende Verluste durch Mitarbeiterdiebstahl sind oft die Folge unzureichender Personalkontrolle. Der Polygraph hat seine Wirksamkeit im Rahmen von Ermittlungsmaßnahmen bewiesen. Er dient dazu, Haupttäter und Komplizen zu identifizieren.`,
         bullets: [
-          "Rollenverteilung: Bestimmung der Rolle jeder beteiligten Person an der Tat",
-          "Informationsfluss: Motivierung von Verdächtigen zur Offenlegung von Informationen",
-          "Rekonstruktion: Feststellung des chronologischen Ablaufs der Ereignisse",
-          "Sachverhaltsaufklärung: Ermittlung der tatsächlichen Umstände des Falls",
-          "Beweissicherung: Sammeln zusätzlicher Erkenntnisse und Details",
-          "Verschwörung: Aufdeckung von Absprachen zwischen mehreren Personen",
-          "Entlastung: Ausschluss unschuldiger Personen aus dem Kreis der Verdächtigen",
-          "Verbleib: Ermittlung des Standorts von gestohlenen Gütern oder Werten",
+          lang === "en" ? "Role distribution: Determining the role of each person involved in the act" : "Rollenverteilung: Bestimmung der Rolle jeder beteiligten Person an der Tat",
+          lang === "en" ? "Information flow: Motivating suspects to disclose information" : "Informationsfluss: Motivierung von Verdächtigen zur Offenlegung von Informationen",
+          lang === "en" ? "Reconstruction: Establishing the chronological sequence of events" : "Rekonstruktion: Feststellung des chronologischen Ablaufs der Ereignisse",
+          lang === "en" ? "Fact clarification: Determining the actual circumstances of the case" : "Sachverhaltsaufklärung: Ermittlung der tatsächlichen Umstände des Falls",
+          lang === "en" ? "Evidence gathering: Collecting additional findings and details" : "Beweissicherung: Sammeln zusätzlicher Erkenntnisse und Details",
+          lang === "en" ? "Conspiracy: Uncovering agreements between multiple persons" : "Verschwörung: Aufdeckung von Absprachen zwischen mehreren Personen",
+          lang === "en" ? "Exoneration: Excluding innocent persons from the circle of suspects" : "Entlastung: Ausschluss unschuldiger Personen aus dem Kreis der Verdächtigen",
+          lang === "en" ? "Location: Determining the whereabouts of stolen goods or valuables" : "Verbleib: Ermittlung des Standorts von gestohlenen Gütern oder Werten",
         ],
       },
     ],
@@ -107,20 +107,20 @@ const allServices = [
     sections: [
       {
         heading: { de: "ÜBERPRÜFUNG VON HAUSPERSONAL: SICHERHEIT FÜR IHR ZUHAUSE", en: "DOMESTIC STAFF SCREENING: SECURITY FOR YOUR HOME" },
-        text: `Ein Test mit dem Polygraphen darf nur mit der freiwilligen Zustimmung des Hauspersonals durchgeführt werden. Es gibt zudem Themenbereiche (wie die Intimsphäre), die nicht Gegenstand der Befragung sein dürfen. Unsere Experten berücksichtigen bei der Erstellung des Fragenkatalogs strikt Ihre individuellen Wünsche.\n\nSeien Sie besonders aufmerksam gegenüber Personen, die einen Test kategorisch ablehnen. Ehrliche und gewissenhafte Mitarbeiter haben in der Regel nichts zu verbergen – für sie ist das Verfahren eine zusätzliche Chance, ihre Loyalität und Integrität unter Beweis zu stellen.`,
+        text: lang === "en" ? "A polygraph test may only be conducted with the voluntary consent of domestic staff. There are also subject areas (such as private life) that may not be the subject of questioning. Our experts strictly take your individual wishes into account when compiling the list of questions.\n\nBe particularly attentive to persons who categorically refuse a test. Honest and conscientious employees generally have nothing to hide – for them, the procedure is an additional opportunity to prove their loyalty and integrity." : `Ein Test mit dem Polygraphen darf nur mit der freiwilligen Zustimmung des Hauspersonals durchgeführt werden. Es gibt zudem Themenbereiche (wie die Intimsphäre), die nicht Gegenstand der Befragung sein dürfen. Unsere Experten berücksichtigen bei der Erstellung des Fragenkatalogs strikt Ihre individuellen Wünsche.\n\nSeien Sie besonders aufmerksam gegenüber Personen, die einen Test kategorisch ablehnen. Ehrliche und gewissenhafte Mitarbeiter haben in der Regel nichts zu verbergen – für sie ist das Verfahren eine zusätzliche Chance, ihre Loyalität und Integrität unter Beweis zu stellen.`,
       },
       {
         heading: { de: "ASPEKTE, DIE BEI HAUSPERSONAL GEKLÄRT WERDEN KÖNNEN:", en: "ASPECTS THAT CAN BE CLARIFIED FOR DOMESTIC STAFF:" },
         text: "",
         bullets: [
-          "Umgang mit Schutzbefohlenen: Aufdeckung von Misshandlungen an Kindern oder Haustieren",
-          "Qualifikation: Bestätigung der tatsächlichen Berufserfahrung und Echtheit von Empfehlungsschreiben",
-          "Zuverlässigkeit: Prüfung, ob die vereinbarten Aufgaben gewissenhaft erfüllt werden",
-          "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug bei Haushaltsausgaben",
-          "Umgang mit Eigentum: Unachtsamer oder mutwilliger Missbrauch von Möbeln, Geräten oder Fahrzeugen",
-          "Diskretion: Unbefugtes Einladen fremder Personen in die Privaträume des Arbeitgebers",
-          "Hygiene & Sorgfalt: Mängel bei der Lebensmittelzubereitung oder absichtliche Sachbeschädigung",
-          "Geheimhaltung: Weitergabe oder Verkauf von vertraulichen Informationen über die Familie an Dritte",
+          lang === "en" ? "Care for dependents: Detection of abuse of children or pets" : "Umgang mit Schutzbefohlenen: Aufdeckung von Misshandlungen an Kindern oder Haustieren",
+          lang === "en" ? "Qualifications: Confirmation of actual work experience and authenticity of references" : "Qualifikation: Bestätigung der tatsächlichen Berufserfahrung und Echtheit von Empfehlungsschreiben",
+          lang === "en" ? "Reliability: Checking whether agreed tasks are performed conscientiously" : "Zuverlässigkeit: Prüfung, ob die vereinbarten Aufgaben gewissenhaft erfüllt werden",
+          lang === "en" ? "Honesty: Detection of theft or fraud in household expenses" : "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug bei Haushaltsausgaben",
+          lang === "en" ? "Property handling: Careless or willful misuse of furniture, appliances or vehicles" : "Umgang mit Eigentum: Unachtsamer oder mutwilliger Missbrauch von Möbeln, Geräten oder Fahrzeugen",
+          lang === "en" ? "Discretion: Unauthorized invitation of strangers into the employer's private premises" : "Diskretion: Unbefugtes Einladen fremder Personen in die Privaträume des Arbeitgebers",
+          lang === "en" ? "Hygiene & care: Deficiencies in food preparation or intentional property damage" : "Hygiene & Sorgfalt: Mängel bei der Lebensmittelzubereitung oder absichtliche Sachbeschädigung",
+          lang === "en" ? "Confidentiality: Sharing or selling confidential family information to third parties" : "Geheimhaltung: Weitergabe oder Verkauf von vertraulichen Informationen über die Familie an Dritte",
         ],
       },
     ],
@@ -137,17 +137,17 @@ const allServices = [
     sections: [
       {
         heading: { de: "DER PROBELAUF: VORBEREITUNG AUF DEN LÜGENDETEKTOR-TEST", en: "THE TRIAL RUN: PREPARATION FOR THE LIE DETECTOR TEST" },
-        text: `Polygraphen-Untersuchungen werden immer häufiger eingesetzt, um Informationen über eine Person zu gewinnen. Sie dienen nicht nur dazu, die Ehrlichkeit zu prüfen, sondern helfen auch dabei, komplexe Situationen ohne offensichtliche Beweise zu klären. Wenn Ihnen ein Test angeboten wurde und Sie mit dem Verfahren nicht vertraut sind, gibt es keinen Grund zur Sorge. Eine sofortige Ablehnung könnte unnötige Zweifel an Ihrer Integrität wecken und Misstrauen schüren.`,
+        text: lang === "en" ? "Polygraph examinations are increasingly used to obtain information about a person. They serve not only to check honesty, but also help to clarify complex situations without obvious evidence. If you have been offered a test and are not familiar with the procedure, there is no reason to worry. An immediate refusal could raise unnecessary doubts about your integrity and create mistrust." : `Polygraphen-Untersuchungen werden immer häufiger eingesetzt, um Informationen über eine Person zu gewinnen. Sie dienen nicht nur dazu, die Ehrlichkeit zu prüfen, sondern helfen auch dabei, komplexe Situationen ohne offensichtliche Beweise zu klären. Wenn Ihnen ein Test angeboten wurde und Sie mit dem Verfahren nicht vertraut sind, gibt es keinen Grund zur Sorge. Eine sofortige Ablehnung könnte unnötige Zweifel an Ihrer Integrität wecken und Misstrauen schüren.`,
       },
       {
         heading: { de: "ZIELE EINES PROBELAUFS (TEST-CHECK)", en: "GOALS OF A TRIAL RUN (TEST-CHECK)" },
-        text: `Ein Probelauf dient dazu, die zu untersuchende Person an die Atmosphäre und die Bedingungen des Tests zu gewöhnen. Er wird durchgeführt, wenn jemand genau wissen möchte, wie die Prozedur abläuft, welche Fragen gestellt werden und um sich von der Sicherheit des Verfahrens zu überzeugen.`,
+        text: lang === "en" ? "A trial run serves to familiarize the person being examined with the atmosphere and conditions of the test. It is conducted when someone wants to know exactly how the procedure works, what questions will be asked, and to convince themselves of the safety of the procedure." : `Ein Probelauf dient dazu, die zu untersuchende Person an die Atmosphäre und die Bedingungen des Tests zu gewöhnen. Er wird durchgeführt, wenn jemand genau wissen möchte, wie die Prozedur abläuft, welche Fragen gestellt werden und um sich von der Sicherheit des Verfahrens zu überzeugen.`,
         bullets: [
-          "Detaillierte Einweisung: Umfassende Aufklärung des Teilnehmers über den Ablauf",
-          "Gewöhnung: Anpassung der Testperson an die angelegten Sensoren",
-          "Individuelle Kalibrierung: Feinabstimmung des Geräts auf die spezifischen physiologischen Reaktionen",
-          "Reaktionsanalyse: Erfassung von Mustern bei unterschiedlichen Fragen",
-          "Sicherheitscheck: Feststellung, ob die Ergebnisse durch Alkohol oder Medikamente verfälscht sein könnten",
+          lang === "en" ? "Detailed briefing: Comprehensive explanation of the procedure to the participant" : "Detaillierte Einweisung: Umfassende Aufklärung des Teilnehmers über den Ablauf",
+          lang === "en" ? "Acclimatization: Familiarizing the test subject with the attached sensors" : "Gewöhnung: Anpassung der Testperson an die angelegten Sensoren",
+          lang === "en" ? "Individual calibration: Fine-tuning the device to specific physiological responses" : "Individuelle Kalibrierung: Feinabstimmung des Geräts auf die spezifischen physiologischen Reaktionen",
+          lang === "en" ? "Response analysis: Recording patterns with different questions" : "Reaktionsanalyse: Erfassung von Mustern bei unterschiedlichen Fragen",
+          lang === "en" ? "Safety check: Determining whether results could be distorted by alcohol or medication" : "Sicherheitscheck: Feststellung, ob die Ergebnisse durch Alkohol oder Medikamente verfälscht sein könnten",
         ],
       },
     ],
@@ -168,11 +168,11 @@ const allServices = [
       },
       {
         heading: { de: "LÜGENDETEKTOR VOR DER HOCHZEIT: VORTEILE", en: "LIE DETECTOR BEFORE THE WEDDING: ADVANTAGES" },
-        text: `Bevor Sie den Bund fürs Leben schließen, ist es ratsam, mögliche Risiken im Vorfeld auszuräumen. So schützen Sie Ihre zukünftige Familie vor Misstrauen, Zweifeln, Verschwiegenheit und anderen belastenden Situationen. Ein Polygraph-Test hilft dabei, Probleme rechtzeitig zu identifizieren und sie für die gemeinsame Zukunft auszuschließen.`,
+        text: lang === "en" ? "Before you tie the knot for life, it is advisable to eliminate possible risks in advance. This protects your future family from mistrust, doubts, secrecy and other stressful situations. A polygraph test helps to identify problems in time and exclude them for your shared future." : `Bevor Sie den Bund fürs Leben schließen, ist es ratsam, mögliche Risiken im Vorfeld auszuräumen. So schützen Sie Ihre zukünftige Familie vor Misstrauen, Zweifeln, Verschwiegenheit und anderen belastenden Situationen. Ein Polygraph-Test hilft dabei, Probleme rechtzeitig zu identifizieren und sie für die gemeinsame Zukunft auszuschließen.`,
         bullets: [
-          "Klarheit: Beseitigung unbegründeter Ängste und Zweifel",
-          "Ehrlichkeit: Bestätigung der Aufrichtigkeit des Partners in Bezug auf die Vergangenheit oder Absichten",
-          "Prävention: Schutz vor unangenehmen Überraschungen nach der Hochzeit",
+          lang === "en" ? "Clarity: Elimination of unfounded fears and doubts" : "Klarheit: Beseitigung unbegründeter Ängste und Zweifel",
+          lang === "en" ? "Honesty: Confirmation of the partner's sincerity regarding the past or intentions" : "Ehrlichkeit: Bestätigung der Aufrichtigkeit des Partners in Bezug auf die Vergangenheit oder Absichten",
+          lang === "en" ? "Prevention: Protection against unpleasant surprises after the wedding" : "Prävention: Schutz vor unangenehmen Überraschungen nach der Hochzeit",
         ],
       },
     ],
@@ -190,19 +190,19 @@ const allServices = [
     sections: [
       {
         heading: { de: "ÜBERPRÜFUNG BEI DER EINSTELLUNG", en: "PRE-EMPLOYMENT SCREENING" },
-        text: `Bei der Auswahl neuer Mitarbeiter sucht jedes Unternehmen nach Zuverlässigkeit. Wie identifiziert man wirklich verantwortungsbewusste und loyale Profis? Erfahrene Experten sieben mit einer Genauigkeit von 99 % unzuverlässige Kandidaten aus und minimieren so Ihre Geschäftsrisiken.\n\nDie Prüfung bei der Einstellung hilft dabei, folgende Ziele zu erreichen:`,
+        text: lang === "en" ? "When selecting new employees, every company looks for reliability. How do you identify truly responsible and loyal professionals? Experienced experts filter out unreliable candidates with 99% accuracy, minimizing your business risks.\n\nPre-employment screening helps achieve the following goals:" : `Bei der Auswahl neuer Mitarbeiter sucht jedes Unternehmen nach Zuverlässigkeit. Wie identifiziert man wirklich verantwortungsbewusste und loyale Profis? Erfahrene Experten sieben mit einer Genauigkeit von 99 % unzuverlässige Kandidaten aus und minimieren so Ihre Geschäftsrisiken.\n\nDie Prüfung bei der Einstellung hilft dabei, folgende Ziele zu erreichen:`,
         bullets: [
-          "Passgenauigkeit: Auswahl von Spezialisten, deren psychologische und moralische Qualitäten exakt zur Stelle passen",
-          "Wahrheitsgehalt: Aufdeckung verborgener Fakten, Lücken im Lebenslauf oder möglicher Vorstrafen",
-          "Risikoprävention: Identifizierung von Faktoren, die gegen eine Einstellung sprechen",
-          "Effizienz: Senkung von Kosten und Zeitaufwand für mehrstufige Hintergrundchecks",
-          "Ehrlichkeit: Erkennung von Tendenzen zu Diebstahl oder unlauterem Verhalten",
-          "Prognose: Objektive Vorhersage des künftigen Verhaltens des Bewerbers",
+          lang === "en" ? "Fit: Selection of specialists whose psychological and moral qualities exactly match the position" : "Passgenauigkeit: Auswahl von Spezialisten, deren psychologische und moralische Qualitäten exakt zur Stelle passen",
+          lang === "en" ? "Truthfulness: Uncovering hidden facts, gaps in the CV or possible criminal records" : "Wahrheitsgehalt: Aufdeckung verborgener Fakten, Lücken im Lebenslauf oder möglicher Vorstrafen",
+          lang === "en" ? "Risk prevention: Identifying factors that speak against hiring" : "Risikoprävention: Identifizierung von Faktoren, die gegen eine Einstellung sprechen",
+          lang === "en" ? "Efficiency: Reducing costs and time for multi-stage background checks" : "Effizienz: Senkung von Kosten und Zeitaufwand für mehrstufige Hintergrundchecks",
+          lang === "en" ? "Honesty: Detecting tendencies toward theft or dishonest behavior" : "Ehrlichkeit: Erkennung von Tendenzen zu Diebstahl oder unlauterem Verhalten",
+          lang === "en" ? "Prognosis: Objective prediction of the applicant's future behavior" : "Prognose: Objektive Vorhersage des künftigen Verhaltens des Bewerbers",
         ],
       },
       {
         heading: "",
-        text: `Die Überprüfung bei der Einstellung wird mit maximaler Genauigkeit durchgeführt, was durch die Korrektur der Themen sichergestellt wird. Häufig möchten Arbeitgeber die Echtheit der vorgelegten Dokumente, Empfehlungen und Registrierungen überprüfen. Der Polygraph hilft auch dabei, die Kredithistorie zu prüfen, verschiedene Risikofaktoren sowie Alkohol-, Drogen- oder Spielsucht zu ermitteln. Das Verfahren deckt kriminelle Hintergründe auf und zeigt, ob gesundheitliche Einschränkungen für die Ausübung der Tätigkeit vorliegen.`,
+        text: lang === "en" ? "Pre-employment screening is conducted with maximum accuracy, ensured through the correction of topics. Employers often want to verify the authenticity of submitted documents, references and registrations. The polygraph also helps to check credit history, identify various risk factors as well as alcohol, drug or gambling addiction. The procedure uncovers criminal backgrounds and reveals whether health restrictions exist for performing the job." : `Die Überprüfung bei der Einstellung wird mit maximaler Genauigkeit durchgeführt, was durch die Korrektur der Themen sichergestellt wird. Häufig möchten Arbeitgeber die Echtheit der vorgelegten Dokumente, Empfehlungen und Registrierungen überprüfen. Der Polygraph hilft auch dabei, die Kredithistorie zu prüfen, verschiedene Risikofaktoren sowie Alkohol-, Drogen- oder Spielsucht zu ermitteln. Das Verfahren deckt kriminelle Hintergründe auf und zeigt, ob gesundheitliche Einschränkungen für die Ausübung der Tätigkeit vorliegen.`,
       },
     ],
   },
@@ -218,19 +218,19 @@ const allServices = [
     sections: [
       {
         heading: { de: "BRANCHEN, IN DENEN REGELMÄSSIGE POLYGRAPHEN-TESTS FÜR MITARBEITER ERFORDERLICH SIND", en: "INDUSTRIES WHERE REGULAR POLYGRAPH TESTS FOR EMPLOYEES ARE REQUIRED" },
-        text: `Regelmäßige Tests des Personals helfen dabei, zahlreiche potenzielle Probleme zu vermeiden und Risiken im Zusammenhang mit materiellen oder immateriellen Werten erheblich zu senken. Wenn die Geschäftsführung plant, einen Mitarbeiter zu befördern oder seinen Aufgabenbereich zu ändern, ist es wichtig, sich seiner Ehrlichkeit zu vergewissern. Eine planmäßige Überprüfung ist insbesondere dann notwendig, wenn Mitarbeiter Zugang zu schwer kontrollierbaren Finanzen haben.`,
+        text: lang === "en" ? "Regular staff testing helps prevent numerous potential problems and significantly reduces risks associated with material or intangible assets. When management plans to promote an employee or change their responsibilities, it is important to verify their honesty. Scheduled screening is particularly necessary when employees have access to finances that are difficult to control." : `Regelmäßige Tests des Personals helfen dabei, zahlreiche potenzielle Probleme zu vermeiden und Risiken im Zusammenhang mit materiellen oder immateriellen Werten erheblich zu senken. Wenn die Geschäftsführung plant, einen Mitarbeiter zu befördern oder seinen Aufgabenbereich zu ändern, ist es wichtig, sich seiner Ehrlichkeit zu vergewissern. Eine planmäßige Überprüfung ist insbesondere dann notwendig, wenn Mitarbeiter Zugang zu schwer kontrollierbaren Finanzen haben.`,
       },
       {
         heading: { de: "GESCHÄFTSBEREICHE, IN DENEN REGELMÄSSIGE LÜGENDETEKTOR-TESTS BESONDERS GEFRAGT SIND:", en: "BUSINESS AREAS WHERE REGULAR LIE DETECTOR TESTS ARE PARTICULARLY IN DEMAND:" },
         text: "",
         bullets: [
-          "Private Sicherheitsdienste: Zum Schutz der Integrität des Wachpersonals",
-          "Einzelhandel: Überall dort, wo Mitarbeiter direkten Zugriff auf Waren und Sachwerte haben",
-          "Logistik und Transport: Insbesondere für Fahrer, Spediteure und Lagerarbeiter",
-          "Geheimnisträger: Unternehmen, deren Tätigkeit mit streng vertraulichen Informationen verbunden ist",
-          "Autohäuser und Werkstätten: Wo Kundenfahrzeuge für die Mitarbeiter frei zugänglich sind",
-          "Produktionsstätten: Betriebe mit wertvollen Rohstoffen und teuren Maschinen",
-          "Finanz- und Bankensektor: Zum Schutz vor Unterschlagung und Finanzdelikten",
+          lang === "en" ? "Private security services: To protect the integrity of security staff" : "Private Sicherheitsdienste: Zum Schutz der Integrität des Wachpersonals",
+          lang === "en" ? "Retail: Wherever employees have direct access to goods and assets" : "Einzelhandel: Überall dort, wo Mitarbeiter direkten Zugriff auf Waren und Sachwerte haben",
+          lang === "en" ? "Logistics and transport: Especially for drivers, freight forwarders and warehouse workers" : "Logistik und Transport: Insbesondere für Fahrer, Spediteure und Lagerarbeiter",
+          lang === "en" ? "Confidential information holders: Companies whose activities involve strictly confidential information" : "Geheimnisträger: Unternehmen, deren Tätigkeit mit streng vertraulichen Informationen verbunden ist",
+          lang === "en" ? "Car dealerships and workshops: Where customer vehicles are freely accessible to employees" : "Autohäuser und Werkstätten: Wo Kundenfahrzeuge für die Mitarbeiter frei zugänglich sind",
+          lang === "en" ? "Production facilities: Companies with valuable raw materials and expensive machinery" : "Produktionsstätten: Betriebe mit wertvollen Rohstoffen und teuren Maschinen",
+          lang === "en" ? "Finance and banking sector: To protect against embezzlement and financial crimes" : "Finanz- und Bankensektor: Zum Schutz vor Unterschlagung und Finanzdelikten",
         ],
       },
     ],
@@ -247,19 +247,19 @@ const allServices = [
     sections: [
       {
         heading: { de: "INTERNE ERMITTLUNGEN: EFFIZIENTE AUFKLÄRUNG DURCH POLYGRAPHEN-TESTS", en: "INTERNAL INVESTIGATIONS: EFFICIENT RESOLUTION THROUGH POLYGRAPH TESTS" },
-        text: `Wenn in Unternehmen Zwischenfälle mit erheblichem Sachschaden auftreten, sind interne Dienstuntersuchungen unumgänglich. Ziel ist es, Mitarbeiter zu identifizieren, die Straftaten begangen oder ihre Befugnisse zur eigenen Bereicherung missbraucht haben. Qualifizierte Polygraphologen garantieren maximale Präzision und absolute Vertraulichkeit. Nach Abschluss der Tests erhalten Sie objektive und belastbare Informationen über den tatsächlichen Tathergang.\n\nDienstuntersuchungen erzeugen oft Spannungen und Stress innerhalb der Belegschaft. Der Einsatz eines Polygraphen verkürzt die Dauer der Ermittlungen erheblich. Sobald die Schuldigen überführt sind, stabilisiert sich das Mikroklima im Team.`,
+        text: lang === "en" ? "When incidents with significant material damage occur in companies, internal investigations are indispensable. The goal is to identify employees who have committed offenses or abused their authority for personal gain. Qualified polygraph examiners guarantee maximum precision and absolute confidentiality. After the tests are completed, you receive objective and reliable information about the actual course of events.\n\nInternal investigations often create tension and stress within the workforce. The use of a polygraph significantly shortens the duration of investigations. Once the guilty parties are identified, the team's working atmosphere stabilizes." : `Wenn in Unternehmen Zwischenfälle mit erheblichem Sachschaden auftreten, sind interne Dienstuntersuchungen unumgänglich. Ziel ist es, Mitarbeiter zu identifizieren, die Straftaten begangen oder ihre Befugnisse zur eigenen Bereicherung missbraucht haben. Qualifizierte Polygraphologen garantieren maximale Präzision und absolute Vertraulichkeit. Nach Abschluss der Tests erhalten Sie objektive und belastbare Informationen über den tatsächlichen Tathergang.\n\nDienstuntersuchungen erzeugen oft Spannungen und Stress innerhalb der Belegschaft. Der Einsatz eines Polygraphen verkürzt die Dauer der Ermittlungen erheblich. Sobald die Schuldigen überführt sind, stabilisiert sich das Mikroklima im Team.`,
       },
       {
         heading: { de: "DURCH EINE POLYGRAPH-UNTERSUCHUNG LASSEN SICH KLÄREN:", en: "ISSUES THAT CAN BE RESOLVED THROUGH A POLYGRAPH EXAMINATION:" },
         text: "",
         bullets: [
-          "Tathandlungen: Fakten über begangene rechtswidrige Aktivitäten",
-          "Glaubwürdigkeit: Wahrheitsgehalt der Aussagen der befragten Personen",
-          "Hintergrundinformationen: Zusätzliche Daten, die für den Fall relevant sind",
-          "Beteiligte: Identifizierung aller involvierten Personen und ihrer jeweiligen Rollen",
-          "Ursachen: Klärung der Gründe für den außerordentlichen Vorfall",
-          "Schadensausmaß: Ermittlung der Schadenshöhe und Möglichkeiten zur Schadensminimierung",
-          "Prävention: Entwicklung von Gegenmaßnahmen, um ähnliche Vorfälle künftig zu verhindern",
+          lang === "en" ? "Criminal acts: Facts about committed unlawful activities" : "Tathandlungen: Fakten über begangene rechtswidrige Aktivitäten",
+          lang === "en" ? "Credibility: Truthfulness of the statements of the persons questioned" : "Glaubwürdigkeit: Wahrheitsgehalt der Aussagen der befragten Personen",
+          lang === "en" ? "Background information: Additional data relevant to the case" : "Hintergrundinformationen: Zusätzliche Daten, die für den Fall relevant sind",
+          lang === "en" ? "Parties involved: Identification of all involved persons and their respective roles" : "Beteiligte: Identifizierung aller involvierten Personen und ihrer jeweiligen Rollen",
+          lang === "en" ? "Causes: Clarification of the reasons for the extraordinary incident" : "Ursachen: Klärung der Gründe für den außerordentlichen Vorfall",
+          lang === "en" ? "Extent of damage: Determining the amount of damage and possibilities for minimization" : "Schadensausmaß: Ermittlung der Schadenshöhe und Möglichkeiten zur Schadensminimierung",
+          lang === "en" ? "Prevention: Developing countermeasures to prevent similar incidents in the future" : "Prävention: Entwicklung von Gegenmaßnahmen, um ähnliche Vorfälle künftig zu verhindern",
         ],
       },
     ],
@@ -276,15 +276,15 @@ const allServices = [
     sections: [
       {
         heading: { de: "DIE WAHRHEIT ANS LICHT BRINGEN: POLYGRAPH-TESTS VOR ORT", en: "BRINGING TRUTH TO LIGHT: ON-SITE POLYGRAPH TESTS" },
-        text: `Die Wahrheit lässt sich oft leicht hinter Täuschungen verbergen. Heute gehört der Lügendetektortest zu den gefragtesten Dienstleistungen, um Klarheit zu schaffen – sei es für Ehepartner, Jugendliche, Hauspersonal oder Büroangestellte. Moderne Geräte sind in der Lage, eine Vielzahl chemischer und physiologischer Prozesse im menschlichen Körper präzise zu erfassen. Unsere erfahrenen Experten erstellen Gutachten zu den vom Kunden gewünschten Themen mit einer Genauigkeit von rund 99 %.`,
+        text: lang === "en" ? "The truth can often easily be hidden behind deceptions. Today, the lie detector test is one of the most sought-after services for bringing clarity – whether for spouses, teenagers, domestic staff or office employees. Modern devices are capable of precisely recording a variety of chemical and physiological processes in the human body. Our experienced experts prepare reports on topics requested by the client with an accuracy of around 99%." : `Die Wahrheit lässt sich oft leicht hinter Täuschungen verbergen. Heute gehört der Lügendetektortest zu den gefragtesten Dienstleistungen, um Klarheit zu schaffen – sei es für Ehepartner, Jugendliche, Hauspersonal oder Büroangestellte. Moderne Geräte sind in der Lage, eine Vielzahl chemischer und physiologischer Prozesse im menschlichen Körper präzise zu erfassen. Unsere erfahrenen Experten erstellen Gutachten zu den vom Kunden gewünschten Themen mit einer Genauigkeit von rund 99 %.`,
       },
       {
         heading: { de: "DURCHFÜHRUNG VON MOBILEN POLYGRAPH-TESTS (VOR-ORT-SERVICE)", en: "CONDUCTING MOBILE POLYGRAPH TESTS (ON-SITE SERVICE)" },
-        text: `Wenn Sie Mitarbeiter, Geschäftspartner oder Hauspersonal testen möchten, kommen unsere Experten mit dem erforderlichen Equipment direkt an die von Ihnen angegebene Adresse. Die Durchführung in einer vertrauten und komfortablen Umgebung sorgt dafür, dass sich die Testpersonen natürlicher verhalten und weniger nervös sind.`,
+        text: lang === "en" ? "If you want to test employees, business partners or domestic staff, our experts come directly to the address you specify with the necessary equipment. Conducting the test in a familiar and comfortable environment ensures that the test subjects behave more naturally and are less nervous." : `Wenn Sie Mitarbeiter, Geschäftspartner oder Hauspersonal testen möchten, kommen unsere Experten mit dem erforderlichen Equipment direkt an die von Ihnen angegebene Adresse. Die Durchführung in einer vertrauten und komfortablen Umgebung sorgt dafür, dass sich die Testpersonen natürlicher verhalten und weniger nervös sind.`,
         bullets: [
-          "Diskretion: Keine Anreise der Testpersonen zu einem externen Institut notwendig",
-          "Komfort: Tests in der gewohnten Umgebung reduzieren Stressfaktoren",
-          "Zeitersparnis: Minimale Ausfallzeiten für Unternehmen und Privatpersonen",
+          lang === "en" ? "Discretion: No need for test subjects to travel to an external institute" : "Diskretion: Keine Anreise der Testpersonen zu einem externen Institut notwendig",
+          lang === "en" ? "Comfort: Tests in a familiar environment reduce stress factors" : "Komfort: Tests in der gewohnten Umgebung reduzieren Stressfaktoren",
+          lang === "en" ? "Time savings: Minimal downtime for companies and private individuals" : "Zeitersparnis: Minimale Ausfallzeiten für Unternehmen und Privatpersonen",
         ],
       },
     ],
@@ -301,15 +301,15 @@ const allServices = [
     sections: [
       {
         heading: { de: "REPUTATIONSSCHUTZ: DIE EIGENE UNSCHULD MIT DEM LÜGENDETEKTOR BEWEISEN", en: "REPUTATION PROTECTION: PROVING YOUR INNOCENCE WITH THE LIE DETECTOR" },
-        text: `Menschen, die im Beruf Zugang zu Sachwerten, Finanzen oder geheimen Informationen haben, wissen, wie entscheidend ein tadelloser Ruf für eine erfolgreiche Karriere ist. Dies gilt für alle Ebenen – vom einfachen Angestellten über Führungskräfte bis hin zu Abgeordneten. Der berufliche Aufstieg kann jäh gestoppt werden, wenn unberechtigte Anschuldigungen über Taten laut werden, die man in der Realität nie begangen hat.\n\nDoch wie lassen sich solche haltlosen Behauptungen entkräften? Die Firma bietet Ihnen die Möglichkeit, Ihre Unschuld zu belegen und Nachstellungen oder falsche Verdächtigungen mittels eines Lügendetektortests zu beenden.`,
+        text: lang === "en" ? "People who have access to assets, finances or confidential information in their profession know how crucial an impeccable reputation is for a successful career. This applies at all levels – from ordinary employees to executives and politicians. Career advancement can be abruptly halted when unfounded accusations arise about acts that were never committed in reality.\n\nBut how can such baseless claims be refuted? Our company offers you the opportunity to prove your innocence and put an end to harassment or false suspicions through a lie detector test." : `Menschen, die im Beruf Zugang zu Sachwerten, Finanzen oder geheimen Informationen haben, wissen, wie entscheidend ein tadelloser Ruf für eine erfolgreiche Karriere ist. Dies gilt für alle Ebenen – vom einfachen Angestellten über Führungskräfte bis hin zu Abgeordneten. Der berufliche Aufstieg kann jäh gestoppt werden, wenn unberechtigte Anschuldigungen über Taten laut werden, die man in der Realität nie begangen hat.\n\nDoch wie lassen sich solche haltlosen Behauptungen entkräften? Die Firma bietet Ihnen die Möglichkeit, Ihre Unschuld zu belegen und Nachstellungen oder falsche Verdächtigungen mittels eines Lügendetektortests zu beenden.`,
       },
       {
         heading: { de: "VORTEILE DER ENTLASTUNGSPRÜFUNG:", en: "ADVANTAGES OF THE EXONERATION EXAMINATION:" },
         text: "",
         bullets: [
-          "Wiederherstellung des Rufes: Effektive Abwehr von Verleumdungen",
-          "Karrieresicherung: Schutz vor beruflichen Nachteilen durch falsche Anschuldigungen",
-          "Offizielles Dokument: Ein fundierter Expertenbericht als Beweismittel für Ihre Integrität",
+          lang === "en" ? "Reputation restoration: Effective defense against defamation" : "Wiederherstellung des Rufes: Effektive Abwehr von Verleumdungen",
+          lang === "en" ? "Career protection: Protection against professional disadvantages from false accusations" : "Karrieresicherung: Schutz vor beruflichen Nachteilen durch falsche Anschuldigungen",
+          lang === "en" ? "Official document: A well-founded expert report as evidence of your integrity" : "Offizielles Dokument: Ein fundierter Expertenbericht als Beweismittel für Ihre Integrität",
         ],
       },
     ],
@@ -326,25 +326,25 @@ const allServices = [
     sections: [
       {
         heading: { de: "SICHERHEIT BEI GROSSEN GESCHÄFTEN: RISIKEN MINIMIEREN MIT DEM POLYGRAPHEN", en: "SECURITY IN MAJOR TRANSACTIONS: MINIMIZING RISKS WITH THE POLYGRAPH" },
-        text: `Bei geplanten Großgeschäften mit Unbekannten ist Vorsicht geboten. Um versteckte Mängel, Unredlichkeit oder Betrug auszuschließen, können Sie Ihrem Geschäftspartner einen Lügendetektortest vorschlagen. Wir garantieren eine schnelle Auswertung, absolute Vertraulichkeit und hochpräzise Ergebnisse.`,
+        text: lang === "en" ? "Caution is advised when planning major transactions with unknown parties. To rule out hidden defects, dishonesty or fraud, you can suggest a lie detector test to your business partner. We guarantee fast evaluation, absolute confidentiality and highly precise results." : `Bei geplanten Großgeschäften mit Unbekannten ist Vorsicht geboten. Um versteckte Mängel, Unredlichkeit oder Betrug auszuschließen, können Sie Ihrem Geschäftspartner einen Lügendetektortest vorschlagen. Wir garantieren eine schnelle Auswertung, absolute Vertraulichkeit und hochpräzise Ergebnisse.`,
       },
       {
         heading: { de: "HÄUFIGE ANWENDUNGSBEREICHE:", en: "COMMON AREAS OF APPLICATION:" },
-        text: `Besonders bei Vereinbarungen „per Handschlag", ohne umfassende rechtliche Absicherung, besteht das Risiko von Täuschungen. Probleme entstehen oft durch verborgene Motive, Falschinformationen oder betrügerische Absichten.`,
+        text: lang === "en" ? "Especially with 'handshake' agreements, without comprehensive legal protection, there is a risk of deception. Problems often arise from hidden motives, false information or fraudulent intentions." : `Besonders bei Vereinbarungen „per Handschlag", ohne umfassende rechtliche Absicherung, besteht das Risiko von Täuschungen. Probleme entstehen oft durch verborgene Motive, Falschinformationen oder betrügerische Absichten.`,
         bullets: [
-          "Große Geldbeträge: Private Darlehen oder Investitionen",
-          "Immobilienkauf/-verkauf: Transaktionen zwischen Privatleuten",
-          "Fahrzeuge und Technik: Übergabe von teuren Autos, Maschinen oder Wertgegenständen",
-          "Finanzielle Verpflichtungen: Absicherung von Rückzahlungen und Schulden",
+          lang === "en" ? "Large sums of money: Private loans or investments" : "Große Geldbeträge: Private Darlehen oder Investitionen",
+          lang === "en" ? "Real estate purchase/sale: Transactions between private individuals" : "Immobilienkauf/-verkauf: Transaktionen zwischen Privatleuten",
+          lang === "en" ? "Vehicles and technology: Transfer of expensive cars, machinery or valuables" : "Fahrzeuge und Technik: Übergabe von teuren Autos, Maschinen oder Wertgegenständen",
+          lang === "en" ? "Financial obligations: Securing repayments and debts" : "Finanzielle Verpflichtungen: Absicherung von Rückzahlungen und Schulden",
         ],
       },
       {
         heading: { de: "WARNSIGNALE, BEI DENEN EIN TEST RATSAM IST:", en: "WARNING SIGNS WHERE A TEST IS ADVISABLE:" },
         text: "",
         bullets: [
-          "Ausweichende Antworten: Der Verkäufer macht unklare Angaben zum Zustand der Ware",
-          "Zu verlockende Angebote: Extrem günstige Preise, die eine hohe Vorabinvestition erfordern",
-          "Erstkontakt: Wenn Sie zum ersten Mal mit dieser Person Geschäfte machen",
+          lang === "en" ? "Evasive answers: The seller makes unclear statements about the condition of the goods" : "Ausweichende Antworten: Der Verkäufer macht unklare Angaben zum Zustand der Ware",
+          lang === "en" ? "Too tempting offers: Extremely low prices that require a high upfront investment" : "Zu verlockende Angebote: Extrem günstige Preise, die eine hohe Vorabinvestition erfordern",
+          lang === "en" ? "First contact: When you are doing business with this person for the first time" : "Erstkontakt: Wenn Sie zum ersten Mal mit dieser Person Geschäfte machen",
         ],
       },
     ],
@@ -360,16 +360,16 @@ const allServices = [
     sections: [
       {
         heading: { de: "ÜBERPRÜFUNG VON HAUSMÄDCHEN AUF DEM POLYGRAPHEN", en: "POLYGRAPH SCREENING OF HOUSEMAIDS" },
-        text: `Hausmädchen und Haushälterinnen haben Zugang zu Ihrem Zuhause, Ihren Wertsachen und Ihrer Familie. Eine Polygraphenprüfung gibt Ihnen die Gewissheit, dass Sie der richtigen Person vertrauen. Wir überprüfen Ehrlichkeit, Verlässlichkeit und mögliche Risikofaktoren mit einer Genauigkeit von 98–99 %.`,
+        text: lang === "en" ? "Housemaids and housekeepers have access to your home, your valuables and your family. A polygraph examination gives you the certainty that you are trusting the right person. We check honesty, reliability and possible risk factors with an accuracy of 98–99%." : `Hausmädchen und Haushälterinnen haben Zugang zu Ihrem Zuhause, Ihren Wertsachen und Ihrer Familie. Eine Polygraphenprüfung gibt Ihnen die Gewissheit, dass Sie der richtigen Person vertrauen. Wir überprüfen Ehrlichkeit, Verlässlichkeit und mögliche Risikofaktoren mit einer Genauigkeit von 98–99 %.`,
       },
       {
         heading: { de: "WAS WIRD GEPRÜFT:", en: "WHAT IS BEING CHECKED:" },
         text: "",
         bullets: [
-          "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug",
-          "Zuverlässigkeit: Überprüfung auf Alkohol- oder Drogenprobleme",
-          "Hintergrund: Kriminelle Vergangenheit oder Vorstrafen",
-          "Loyalität: Weitergabe privater Informationen an Dritte",
+          lang === "en" ? "Honesty: Detection of theft or fraud" : "Ehrlichkeit: Aufdeckung von Diebstahl oder Betrug",
+          lang === "en" ? "Reliability: Checking for alcohol or drug problems" : "Zuverlässigkeit: Überprüfung auf Alkohol- oder Drogenprobleme",
+          lang === "en" ? "Background: Criminal history or prior convictions" : "Hintergrund: Kriminelle Vergangenheit oder Vorstrafen",
+          lang === "en" ? "Loyalty: Passing on private information to third parties" : "Loyalität: Weitergabe privater Informationen an Dritte",
         ],
       },
     ],
@@ -385,16 +385,16 @@ const allServices = [
     sections: [
       {
         heading: { de: "POLYGRAPHENPRÜFUNG IM IT-SEKTOR", en: "POLYGRAPH EXAMINATION IN THE IT SECTOR" },
-        text: `IT-Mitarbeiter haben Zugang zu sensiblen Unternehmensdaten, Passwörtern und kritischer Infrastruktur. Eine Polygraphenprüfung hilft, Datenlecks, Insider-Bedrohungen und unautorisierten Zugriff aufzudecken. Schützen Sie Ihr Unternehmen vor digitalen Risiken.`,
+        text: lang === "en" ? "IT employees have access to sensitive company data, passwords and critical infrastructure. A polygraph examination helps uncover data leaks, insider threats and unauthorized access. Protect your company from digital risks." : `IT-Mitarbeiter haben Zugang zu sensiblen Unternehmensdaten, Passwörtern und kritischer Infrastruktur. Eine Polygraphenprüfung hilft, Datenlecks, Insider-Bedrohungen und unautorisierten Zugriff aufzudecken. Schützen Sie Ihr Unternehmen vor digitalen Risiken.`,
       },
       {
         heading: { de: "TYPISCHE PRÜFUNGSBEREICHE:", en: "TYPICAL SCREENING AREAS:" },
         text: "",
         bullets: [
-          "Datenlecks: Weitergabe vertraulicher Informationen an Wettbewerber",
-          "Sabotage: Absichtliche Beschädigung von Systemen oder Daten",
-          "Insider-Bedrohungen: Missbrauch von Zugriffsrechten",
-          "Loyalität: Nebentätigkeiten für Konkurrenten",
+          lang === "en" ? "Data leaks: Sharing confidential information with competitors" : "Datenlecks: Weitergabe vertraulicher Informationen an Wettbewerber",
+          lang === "en" ? "Sabotage: Intentional damage to systems or data" : "Sabotage: Absichtliche Beschädigung von Systemen oder Daten",
+          lang === "en" ? "Insider threats: Abuse of access rights" : "Insider-Bedrohungen: Missbrauch von Zugriffsrechten",
+          lang === "en" ? "Loyalty: Secondary employment for competitors" : "Loyalität: Nebentätigkeiten für Konkurrenten",
         ],
       },
     ],
@@ -410,16 +410,16 @@ const allServices = [
     sections: [
       {
         heading: { de: "POLYGRAPHENPRÜFUNG FÜR FAHRER", en: "POLYGRAPH EXAMINATION FOR DRIVERS" },
-        text: `Fahrer haben direkten Zugang zu Personen, Fahrzeugen und Gütern. Eine Polygraphenprüfung gibt Ihnen Sicherheit über die Zuverlässigkeit Ihres Fahrers – ob Privatfahrer, Unternehmensfahrer oder Kurier.`,
+        text: lang === "en" ? "Drivers have direct access to persons, vehicles and goods. A polygraph examination gives you certainty about the reliability of your driver – whether a private driver, corporate driver or courier." : `Fahrer haben direkten Zugang zu Personen, Fahrzeugen und Gütern. Eine Polygraphenprüfung gibt Ihnen Sicherheit über die Zuverlässigkeit Ihres Fahrers – ob Privatfahrer, Unternehmensfahrer oder Kurier.`,
       },
       {
         heading: { de: "WAS WIRD GEPRÜFT:", en: "WHAT IS BEING CHECKED:" },
         text: "",
         bullets: [
-          "Alkohol- und Drogenprobleme: Risiken im Straßenverkehr",
-          "Kriminelle Vergangenheit: Vorstrafen oder laufende Verfahren",
-          "Ehrlichkeit: Manipulation von Fahrtenbüchern oder Abrechnungen",
-          "Loyalität: Weitergabe von Informationen über Routen und Personen",
+          lang === "en" ? "Alcohol and drug problems: Risks in road traffic" : "Alkohol- und Drogenprobleme: Risiken im Straßenverkehr",
+          lang === "en" ? "Criminal history: Prior convictions or ongoing proceedings" : "Kriminelle Vergangenheit: Vorstrafen oder laufende Verfahren",
+          lang === "en" ? "Honesty: Manipulation of logbooks or billing" : "Ehrlichkeit: Manipulation von Fahrtenbüchern oder Abrechnungen",
+          lang === "en" ? "Loyalty: Sharing information about routes and persons" : "Loyalität: Weitergabe von Informationen über Routen und Personen",
         ],
       },
     ],
@@ -435,16 +435,16 @@ const allServices = [
     sections: [
       {
         heading: { de: "POLYGRAPHENPRÜFUNG FÜR SICHERHEITSPERSONAL", en: "POLYGRAPH EXAMINATION FOR SECURITY PERSONNEL" },
-        text: `Sicherheitspersonal trägt besondere Verantwortung für den Schutz von Personen und Eigentum. Eine Polygraphenprüfung stellt sicher, dass Ihre Sicherheitskräfte integer, zuverlässig und vertrauenswürdig sind.`,
+        text: lang === "en" ? "Security personnel bear special responsibility for the protection of persons and property. A polygraph examination ensures that your security forces are honest, reliable and trustworthy." : `Sicherheitspersonal trägt besondere Verantwortung für den Schutz von Personen und Eigentum. Eine Polygraphenprüfung stellt sicher, dass Ihre Sicherheitskräfte integer, zuverlässig und vertrauenswürdig sind.`,
       },
       {
         heading: { de: "PRÜFUNGSSCHWERPUNKTE:", en: "EXAMINATION FOCUS AREAS:" },
         text: "",
         bullets: [
-          "Integrität: Keine Zusammenarbeit mit kriminellen Elementen",
-          "Zuverlässigkeit: Keine Alkohol- oder Drogenprobleme im Dienst",
-          "Loyalität: Weitergabe von Sicherheitsinformationen an Dritte",
-          "Hintergrund: Überprüfung auf kriminelle Vergangenheit",
+          lang === "en" ? "Integrity: No cooperation with criminal elements" : "Integrität: Keine Zusammenarbeit mit kriminellen Elementen",
+          lang === "en" ? "Reliability: No alcohol or drug problems on duty" : "Zuverlässigkeit: Keine Alkohol- oder Drogenprobleme im Dienst",
+          lang === "en" ? "Loyalty: Sharing security information with third parties" : "Loyalität: Weitergabe von Sicherheitsinformationen an Dritte",
+          lang === "en" ? "Background: Checking for criminal history" : "Hintergrund: Überprüfung auf kriminelle Vergangenheit",
         ],
       },
     ],
@@ -460,16 +460,16 @@ const allServices = [
     sections: [
       {
         heading: { de: "POLYGRAPHENPRÜFUNG FÜR LAGERARBEITER", en: "POLYGRAPH EXAMINATION FOR WAREHOUSE WORKERS" },
-        text: `Lagerarbeiter haben direkten Zugang zu Waren, Inventar und Versandgütern. Diebstahl und Unterschlagung im Lager verursachen erhebliche wirtschaftliche Schäden. Eine Polygraphenprüfung hilft, Täter zu identifizieren und präventiv zu wirken.`,
+        text: lang === "en" ? "Warehouse workers have direct access to goods, inventory and shipping items. Theft and embezzlement in the warehouse cause significant economic damage. A polygraph examination helps identify perpetrators and act preventively." : `Lagerarbeiter haben direkten Zugang zu Waren, Inventar und Versandgütern. Diebstahl und Unterschlagung im Lager verursachen erhebliche wirtschaftliche Schäden. Eine Polygraphenprüfung hilft, Täter zu identifizieren und präventiv zu wirken.`,
       },
       {
         heading: { de: "TYPISCHE PRÜFUNGSBEREICHE:", en: "TYPICAL SCREENING AREAS:" },
         text: "",
         bullets: [
-          "Warendiebstahl: Entwendung von Lagerbeständen",
-          "Manipulation: Fälschung von Lieferscheinen oder Inventarlisten",
-          "Zusammenarbeit: Kooperation mit externen Dieben",
-          "Ehrlichkeit: Überprüfung bei Inventurdifferenzen",
+          lang === "en" ? "Goods theft: Theft of warehouse stock" : "Warendiebstahl: Entwendung von Lagerbeständen",
+          lang === "en" ? "Manipulation: Falsification of delivery notes or inventory lists" : "Manipulation: Fälschung von Lieferscheinen oder Inventarlisten",
+          lang === "en" ? "Collusion: Cooperation with external thieves" : "Zusammenarbeit: Kooperation mit externen Dieben",
+          lang === "en" ? "Honesty: Verification in case of inventory discrepancies" : "Ehrlichkeit: Überprüfung bei Inventurdifferenzen",
         ],
       },
     ],
@@ -624,7 +624,7 @@ function StatsBar() {
 // ─────────────────────────────────────────────
 // SERVICE DETAIL PANEL
 // ─────────────────────────────────────────────
-function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onClose: () => void }) {
+function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServices>[0]; onClose: () => void }) {
   const { lang } = useLang();
   return (
     <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
@@ -695,7 +695,7 @@ function ServiceDetailPanel({ svc, onClose }: { svc: typeof allServices[0]; onCl
 function ServicesSection() {
   const { lang } = useLang();
   const [openService, setOpenService] = useState<string | null>(null);
-  const services = allServices;
+  const services = getServices(lang);
 
   return (
     <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
@@ -948,7 +948,7 @@ function PricesSection() {
             <span style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Leistung</span>
             <span style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Preis</span>
           </div>
-          {allServices.map((svc, i) => (
+          {getServices(lang).map((svc, i) => (
             <div key={svc.id} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
               <span style={{ color: TEXT_DARK, fontSize: "16px" }}>
                 <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{typeof svc.title === "object" ? (svc.title as any)[lang] : svc.title}

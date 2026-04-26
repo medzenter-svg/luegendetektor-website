@@ -271,7 +271,7 @@ const getServices = (lang: string) => [
     title: { de: "Polygraph mit Hausbesuch", en: "Mobile Polygraph Service" },
     price: "auf Anfrage",
     short: { de: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause", en: "We come to you – to your office or home" },
-    img: "/manus-storage/img_mobil_new_opt_b29b6a2f.jpg",
+    img: "/manus-storage/mobil_hausbesuch_new_b74c2abc.jpg",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
     sections: [
       {

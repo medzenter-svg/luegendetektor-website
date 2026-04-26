@@ -56,7 +56,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Jugendlichen ab 14 Jahren", en: "Testing of Minors (14+)" },
     price: "ab 749 €",
     short: { de: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen", en: "Clarification of behavioral issues in adolescents" },
-    img: "/manus-storage/img_jugendliche_71d37249.png",
+    img: "/manus-storage/img_jugendliche_opt_b0f6ab3a.jpg",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -242,7 +242,7 @@ const getServices = (lang: string) => [
     title: { de: "Interne Ermittlungen", en: "Internal Investigations" },
     price: "ab 649 €",
     short: { de: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen", en: "Investigation of incidents and misconduct within the company" },
-    img: "/manus-storage/img_intern_new_cc041727.png",
+    img: "/manus-storage/interne_ermittlungen_new_9a22ff48.jpg",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -271,7 +271,7 @@ const getServices = (lang: string) => [
     title: { de: "Polygraph mit Hausbesuch", en: "Mobile Polygraph Service" },
     price: "auf Anfrage",
     short: { de: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause", en: "We come to you – to your office or home" },
-    img: "/manus-storage/img_mobil_new_786ef233.png",
+    img: "/manus-storage/img_mobil_new_opt_b29b6a2f.jpg",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
     sections: [
       {
@@ -430,7 +430,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Sicherheitspersonal", en: "Security Personnel Screening" },
     price: "ab 350 €",
     short: { de: "Wachleute, Sicherheitsbeamte und Bodyguards", en: "Guards, security officers and bodyguards" },
-    img: "/manus-storage/img_sicherheit_1fdb025d.gif",
+    img: "/manus-storage/img_sicherheit_opt_b5100c44.jpg",
     features: ["Höchste Sicherheit", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {

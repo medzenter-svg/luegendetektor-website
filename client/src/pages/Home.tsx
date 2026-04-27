@@ -1386,15 +1386,19 @@ function CasesSection() {
           <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
           <p style={{ color: TEXT_MID, marginTop: 12 }}>{c.sub[L]}</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }} className="detail-grid">
-          {c.items.map((item, idx) => (
-            <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 20px", borderLeft: `4px solid ${accent}`, cursor: "pointer", border: `1px solid ${BORDER}`, borderLeftWidth: 4, boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}
-              onMouseEnter={e => (e.currentTarget.style.borderLeftColor = "#f59e0b")}
-            >
-              <div style={{ color: TEXT_MID, fontSize: 12, marginBottom: 8 }}>{c.dates[idx]}</div>
-              <p style={{ color: TEXT_DARK, fontSize: 14, lineHeight: 1.6, margin: 0 }}>{item[L]}</p>
-            </div>
-          ))}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }} className="detail-grid">
+          {c.items.map((item, idx) => {
+            const lines = item[L].split("\n\n");
+            const title = lines[0] || "";
+            const body = lines.slice(1).join("\n\n");
+            return (
+              <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "28px 24px", borderLeft: `4px solid ${accent}`, border: `1px solid ${BORDER}`, borderLeftWidth: 4, boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}>
+                <div style={{ color: TEXT_MID, fontSize: 12, marginBottom: 10 }}>{c.dates[idx]}</div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: 15, marginBottom: 12, lineHeight: 1.4 }}>{title}</div>
+                <p style={{ color: TEXT_DARK, fontSize: 14, lineHeight: 1.7, margin: 0 }}>{body}</p>
+              </div>
+            );
+          })}
         </div>
         <div style={{ textAlign: "center", marginTop: 40 }}>
           <button

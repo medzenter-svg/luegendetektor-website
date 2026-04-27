@@ -1346,7 +1346,7 @@ function ReportSection() {
               </div>
               <div>
                 <div style={{ color: NAVY, fontWeight: 700, fontSize: 16 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
-                <div style={{ color: TEXT_MID, fontSize: 12 }}>{lang === "de" ? "Offizielles Dokument" : "Official Document"}</div>
+
               </div>
             </div>
             {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
@@ -1355,14 +1355,7 @@ function ReportSection() {
                 <span style={{ color: TEXT_DARK, fontSize: 14 }}>{sec}</span>
               </div>
             ))}
-                <div style={{ marginTop: 24, padding: "16px", background: LIGHT_BG, borderRadius: 8, textAlign: "center", border: `1px solid ${BORDER}` }}>
-              <div style={{ color: accent, fontWeight: 700, fontSize: 13, letterSpacing: 1 }}>
-                {lang === "de" ? "✓ RECHTSGÜLTIG" : "✓ LEGALLY VALID"}
-              </div>
-                <div style={{ color: TEXT_MID, fontSize: 12, marginTop: 4 }}>
-                {lang === "de" ? "Anerkannt von Gerichten und Behörden" : "Recognized by courts and authorities"}
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

@@ -1313,49 +1313,88 @@ function ReportSection() {
           <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
           <p style={{ color: TEXT_MID, marginTop: 12 }}>{r.sub[L]}</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }} className="grid-2col">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "start" }} className="grid-2col">
           {/* Left: intro + sections */}
           <div>
-            <p style={{ color: TEXT_MID, marginBottom: 24, lineHeight: 1.7 }}>{r.intro[L]}</p>
+            <p style={{ color: TEXT_MID, marginBottom: 28, lineHeight: 1.8, fontSize: 16 }}>{r.intro[L]}</p>
             {[
               { title: r.section1Title[L], items: r.section1Items.map(i => i[L]) },
               { title: r.section2Title[L], items: r.section2Items.map(i => i[L]) },
               { title: r.section3Title[L], items: r.section3Items.map(i => i[L]) },
             ].map((sec, idx) => (
-              <div key={idx} style={{ background: cardBg, borderRadius: 8, padding: "20px 24px", marginBottom: 16, border: `1px solid ${BORDER}`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
-                <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 12px", fontSize: 15 }}>{sec.title}</h4>
-                <ul style={{ margin: 0, paddingLeft: 20 }}>
+              <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 28px", marginBottom: 16, border: `1px solid ${BORDER}`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
+                <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 14px", fontSize: 17 }}>{sec.title}</h4>
+                <ul style={{ margin: 0, paddingLeft: 22 }}>
                   {sec.items.map((item, i) => (
-                    <li key={i} style={{ color: TEXT_MID, marginBottom: 6, fontSize: 14 }}>{item}</li>
+                    <li key={i} style={{ color: TEXT_MID, marginBottom: 8, fontSize: 15, lineHeight: 1.6 }}>{item}</li>
                   ))}
                 </ul>
               </div>
             ))}
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              style={{ marginTop: 8, background: accent, color: "#000", border: "none", borderRadius: 6, padding: "14px 32px", fontWeight: 700, fontSize: 14, letterSpacing: 1, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}
+              style={{ marginTop: 16, background: accent, color: "#000", border: "none", borderRadius: 6, padding: "16px 36px", fontWeight: 700, fontSize: 15, letterSpacing: 1, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}
             >
               {r.btnRequest[L]}
             </button>
           </div>
-          {/* Right: visual report card */}
-          <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}44`, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <div style={{ background: accent, borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontSize: 22 }}>📄</span>
+          {/* Right: info cards */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {/* Report structure card */}
+            <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}44`, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
+                <div style={{ background: accent, borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ fontSize: 24 }}>📄</span>
+                </div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: 18 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
               </div>
-              <div>
-                <div style={{ color: NAVY, fontWeight: 700, fontSize: 16 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
-
+              {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 0", borderBottom: i < 2 ? `1px solid ${BORDER}` : "none" }}>
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: accent, flexShrink: 0 }} />
+                  <span style={{ color: TEXT_DARK, fontSize: 16 }}>{sec}</span>
+                </div>
+              ))}
+            </div>
+            {/* Double verification card */}
+            <div style={{ background: cardBg, borderRadius: 12, padding: "28px", border: `1px solid ${BORDER}`, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                <div style={{ background: "#eff6ff", borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ fontSize: 24 }}>👥</span>
+                </div>
+                <div>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>
+                    {lang === "de" ? "Doppelte Überprüfung durch 2 Spezialisten" : "Double verification by 2 specialists"}
+                  </div>
+                  <p style={{ color: TEXT_MID, fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                    {lang === "de"
+                      ? "Das Ergebnis wird von zwei unabhängigen Polygraphologen geprüft und analysiert. Erst nach dieser doppelten Kontrolle wird der vollständige Bericht erstellt."
+                      : "The result is reviewed and analyzed by two independent polygraphers. Only after this double verification is the complete report prepared."}
+                  </p>
+                </div>
               </div>
             </div>
-            {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: i < 2 ? `1px solid ${BORDER}` : "none" }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: accent, flexShrink: 0 }} />
-                <span style={{ color: TEXT_DARK, fontSize: 14 }}>{sec}</span>
+            {/* Written report price card */}
+            <div style={{ background: cardBg, borderRadius: 12, padding: "28px", border: `2px solid ${accent}`, boxShadow: "0 2px 8px rgba(245,158,11,0.12)" }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                <div style={{ background: "#fffbeb", borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ fontSize: 24 }}>📋</span>
+                </div>
+                <div>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>
+                    {lang === "de" ? "Schriftlicher Bericht" : "Written Report"}
+                  </div>
+                  <p style={{ color: TEXT_MID, fontSize: 15, lineHeight: 1.7, margin: "0 0 12px" }}>
+                    {lang === "de"
+                      ? "Der vollständige schriftliche Bericht kann auf Wunsch gegen einen Aufpreis ausgestellt werden."
+                      : "The complete written report can be issued on request for an additional fee."}
+                  </p>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: accent, borderRadius: 6, padding: "8px 18px" }}>
+                    <span style={{ color: "#000", fontWeight: 800, fontSize: 20 }}>150 €</span>
+                    <span style={{ color: "#000", fontSize: 14, fontWeight: 600 }}>{lang === "de" ? "Aufpreis" : "additional fee"}</span>
+                  </div>
+                </div>
               </div>
-            ))}
-
+            </div>
           </div>
         </div>
       </div>

@@ -511,7 +511,7 @@ function Navbar() {
   ];
 
   return (
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <img src="/manus-storage/logo_clean_f9c5298d.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
@@ -564,7 +564,7 @@ function HeroSection() {
   const { lang } = useLang();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
-    <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 40%", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 40%", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,25,50,0.88) 0%, rgba(15,25,50,0.72) 50%, rgba(15,25,50,0.45) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "80px 24px 60px", width: "100%" }}>
         <div style={{ maxWidth: "620px" }}>
@@ -606,7 +606,7 @@ function HeroSection() {
 function StatsBar() {
   const { lang } = useLang();
   return (
-    <div style={{ backgroundColor: NAVY, fontFamily: "'Roboto', sans-serif" }}>
+    <div style={{ backgroundColor: NAVY, fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }} className="stats-grid">
         {[{ val: t.stats.s1v[lang], label: t.stats.s1l[lang], icon: "fas fa-crosshairs" }, { val: t.stats.s2v[lang], label: t.stats.s2l[lang], icon: "fas fa-award" }, { val: t.stats.s3v[lang], label: t.stats.s3l[lang], icon: "fas fa-check-double" }, { val: t.stats.s4v[lang], label: t.stats.s4l[lang], icon: "fas fa-user-secret" }].map((s, i) => (
           <div key={i} style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
@@ -710,7 +710,7 @@ function ServicesSection() {
   const services = getServices(lang);
 
   return (
-    <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unsere Leistungen</p>
@@ -775,7 +775,7 @@ function ServicesSection() {
 function AboutSection() {
   const { lang } = useLang();
   return (
-    <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="grid-2col">
           <div>
@@ -835,7 +835,7 @@ function AboutSection() {
 function ProcessSection() {
   const { lang } = useLang();
   return (
-    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "80px 0", fontFamily: "'Roboto', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Verfahren" : "Our Process"}</p>
@@ -862,7 +862,7 @@ function ProcessSection() {
 function EquipmentSection() {
   const { lang } = useLang();
   return (
-    <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Technologie</p>
@@ -899,7 +899,7 @@ function EquipmentSection() {
 function CtaBanner() {
   const { lang } = useLang();
   return (
-    <section style={{ backgroundColor: ORANGE, padding: "48px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section style={{ backgroundColor: ORANGE, padding: "48px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
         <div>
           <h2 style={{ color: WHITE, fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{t.cta.heading[lang]}</h2>
@@ -925,7 +925,7 @@ function CtaBanner() {
 function SpecialistsSection() {
   const { lang } = useLang();
   return (
-    <section id="specialists" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="specialists" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Team" : "Our Team"}</p>
@@ -959,7 +959,7 @@ function SpecialistsSection() {
 function PricesSection() {
   const { lang } = useLang();
   return (
-    <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Transparente Preise" : "Transparent Prices"}</p>
@@ -1005,7 +1005,7 @@ function FAQSection() {
   const { lang } = useLang();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
-    <section id="faq" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif" }}>
+    <section id="faq" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
@@ -1044,7 +1044,7 @@ function ContactSection() {
 
   return (
     <>
-    <section id="contact" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Roboto', sans-serif", borderTop: `1px solid ${BORDER}` }}>
+    <section id="contact" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{t.contact.sub[lang]}</p>
@@ -1150,7 +1150,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
   const { lang } = useLang();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
-    <footer style={{ backgroundColor: NAVY_DARK, fontFamily: "'Roboto', sans-serif" }}>
+    <footer style={{ backgroundColor: NAVY_DARK, fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "48px 24px 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "40px", marginBottom: "36px" }} className="grid-footer">
           <div>
@@ -1451,7 +1451,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ fontFamily: "'Roboto', sans-serif" }}>
+    <div style={{ fontFamily: "'Lato', sans-serif" }}>
       <style>{`
         @media (max-width: 768px) {
           .grid-2col { grid-template-columns: 1fr !important; }

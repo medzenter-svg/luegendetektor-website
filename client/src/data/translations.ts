@@ -192,28 +192,52 @@ export const t = {
     sub:     { de: "Echte Fälle aus unserer Praxis", en: "Real cases from our practice" },
     items: [
       {
-        de: `Fall Nr. 1: Mitarbeiter identifiziert, der die Kundendatenbank an Konkurrenten weitergegeben hat
+        de: `Fall Nr. 1: Emotionale Bindung, die zur Untreue wurde
 
-Ein mittelständisches Unternehmen bemerkte ungewöhnliche Abwanderungen von Stammkunden zu einem direkten Wettbewerber. Interne Analysen zeigten keinen klaren technischen Datenabfluss, weshalb der Verdacht auf einen Insider entstand. Mehrere Mitarbeiter mit Zugang zur Kundendatenbank wurden im Rahmen einer internen Untersuchung überprüft. Ein Verdächtiger zeigte widersprüchliche Aussagen zu seinem Zugriff auf sensible Daten. Im anschließenden Polygraphentest wurden deutliche Stressreaktionen bei relevanten Fragen festgestellt. Die Ergebnisse deuteten klar darauf hin, dass er Informationen unbefugt weitergegeben hatte. Nach Konfrontation mit den Ergebnissen gestand der Mitarbeiter die Weitergabe der Daten gegen Bezahlung. Das Unternehmen konnte daraufhin schnell Maßnahmen ergreifen und weitere Schäden verhindern.`,
-        en: `Case No. 1: Identified the employee who leaked the customer database to competitors
+In einer Ehe mit zehnjähriger Geschichte entstanden Kommunikationsprobleme, die zunächst als vorübergehend eingestuft wurden. Einer der Partner begann, außerhalb der Arbeitszeit intensiv mit einer Kollegin zu kommunizieren. Die Korrespondenz nahm allmählich persönlichen Charakter an – es wurden Familienprobleme besprochen und emotionale Unterstützung geleistet.
 
-A mid-sized company noticed unusual departures of regular customers to a direct competitor. Internal analyses showed no clear technical data leak, which led to suspicion of an insider. Several employees with access to the customer database were examined as part of an internal investigation. One suspect showed contradictory statements about his access to sensitive data. The subsequent polygraph test revealed clear stress reactions to relevant questions. The results clearly indicated that he had passed on information without authorization. When confronted with the results, the employee confessed to selling the data for payment. The company was then able to act quickly and prevent further damage.`,
+Bei der Analyse digitaler Spuren wurden regelmäßige Kontakte in den Abendstunden sowie Treffen außerhalb des Büros festgestellt, die keinen beruflichen Bezug hatten. Direkte Beweise für eine körperliche Untreue fehlten in der Anfangsphase, doch die Art der Kommunikation deutete auf die Entstehung einer stabilen emotionalen Abhängigkeit hin.
+
+In der Folge entwickelte sich die Beziehung zu einem körperlichen Verhältnis, was durch ein Geständnis bestätigt wurde. Der Fall zeigt eine typische Eskalation: von emotionaler Verstrickung zur tatsächlichen Untreue. Die Konsequenzen umfassten Scheidung und Vermögensstreitigkeiten.`,
+        en: `Case No. 1: Emotional bond that turned into infidelity
+
+In a marriage of ten years, communication problems arose that were initially considered temporary. One partner began communicating intensively with a colleague outside working hours. The correspondence gradually took on a personal character – family problems were discussed and emotional support was provided.
+
+Analysis of digital traces revealed regular contacts in the evening hours and meetings outside the office unrelated to work. Direct evidence of physical infidelity was absent in the early stages, but the nature of the communication indicated the formation of a stable emotional dependency.
+
+Subsequently, the relationship developed into a physical affair, which was confirmed by a confession. The case illustrates a typical escalation: from emotional involvement to actual infidelity. The consequences included divorce and property disputes.`,
       },
       {
-        de: `Fall Nr. 2: Festgestellt, wer ein Rückvergütungssystem mit Lieferanten organisiert hat
+        de: `Fall Nr. 2: Nutzung von Dienstreisen zur Vertuschung von Untreue
 
-Ein Handelsunternehmen stellte fest, dass bestimmte Lieferantenverträge zu ungewöhnlich hohen Preisen abgeschlossen wurden, ohne erkennbaren Mehrwert für das Unternehmen. Der Verdacht fiel auf mehrere Einkäufer, die regelmäßig mit denselben Lieferanten zusammenarbeiteten. Eine interne Revision konnte keine eindeutigen Belege finden, da die Absprachen offenbar außerhalb der offiziellen Kommunikationskanäle stattfanden. Im Rahmen der Polygraphenuntersuchung wurden alle betroffenen Mitarbeiter befragt. Bei zwei Personen zeigten sich signifikante physiologische Reaktionen auf Fragen zu persönlichen Vorteilen und Gegenleistungen. Einer der Befragten räumte nach dem Test ein, regelmäßig Provisionen von einem Lieferanten erhalten zu haben. Das Unternehmen leitete daraufhin rechtliche Schritte ein und überarbeitete seine Einkaufsrichtlinien grundlegend.`,
-        en: `Case No. 2: Determined who organized a kickback scheme with suppliers
+Ein Mittelmanager unternahm regelmäßig Dienstreisen. Der Ehepartner bemerkte Unstimmigkeiten im Reiseplan und bei den Ausgaben. Eine Überprüfung ergab, dass ein Teil der Reisen entweder keinen geschäftlichen Anlass hatte oder ohne objektive Gründe verlängert wurde.
 
-A trading company discovered that certain supplier contracts were concluded at unusually high prices without any recognizable added value. Suspicion fell on several buyers who regularly worked with the same suppliers. An internal audit found no clear evidence, as the arrangements apparently took place outside official communication channels. All affected employees were interviewed as part of the polygraph examination. Two individuals showed significant physiological reactions to questions about personal benefits and kickbacks. One of those questioned admitted after the test to having regularly received commissions from a supplier. The company subsequently initiated legal proceedings and fundamentally revised its purchasing policies.`,
+Die Analyse von Hotelbuchungen und Zahlungen zeigte die Anwesenheit einer zweiten Person, die nicht mit dem Unternehmen verbunden war. Zusätzlich wurden wiederkehrende Reisen in dieselbe Stadt an Wochenenden unter dem Vorwand geschäftlicher Treffen festgestellt.
+
+Bei der Konfrontation räumte die betreffende Person eine langjährige außereheliche Beziehung ein. Der entscheidende Faktor zur Vertuschung war die Möglichkeit, die Abwesenheit mit dienstlichen Verpflichtungen zu erklären. Die Folgen waren Scheidung und Reputationsrisiken am Arbeitsplatz.`,
+        en: `Case No. 2: Using business trips to conceal infidelity
+
+A middle manager regularly went on business trips. The spouse noticed discrepancies in the schedule and financial expenses. A review revealed that some trips either had no business necessity or were extended without objective reasons.
+
+Analysis of hotel bookings and payments revealed the presence of a second person not connected to the company. Additionally, recurring trips to the same city on weekends under the pretext of business meetings were identified.
+
+During confrontation, the person admitted to a long-term extramarital relationship. The key concealment factor was the ability to explain absences with professional obligations. The consequences were divorce and reputational risks at work.`,
       },
       {
-        de: `Fall Nr. 3: Mitarbeiter gefunden, der systematisch Waren aus Internetretouren unterschlagen hat
+        de: `Fall Nr. 3: Doppelleben über soziale Netzwerke
 
-Ein Online-Händler verzeichnete über mehrere Monate hinweg erhebliche Differenzen zwischen den registrierten Retouren und dem tatsächlich eingelagerten Warenbestand. Trotz Videoüberwachung im Lager ließen sich keine eindeutigen Beweise sichern, da die Manipulationen offenbar gezielt in blinden Winkeln stattfanden. Mehrere Lagermitarbeiter gerieten in den Fokus der Ermittlungen. Im Polygraphentest zeigte ein Mitarbeiter, der für die Bearbeitung von Retouren zuständig war, deutliche Stressreaktionen bei Fragen zur Warenentnahme und zur privaten Nutzung von Firmenware. Konfrontiert mit den Testergebnissen gab er zu, hochwertige Artikel aus dem Retourenbestand regelmäßig entnommen und weiterverkauft zu haben. Der entstandene Schaden belief sich auf mehrere tausend Euro. Das Unternehmen erstattete Strafanzeige und optimierte seine internen Kontrollprozesse.`,
-        en: `Case No. 3: Found the employee who systematically embezzled goods from internet returns
+Einer der Partner nutzte soziale Netzwerke und Messenger aktiv und pflegte dabei parallele Bekanntschaften. Der Ehepartner schöpfte Verdacht aufgrund von Heimlichkeit beim Telefongebrauch und Widersprüchen in den Berichten über die außerhalb verbrachte Zeit.
 
-An online retailer recorded significant discrepancies over several months between registered returns and the actual warehouse inventory. Despite video surveillance in the warehouse, no clear evidence could be secured, as the manipulations apparently took place in blind spots. Several warehouse employees came under scrutiny. In the polygraph test, an employee responsible for processing returns showed clear stress reactions to questions about removing goods and personal use of company merchandise. Confronted with the test results, he admitted to regularly removing high-value items from the returns inventory and reselling them. The resulting damage amounted to several thousand euros. The company filed a criminal complaint and optimized its internal control processes.`,
+Die digitale Analyse ergab das Vorhandensein mehrerer Konten, von denen ein Teil vor dem engsten Umfeld verborgen gehalten wurde. Über diese Konten wurde eine aktive Korrespondenz geführt, einschließlich des Austauschs persönlicher Fotos und der Vereinbarung von Treffen.
+
+Es stellte sich heraus, dass die Person über einen langen Zeitraum mehrere parallele Beziehungen gepflegt hatte. Der Fall veranschaulicht, wie digitale Werkzeuge das Führen eines „Doppellebens" erleichtern. Das Ergebnis war das Ende der Beziehung und ein psychologischer Konflikt.`,
+        en: `Case No. 3: Double life through social networks
+
+One partner actively used social networks and messengers, maintaining parallel acquaintances. The spouse became suspicious due to secretiveness with the phone and inconsistencies in accounts of time spent away from home.
+
+Digital analysis revealed the existence of several accounts, some of which were hidden from the immediate circle. Through these accounts, active correspondence was conducted, including the exchange of personal photos and arrangements for meetings.
+
+It turned out that the person had maintained several parallel relationships over a long period. The case illustrates how digital tools facilitate leading a "double life". The outcome was the end of the relationship and a psychological conflict.`,
       },
       {
         de: `Fall Nr. 4: Manager entlarvt, der Unterschriften in Verträgen gefälscht hat

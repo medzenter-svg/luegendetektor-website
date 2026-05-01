@@ -1432,14 +1432,7 @@ function CasesSection() {
             );
           })}
         </div>
-        <div style={{ textAlign: "center", marginTop: 40 }}>
-          <button
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ background: "transparent", color: accent, border: `2px solid ${accent}`, borderRadius: 6, padding: "12px 32px", fontWeight: 700, fontSize: 14, letterSpacing: 1, cursor: "pointer" }}
-          >
-            {c.btnAll[L]}
-          </button>
-        </div>
+
       </div>
     </div>
   );

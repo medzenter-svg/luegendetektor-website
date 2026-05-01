@@ -1051,51 +1051,11 @@ function ContactSection() {
           <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.contact.heading[lang]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", maxWidth: "960px", margin: "0 auto", alignItems: "stretch" }} className="grid-2col">
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              {[
-                { icon: "fas fa-map-marker-alt", label: lang === "de" ? "Adresse" : "Address", val: "Marienstr. 4, 80331 München", href: undefined },
-                { icon: "fas fa-phone-alt", label: lang === "de" ? "Telefon" : "Phone", val: "+49 175 6036003", href: "tel:+4917560360003" },
-                { icon: "fas fa-envelope", label: lang === "de" ? "E-Mail" : "Email", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
-                { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
-                { icon: "fas fa-clock", label: lang === "de" ? "Öffnungszeiten" : "Opening Hours", val: t.contact.hoursVal[lang], sub: t.contact.hoursSub[lang], href: undefined },
-              ].map(c => (
-                <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>
-                    <i className={c.icon}></i>
-                  </div>
-                  <div>
-                    <div style={{ color: TEXT_MID, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
-                    {c.href ? (
-                      <a href={c.href} style={{ color: NAVY, fontWeight: 700, fontSize: "17px", textDecoration: "none" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                        onMouseLeave={e => (e.currentTarget.style.color = NAVY)}>{c.val}</a>                    ) : (
-                      <span style={{ color: NAVY, fontWeight: 700, fontSize: "17px" }}>{c.val}</span>
-                    )}
-                    {(c as any).sub && <div style={{ color: TEXT_MID, fontSize: "14px", marginTop: "3px" }}>{(c as any).sub}</div>}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ marginTop: "auto", paddingTop: "24px", display: "flex", gap: "10px" }}>
-              <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
-                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fab fa-whatsapp"></i> {t.contact.btnWA[lang]}
-              </a>
-              <a href="mailto:beratung@lügendetektortest.com"
-                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fas fa-envelope"></i> {t.contact.btnEmail[lang]}
-              </a>
-            </div>
-            <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
-              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
-            </p>
-          </div>
-          <div>
+        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+          {/* FORM oben */}
+          <div style={{ marginBottom: "56px" }}>
             {sent ? (
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "40px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "40px" }}>
                 <i className="fas fa-check-circle" style={{ fontSize: "52px", color: "#22c55e", marginBottom: "16px" }}></i>
                 <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>{t.contact.thankYou[lang]}</h3>
                 <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.7 }}>{t.contact.thankMsg[lang]}</p>
@@ -1118,24 +1078,68 @@ function ContactSection() {
                   </div>
                 ))}
                 <div>
-                   <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
+                  <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
                   <textarea rows={4} placeholder={t.contact.formPh4[lang]}
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                     style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, resize: "none", boxSizing: "border-box" }}
+                    style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, resize: "none", boxSizing: "border-box" }}
                     onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
-                     onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
+                    onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
                 </div>
                 <button type="submit"
                   style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "28px" }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-                  <i className="fas fa-paper-plane mr-2"></i>{t.contact.btnSend[lang]}
+                  <i className="fas fa-paper-plane" style={{ marginRight: "8px" }}></i>{t.contact.btnSend[lang]}
                 </button>
-                 <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center" }}>
-                  <i className="fas fa-lock mr-1"></i>{t.contact.privacy[lang]}
+                <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
+                  <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
                 </p>
               </form>
             )}
+          </div>
+
+          {/* KONTAKTINFORMATIONEN unten */}
+          <div style={{ borderTop: `2px solid ${BORDER}`, paddingTop: "40px" }}>
+            <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 32px" }} className="grid-2col">
+              {[
+                { icon: "fas fa-map-marker-alt", label: lang === "de" ? "Adresse" : "Address", val: "Marienstr. 4, 80331 München", href: undefined },
+                { icon: "fas fa-phone-alt", label: lang === "de" ? "Telefon" : "Phone", val: "+49 175 6036003", href: "tel:+4917560360003" },
+                { icon: "fas fa-envelope", label: lang === "de" ? "E-Mail" : "Email", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
+                { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
+                { icon: "fas fa-clock", label: lang === "de" ? "Öffnungszeiten" : "Opening Hours", val: t.contact.hoursVal[lang], sub: t.contact.hoursSub[lang], href: undefined },
+              ].map(c => (
+                <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                  <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>
+                    <i className={c.icon}></i>
+                  </div>
+                  <div>
+                    <div style={{ color: TEXT_MID, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
+                    {c.href ? (
+                      <a href={c.href} style={{ color: NAVY, fontWeight: 700, fontSize: "16px", textDecoration: "none" }}
+                        onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
+                        onMouseLeave={e => (e.currentTarget.style.color = NAVY)}>{c.val}</a>
+                    ) : (
+                      <span style={{ color: NAVY, fontWeight: 700, fontSize: "16px" }}>{c.val}</span>
+                    )}
+                    {(c as any).sub && <div style={{ color: TEXT_MID, fontSize: "13px", marginTop: "3px" }}>{(c as any).sub}</div>}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: "28px", display: "flex", gap: "10px" }}>
+              <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
+                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
+                <i className="fab fa-whatsapp"></i> {t.contact.btnWA[lang]}
+              </a>
+              <a href="mailto:beratung@lügendetektortest.com"
+                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
+                <i className="fas fa-envelope"></i> {t.contact.btnEmail[lang]}
+              </a>
+            </div>
+            <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
+              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
+            </p>
           </div>
         </div>
       </div>

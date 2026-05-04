@@ -589,11 +589,17 @@ function HeroSection() {
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
               <i className="fas fa-paper-plane"></i> {t.hero.btnRequest[lang]}
             </button>
-            <a href="tel:+4917560360003"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
-              <i className="fas fa-phone-alt"></i> {t.hero.btnPhone[lang]}
-            </a>
-          </div>
+             <a href="tel:+4917560360003"
+               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
+               <i className="fas fa-phone-alt"></i> {t.hero.btnPhone[lang]}
+             </a>
+             <a href="/fremdgehen-beweisen"
+               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "rgba(255,255,255,0.12)", border: "2px solid rgba(255,255,255,0.4)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase", backdropFilter: "blur(4px)" }}
+               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.22)"; }}
+               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.12)"; }}>
+               <i className="fas fa-balance-scale"></i> Fremdgehen beweisen
+             </a>
+           </div>
         </div>
       </div>
     </section>

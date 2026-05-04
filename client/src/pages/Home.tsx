@@ -678,6 +678,13 @@ function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServic
             <i className="fas fa-search"></i>
             Anzeichen für Fremdgehen erkennen →
           </a>
+          <a href="/fremdgehen-beweisen"
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: NAVY, fontWeight: 700, fontSize: "15px", textDecoration: "none", border: `1px solid ${NAVY}`, borderRadius: "6px", padding: "10px 20px", marginTop: "10px" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(26,42,74,0.06)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}>
+            <i className="fas fa-balance-scale"></i>
+            Fremdgehen beweisen – legale Möglichkeiten →
+          </a>
         </div>
       )}
 

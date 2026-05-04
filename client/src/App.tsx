@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import AnzeichenFremdgehen from "./pages/AnzeichenFremdgehen";
+import FremdgehenBeweisen from "./pages/FremdgehenBeweisen";
 
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/anzeichen-fremdgehen"} component={AnzeichenFremdgehen} />
+      <Route path={"/fremdgehen-beweisen"} component={FremdgehenBeweisen} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

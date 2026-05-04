@@ -668,6 +668,19 @@ function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServic
         </div>
       ))}
 
+      {/* Anzeichen-Link nur für Untreue-Service */}
+      {svc.id === "untreue" && (
+        <div style={{ padding: "0 24px 16px" }}>
+          <a href="/anzeichen-fremdgehen"
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: ORANGE, fontWeight: 700, fontSize: "15px", textDecoration: "none", border: `1px solid ${ORANGE}`, borderRadius: "6px", padding: "10px 20px" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,140,0,0.08)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}>
+            <i className="fas fa-search"></i>
+            Anzeichen für Fremdgehen erkennen →
+          </a>
+        </div>
+      )}
+
       {/* CTA */}
       <div style={{ padding: "16px 24px 24px", borderTop: `1px solid ${BORDER}`, display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>

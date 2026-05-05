@@ -57,7 +57,7 @@ const signs = [
 
 export default function AnzeichenFremdgehen() {
   useEffect(() => {
-    document.title = "Anzeichen für Fremdgehen – häufigste Hinweise | lügendetektortest.com";
+    document.title = "Anzeichen für Fremdgehen – häufigste Hinweise | luegendetektor-test-muenchen.de";
     window.scrollTo(0, 0);
   }, []);
 
@@ -70,7 +70,7 @@ export default function AnzeichenFremdgehen() {
             <div style={{ width: "32px", height: "32px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <i className="fas fa-wave-square" style={{ color: WHITE, fontSize: "14px" }} />
             </div>
-            <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "0.5px" }}>lügendetektortest.com</span>
+            <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "0.5px" }}>luegendetektor-test-muenchen.de</span>
           </Link>
           <Link href="/" style={{ textDecoration: "none" }}>
             <button style={{ backgroundColor: ORANGE, color: WHITE, border: "none", borderRadius: "6px", padding: "10px 20px", fontWeight: 700, fontSize: "14px", cursor: "pointer", fontFamily: "'Lato', sans-serif", letterSpacing: "0.5px" }}>
@@ -176,7 +176,7 @@ export default function AnzeichenFremdgehen() {
       {/* Footer */}
       <footer style={{ backgroundColor: NAVY, padding: "32px 24px", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-          <div style={{ color: WHITE, fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>lügendetektortest.com</div>
+          <div style={{ color: WHITE, fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>luegendetektor-test-muenchen.de</div>
           <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px", marginBottom: "16px" }}>
             Marienstr. 4, 80331 München · +49 175 6036003 · beratung@lügendetektortest.com
           </div>

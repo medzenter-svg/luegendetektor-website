@@ -321,7 +321,7 @@ const getServices = (lang: string) => [
     title: { de: "Sicherheit bei großen Geschäften", en: "Security in Major Transactions" },
     price: "auf Anfrage",
     short: { de: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen", en: "Minimizing risks in private transactions and agreements" },
-    img: "/manus-storage/img_geschaefte_business_opt_1f5c005b.jpg",
+    img: "/manus-storage/geschaefte_new2_879fcd94.png",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {

@@ -960,17 +960,17 @@ function SpecialistsSection() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
-            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "20 Jahre Erfahrung" : "20 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", icon: "fas fa-user-tie" },
-            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", icon: "fas fa-user-graduate" },
+            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "20 Jahre Erfahrung" : "20 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_razarenov_small_81cada6d.jpg" },
+            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_neubauer_small_10444990.jpg" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "36px 28px", textAlign: "center", borderTop: `4px solid ${ORANGE}` }}>
-              <div style={{ width: "90px", height: "90px", borderRadius: "50%", backgroundColor: NAVY, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                <i className={s.icon} style={{ fontSize: "36px", color: ORANGE }}></i>
+              <div style={{ width: "120px", height: "120px", borderRadius: "50%", overflow: "hidden", margin: "0 auto 20px", border: `3px solid ${ORANGE}` }}>
+                <img src={s.photo} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
               <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
               <p style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{s.role}</p>
-              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "16px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
-              <p style={{ color: TEXT_MID, fontSize: "16px" }}>{s.edu}</p>
+              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
+              <p style={{ color: TEXT_MID, fontSize: "14px" }}>{s.edu}</p>
             </div>
           ))}
         </div>

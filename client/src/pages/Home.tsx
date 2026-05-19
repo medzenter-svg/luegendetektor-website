@@ -1013,6 +1013,14 @@ function PricesSection() {
           <i className="fas fa-info-circle mr-1" style={{ color: BLUE_LINE }}></i>
           Der genaue Preis wird nach dem kostenlosen Erstgespräch festgelegt. Gruppenrabatte möglich.
         </p>
+        <div style={{ maxWidth: "700px", margin: "0 auto 28px", backgroundColor: "#fff8f0", border: `1px solid ${ORANGE}`, borderLeft: `4px solid ${ORANGE}`, borderRadius: "6px", padding: "16px 22px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
+          <i className="fas fa-exclamation-triangle" style={{ color: ORANGE, fontSize: "18px", marginTop: "2px", flexShrink: 0 }}></i>
+          <p style={{ fontSize: "14px", color: "#7c4a00", margin: 0, lineHeight: "1.6" }}>
+            {lang === "de"
+              ? "Da wir unsere Termine langfristig im Voraus planen und reservieren, wird die Vorauszahlung in Höhe von 200\u00a0€ bei einer Absage weniger als 24\u00a0Stunden vor dem vereinbarten Termin nicht zurückerstattet. Kunden haben jedoch die Möglichkeit, den Termin rechtzeitig zu verschieben."
+              : "As we plan and reserve our appointments well in advance, the prepayment of €200 will not be refunded in case of cancellation less than 24 hours before the agreed appointment. However, customers have the option to reschedule the appointment in time."}
+          </p>
+        </div>
         <div style={{ textAlign: "center" }}>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", border: "none", cursor: "pointer", textTransform: "uppercase" }}

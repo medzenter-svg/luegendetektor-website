@@ -960,17 +960,19 @@ function SpecialistsSection() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
-            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_razarenov_small_81cada6d.jpg" },
-            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_neubauer_small_10444990.jpg" },
+            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa.jpg" },
+            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_large_f2126d39.jpg" },
           ].map(s => (
-            <div key={s.name} style={{ backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "36px 28px", textAlign: "center", borderTop: `4px solid ${ORANGE}` }}>
-              <div style={{ width: "120px", height: "120px", borderRadius: "50%", overflow: "hidden", margin: "0 auto 20px", border: `3px solid ${ORANGE}` }}>
+            <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+              <div style={{ width: "100%", height: "340px", overflow: "hidden" }}>
                 <img src={s.photo} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
-              <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
-              <p style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{s.role}</p>
-              <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "10px" }}><i className="fas fa-award mr-1"></i>{s.exp}</p>
-              <p style={{ color: TEXT_MID, fontSize: "14px" }}>{s.edu}</p>
+              <div style={{ padding: "24px 28px" }}>
+                <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
+                <p style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{s.role}</p>
+                <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "8px" }}><i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}</p>
+                <p style={{ color: TEXT_MID, fontSize: "14px" }}>{s.edu}</p>
+              </div>
             </div>
           ))}
         </div>

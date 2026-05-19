@@ -964,8 +964,8 @@ function SpecialistsSection() {
             { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_large_f2126d39.jpg" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-              <div style={{ width: "100%", height: "420px", overflow: "hidden" }}>
-                <img src={s.photo} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%", display: "block" }} />
+              <div style={{ width: "100%" }}>
+                <img src={s.photo} alt={s.name} style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }} />
               </div>
               <div style={{ padding: "24px 28px" }}>
                 <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>

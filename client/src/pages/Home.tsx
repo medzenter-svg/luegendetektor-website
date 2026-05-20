@@ -1527,7 +1527,7 @@ function ReportSection() {
                       : "The complete written report can be issued on request for an additional fee."}
                   </p>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: accent, borderRadius: 6, padding: "8px 18px" }}>
-                    <span style={{ color: "#000", fontWeight: 800, fontSize: 20 }}>150 €</span>
+                     <span style={{ color: "#000", fontWeight: 800, fontSize: 20 }}>200 €</span>
                     <span style={{ color: "#000", fontSize: 14, fontWeight: 600 }}>{lang === "de" ? "Aufpreis" : "additional fee"}</span>
                   </div>
                 </div>

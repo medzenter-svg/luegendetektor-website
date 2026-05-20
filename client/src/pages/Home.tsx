@@ -590,8 +590,11 @@ function HeroSection() {
               <i className="fas fa-paper-plane"></i> {t.hero.btnRequest[lang]}
             </button>
              <a href="tel:+4917560360003"
-               style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase" }}>
-               <i className="fas fa-phone-alt"></i> {t.hero.btnPhone[lang]}
+               style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: "2px", backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.5)", color: WHITE, padding: "10px 28px", borderRadius: "4px", fontWeight: 700, textDecoration: "none" }}>
+               <span style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "18px", textTransform: "uppercase" }}>
+                 <i className="fas fa-phone-alt"></i> {t.hero.btnPhone[lang]}
+               </span>
+               <span style={{ fontSize: "12px", fontWeight: 400, color: "rgba(255,255,255,0.75)", letterSpacing: "0.5px" }}>Mo–So 9:00–22:00 Uhr</span>
              </a>
              <a href="/fremdgehen-beweisen"
                style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "rgba(255,255,255,0.12)", border: "2px solid rgba(255,255,255,0.4)", color: WHITE, padding: "13px 28px", borderRadius: "4px", fontWeight: 700, fontSize: "14px", textDecoration: "none", textTransform: "uppercase", backdropFilter: "blur(4px)" }}

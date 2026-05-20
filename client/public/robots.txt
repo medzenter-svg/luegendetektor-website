@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://luegendetektor-test-muenchen.de/sitemap.xml
+
+# Crawl-delay für freundliches Crawling
+Crawl-delay: 1

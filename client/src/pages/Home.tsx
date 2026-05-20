@@ -514,7 +514,7 @@ function Navbar() {
     <nav className="navbar" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src="/manus-storage/logo_clean_f9c5298d.png" alt="POLYGRAPH Logo" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
+          <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor Test München – Logo" loading="eager" fetchPriority="high" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
           <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "1px" }}>luegendetektor-test-muenchen.de</span>
         </div>
         <div className="hidden lg:flex" style={{ flex: 1, gap: "22px", alignItems: "center" }}>
@@ -640,7 +640,7 @@ function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServic
     <div style={{ backgroundColor: WHITE, border: `2px solid ${NAVY}`, borderTop: "none", borderRadius: "0 0 8px 8px", overflow: "hidden" }}>
       {/* Image centered */}
       <div style={{ display: "flex", justifyContent: "center", padding: "24px 24px 0" }}>
-        <img src={svc.img} alt={typeof svc.title === "object" ? svc.title[lang] : svc.title} style={{ width: "100%", maxWidth: "784px", height: "448px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
+        <img src={svc.img} alt={typeof svc.title === "object" ? svc.title[lang] : svc.title} loading="lazy" decoding="async" style={{ width: "100%", maxWidth: "784px", height: "448px", objectFit: "cover", display: "block", borderRadius: "6px" }} />
       </div>
       {/* Features + intro */}
       <div style={{ padding: "24px 28px 16px" }}>
@@ -867,7 +867,7 @@ function AboutSection() {
             ].map(s => (
               <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 <div style={{ width: "100%" }}>
-                  <img src={s.photo} alt={s.name} style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }} />
+                  <img src={s.photo} alt={s.name} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }} />
                 </div>
                 <div style={{ padding: "24px 28px" }}>
                   <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
@@ -995,7 +995,7 @@ function SpecialistsSection() {
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
               <div style={{ width: "100%" }}>
-                <img src={s.photo} alt={s.name} style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }} />
+                <img src={s.photo} alt={s.name} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }} />
               </div>
               <div style={{ padding: "24px 28px" }}>
                 <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
@@ -1403,7 +1403,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "40px", marginBottom: "36px" }} className="grid-footer">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
+              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor Test München – luegendetektor-test-muenchen.de" loading="lazy" decoding="async" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
               <div>
                 <div style={{ color: WHITE, fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>luegendetektor-test-muenchen.de</div>
               </div>

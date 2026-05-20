@@ -56,7 +56,7 @@ export const t = {
   about: {
     heading:  { de: "ÜBER UNS", en: "ABOUT US" },
     sub:      { de: "Ihr vertrauenswürdiger Partner für Polygraphuntersuchungen", en: "Your trusted partner for polygraph examinations" },
-    p1:       { de: "POLYGRAPH München – professionelle Polygraphuntersuchungen für Unternehmen und Privatpersonen.", en: "POLYGRAPH Munich – professional polygraph examinations for businesses and private individuals." },
+    p1:       { de: "luegendetektor-test-muenchen.de – Ihr Spezialist für professionelle Polygraphuntersuchungen und Lügendetektor-Tests in München und ganz Bayern.", en: "luegendetektor-test-muenchen.de – Your specialist for professional polygraph examinations and lie detector tests in Munich and throughout Bavaria." },
     p2:       { de: "Unser Team besteht aus zertifizierten Polygraphologen mit über 15 Jahren Erfahrung. Wir verwenden modernste Ausrüstung und wissenschaftlich anerkannte Methoden.", en: "Our team consists of certified polygraphers with over 15 years of experience. We use state-of-the-art equipment and scientifically recognized methods." },
     p3:       { de: "Jede Untersuchung wird streng vertraulich behandelt. Ihre Privatsphäre hat für uns höchste Priorität.", en: "Every examination is treated with strict confidentiality. Your privacy is our highest priority." },
     whyTitle: { de: "Warum POLYGRAPH München?", en: "Why POLYGRAPH Munich?" },

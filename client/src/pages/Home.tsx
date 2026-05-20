@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { legalDocs } from "../data/legalDocs";
 import { useLang } from "../contexts/LanguageContext";
 import { t } from "../data/translations";
@@ -774,10 +774,9 @@ function ServicesSection() {
                   <div style={{ fontWeight: 700, fontSize: "21px", marginBottom: "4px" }}>{typeof svc.title === "object" ? svc.title[lang] : svc.title}</div>
                   <div style={{ fontSize: "16px", color: openService === svc.id ? "rgba(255,255,255,0.65)" : TEXT_MID }}>{typeof svc.short === "object" ? svc.short[lang] : svc.short}</div>
                 </div>
-                {/* Price + chevron */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px", flexShrink: 0 }}>
-                  <span style={{ color: ORANGE, fontWeight: 700, fontSize: "17px" }}>{svc.price}</span>
-                  <i className={`fas fa-chevron-${openService === svc.id ? "up" : "down"}`} style={{ color: openService === svc.id ? "rgba(255,255,255,0.5)" : "#A0AEC0", fontSize: "11px" }}></i>
+                {/* Chevron only */}
+                <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+                  <i className={`fas fa-chevron-${openService === svc.id ? "up" : "down"}`} style={{ color: openService === svc.id ? "rgba(255,255,255,0.5)" : "#A0AEC0", fontSize: "13px" }}></i>
                 </div>
               </button>
 
@@ -984,51 +983,109 @@ function SpecialistsSection() {
 // ─────────────────────────────────────────────
 // PRICES
 // ─────────────────────────────────────────────
+const PRICE_PACKAGES = [
+  {
+    id: "basic",
+    title: { de: "Polygraphentest Basic", en: "Polygraph Test Basic" },
+    desc: { de: "Der Basic-Test liefert zuverlässige Ergebnisse in kompakter Form.", en: "The basic test delivers reliable results in a compact format." },
+    single: { price: "599", label: { de: "Nur eine Person testen", en: "Test one person only" } },
+    partner: { price: "999", oldPrice: "1198", discount: "-18%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
+  },
+  {
+    id: "premium",
+    title: { de: "Polygraphentest Premium", en: "Polygraph Test Premium" },
+    desc: { de: "Der Premium-Test mit ausführlichem schriftlichem Gutachten und Nachberatung.", en: "The premium test with detailed written report and follow-up consultation." },
+    single: { price: "890", label: { de: "Nur eine Person testen", en: "Test one person only" } },
+    partner: { price: "1490", oldPrice: "1780", discount: "-16%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
+  },
+];
+
+function PriceCard({ pkg, lang }: { pkg: typeof PRICE_PACKAGES[0]; lang: string }) {
+  const [selected, setSelected] = useState<"single" | "partner">("single");
+  const L = lang as "de" | "en";
+  const current = selected === "single" ? pkg.single : pkg.partner;
+  return (
+    <div style={{ backgroundColor: WHITE, border: `2px solid ${BORDER}`, borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", gap: "0" }}>
+      <h3 style={{ color: NAVY, fontSize: "clamp(1.4rem, 2.5vw, 1.75rem)", fontWeight: 800, marginBottom: "10px" }}>{pkg.title[L]}</h3>
+      <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.6, marginBottom: "22px" }}>{pkg.desc[L]}</p>
+      <p style={{ color: TEXT_DARK, fontWeight: 700, fontSize: "15px", marginBottom: "12px" }}>{L === "de" ? "Anzahl der Personen:" : "Number of persons:"}</p>
+      {/* Single option */}
+      <div
+        onClick={() => setSelected("single")}
+        style={{ border: `2px solid ${selected === "single" ? ORANGE : BORDER}`, borderRadius: "8px", padding: "14px 18px", marginBottom: "10px", cursor: "pointer", backgroundColor: selected === "single" ? "#fff8f0" : WHITE, display: "flex", alignItems: "center", gap: "12px" }}
+      >
+        <div style={{ width: "20px", height: "20px", borderRadius: "50%", border: `2px solid ${selected === "single" ? ORANGE : "#ccc"}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          {selected === "single" && <div style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: ORANGE }}></div>}
+        </div>
+        <span style={{ color: TEXT_DARK, fontWeight: selected === "single" ? 600 : 400, fontSize: "16px" }}>{pkg.single.label[L]}</span>
+      </div>
+      {/* Partner option */}
+      <div
+        onClick={() => setSelected("partner")}
+        style={{ border: `2px solid ${selected === "partner" ? ORANGE : BORDER}`, borderRadius: "8px", padding: "14px 18px", marginBottom: "24px", cursor: "pointer", backgroundColor: selected === "partner" ? "#fff8f0" : WHITE, display: "flex", alignItems: "flex-start", gap: "12px" }}
+      >
+        <div style={{ width: "20px", height: "20px", borderRadius: "50%", border: `2px solid ${selected === "partner" ? ORANGE : "#ccc"}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
+          {selected === "partner" && <div style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: ORANGE }}></div>}
+        </div>
+        <span style={{ color: TEXT_DARK, fontWeight: selected === "partner" ? 600 : 400, fontSize: "16px" }}>{pkg.partner.label[L]}</span>
+      </div>
+      {/* Price display */}
+      <div style={{ marginBottom: "20px" }}>
+        {selected === "partner" ? (
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <span style={{ color: "#999", fontSize: "clamp(1.2rem, 2vw, 1.5rem)", fontWeight: 700, textDecoration: "line-through" }}>ab €{pkg.partner.oldPrice},-</span>
+            <span style={{ color: TEXT_DARK, fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800 }}>€{pkg.partner.price},-</span>
+            <span style={{ backgroundColor: "#fbbf24", color: "#000", fontWeight: 700, fontSize: "14px", padding: "4px 10px", borderRadius: "6px" }}>{pkg.partner.discount}</span>
+          </div>
+        ) : (
+          <span style={{ color: TEXT_DARK, fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800 }}>ab €{pkg.single.price},-</span>
+        )}
+        <p style={{ color: TEXT_MID, fontSize: "13px", marginTop: "4px" }}>Endpreis. Gemäß § 19 UStG</p>
+      </div>
+      {/* CTA Button */}
+      <button
+        onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+        style={{ width: "100%", backgroundColor: ORANGE, color: WHITE, border: "none", borderRadius: "8px", padding: "16px", fontWeight: 700, fontSize: "17px", cursor: "pointer", textDecoration: "underline", letterSpacing: "0.3px" }}
+        onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
+        onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}
+      >
+        {L === "de" ? "Unverbindlich Anfragen" : "Request without obligation"}
+      </button>
+    </div>
+  );
+}
+
 function PricesSection() {
   const { lang } = useLang();
+  const L = lang as "de" | "en";
   return (
     <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-        <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Transparente Preise" : "Transparent Prices"}</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.prices.heading[lang]}</h2>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{L === "de" ? "Transparente Preise" : "Transparent Prices"}</p>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.prices.heading[L]}</h2>
           <div style={{ height: "3px", width: "60px", backgroundColor: BLUE_LINE, margin: "0 auto 12px" }} />
-          <p style={{ color: TEXT_MID, fontSize: "17px" }}>Keine versteckten Kosten – transparente und faire Preisgestaltung</p>
+          <p style={{ color: TEXT_MID, fontSize: "17px" }}>{L === "de" ? "Keine versteckten Kosten – transparente und faire Preisgestaltung" : "No hidden costs – transparent and fair pricing"}</p>
         </div>
-        <div style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", maxWidth: "800px", margin: "0 auto 24px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
-          <div style={{ backgroundColor: NAVY, padding: "14px 24px", display: "grid", gridTemplateColumns: "1fr auto" }}>
-            <span style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Leistung</span>
-            <span style={{ color: ORANGE, fontWeight: 700, fontSize: "16px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Preis</span>
-          </div>
-          {getServices(lang).map((svc, i) => (
-            <div key={svc.id} style={{ padding: "13px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", borderBottom: `1px solid ${BORDER}`, backgroundColor: i % 2 === 0 ? WHITE : "#FAFBFC" }}>
-              <span style={{ color: TEXT_DARK, fontSize: "16px" }}>
-                <i className="fas fa-check-circle mr-2" style={{ color: "#22c55e", fontSize: "11px" }}></i>{typeof svc.title === "object" ? (svc.title as any)[lang] : svc.title}
-              </span>
-              <span style={{ color: ORANGE, fontWeight: 700, fontSize: "17px", whiteSpace: "nowrap" }}>{svc.price}</span>
-            </div>
+        {/* Price cards grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "28px", marginBottom: "36px" }}>
+          {PRICE_PACKAGES.map(pkg => (
+            <PriceCard key={pkg.id} pkg={pkg} lang={lang} />
           ))}
         </div>
-        <p style={{ textAlign: "center", fontSize: "15px", color: TEXT_MID, marginBottom: "18px" }}>
-          <i className="fas fa-info-circle mr-1" style={{ color: BLUE_LINE }}></i>
-          Der genaue Preis wird nach dem kostenlosen Erstgespräch festgelegt. Gruppenrabatte möglich.
-        </p>
-        <div style={{ maxWidth: "700px", margin: "0 auto 28px", backgroundColor: "#fff8f0", border: `1px solid ${ORANGE}`, borderLeft: `4px solid ${ORANGE}`, borderRadius: "6px", padding: "16px 22px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
+        {/* Cancellation notice */}
+        <div style={{ maxWidth: "800px", margin: "0 auto 28px", backgroundColor: "#fff8f0", border: `1px solid ${ORANGE}`, borderLeft: `4px solid ${ORANGE}`, borderRadius: "6px", padding: "16px 22px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
           <i className="fas fa-exclamation-triangle" style={{ color: ORANGE, fontSize: "18px", marginTop: "2px", flexShrink: 0 }}></i>
           <p style={{ fontSize: "14px", color: "#7c4a00", margin: 0, lineHeight: "1.6" }}>
-            {lang === "de"
+            {L === "de"
               ? "Da wir unsere Termine langfristig im Voraus planen und reservieren, wird die Vorauszahlung in Höhe von 200\u00a0€ bei einer Absage weniger als 24\u00a0Stunden vor dem vereinbarten Termin nicht zurückerstattet. Kunden haben jedoch die Möglichkeit, den Termin rechtzeitig zu verschieben."
               : "As we plan and reserve our appointments well in advance, the prepayment of €200 will not be refunded in case of cancellation less than 24 hours before the agreed appointment. However, customers have the option to reschedule the appointment in time."}
           </p>
         </div>
-        <div style={{ textAlign: "center" }}>
-          <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "12px 26px", borderRadius: "4px", fontWeight: 700, fontSize: "16px", border: "none", cursor: "pointer", textTransform: "uppercase" }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-            <i className="fas fa-paper-plane"></i> Anfrage senden
-          </button>
-        </div>
+        <p style={{ textAlign: "center", fontSize: "14px", color: TEXT_MID }}>
+          <i className="fas fa-info-circle mr-1" style={{ color: BLUE_LINE }}></i>
+          {L === "de" ? "Der genaue Preis wird nach dem kostenlosen Erstgespräch festgelegt. Gruppenrabatte möglich." : "The exact price is determined after the free initial consultation. Group discounts available."}
+        </p>
       </div>
     </section>
   );

@@ -1004,7 +1004,7 @@ const GUTACHTEN_PACKAGE = {
   id: "gutachten",
   title: { de: "Schriftliches Gutachten + Nachberatung", en: "Written Report + Follow-up Consultation" },
   desc: { de: "Erhalten Sie ein offizielles schriftliches Gutachten sowie eine pers\u00f6nliche Nachberatung durch unsere Experten.", en: "Receive an official written report and a personal follow-up consultation with our experts." },
-  price: "150",
+  price: "200",
   features: [
     { de: "Offizielles schriftliches Gutachten", en: "Official written report" },
     { de: "Rechtlich verwertbar", en: "Legally admissible" },

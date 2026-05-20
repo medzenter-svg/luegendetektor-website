@@ -33,7 +33,7 @@ const getServices = (lang: string) => [
     id: "untreue",
     category: "private",
     icon: "fas fa-heart-broken",
-    title: { de: "Überprüfung auf Untreue", en: "Infidelity Check" },
+    title: { de: "Treuetest", en: "Fidelity Test" },
     price: "550 €",
     short: { de: "Klärung bei Verdacht auf Untreue in der Partnerschaft", en: "Clarification when infidelity is suspected in a relationship" },
     img: "/manus-storage/img_untreue_new_opt_aa63860c.jpg",
@@ -1425,7 +1425,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
           </div>
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Beliebte Leistungen</h4>
-            {["Überprüfung auf Untreue", "Überprüfung von Jugendlichen", "Überprüfung bei der Einstellung", "Interne Ermittlungen", "Aufklärung von Diebstählen"].map(s => (
+            {["Treuetest", "Überprüfung von Jugendlichen", "Überprüfung bei der Einstellung", "Interne Ermittlungen", "Aufklärung von Diebstählen"].map(s => (
               <button key={s} onClick={() => scrollTo("services")} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{s}</button>

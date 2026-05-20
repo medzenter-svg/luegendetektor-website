@@ -995,7 +995,7 @@ const PRICE_PACKAGES = [
     id: "premium",
     title: { de: "Polygraphentest Premium", en: "Polygraph Test Premium" },
     desc: { de: "Der Premium-Test mit ausführlichem schriftlichem Gutachten und Nachberatung.", en: "The premium test with detailed written report and follow-up consultation." },
-    single: { price: "890", label: { de: "Nur eine Person testen", en: "Test one person only" } },
+    single: { price: "750", label: { de: "Nur eine Person testen", en: "Test one person only" } },
     partner: { price: "1299", oldPrice: "1780", discount: "-27%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
   },
 ];

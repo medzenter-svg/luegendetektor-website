@@ -989,16 +989,29 @@ const PRICE_PACKAGES = [
     title: { de: "Polygraphentest Basic", en: "Polygraph Test Basic" },
     desc: { de: "Der Basic-Test liefert zuverlässige Ergebnisse in kompakter Form.", en: "The basic test delivers reliable results in a compact format." },
     single: { price: "599", label: { de: "Nur eine Person testen", en: "Test one person only" } },
-    partner: { price: "999", oldPrice: "1198", discount: "-18%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
+    partner: { price: "899", oldPrice: "1198", discount: "-25%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
   },
   {
     id: "premium",
     title: { de: "Polygraphentest Premium", en: "Polygraph Test Premium" },
     desc: { de: "Der Premium-Test mit ausführlichem schriftlichem Gutachten und Nachberatung.", en: "The premium test with detailed written report and follow-up consultation." },
     single: { price: "890", label: { de: "Nur eine Person testen", en: "Test one person only" } },
-    partner: { price: "1490", oldPrice: "1780", discount: "-16%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
+    partner: { price: "1299", oldPrice: "1780", discount: "-27%", label: { de: "Zwei Personen testen (Partner Option)", en: "Test two people (Partner Option)" } },
   },
 ];
+
+const GUTACHTEN_PACKAGE = {
+  id: "gutachten",
+  title: { de: "Schriftliches Gutachten + Nachberatung", en: "Written Report + Follow-up Consultation" },
+  desc: { de: "Erhalten Sie ein offizielles schriftliches Gutachten sowie eine pers\u00f6nliche Nachberatung durch unsere Experten.", en: "Receive an official written report and a personal follow-up consultation with our experts." },
+  price: "150",
+  features: [
+    { de: "Offizielles schriftliches Gutachten", en: "Official written report" },
+    { de: "Rechtlich verwertbar", en: "Legally admissible" },
+    { de: "Pers\u00f6nliche Nachberatung", en: "Personal follow-up consultation" },
+    { de: "Auf Wunsch als Zusatz buchbar", en: "Available as an add-on" },
+  ],
+};
 
 function PriceCard({ pkg, lang }: { pkg: typeof PRICE_PACKAGES[0]; lang: string }) {
   const [selected, setSelected] = useState<"single" | "partner">("single");
@@ -1068,10 +1081,38 @@ function PricesSection() {
           <p style={{ color: TEXT_MID, fontSize: "17px" }}>{L === "de" ? "Keine versteckten Kosten – transparente und faire Preisgestaltung" : "No hidden costs – transparent and fair pricing"}</p>
         </div>
         {/* Price cards grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "28px", marginBottom: "36px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "28px", marginBottom: "36px" }}>
           {PRICE_PACKAGES.map(pkg => (
             <PriceCard key={pkg.id} pkg={pkg} lang={lang} />
           ))}
+          {/* Gutachten card */}
+          <div style={{ backgroundColor: WHITE, border: `2px solid ${BORDER}`, borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column" }}>
+            <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#EEF2F7", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "18px" }}>
+              <i className="fas fa-file-alt" style={{ color: NAVY, fontSize: "22px" }}></i>
+            </div>
+            <h3 style={{ color: NAVY, fontSize: "clamp(1.3rem, 2.5vw, 1.6rem)", fontWeight: 800, marginBottom: "10px" }}>{GUTACHTEN_PACKAGE.title[L]}</h3>
+            <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.6, marginBottom: "22px" }}>{GUTACHTEN_PACKAGE.desc[L]}</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+              {GUTACHTEN_PACKAGE.features.map((f, i) => (
+                <li key={i} style={{ display: "flex", alignItems: "center", gap: "10px", color: TEXT_DARK, fontSize: "15px" }}>
+                  <i className="fas fa-check-circle" style={{ color: "#22c55e", fontSize: "14px", flexShrink: 0 }}></i>
+                  {f[L]}
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginBottom: "20px" }}>
+              <span style={{ color: TEXT_DARK, fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800 }}>€{GUTACHTEN_PACKAGE.price},-</span>
+              <p style={{ color: TEXT_MID, fontSize: "13px", marginTop: "4px" }}>Endpreis. Gemäß § 19 UStG</p>
+            </div>
+            <button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              style={{ width: "100%", backgroundColor: ORANGE, color: WHITE, border: "none", borderRadius: "8px", padding: "16px", fontWeight: 700, fontSize: "17px", cursor: "pointer", textDecoration: "underline", letterSpacing: "0.3px" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}
+            >
+              {L === "de" ? "Unverbindlich Anfragen" : "Request without obligation"}
+            </button>
+          </div>
         </div>
         {/* Cancellation notice */}
         <div style={{ maxWidth: "800px", margin: "0 auto 28px", backgroundColor: "#fff8f0", border: `1px solid ${ORANGE}`, borderLeft: `4px solid ${ORANGE}`, borderRadius: "6px", padding: "16px 22px", display: "flex", gap: "12px", alignItems: "flex-start" }}>

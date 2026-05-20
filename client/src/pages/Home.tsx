@@ -1208,107 +1208,179 @@ function FAQSection() {
 // ─────────────────────────────────────────────
 function ContactSection() {
   const { lang } = useLang();
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", test: "", notes: "" });
   const [sent, setSent] = useState(false);
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%", padding: "11px 14px", borderRadius: "6px", fontSize: "15px",
+    outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`,
+    color: TEXT_DARK, boxSizing: "border-box", fontFamily: "'Lato', sans-serif",
+  };
+  const labelStyle: React.CSSProperties = {
+    display: "block", color: TEXT_DARK, fontSize: "14px", fontWeight: 600,
+    marginBottom: "5px",
+  };
 
   return (
     <>
-    <section id="contact" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{t.contact.sub[lang]}</p>
-          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>{t.contact.heading[lang]}</h2>
-          <div style={{ height: "3px", width: "60px", backgroundColor: ORANGE, margin: "0 auto" }} />
-        </div>
-        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-          {/* FORM oben */}
-          <div style={{ marginBottom: "56px" }}>
+    <section id="contact" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+        {/* Two-column layout */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "60px", alignItems: "start" }} className="grid-contact">
+
+          {/* LEFT: info + contact person */}
+          <div>
+            <div style={{ display: "inline-block", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "2px", padding: "6px 14px", borderRadius: "4px", marginBottom: "20px" }}>
+              {lang === "de" ? "TERMIN BUCHEN" : "BOOK APPOINTMENT"}
+            </div>
+            <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 800, lineHeight: 1.2, marginBottom: "20px" }}>
+              {lang === "de" ? "Jetzt Termin sichern und Klarheit gewinnen!" : "Book your appointment and gain clarity!"}
+            </h2>
+            <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.75, marginBottom: "32px" }}>
+              {lang === "de"
+                ? "Ihre Terminanfrage ist selbstverständlich unverbindlich und für Sie kostenlos. Wir kontaktieren Sie innerhalb von 24 Stunden, um alle Details zu besprechen und den Termin zu bestätigen."
+                : "Your appointment request is of course non-binding and free of charge. We will contact you within 24 hours to discuss all details and confirm the appointment."}
+            </p>
+
+            <p style={{ color: NAVY, fontWeight: 700, fontSize: "16px", marginBottom: "16px", textDecoration: "underline", cursor: "default" }}>
+              {lang === "de" ? "Rufen Sie uns direkt an!" : "Call us directly!"}
+            </p>
+
+            {/* Contact person card */}
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
+              <img
+                src="/manus-storage/andreja_schmidt_6fbfb20a.png"
+                alt="Andreja Schmidt"
+                style={{ width: "90px", height: "90px", borderRadius: "8px", objectFit: "cover", objectPosition: "top", flexShrink: 0, border: `2px solid ${BORDER}` }}
+              />
+              <div>
+                <div style={{ color: TEXT_MID, fontSize: "14px", marginBottom: "4px" }}>{lang === "de" ? "Ihr Ansprechpartner" : "Your contact person"}</div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: "18px", marginBottom: "8px" }}>Andreja Schmidt</div>
+                <a href="tel:+4917560360003" style={{ display: "flex", alignItems: "center", gap: "8px", color: NAVY, textDecoration: "none", fontSize: "15px", fontWeight: 600, marginBottom: "4px" }}>
+                  <i className="fas fa-phone-alt" style={{ color: ORANGE }}></i> +49 175 6036003
+                </a>
+                <a href="mailto:beratung@luegendetektor-test-muenchen.de" style={{ display: "flex", alignItems: "center", gap: "8px", color: NAVY, textDecoration: "none", fontSize: "14px" }}>
+                  <i className="fas fa-envelope" style={{ color: ORANGE }}></i> beratung@luegendetektor-test-muenchen.de
+                </a>
+              </div>
+            </div>
+
+            {/* Contact info */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              {[
+                { icon: "fas fa-map-marker-alt", val: "Marienstr. 4, 80331 München" },
+                { icon: "fas fa-clock", val: lang === "de" ? "Mo–Fr 9:00–20:00, Sa 10:00–18:00" : "Mon–Fri 9:00–20:00, Sat 10:00–18:00" },
+                { icon: "fab fa-whatsapp", val: "WhatsApp: +49 175 6036003", href: "https://wa.me/491756036003" },
+              ].map((c, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <i className={c.icon} style={{ color: ORANGE, width: "18px", textAlign: "center" }}></i>
+                  {(c as any).href
+                    ? <a href={(c as any).href} style={{ color: TEXT_MID, fontSize: "14px", textDecoration: "none" }}>{c.val}</a>
+                    : <span style={{ color: TEXT_MID, fontSize: "14px" }}>{c.val}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT: form */}
+          <div style={{ backgroundColor: WHITE, borderRadius: "10px", padding: "36px", boxShadow: "0 4px 24px rgba(0,0,0,0.07)", border: `1px solid ${BORDER}` }}>
             {sent ? (
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "40px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "40px 20px" }}>
                 <i className="fas fa-check-circle" style={{ fontSize: "52px", color: "#22c55e", marginBottom: "16px" }}></i>
                 <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "20px", marginBottom: "10px" }}>{t.contact.thankYou[lang]}</h3>
                 <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.7 }}>{t.contact.thankMsg[lang]}</p>
               </div>
             ) : (
-              <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                {[
-                  { name: "name", label: t.contact.formName[lang], type: "text", placeholder: t.contact.formPh1[lang], required: true },
-                  { name: "phone", label: t.contact.formPhone[lang], type: "tel", placeholder: t.contact.formPh2[lang], required: false },
-                  { name: "email", label: t.contact.formEmail[lang], type: "email", placeholder: t.contact.formPh3[lang], required: true },
-                ].map(f => (
-                  <div key={f.name}>
-                    <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</label>
-                    <input type={f.type} placeholder={f.placeholder} required={f.required}
-                      value={form[f.name as keyof typeof form]}
-                      onChange={e => setForm({ ...form, [f.name]: e.target.value })}
-                      style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, boxSizing: "border-box" }}
-                      onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
-                      onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
-                  </div>
-                ))}
+              <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+                {/* Name */}
                 <div>
-                  <label style={{ display: "block", color: TEXT_DARK, fontSize: "15px", fontWeight: 700, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{t.contact.formMsg[lang].toUpperCase()}</label>
-                  <textarea rows={4} placeholder={t.contact.formPh4[lang]}
-                    value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                    style={{ width: "100%", padding: "10px 14px", borderRadius: "4px", fontSize: "16px", outline: "none", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: TEXT_DARK, resize: "none", boxSizing: "border-box" }}
+                  <label style={labelStyle}>{lang === "de" ? "Vor- und Nachname:" : "Full name:"}</label>
+                  <input type="text" placeholder={lang === "de" ? "Name eintragen" : "Enter name"}
+                    value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
+                    style={inputStyle}
                     onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
                     onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
                 </div>
-                <button type="submit"
-                  style={{ padding: "11px", borderRadius: "4px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "17px", textTransform: "uppercase", border: "none", cursor: "pointer", marginTop: "28px" }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
-                  <i className="fas fa-paper-plane" style={{ marginRight: "8px" }}></i>{t.contact.btnSend[lang]}
-                </button>
-                <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
-                  <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
-                </p>
-              </form>
-            )}
-          </div>
 
-          {/* KONTAKTINFORMATIONEN unten */}
-          <div style={{ borderTop: `2px solid ${BORDER}`, paddingTop: "40px" }}>
-            <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "17px", marginBottom: "24px", textTransform: "uppercase" }}>{t.contact.infoTitle[lang].toUpperCase()}</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 32px" }} className="grid-2col">
-              {[
-                { icon: "fas fa-map-marker-alt", label: lang === "de" ? "Adresse" : "Address", val: "Marienstr. 4, 80331 München", href: undefined },
-                { icon: "fas fa-phone-alt", label: lang === "de" ? "Telefon" : "Phone", val: "+49 175 6036003", href: "tel:+4917560360003" },
-                { icon: "fas fa-envelope", label: lang === "de" ? "E-Mail" : "Email", val: "beratung@lügendetektortest.com", href: "mailto:beratung@lügendetektortest.com" },
-                { icon: "fab fa-whatsapp", label: "WhatsApp", val: "+49 175 6036003", href: "https://wa.me/491756036003" },
-                { icon: "fas fa-clock", label: lang === "de" ? "Öffnungszeiten" : "Opening Hours", val: t.contact.hoursVal[lang], sub: t.contact.hoursSub[lang], href: undefined },
-              ].map(c => (
-                <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "rgba(255,140,0,0.12)", color: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "14px" }}>
-                    <i className={c.icon}></i>
-                  </div>
-                  <div>
-                    <div style={{ color: TEXT_MID, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>{c.label}</div>
-                    {c.href ? (
-                      <a href={c.href} style={{ color: NAVY, fontWeight: 700, fontSize: "16px", textDecoration: "none" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                        onMouseLeave={e => (e.currentTarget.style.color = NAVY)}>{c.val}</a>
-                    ) : (
-                      <span style={{ color: NAVY, fontWeight: 700, fontSize: "16px" }}>{c.val}</span>
-                    )}
-                    {(c as any).sub && <div style={{ color: TEXT_MID, fontSize: "13px", marginTop: "3px" }}>{(c as any).sub}</div>}
+                {/* Test dropdown */}
+                <div>
+                  <label style={labelStyle}>
+                    {lang === "de" ? "Lügendetektor Test" : "Polygraph Test"} <span style={{ color: "#e53e3e" }}>*</span>
+                  </label>
+                  <div style={{ position: "relative" }}>
+                    <select required value={form.test} onChange={e => setForm({ ...form, test: e.target.value })}
+                      style={{ ...inputStyle, appearance: "none", WebkitAppearance: "none", paddingRight: "36px", cursor: "pointer", color: form.test ? TEXT_DARK : "#a0aec0" }}>
+                      <option value="" disabled>{lang === "de" ? "Test wählen" : "Choose test"}</option>
+                      <option value="basic">{lang === "de" ? "Basic (599 € / 899 €)" : "Basic (599 € / 899 €)"}</option>
+                      <option value="premium">{lang === "de" ? "Premium (750 € / 1299 €)" : "Premium (750 € / 1299 €)"}</option>
+                      <option value="gutachten">{lang === "de" ? "Schriftliches Gutachten (+200 €)" : "Written Report (+200 €)"}</option>
+                    </select>
+                    <i className="fas fa-chevron-down" style={{ position: "absolute", right: "14px", top: "50%", transform: "translateY(-50%)", color: ORANGE, pointerEvents: "none", fontSize: "13px" }}></i>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div style={{ marginTop: "28px", display: "flex", gap: "10px" }}>
-              <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
-                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: GREEN_WA, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fab fa-whatsapp"></i> {t.contact.btnWA[lang]}
-              </a>
-              <a href="mailto:beratung@lügendetektortest.com"
-                style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: ORANGE, color: WHITE, padding: "11px", borderRadius: "4px", fontWeight: 700, fontSize: "13px", textDecoration: "none", textTransform: "uppercase" }}>
-                <i className="fas fa-envelope"></i> {t.contact.btnEmail[lang]}
-              </a>
-            </div>
-            <p style={{ color: TEXT_MID, fontSize: "14px", textAlign: "center", marginTop: "8px" }}>
-              <i className="fas fa-lock" style={{ marginRight: "4px" }}></i>{t.contact.privacy[lang]}
-            </p>
+
+                {/* Address */}
+                <div>
+                  <label style={labelStyle}>
+                    {lang === "de" ? "Adresse (Straße, PLZ, Ort)" : "Address (Street, ZIP, City)"} <span style={{ color: "#e53e3e" }}>*</span>
+                  </label>
+                  <input type="text" placeholder={lang === "de" ? "Adresse eingeben" : "Enter address"} required
+                    value={form.address} onChange={e => setForm({ ...form, address: e.target.value })}
+                    style={inputStyle}
+                    onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
+                    onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
+                </div>
+
+                {/* Phone + Email row */}
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }} className="grid-2col">
+                  <div>
+                    <label style={labelStyle}>
+                      {lang === "de" ? "Telefon" : "Phone"} <span style={{ color: "#e53e3e" }}>*</span>
+                    </label>
+                    <input type="tel" placeholder={lang === "de" ? "Telefon eintragen" : "Enter phone"} required
+                      value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
+                      style={inputStyle}
+                      onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
+                      onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
+                  </div>
+                  <div>
+                    <label style={labelStyle}>
+                      {lang === "de" ? "E-Mail-Adresse" : "Email address"} <span style={{ color: "#e53e3e" }}>*</span>
+                    </label>
+                    <input type="email" placeholder={lang === "de" ? "E-Mail Adresse eintragen" : "Enter email"} required
+                      value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
+                      style={inputStyle}
+                      onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
+                      onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
+                  </div>
+                </div>
+
+                {/* Notes */}
+                <div>
+                  <label style={labelStyle}>{lang === "de" ? "Anmerkungen / Wunschtermin" : "Notes / Preferred date"}</label>
+                  <textarea rows={4} placeholder={lang === "de" ? "Anmerkungen zum Test" : "Notes about the test"}
+                    value={form.notes} onChange={e => setForm({ ...form, notes: e.target.value })}
+                    style={{ ...inputStyle, resize: "none" }}
+                    onFocus={e => (e.currentTarget.style.borderColor = ORANGE)}
+                    onBlur={e => (e.currentTarget.style.borderColor = BORDER)} />
+                </div>
+
+                {/* Bottom row: disclaimer + button */}
+                <div style={{ display: "flex", gap: "12px", alignItems: "stretch" }}>
+                  <div style={{ flex: 1, backgroundColor: "#f0f4ff", border: `1px solid #c7d2fe`, borderRadius: "6px", padding: "12px 14px", fontSize: "13px", color: TEXT_MID, lineHeight: 1.6 }}>
+                    {lang === "de"
+                      ? <span>Dies ist <strong>keine</strong> verbindliche Buchung, sondern eine <strong>unverbindliche Anfrage</strong>.</span>
+                      : <span>This is <strong>not</strong> a binding booking, but a <strong>non-binding inquiry</strong>.</span>}
+                  </div>
+                  <button type="submit"
+                    style={{ flexShrink: 0, padding: "12px 24px", borderRadius: "6px", backgroundColor: ORANGE, color: WHITE, fontWeight: 700, fontSize: "15px", border: "none", cursor: "pointer", whiteSpace: "nowrap" }}
+                    onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#e07b00")}
+                    onMouseLeave={e => (e.currentTarget.style.backgroundColor = ORANGE)}>
+                    {lang === "de" ? "Anfragen" : "Inquire"}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>

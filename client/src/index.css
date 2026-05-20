@@ -152,4 +152,11 @@
     background: linear-gradient(90deg, oklch(0.22 0.06 243), oklch(0.72 0.12 75), oklch(0.22 0.06 243));
     opacity: 0.3;
   }
+
+  /* Contact section responsive grid */
+  @media (max-width: 860px) {
+    .grid-contact {
+      grid-template-columns: 1fr !important;
+    }
+  }
 }

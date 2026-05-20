@@ -1672,7 +1672,6 @@ export default function Home() {
       <ProcessSection />
       <EquipmentSection />
       <CtaBanner />
-      <SpecialistsSection />
       <PricesSection />
       <ReportSection />
       <CasesSection />

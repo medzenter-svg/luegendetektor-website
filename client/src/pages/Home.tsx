@@ -1016,9 +1016,12 @@ const GUTACHTEN_PACKAGE = {
 function PriceCard({ pkg, lang }: { pkg: typeof PRICE_PACKAGES[0]; lang: string }) {
   const [selected, setSelected] = useState<"single" | "partner">("single");
   const L = lang as "de" | "en";
-  const current = selected === "single" ? pkg.single : pkg.partner;
   return (
-    <div style={{ backgroundColor: WHITE, border: `2px solid ${BORDER}`, borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column", gap: "0" }}>
+    <div style={{ backgroundColor: WHITE, border: `2px solid ${BORDER}`, borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column" }}>
+      {/* Icon placeholder for alignment with gutachten card */}
+      <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#EEF2F7", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "18px" }}>
+        <i className={pkg.id === "basic" ? "fas fa-clipboard-check" : "fas fa-star"} style={{ color: NAVY, fontSize: "22px" }}></i>
+      </div>
       <h3 style={{ color: NAVY, fontSize: "clamp(1.4rem, 2.5vw, 1.75rem)", fontWeight: 800, marginBottom: "10px" }}>{pkg.title[L]}</h3>
       <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.6, marginBottom: "22px" }}>{pkg.desc[L]}</p>
       <p style={{ color: TEXT_DARK, fontWeight: 700, fontSize: "15px", marginBottom: "12px" }}>{L === "de" ? "Anzahl der Personen:" : "Number of persons:"}</p>
@@ -1035,15 +1038,17 @@ function PriceCard({ pkg, lang }: { pkg: typeof PRICE_PACKAGES[0]; lang: string 
       {/* Partner option */}
       <div
         onClick={() => setSelected("partner")}
-        style={{ border: `2px solid ${selected === "partner" ? ORANGE : BORDER}`, borderRadius: "8px", padding: "14px 18px", marginBottom: "24px", cursor: "pointer", backgroundColor: selected === "partner" ? "#fff8f0" : WHITE, display: "flex", alignItems: "flex-start", gap: "12px" }}
+        style={{ border: `2px solid ${selected === "partner" ? ORANGE : BORDER}`, borderRadius: "8px", padding: "14px 18px", cursor: "pointer", backgroundColor: selected === "partner" ? "#fff8f0" : WHITE, display: "flex", alignItems: "flex-start", gap: "12px" }}
       >
         <div style={{ width: "20px", height: "20px", borderRadius: "50%", border: `2px solid ${selected === "partner" ? ORANGE : "#ccc"}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
           {selected === "partner" && <div style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: ORANGE }}></div>}
         </div>
         <span style={{ color: TEXT_DARK, fontWeight: selected === "partner" ? 600 : 400, fontSize: "16px" }}>{pkg.partner.label[L]}</span>
       </div>
+      {/* Spacer to push price+button to bottom */}
+      <div style={{ flex: 1 }} />
       {/* Price display */}
-      <div style={{ marginBottom: "20px" }}>
+      <div style={{ marginTop: "24px", marginBottom: "20px" }}>
         {selected === "partner" ? (
           <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
             <span style={{ color: "#999", fontSize: "clamp(1.2rem, 2vw, 1.5rem)", fontWeight: 700, textDecoration: "line-through" }}>ab €{pkg.partner.oldPrice},-</span>
@@ -1081,7 +1086,7 @@ function PricesSection() {
           <p style={{ color: TEXT_MID, fontSize: "17px" }}>{L === "de" ? "Keine versteckten Kosten – transparente und faire Preisgestaltung" : "No hidden costs – transparent and fair pricing"}</p>
         </div>
         {/* Price cards grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "28px", marginBottom: "36px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "28px", marginBottom: "36px", alignItems: "stretch" }}>
           {PRICE_PACKAGES.map(pkg => (
             <PriceCard key={pkg.id} pkg={pkg} lang={lang} />
           ))}
@@ -1090,9 +1095,9 @@ function PricesSection() {
             <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#EEF2F7", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "18px" }}>
               <i className="fas fa-file-alt" style={{ color: NAVY, fontSize: "22px" }}></i>
             </div>
-            <h3 style={{ color: NAVY, fontSize: "clamp(1.3rem, 2.5vw, 1.6rem)", fontWeight: 800, marginBottom: "10px" }}>{GUTACHTEN_PACKAGE.title[L]}</h3>
+            <h3 style={{ color: NAVY, fontSize: "clamp(1.4rem, 2.5vw, 1.75rem)", fontWeight: 800, marginBottom: "10px" }}>{GUTACHTEN_PACKAGE.title[L]}</h3>
             <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.6, marginBottom: "22px" }}>{GUTACHTEN_PACKAGE.desc[L]}</p>
-            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               {GUTACHTEN_PACKAGE.features.map((f, i) => (
                 <li key={i} style={{ display: "flex", alignItems: "center", gap: "10px", color: TEXT_DARK, fontSize: "15px" }}>
                   <i className="fas fa-check-circle" style={{ color: "#22c55e", fontSize: "14px", flexShrink: 0 }}></i>
@@ -1100,7 +1105,9 @@ function PricesSection() {
                 </li>
               ))}
             </ul>
-            <div style={{ marginBottom: "20px" }}>
+            {/* Spacer to push price+button to bottom */}
+            <div style={{ flex: 1 }} />
+            <div style={{ marginTop: "24px", marginBottom: "20px" }}>
               <span style={{ color: TEXT_DARK, fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800 }}>€{GUTACHTEN_PACKAGE.price},-</span>
               <p style={{ color: TEXT_MID, fontSize: "13px", marginTop: "4px" }}>Endpreis. Gemäß § 19 UStG</p>
             </div>

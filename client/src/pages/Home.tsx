@@ -1443,67 +1443,79 @@ function ReportSection() {
   const accent = "#f59e0b";
   const bg = "#f8fafc";
   const cardBg = WHITE;
+
+  const gutachtenBenefits = [
+    { icon: "fas fa-gavel", de: "Fundierte Beweiskraft: Detaillierte Dokumentation weit über ein einfaches \u201eWahr\u201c oder \u201eFalsch\u201c hinaus.", en: "Strong evidence: Detailed documentation far beyond a simple \"True\" or \"False\"." },
+    { icon: "fas fa-heart", de: "Klarheit für Beziehungen: Objektive Faktenbasis für Paare und Familien, um Vertrauen nachhaltig wiederherzustellen.", en: "Clarity for relationships: Objective factual basis for couples and families to restore trust sustainably." },
+    { icon: "fas fa-briefcase", de: "Sicherheit für Unternehmen: Seriöse Grundlage zur Klärung interner Sachverhalte oder zur Entlastung von Personen.", en: "Security for companies: Reliable basis for clarifying internal matters or exonerating individuals." },
+    { icon: "fas fa-archive", de: "Jederzeit abrufbar: Ihr Ergebnis ist sicher archiviert und dient auch nach Jahren noch als unumstößlicher Beleg.", en: "Always accessible: Your result is securely archived and serves as irrefutable evidence even years later." },
+  ];
+
   return (
     <div id="report" style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
+        {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 style={{ color: NAVY, fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{r.heading[L]}</h2>
           <div style={{ width: 60, height: 3, background: accent, margin: "12px auto 0" }} />
           <p style={{ color: TEXT_MID, marginTop: 12 }}>{r.sub[L]}</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "start" }} className="grid-2col">
+
+        {/* Top grid: report structure + double verification */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28, marginBottom: 28 }} className="grid-2col">
           {/* Left: intro + sections */}
-          <div>
-            <p style={{ color: TEXT_MID, marginBottom: 28, lineHeight: 1.8, fontSize: 16 }}>{r.intro[L]}</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <p style={{ color: TEXT_MID, lineHeight: 1.8, fontSize: 16, margin: 0 }}>{r.intro[L]}</p>
             {[
               { title: r.section1Title[L], items: r.section1Items.map(i => i[L]) },
               { title: r.section2Title[L], items: r.section2Items.map(i => i[L]) },
               { title: r.section3Title[L], items: r.section3Items.map(i => i[L]) },
             ].map((sec, idx) => (
-              <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "24px 28px", marginBottom: 16, border: `1px solid ${BORDER}`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
-                <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 14px", fontSize: 17 }}>{sec.title}</h4>
-                <ul style={{ margin: 0, paddingLeft: 22 }}>
+              <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "20px 24px", border: `1px solid ${BORDER}`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
+                <h4 style={{ color: accent, fontWeight: 700, margin: "0 0 12px", fontSize: 16 }}>{sec.title}</h4>
+                <ul style={{ margin: 0, paddingLeft: 20 }}>
                   {sec.items.map((item, i) => (
-                    <li key={i} style={{ color: TEXT_MID, marginBottom: 8, fontSize: 15, lineHeight: 1.6 }}>{item}</li>
+                    <li key={i} style={{ color: TEXT_MID, marginBottom: 6, fontSize: 14, lineHeight: 1.6 }}>{item}</li>
                   ))}
                 </ul>
               </div>
             ))}
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              style={{ marginTop: 16, background: accent, color: "#000", border: "none", borderRadius: 6, padding: "16px 36px", fontWeight: 700, fontSize: 15, letterSpacing: 1, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}
+              style={{ marginTop: 4, background: accent, color: "#000", border: "none", borderRadius: 6, padding: "14px 32px", fontWeight: 700, fontSize: 15, letterSpacing: 1, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8, alignSelf: "flex-start" }}
             >
               {r.btnRequest[L]}
             </button>
           </div>
+
           {/* Right: info cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {/* Report structure card */}
-            <div style={{ background: cardBg, borderRadius: 12, padding: "32px 28px", border: `2px solid ${accent}44`, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
-                <div style={{ background: accent, borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontSize: 24 }}>📄</span>
+            <div style={{ background: cardBg, borderRadius: 12, padding: "28px", border: `2px solid ${accent}44`, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
+                <div style={{ background: accent, borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className="fas fa-file-alt" style={{ color: "#000", fontSize: 20 }} />
                 </div>
-                <div style={{ color: NAVY, fontWeight: 700, fontSize: 18 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: 17 }}>{lang === "de" ? "Polygraph-Gutachten" : "Polygraph Report"}</div>
               </div>
               {[r.section1Title[L], r.section2Title[L], r.section3Title[L]].map((sec, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 0", borderBottom: i < 2 ? `1px solid ${BORDER}` : "none" }}>
-                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: accent, flexShrink: 0 }} />
-                  <span style={{ color: TEXT_DARK, fontSize: 16 }}>{sec}</span>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: i < 2 ? `1px solid ${BORDER}` : "none" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: accent, flexShrink: 0 }} />
+                  <span style={{ color: TEXT_DARK, fontSize: 15 }}>{sec}</span>
                 </div>
               ))}
             </div>
             {/* Double verification card */}
-            <div style={{ background: cardBg, borderRadius: 12, padding: "28px", border: `1px solid ${BORDER}`, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+            <div style={{ background: cardBg, borderRadius: 12, padding: "24px", border: `1px solid ${BORDER}`, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <div style={{ background: "#eff6ff", borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontSize: 24 }}>👥</span>
+                <div style={{ background: "#eff6ff", borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className="fas fa-user-friends" style={{ color: "#1e3a5f", fontSize: 18 }} />
                 </div>
                 <div>
-                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 16, marginBottom: 8 }}>
                     {lang === "de" ? "Doppelte Überprüfung durch 2 Spezialisten" : "Double verification by 2 specialists"}
                   </div>
-                  <p style={{ color: TEXT_MID, fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ color: TEXT_MID, fontSize: 14, lineHeight: 1.7, margin: 0 }}>
                     {lang === "de"
                       ? "Das Ergebnis wird von zwei unabhängigen Polygraphologen geprüft und analysiert. Erst nach dieser doppelten Kontrolle wird der vollständige Bericht erstellt."
                       : "The result is reviewed and analyzed by two independent polygraphers. Only after this double verification is the complete report prepared."}
@@ -1512,29 +1524,57 @@ function ReportSection() {
               </div>
             </div>
             {/* Written report price card */}
-            <div style={{ background: cardBg, borderRadius: 12, padding: "28px", border: `2px solid ${accent}`, boxShadow: "0 2px 8px rgba(245,158,11,0.12)" }}>
+            <div style={{ background: cardBg, borderRadius: 12, padding: "24px", border: `2px solid ${accent}`, boxShadow: "0 2px 8px rgba(245,158,11,0.12)" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <div style={{ background: "#fffbeb", borderRadius: 8, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontSize: 24 }}>📋</span>
+                <div style={{ background: "#fffbeb", borderRadius: 8, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className="fas fa-clipboard-list" style={{ color: accent, fontSize: 18 }} />
                 </div>
                 <div>
-                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 16, marginBottom: 6 }}>
                     {lang === "de" ? "Schriftlicher Bericht" : "Written Report"}
                   </div>
-                  <p style={{ color: TEXT_MID, fontSize: 15, lineHeight: 1.7, margin: "0 0 12px" }}>
+                  <p style={{ color: TEXT_MID, fontSize: 14, lineHeight: 1.7, margin: "0 0 10px" }}>
                     {lang === "de"
                       ? "Der vollständige schriftliche Bericht kann auf Wunsch gegen einen Aufpreis ausgestellt werden."
                       : "The complete written report can be issued on request for an additional fee."}
                   </p>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: accent, borderRadius: 6, padding: "8px 18px" }}>
-                     <span style={{ color: "#000", fontWeight: 800, fontSize: 20 }}>200 €</span>
-                    <span style={{ color: "#000", fontSize: 14, fontWeight: 600 }}>{lang === "de" ? "Aufpreis" : "additional fee"}</span>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: accent, borderRadius: 6, padding: "7px 16px" }}>
+                    <span style={{ color: "#000", fontWeight: 800, fontSize: 18 }}>200 \u20ac</span>
+                    <span style={{ color: "#000", fontSize: 13, fontWeight: 600 }}>{lang === "de" ? "Aufpreis" : "additional fee"}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Gutachten full-width block */}
+        <div style={{ background: cardBg, borderRadius: 14, border: `2px solid ${accent}`, boxShadow: "0 4px 20px rgba(245,158,11,0.10)", padding: "40px 40px 36px", marginTop: 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 10 }}>
+            <div style={{ background: accent, borderRadius: 10, width: 52, height: 52, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <i className="fas fa-stamp" style={{ color: "#000", fontSize: 22 }} />
+            </div>
+            <h3 style={{ color: NAVY, fontWeight: 800, fontSize: "clamp(1.2rem,2.5vw,1.5rem)", margin: 0 }}>
+              {lang === "de" ? "Schriftliches Gutachten: Ihre Sicherheit, schwarz auf wei\u00df" : "Written Expert Report: Your Security in Black and White"}
+            </h3>
+          </div>
+          <p style={{ color: TEXT_MID, fontSize: 15, lineHeight: 1.8, marginBottom: 28, maxWidth: 820 }}>
+            {lang === "de"
+              ? "Ein Test bei L\u00fcgendetektor-Test M\u00fcnchen liefert Ihnen mehr als nur ein m\u00fcndliches Ergebnis. Unser schriftliches Expertengutachten ist eine pr\u00e4zise, wissenschaftlich fundierte Analyse Ihrer Untersuchung \u2013 \u00fcbersichtlich aufbereitet als professionelles PDF-Dokument."
+              : "A test at L\u00fcgendetektor-Test Munich gives you more than just a verbal result. Our written expert report is a precise, scientifically grounded analysis of your examination \u2013 clearly prepared as a professional PDF document."}
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
+            {gutachtenBenefits.map((b, i) => (
+              <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: "#fff8e6", border: `1px solid ${accent}55`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <i className={b.icon} style={{ color: accent, fontSize: 15 }} />
+                </div>
+                <p style={{ color: TEXT_DARK, fontSize: 14, lineHeight: 1.65, margin: 0 }}>{lang === "de" ? b.de : b.en}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );

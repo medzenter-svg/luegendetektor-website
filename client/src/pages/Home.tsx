@@ -569,7 +569,7 @@ function HeroSection() {
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,25,50,0.88) 0%, rgba(15,25,50,0.72) 50%, rgba(15,25,50,0.45) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "80px 24px 60px", width: "100%" }}>
         <div style={{ maxWidth: "620px" }}>
-          <h1 style={{ color: WHITE, fontSize: "clamp(1.5rem, 3.2vw, 2.4rem)", fontWeight: 700, lineHeight: 1.2, marginBottom: "14px", textTransform: "uppercase", letterSpacing: "1px" }}>
+          <h1 style={{ color: WHITE, fontSize: "clamp(1.2rem, 2.2vw, 1.8rem)", fontWeight: 700, lineHeight: 1.2, marginBottom: "14px", textTransform: "uppercase", letterSpacing: "1px" }}>
             {t.hero.title1[lang]}<br />{t.hero.title2[lang]}
           </h1>
           <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>{t.hero.subtitle[lang]}</p>

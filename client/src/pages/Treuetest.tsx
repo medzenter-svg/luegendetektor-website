@@ -51,7 +51,7 @@ export default function Treuetest() {
   const steps = [
     { num: "1", icon: "fas fa-phone", title: "Kostenlose Erstberatung", text: "Schildern Sie uns Ihre Situation in einem vertraulichen Gespräch. Wir beraten Sie über den Ablauf und beantworten alle Fragen." },
     { num: "2", icon: "fas fa-calendar-check", title: "Terminvereinbarung", text: "Wir vereinbaren einen diskreten Termin – in unserem Büro in München oder auf Wunsch bei Ihnen zu Hause." },
-    { num: "3", icon: "fas fa-wave-square", title: "Polygraphuntersuchung", text: "Die Untersuchung dauert ca. 2–3 Stunden. Erfahrene Spezialisten führen die Befragung professionell und einfühlsam durch." },
+    { num: "3", icon: "fas fa-chart-line", title: "Polygraphuntersuchung", text: "Die Untersuchung dauert ca. 2–3 Stunden. Erfahrene Spezialisten führen die Befragung professionell und einfühlsam durch." },
     { num: "4", icon: "fas fa-file-alt", title: "Ergebnis & Auswertung", text: "Sie erhalten eine klare Auswertung. Auf Wunsch auch als schriftliche Dokumentation für Ihre Unterlagen." },
   ];
 

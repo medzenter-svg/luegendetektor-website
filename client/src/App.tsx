@@ -39,6 +39,10 @@ import LuegendetekorStuttgart from "./pages/LuegendetekorStuttgart";
 import LuegendetekorKoeln from "./pages/LuegendetekorKoeln";
 import LuegendetekorLeipzig from "./pages/LuegendetekorLeipzig";
 import LuegendetekorDresden from "./pages/LuegendetekorDresden";
+import AbsoluteVertraulichkeit from "./pages/AbsoluteVertraulichkeit";
+import ErfahreneExperten from "./pages/ErfahreneExperten";
+import ModerneAusruestung from "./pages/ModerneAusruestung";
+import DoppeltePruefung from "./pages/DoppeltePruefung";
 
 
 function Router() {
@@ -78,6 +82,10 @@ function Router() {
       <Route path={"/luegendetektor-koeln"} component={LuegendetekorKoeln} />
       <Route path={"/luegendetektor-leipzig"} component={LuegendetekorLeipzig} />
       <Route path={"/luegendetektor-dresden"} component={LuegendetekorDresden} />
+      <Route path={"/absolute-vertraulichkeit"} component={AbsoluteVertraulichkeit} />
+      <Route path={"/erfahrene-experten"} component={ErfahreneExperten} />
+      <Route path={"/moderne-ausruestung"} component={ModerneAusruestung} />
+      <Route path={"/doppelte-pruefung"} component={DoppeltePruefung} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

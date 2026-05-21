@@ -58,7 +58,7 @@ export default function Fahrerpruefung() {
   const steps = [
     { num: "1", icon: "fas fa-phone", title: "Kostenlose Erstberatung", text: "Schildern Sie uns Ihre Anforderungen. Wir beraten Sie über den Ablauf und die spezifischen Prüfpunkte für Ihren Fahrer." },
     { num: "2", icon: "fas fa-calendar-check", title: "Terminvereinbarung", text: "Wir vereinbaren einen diskreten Termin – in unserem Büro in München oder bei Ihnen vor Ort." },
-    { num: "3", icon: "fas fa-wave-square", title: "Polygraphuntersuchung", text: "Die Untersuchung dauert ca. 2–3 Stunden. Unsere Spezialisten prüfen alle relevanten Aspekte professionell und diskret." },
+    { num: "3", icon: "fas fa-chart-line", title: "Polygraphuntersuchung", text: "Die Untersuchung dauert ca. 2–3 Stunden. Unsere Spezialisten prüfen alle relevanten Aspekte professionell und diskret." },
     { num: "4", icon: "fas fa-file-alt", title: "Ergebnis & Dokumentation", text: "Sie erhalten eine klare Auswertung. Auf Wunsch als schriftliche Dokumentation für Ihre Unterlagen." },
   ];
 

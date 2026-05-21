@@ -244,11 +244,36 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
+   <url>
     <loc>https://luegendetektor-test-muenchen.de/anzeichen-fremdgehen</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Badge-Seiten -->
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/absolute-vertraulichkeit</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/erfahrene-experten</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/moderne-ausruestung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/doppelte-pruefung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

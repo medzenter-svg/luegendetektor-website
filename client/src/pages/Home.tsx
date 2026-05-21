@@ -572,20 +572,31 @@ function HeroSection() {
   return (
     <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 40%", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,25,50,0.88) 0%, rgba(15,25,50,0.72) 50%, rgba(15,25,50,0.45) 100%)" }} />
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "80px 24px 60px", width: "100%" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "160px 24px 60px", width: "100%" }}>
         <div style={{ maxWidth: "620px" }}>
-          <h1 style={{ color: WHITE, fontSize: "clamp(1.2rem, 2.2vw, 1.8rem)", fontWeight: 700, lineHeight: 1.2, marginBottom: "14px", textTransform: "uppercase", letterSpacing: "1px" }}>
+          <h1 style={{ color: WHITE, fontSize: "clamp(1.2rem, 2.2vw, 1.8rem)", fontWeight: 700, lineHeight: 1.55, marginBottom: "28px", textTransform: "uppercase", letterSpacing: "1px" }}>
             {t.hero.title1[lang]}<br />{t.hero.title2[lang]}
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "14px" }}>{t.hero.subtitle[lang]}</p>
-          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{t.hero.accuracy[lang]}</p>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "26px", marginBottom: "36px" }}>{t.hero.anon[lang]}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "32px" }}>
-            {[{ icon: "fas fa-lock", label: t.hero.badge1[lang] }, { icon: "fas fa-user-tie", label: t.hero.badge2[lang] }, { icon: "fas fa-desktop", label: t.hero.badge3[lang] }, { icon: "fas fa-user-check", label: lang === "de" ? "Doppelte Prüfung durch 2 Experten" : "Double-checked by 2 experts" }].map(b => (
-              <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "10px", backgroundColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.18)", padding: "12px 20px", borderRadius: "6px", minWidth: "170px" }}>
+          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", fontWeight: 400, marginBottom: "20px" }}>{t.hero.subtitle[lang]}</p>
+          <p style={{ color: ORANGE, fontSize: "16px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "24px" }}>{t.hero.accuracy[lang]}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "40px" }}>
+            {[
+              { icon: "fas fa-lock", label: t.hero.badge1[lang], href: "/absolute-vertraulichkeit" },
+              { icon: "fas fa-user-tie", label: t.hero.badge2[lang], href: "/erfahrene-experten" },
+              { icon: "fas fa-desktop", label: t.hero.badge3[lang], href: "/moderne-ausruestung" },
+              { icon: "fas fa-user-check", label: lang === "de" ? "Doppelte Prüfung durch 2 Experten" : "Double-checked by 2 experts", href: "/doppelte-pruefung" },
+            ].map(b => (
+              <Link
+                key={b.label}
+                href={b.href}
+                style={{ display: "flex", alignItems: "center", gap: "10px", backgroundColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(230,140,0,0.6)", padding: "12px 20px", borderRadius: "6px", minWidth: "170px", cursor: "pointer", transition: "background-color 0.2s, border-color 0.2s, transform 0.15s", textDecoration: "none" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(230,140,0,0.22)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = ORANGE; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.1)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(230,140,0,0.6)"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"; }}
+              >
                 <i className={b.icon} style={{ color: ORANGE, fontSize: "18px" }}></i>
                 <span style={{ color: WHITE, fontSize: "13px", fontWeight: 500 }}>{b.label}</span>
-              </div>
+                <i className="fas fa-arrow-right" style={{ color: ORANGE, fontSize: "10px", marginLeft: "auto", opacity: 0.8 }}></i>
+              </Link>
             ))}
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
@@ -666,7 +677,7 @@ function RegionalSection() {
         <h2 style={{ color: NAVY, fontWeight: 900, fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.25, marginBottom: "20px", maxWidth: "820px" }}>
           {lang === "en"
             ? "Exclusive Polygraph Services in Germany, Austria & Switzerland"
-            : "Vertrauliche Polygraph-LÜGENDETEKTOR-TESTS Untersuchungen für Privatpersonen und Unternehmen"}
+            : "Vertrauliche Lügendetektor-Tests Untersuchungen für Privatpersonen und Unternehmen"}
         </h2>
         {/* Body text */}
         <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.85, marginBottom: "16px", maxWidth: "900px" }}>

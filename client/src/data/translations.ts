@@ -17,7 +17,7 @@ export const t = {
 
   // ── HERO ──
   hero: {
-    title1:     { de: "LÜGENDETEKTOR-TESTS Untersuchungen für Privatpersonen und Unternehmen", en: "LIE DETECTOR TESTS for Private Clients & Companies" },
+    title1:     { de: "LÜGENDETEKTOR TESTS Untersuchungen", en: "LIE DETECTOR TESTS for Private Clients & Companies" },
     title2:     { de: "in Deutschland, Österreich und der Schweiz", en: "in Germany, Austria & Switzerland" },
     subtitle:   { de: "Premium-Prüfung zum fairen Preis", en: "Premium examination at a fair price" },
     accuracy:   { de: "GENAUIGKEIT 98–99%", en: "ACCURACY 98–99%" },

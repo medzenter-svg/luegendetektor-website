@@ -1277,6 +1277,95 @@ function FAQSection() {
 }
 
 // ─────────────────────────────────────────────
+// REVIEWS
+// ─────────────────────────────────────────────
+function ReviewsSection() {
+  const { lang } = useLang();
+  const reviews = [
+    {
+      name: "Thomas K.",
+      city: "München",
+      stars: 5,
+      de: "Sehr professionelle Abwicklung. Der Test war diskret, schnell und das Ergebnis eindeutig. Ich kann den Service nur weiterempfehlen – hat uns als Familie wirklich geholfen, Klarheit zu gewinnen.",
+      en: "Very professional handling. The test was discreet, quick and the result was clear. I can only recommend the service – it really helped our family gain clarity.",
+    },
+    {
+      name: "Sandra M.",
+      city: "Augsburg",
+      stars: 5,
+      de: "Ich hatte anfangs Bedenken, aber das Team hat mich von Anfang an beruhigt. Alles verlief vertraulich und respektvoll. Das Gutachten war sehr ausführlich und professionell erstellt.",
+      en: "I had concerns at first, but the team reassured me from the start. Everything was handled confidentially and respectfully. The report was very detailed and professionally prepared.",
+    },
+    {
+      name: "Markus R.",
+      city: "Frankfurt",
+      stars: 5,
+      de: "Wir haben den Polygraphentest für eine interne Firmenuntersuchung genutzt. Die Koordination war reibungslos, der Spezialist kam direkt zu uns. Absolut empfehlenswert für Unternehmen.",
+      en: "We used the polygraph test for an internal company investigation. The coordination was smooth, the specialist came directly to us. Absolutely recommended for companies.",
+    },
+    {
+      name: "Julia B.",
+      city: "Wien",
+      stars: 5,
+      de: "Trotz der schwierigen Situation wurde ich sehr einfühlsam betreut. Der Test verlief ruhig und professionell. Das Ergebnis hat mir die Gewissheit gegeben, die ich gebraucht habe.",
+      en: "Despite the difficult situation, I was cared for very empathetically. The test went smoothly and professionally. The result gave me the certainty I needed.",
+    },
+  ];
+  const L = lang as "de" | "en";
+  return (
+    <section id="reviews" style={{ backgroundColor: WHITE, padding: "48px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+        <div style={{ textAlign: "center", marginBottom: "40px" }}>
+          <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>
+            {L === "de" ? "Kundenstimmen" : "Client Reviews"}
+          </p>
+          <h2 style={{ color: NAVY, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>
+            {L === "de" ? "WAS UNSERE KUNDEN SAGEN" : "WHAT OUR CLIENTS SAY"}
+          </h2>
+          <div style={{ width: "60px", height: "3px", background: ORANGE, margin: "12px auto 0" }} />
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }} className="detail-grid">
+          {reviews.map((r, i) => (
+            <div key={i} style={{ background: LIGHT_BG, borderRadius: "10px", padding: "28px 28px 24px", border: `1px solid ${BORDER}`, position: "relative" }}>
+              {/* Quote mark */}
+              <div style={{ fontSize: "48px", lineHeight: 1, color: ORANGE, opacity: 0.25, position: "absolute", top: "16px", left: "22px", fontFamily: "Georgia, serif", fontWeight: 900 }}>"</div>
+              {/* Stars */}
+              <div style={{ display: "flex", gap: "3px", marginBottom: "14px" }}>
+                {Array.from({ length: r.stars }).map((_, s) => (
+                  <span key={s} style={{ color: ORANGE, fontSize: "18px" }}>★</span>
+                ))}
+              </div>
+              {/* Text */}
+              <p style={{ color: TEXT_DARK, fontSize: "15px", lineHeight: 1.7, margin: "0 0 18px", fontStyle: "italic" }}>
+                "{r[L]}"
+              </p>
+              {/* Author */}
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: NAVY, display: "flex", alignItems: "center", justifyContent: "center", color: WHITE, fontWeight: 700, fontSize: "15px", flexShrink: 0 }}>
+                  {r.name.charAt(0)}
+                </div>
+                <div>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: "15px" }}>{r.name}</div>
+                  <div style={{ color: TEXT_MID, fontSize: "13px" }}>{r.city}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Google rating badge */}
+        <div style={{ textAlign: "center", marginTop: "32px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: LIGHT_BG, border: `1px solid ${BORDER}`, borderRadius: "8px", padding: "10px 22px" }}>
+            <span style={{ color: ORANGE, fontSize: "20px" }}>★★★★★</span>
+            <span style={{ color: NAVY, fontWeight: 700, fontSize: "15px" }}>4.9 / 5.0</span>
+            <span style={{ color: TEXT_MID, fontSize: "14px" }}>· Google Bewertungen</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────
 // CONTACT
 // ─────────────────────────────────────────────
 function ContactSection() {
@@ -1822,6 +1911,7 @@ export default function Home() {
       <ReportSection />
       <CasesSection />
       <FAQSection />
+      <ReviewsSection />
       <ContactSection />
       <Footer onLegalOpen={(key) => setLegalDoc(key)} docKeyMap={docKeyMap} />
       <FloatingWidgets />

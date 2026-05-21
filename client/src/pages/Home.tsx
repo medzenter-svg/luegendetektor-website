@@ -1107,7 +1107,7 @@ const GUTACHTEN_PACKAGE = {
   desc: { de: "Erhalten Sie ein offizielles schriftliches Gutachten sowie eine pers\u00f6nliche Nachberatung durch unsere Experten.", en: "Receive an official written report and a personal follow-up consultation with our experts." },
   price: "200",
   features: [
-    { de: "Offizielles schriftliches Gutachten", en: "Official written report" },
+    { de: "Detaillierte schriftliche Dokumentation", en: "Detailed written documentation" },
     { de: "Rechtlich verwertbar", en: "Legally admissible" },
     { de: "Pers\u00f6nliche Nachberatung", en: "Personal follow-up consultation" },
     { de: "Auf Wunsch als Zusatz buchbar", en: "Available as an add-on" },

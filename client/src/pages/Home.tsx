@@ -638,14 +638,14 @@ function StatsBar() {
 function RegionalSection() {
   const { lang } = useLang();
   const cities = [
-    { name: "München", href: "#kontakt" },
-    { name: "Berlin", href: "#kontakt" },
-    { name: "Hamburg", href: "#kontakt" },
-    { name: "Frankfurt", href: "#kontakt" },
-    { name: "Düsseldorf", href: "#kontakt" },
-    { name: "Stuttgart", href: "#kontakt" },
-    { name: "Wien", href: "#kontakt" },
-    { name: "Zürich", href: "#kontakt" },
+    { name: "München", href: "/luegendetektor-muenchen" },
+    { name: "Berlin", href: "/#contact" },
+    { name: "Hamburg", href: "/#contact" },
+    { name: "Frankfurt", href: "/#contact" },
+    { name: "Düsseldorf", href: "/#contact" },
+    { name: "Stuttgart", href: "/#contact" },
+    { name: "Wien", href: "/polygraph-wien" },
+    { name: "Zürich", href: "/polygraph-zuerich" },
   ];
   return (
     <section style={{ backgroundColor: "#f8f9fb", borderBottom: `1px solid ${BORDER}`, fontFamily: "'Lato', sans-serif", padding: "52px 24px" }}>
@@ -1587,11 +1587,18 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
           </div>
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Beliebte Leistungen</h4>
-            {["Treuetest", "Überprüfung von Jugendlichen", "Überprüfung von Hausmädchen", "Überprüfung bei der Einstellung", "Interne Ermittlungen", "Aufklärung von Diebstählen"].map(s => (
-              <button key={s} onClick={() => scrollTo("services")} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
-                onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{s}</button>
-            ))}
+             {[
+               { label: "Treuetest", href: "/treuetest" },
+               { label: "Überprüfung von Jugendlichen", href: "/#services" },
+               { label: "Überprüfung von Hausmädchen", href: "/#services" },
+               { label: "Mitarbeiterüberprüfung", href: "/mitarbeiterueberpruefung" },
+               { label: "Interne Ermittlungen", href: "/interne-ermittlungen" },
+               { label: "Aufklärung von Diebstählen", href: "/#services" },
+             ].map(s => (
+               <a key={s.label} href={s.href} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none", padding: "3px 0" }}
+                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
+                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{s.label}</a>
+             ))}
           </div>
           <div>
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Dokumente</h4>

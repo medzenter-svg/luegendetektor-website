@@ -14,6 +14,20 @@ import PolygraphZuerich from "./pages/PolygraphZuerich";
 import InterneErmittlungen from "./pages/InterneErmittlungen";
 import Treuetest from "./pages/Treuetest";
 import Mitarbeiterueberpruefung from "./pages/Mitarbeiterueberpruefung";
+import Sicherheitspruefung from "./pages/Sicherheitspruefung";
+import ItSektor from "./pages/ItSektor";
+import HauspersonalUeberpruefung from "./pages/HauspersonalUeberpruefung";
+import Fahrerpruefung from "./pages/Fahrerpruefung";
+import PolygraphOesterreich from "./pages/PolygraphOesterreich";
+import PolygraphSchweiz from "./pages/PolygraphSchweiz";
+import LuegendetekorBerlin from "./pages/LuegendetekorBerlin";
+import LuegendetekorHamburg from "./pages/LuegendetekorHamburg";
+import LuegendetekorFrankfurt from "./pages/LuegendetekorFrankfurt";
+import Ratgeber from "./pages/Ratgeber";
+import RatgeberGenauigkeit from "./pages/RatgeberGenauigkeit";
+import RatgeberKosten from "./pages/RatgeberKosten";
+import RatgeberLegal from "./pages/RatgeberLegal";
+import RatgeberTreuetest from "./pages/RatgeberTreuetest";
 
 
 function Router() {
@@ -28,6 +42,20 @@ function Router() {
       <Route path={"/interne-ermittlungen"} component={InterneErmittlungen} />
       <Route path={"/treuetest"} component={Treuetest} />
       <Route path={"/mitarbeiterueberpruefung"} component={Mitarbeiterueberpruefung} />
+      <Route path={"/sicherheitspruefung"} component={Sicherheitspruefung} />
+      <Route path={"/it-sektor"} component={ItSektor} />
+      <Route path={"/hauspersonal-ueberpruefung"} component={HauspersonalUeberpruefung} />
+      <Route path={"/fahrerpruefung"} component={Fahrerpruefung} />
+      <Route path={"/polygraph-oesterreich"} component={PolygraphOesterreich} />
+      <Route path={"/polygraph-schweiz"} component={PolygraphSchweiz} />
+      <Route path={"/luegendetektor-berlin"} component={LuegendetekorBerlin} />
+      <Route path={"/luegendetektor-hamburg"} component={LuegendetekorHamburg} />
+      <Route path={"/luegendetektor-frankfurt"} component={LuegendetekorFrankfurt} />
+      <Route path={"/ratgeber"} component={Ratgeber} />
+      <Route path={"/ratgeber/luegendetektor-genauigkeit"} component={RatgeberGenauigkeit} />
+      <Route path={"/ratgeber/kosten-polygraph"} component={RatgeberKosten} />
+      <Route path={"/ratgeber/polygraph-legal-deutschland"} component={RatgeberLegal} />
+      <Route path={"/ratgeber/treuetest-vorbereitung"} component={RatgeberTreuetest} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

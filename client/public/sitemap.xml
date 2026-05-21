@@ -56,6 +56,107 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Thematische Seiten (neu) -->
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/sicherheitspruefung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/it-sektor</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/hauspersonal-ueberpruefung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/fahrerpruefung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Regionale Seiten (neu) -->
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/polygraph-oesterreich</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/polygraph-schweiz</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-berlin</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-hamburg</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-frankfurt</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Ratgeber / Magazin -->
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/luegendetektor-genauigkeit</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/kosten-polygraph</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/polygraph-legal-deutschland</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/treuetest-vorbereitung</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Unterseiten -->
   <url>
     <loc>https://luegendetektor-test-muenchen.de/fremdgehen-beweisen</loc>

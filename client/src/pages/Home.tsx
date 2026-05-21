@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { legalDocs } from "../data/legalDocs";
 import { useLang } from "../contexts/LanguageContext";
 import { t } from "../data/translations";
+import { Link } from "wouter";
 
 // ============================================================
 // POLYGRAPH – lügendetektortest.com
@@ -525,6 +526,10 @@ function Navbar() {
               onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}>{label}</button>
           ))}
+          <Link href="/ratgeber"
+            style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", fontWeight: 500, letterSpacing: "0.3px", textDecoration: "none", padding: "4px 0", whiteSpace: "nowrap" }}
+            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => ((e.currentTarget as HTMLAnchorElement).style.color = ORANGE)}
+            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.85)")}>Ratgeber</Link>
         </div>
         {/* Language switcher */}
         <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
@@ -639,9 +644,9 @@ function RegionalSection() {
   const { lang } = useLang();
   const cities = [
     { name: "München", href: "/luegendetektor-muenchen" },
-    { name: "Berlin", href: "/#contact" },
-    { name: "Hamburg", href: "/#contact" },
-    { name: "Frankfurt", href: "/#contact" },
+    { name: "Berlin", href: "/luegendetektor-berlin" },
+    { name: "Hamburg", href: "/luegendetektor-hamburg" },
+    { name: "Frankfurt", href: "/luegendetektor-frankfurt" },
     { name: "Düsseldorf", href: "/#contact" },
     { name: "Stuttgart", href: "/#contact" },
     { name: "Wien", href: "/polygraph-wien" },
@@ -1589,11 +1594,13 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
             <h4 style={{ color: WHITE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "14px" }}>Beliebte Leistungen</h4>
              {[
                { label: "Treuetest", href: "/treuetest" },
-               { label: "Überprüfung von Jugendlichen", href: "/#services" },
-               { label: "Überprüfung von Hausmädchen", href: "/#services" },
+               { label: "Hauspersonal-Überprüfung", href: "/hauspersonal-ueberpruefung" },
+               { label: "Fahrerüberprüfung", href: "/fahrerpruefung" },
                { label: "Mitarbeiterüberprüfung", href: "/mitarbeiterueberpruefung" },
                { label: "Interne Ermittlungen", href: "/interne-ermittlungen" },
-               { label: "Aufklärung von Diebstählen", href: "/#services" },
+               { label: "Sicherheitsprüfung", href: "/sicherheitspruefung" },
+               { label: "IT-Sektor Überprüfung", href: "/it-sektor" },
+               { label: "Ratgeber & Magazin", href: "/ratgeber" },
              ].map(s => (
                <a key={s.label} href={s.href} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none", padding: "3px 0" }}
                  onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}

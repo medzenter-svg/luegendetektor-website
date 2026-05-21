@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -16,7 +18,31 @@ const BORDER = "#e2e8f0";
 
 export default function Treuetest() {
   useEffect(() => {
-    document.title = "Treuetest München | Lügendetektor Untreue | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Treuetest München – Polygraph Lügendetektor | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Professioneller Treuetest mit dem Polygraphen in München. Diskrete Untersuchung für Privatpersonen – zertifiziert, vertraulich, mit offiziellem Gutachten. Täglich 10–22 Uhr.");
+    setMeta("og:title", "Treuetest München – Polygraph Lügendetektor | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Professioneller Treuetest mit dem Polygraphen in München. Diskrete Untersuchung für Privatpersonen – zertifiziert, vertraulich, mit offiziellem Gutachten. Täglich 10–22 Uhr.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/treuetest", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Treuetest München – Polygraph Lügendetektor | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Professioneller Treuetest mit dem Polygraphen in München. Diskrete Untersuchung für Privatpersonen – zertifiziert, vertraulich, mit offiziellem Gutachten. Täglich 10–22 Uhr.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/treuetest");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Treuetest mit Lügendetektor in München. Professionelle Polygraphuntersuchung bei Verdacht auf Untreue. Diskret, vertraulich, 98–99% Genauigkeit. +49 175 6036003");
     window.scrollTo(0, 0);
@@ -121,6 +147,15 @@ export default function Treuetest() {
           </div>
         </div>
       </section>
+            <RelatedContent
+        heading="Weiterführende Informationen zum Treuetest"
+        items={[
+        { title: "Anzeichen Fremdgehen – wann ist ein Treuetest sinnvoll?", excerpt: "Sachliche Analyse typischer Anzeichen von Untreue und wann ein professioneller Test Klarheit schaffen kann.", href: "/ratgeber/anzeichen-fremdgehen", type: "ratgeber" as const },
+        { title: "Treuetest Vorbereitung – was Sie wissen sollten", excerpt: "Ablauf, Rechte und Erwartungen vor einer Polygraphuntersuchung – sachlich erklärt.", href: "/ratgeber/treuetest-vorbereitung", type: "ratgeber" as const },
+        { title: "Wie genau ist ein Lügendetektor?", excerpt: "Wissenschaftliche Grundlagen, Fehlerquellen und was ein professionelles Gutachten wirklich aussagt.", href: "/ratgeber/luegendetektor-genauigkeit", type: "ratgeber" as const }
+        ]}
+      />
+      <ContactFormCompact context="Treuetest" />
       <SharedFooter />
       <FloatingButtons />
     </div>

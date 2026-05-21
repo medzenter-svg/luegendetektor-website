@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -15,10 +16,77 @@ const BORDER = "#e2e8f0";
 
 export default function PolygraphZuerich() {
   useEffect(() => {
-    document.title = "Polygraph Zürich | Lügendetektor Test Schweiz | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Polygraph Test Zürich – Lügendetektor Schweiz | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Professionelle Polygraphuntersuchungen in Zürich. Diskreter Lügendetektor-Test mit offiziellem Gutachten für die Schweiz.");
+    setMeta("og:title", "Polygraph Test Zürich – Lügendetektor Schweiz | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Professionelle Polygraphuntersuchungen in Zürich. Diskreter Lügendetektor-Test mit offiziellem Gutachten für die Schweiz.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/polygraph-zuerich", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Polygraph Test Zürich – Lügendetektor Schweiz | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Professionelle Polygraphuntersuchungen in Zürich. Diskreter Lügendetektor-Test mit offiziellem Gutachten für die Schweiz.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/polygraph-zuerich");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Professioneller Polygraph Test in Zürich und der Schweiz. Diskrete Lügendetektor-Untersuchungen für Privatpersonen und Unternehmen. Termin auf Anfrage. +49 175 6036003");
     window.scrollTo(0, 0);
+
+    // City LocalBusiness Schema
+    const citySchema = {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://luegendetektor-test-muenchen.de/polygraph-zuerich#business",
+      "name": "Polygraph Test Zürich – Lügendetektor Untersuchungen",
+      "description": "Professionelle Polygraphuntersuchungen in Zürich. Diskreter Lügendetektor-Test mit offiziellem Gutachten für die Schweiz.",
+      "url": "https://luegendetektor-test-muenchen.de/polygraph-zuerich",
+      "telephone": "+4917560360003",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Auf Anfrage",
+        "addressLocality": "Zürich",
+        "postalCode": "8001",
+        "addressRegion": "Zürich",
+        "addressCountry": "CH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.3769,
+        "longitude": 8.5417
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      }],
+      "priceRange": "€€",
+      "parentOrganization": {
+        "@type": "LocalBusiness",
+        "@id": "https://luegendetektor-test-muenchen.de/#business"
+      }
+    };
+    const existingCity = document.getElementById("schema-city-lb");
+    if (existingCity) existingCity.remove();
+    const cityScript = document.createElement("script");
+    cityScript.id = "schema-city-lb";
+    cityScript.type = "application/ld+json";
+    cityScript.textContent = JSON.stringify(citySchema);
+    document.head.appendChild(cityScript);
+    return () => { document.getElementById("schema-city-lb")?.remove(); };
   }, []);
 
   return (
@@ -100,6 +168,7 @@ export default function PolygraphZuerich() {
           </div>
         </div>
       </section>
+      <ContactFormCompact context="Polygraph Zürich" />
       <SharedFooter />
       <FloatingButtons />
     </div>

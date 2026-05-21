@@ -98,7 +98,31 @@ const articles = [
 
 export default function Ratgeber() {
   useEffect(() => {
-    document.title = "Ratgeber Lügendetektor | Polygraph Magazin | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Ratgeber Polygraph & Lügendetektor – Magazin | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Fundierte Informationen rund um Polygraphuntersuchungen: Genauigkeit, Kosten, Legalität, Ablauf und mehr. Professionelle Beratung für Privatpersonen und Unternehmen.");
+    setMeta("og:title", "Ratgeber Polygraph & Lügendetektor – Magazin | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Fundierte Informationen rund um Polygraphuntersuchungen: Genauigkeit, Kosten, Legalität, Ablauf und mehr. Professionelle Beratung für Privatpersonen und Unternehmen.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/ratgeber", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Ratgeber Polygraph & Lügendetektor – Magazin | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Fundierte Informationen rund um Polygraphuntersuchungen: Genauigkeit, Kosten, Legalität, Ablauf und mehr. Professionelle Beratung für Privatpersonen und Unternehmen.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/ratgeber");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Ratgeber und Magazin rund um Polygraph & Lügendetektor. Expertenwissen zu Genauigkeit, Kosten, Legalität und Vorbereitung. Fundiert, sachlich, verständlich.");
     window.scrollTo(0, 0);

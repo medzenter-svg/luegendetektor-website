@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -16,7 +18,31 @@ const BORDER = "#e2e8f0";
 
 export default function Mitarbeiterueberpruefung() {
   useEffect(() => {
-    document.title = "Mitarbeiterüberprüfung Polygraph | Einstellungstest | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Mitarbeiterüberprüfung Polygraph München | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Polygraphbasierte Mitarbeiterüberprüfung für Unternehmen. Diskret, rechtssicher, mit offiziellem Gutachten. Bundesweit verfügbar – täglich 10–22 Uhr.");
+    setMeta("og:title", "Mitarbeiterüberprüfung Polygraph München | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Polygraphbasierte Mitarbeiterüberprüfung für Unternehmen. Diskret, rechtssicher, mit offiziellem Gutachten. Bundesweit verfügbar – täglich 10–22 Uhr.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/mitarbeiterueberpruefung", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Mitarbeiterüberprüfung Polygraph München | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Polygraphbasierte Mitarbeiterüberprüfung für Unternehmen. Diskret, rechtssicher, mit offiziellem Gutachten. Bundesweit verfügbar – täglich 10–22 Uhr.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/mitarbeiterueberpruefung");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Mitarbeiterüberprüfung mit Polygraph für Unternehmen. Einstellungstests, Zuverlässigkeitsprüfungen und Sicherheitsüberprüfungen. Bundesweit. +49 175 6036003");
     window.scrollTo(0, 0);
@@ -122,6 +148,15 @@ export default function Mitarbeiterueberpruefung() {
           </div>
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Leistungen und Ratgeber"
+        items={[
+        { title: "Polygraph für Unternehmen", excerpt: "Einsatzmöglichkeiten des Polygraphen im Unternehmenskontext – von der Einstellung bis zur internen Ermittlung.", href: "/ratgeber/polygraph-fuer-unternehmen", type: "ratgeber" as const },
+        { title: "Mitarbeiterdiebstahl aufklären", excerpt: "Wie der Polygraph bei der Aufklärung von Diebstahl und Unterschlagung helfen kann.", href: "/ratgeber/mitarbeiterdiebstahl", type: "ratgeber" as const },
+        { title: "Interne Ermittlungen", excerpt: "Diskrete Untersuchung von Vertrauensbrüchen, Datenmissbrauch und internen Konflikten.", href: "/interne-ermittlungen", type: "leistung" as const }
+        ]}
+      />
+      <ContactFormCompact context="Mitarbeiterüberprüfung" />
       <SharedFooter />
       <FloatingButtons />
     </div>

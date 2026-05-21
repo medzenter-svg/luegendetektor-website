@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -16,7 +18,31 @@ const BORDER = "#e2e8f0";
 
 export default function ItSektor() {
   useEffect(() => {
-    document.title = "Polygraph IT-Sektor | Überprüfung von IT-Fachkräften | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Polygraph IT-Sektor – Datenleck & Spionage | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Spezialisierte Polygraphuntersuchungen für IT-Unternehmen. Überprüfung bei Datenlecks, Industriespionage und Zugangsmissbrauch. Bundesweit.");
+    setMeta("og:title", "Polygraph IT-Sektor – Datenleck & Spionage | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Spezialisierte Polygraphuntersuchungen für IT-Unternehmen. Überprüfung bei Datenlecks, Industriespionage und Zugangsmissbrauch. Bundesweit.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/it-sektor", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Polygraph IT-Sektor – Datenleck & Spionage | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Spezialisierte Polygraphuntersuchungen für IT-Unternehmen. Überprüfung bei Datenlecks, Industriespionage und Zugangsmissbrauch. Bundesweit.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/it-sektor");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Polygraphuntersuchung für IT-Fachkräfte, Entwickler und Systemadministratoren. Schutz sensibler Daten und IT-Infrastruktur. Diskret und professionell. +49 175 6036003");
     window.scrollTo(0, 0);
@@ -108,6 +134,15 @@ export default function ItSektor() {
           </div>
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Leistungen"
+        items={[
+        { title: "Sicherheitsprüfung", excerpt: "Überprüfung von Vertrauenswürdigkeit und Integrität für sensible Positionen.", href: "/sicherheitspruefung", type: "leistung" as const },
+        { title: "Interne Ermittlungen", excerpt: "Diskrete Untersuchung von Datenmissbrauch und internen Konflikten.", href: "/interne-ermittlungen", type: "leistung" as const },
+        { title: "Polygraph für Unternehmen – Ratgeber", excerpt: "Einsatzmöglichkeiten, Rechtslage und Ablauf im Unternehmenskontext.", href: "/ratgeber/polygraph-fuer-unternehmen", type: "ratgeber" as const }
+        ]}
+      />
+      <ContactFormCompact context="IT-Sektor Überprüfung" />
       <SharedFooter />
       <FloatingButtons />
     </div>

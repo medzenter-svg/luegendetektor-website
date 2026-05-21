@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import RelatedContent from "../components/RelatedContent";
 import Breadcrumb from "../components/Breadcrumb";
 import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
@@ -15,7 +16,31 @@ const BORDER = "#e2e8f0";
 
 export default function RatgeberMitarbeiterdiebstahl() {
   useEffect(() => {
-    document.title = "Mitarbeiterdiebstahl aufklären – Polygraph als Ermittlungsinstrument | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Mitarbeiterdiebstahl aufklären – Polygraph | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Wie hilft der Polygraph bei der Aufklärung von Mitarbeiterdiebstahl? Vorgehen, Rechtslage und was Unternehmen beachten müssen.");
+    setMeta("og:title", "Mitarbeiterdiebstahl aufklären – Polygraph | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Wie hilft der Polygraph bei der Aufklärung von Mitarbeiterdiebstahl? Vorgehen, Rechtslage und was Unternehmen beachten müssen.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/ratgeber/mitarbeiterdiebstahl", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Mitarbeiterdiebstahl aufklären – Polygraph | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Wie hilft der Polygraph bei der Aufklärung von Mitarbeiterdiebstahl? Vorgehen, Rechtslage und was Unternehmen beachten müssen.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/ratgeber/mitarbeiterdiebstahl");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Wie Unternehmen bei Verdacht auf Mitarbeiterdiebstahl vorgehen können – und welche Rolle die Polygraphie bei internen Ermittlungen spielt.");
     window.scrollTo(0, 0);
@@ -124,6 +149,14 @@ export default function RatgeberMitarbeiterdiebstahl() {
 
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Leistungen und Ratgeber"
+        items={[
+        { title: "Mitarbeiterüberprüfung", excerpt: "Polygraphbasierte Überprüfung für Neueinstellungen und bestehende Mitarbeiter.", href: "/mitarbeiterueberpruefung", type: "leistung" as const },
+        { title: "Interne Ermittlungen", excerpt: "Diskrete Untersuchung von Vertrauensbrüchen und Datenmissbrauch.", href: "/interne-ermittlungen", type: "leistung" as const },
+        { title: "Polygraph für Unternehmen", excerpt: "Einsatzmöglichkeiten des Polygraphen im Unternehmenskontext.", href: "/ratgeber/polygraph-fuer-unternehmen", type: "ratgeber" as const }
+        ]}
+      />
       <SharedFooter />
       <FloatingButtons />
     </div>

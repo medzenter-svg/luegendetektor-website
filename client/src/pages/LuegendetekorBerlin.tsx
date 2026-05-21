@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -15,10 +16,77 @@ const BORDER = "#e2e8f0";
 
 export default function LuegendetekorBerlin() {
   useEffect(() => {
-    document.title = "Lügendetektor Berlin | Polygraph Test Berlin | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Lügendetektor Test Berlin – Polygraph | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Professionelle Lügendetektor-Tests in Berlin. Polygraphuntersuchung mit offiziellem Gutachten – diskret, zertifiziert, für Privatpersonen und Unternehmen.");
+    setMeta("og:title", "Lügendetektor Test Berlin – Polygraph | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Professionelle Lügendetektor-Tests in Berlin. Polygraphuntersuchung mit offiziellem Gutachten – diskret, zertifiziert, für Privatpersonen und Unternehmen.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/luegendetektor-berlin", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Lügendetektor Test Berlin – Polygraph | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Professionelle Lügendetektor-Tests in Berlin. Polygraphuntersuchung mit offiziellem Gutachten – diskret, zertifiziert, für Privatpersonen und Unternehmen.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/luegendetektor-berlin");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Lügendetektor & Polygraph-Tests in Berlin. Professionelle Polygraphuntersuchungen für Privatpersonen und Unternehmen in der Hauptstadt. Diskret & vertraulich. +49 175 6036003");
     window.scrollTo(0, 0);
+
+    // City LocalBusiness Schema
+    const citySchema = {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://luegendetektor-test-muenchen.de/luegendetektor-berlin#business",
+      "name": "Lügendetektor Test Berlin – Polygraph Untersuchungen",
+      "description": "Professionelle Polygraphuntersuchungen in Berlin. Diskreter Lügendetektor-Test mit offiziellem Gutachten – für Privatpersonen und Unternehmen.",
+      "url": "https://luegendetektor-test-muenchen.de/luegendetektor-berlin",
+      "telephone": "+4917560360003",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Auf Anfrage",
+        "addressLocality": "Berlin",
+        "postalCode": "10115",
+        "addressRegion": "Berlin",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.52,
+        "longitude": 13.405
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      }],
+      "priceRange": "€€",
+      "parentOrganization": {
+        "@type": "LocalBusiness",
+        "@id": "https://luegendetektor-test-muenchen.de/#business"
+      }
+    };
+    const existingCity = document.getElementById("schema-city-lb");
+    if (existingCity) existingCity.remove();
+    const cityScript = document.createElement("script");
+    cityScript.id = "schema-city-lb";
+    cityScript.type = "application/ld+json";
+    cityScript.textContent = JSON.stringify(citySchema);
+    document.head.appendChild(cityScript);
+    return () => { document.getElementById("schema-city-lb")?.remove(); };
   }, []);
 
   const services = [
@@ -110,6 +178,7 @@ export default function LuegendetekorBerlin() {
           </div>
         </div>
       </section>
+      <ContactFormCompact context="Lügendetektor Berlin" />
       <SharedFooter />
       <FloatingButtons />
     </div>

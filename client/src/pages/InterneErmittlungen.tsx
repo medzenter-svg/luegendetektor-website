@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -16,7 +18,31 @@ const BORDER = "#e2e8f0";
 
 export default function InterneErmittlungen() {
   useEffect(() => {
-    document.title = "Interne Ermittlungen Polygraph | Unternehmensermittlung | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Interne Ermittlungen Polygraph – Unternehmen | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Diskrete interne Ermittlungen mit dem Polygraphen. Aufklärung von Diebstahl, Datenmissbrauch und Vertrauensbrüchen in Unternehmen. Offizielles Gutachten.");
+    setMeta("og:title", "Interne Ermittlungen Polygraph – Unternehmen | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Diskrete interne Ermittlungen mit dem Polygraphen. Aufklärung von Diebstahl, Datenmissbrauch und Vertrauensbrüchen in Unternehmen. Offizielles Gutachten.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/interne-ermittlungen", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Interne Ermittlungen Polygraph – Unternehmen | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Diskrete interne Ermittlungen mit dem Polygraphen. Aufklärung von Diebstahl, Datenmissbrauch und Vertrauensbrüchen in Unternehmen. Offizielles Gutachten.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/interne-ermittlungen");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Interne Ermittlungen mit Polygraph für Unternehmen. Aufklärung von Diebstahl, Betrug, Datenlecks und Vertrauensbrüchen. Diskret, professionell, bundesweit. +49 175 6036003");
     window.scrollTo(0, 0);
@@ -122,6 +148,15 @@ export default function InterneErmittlungen() {
           </div>
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Leistungen"
+        items={[
+        { title: "Mitarbeiterüberprüfung", excerpt: "Polygraphbasierte Überprüfung für Neueinstellungen und bestehende Mitarbeiter.", href: "/mitarbeiterueberpruefung", type: "leistung" as const },
+        { title: "Sicherheitsprüfung", excerpt: "Überprüfung von Vertrauenswürdigkeit und Integrität für sensible Positionen.", href: "/sicherheitspruefung", type: "leistung" as const },
+        { title: "Polygraph für Unternehmen – Ratgeber", excerpt: "Einsatzmöglichkeiten, Rechtslage und Ablauf im Unternehmenskontext.", href: "/ratgeber/polygraph-fuer-unternehmen", type: "ratgeber" as const }
+        ]}
+      />
+      <ContactFormCompact context="Interne Ermittlungen" />
       <SharedFooter />
       <FloatingButtons />
     </div>

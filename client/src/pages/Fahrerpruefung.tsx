@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -16,7 +18,31 @@ const BORDER = "#e2e8f0";
 
 export default function Fahrerpruefung() {
   useEffect(() => {
-    document.title = "Fahrerüberprüfung Polygraph | Chauffeur & Fahrer testen | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Fahrerüberprüfung Polygraph München | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Polygraphbasierte Überprüfung von Fahrern und Chauffeuren. Für Privatpersonen, Unternehmen und Sicherheitsdienste. Bundesweit verfügbar.");
+    setMeta("og:title", "Fahrerüberprüfung Polygraph München | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Polygraphbasierte Überprüfung von Fahrern und Chauffeuren. Für Privatpersonen, Unternehmen und Sicherheitsdienste. Bundesweit verfügbar.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/fahrerpruefung", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Fahrerüberprüfung Polygraph München | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Polygraphbasierte Überprüfung von Fahrern und Chauffeuren. Für Privatpersonen, Unternehmen und Sicherheitsdienste. Bundesweit verfügbar.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/fahrerpruefung");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Fahrerüberprüfung mit Polygraph für Chauffeure, Lieferfahrer und Berufskraftfahrer. Zuverlässigkeit, Ehrlichkeit und Sicherheit professionell testen. München & bundesweit. +49 175 6036003");
     window.scrollTo(0, 0);
@@ -129,6 +155,15 @@ export default function Fahrerpruefung() {
           </div>
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Leistungen"
+        items={[
+        { title: "Hauspersonal-Überprüfung", excerpt: "Diskrete Überprüfung von Hauspersonal, Haushaltshilfen und Pflegepersonal.", href: "/hauspersonal-ueberpruefung", type: "leistung" as const },
+        { title: "Mitarbeiterüberprüfung", excerpt: "Polygraphbasierte Überprüfung für Neueinstellungen und bestehende Mitarbeiter.", href: "/mitarbeiterueberpruefung", type: "leistung" as const },
+        { title: "Kosten & Preise – Ratgeber", excerpt: "Transparente Übersicht der Kosten für Polygraphuntersuchungen.", href: "/ratgeber/kosten-polygraph", type: "ratgeber" as const }
+        ]}
+      />
+      <ContactFormCompact context="Fahrerüberprüfung" />
       <SharedFooter />
       <FloatingButtons />
     </div>

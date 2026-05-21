@@ -193,7 +193,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Neue Ratgeber-Artikel -->
+  <!-- Neue Ratgeber-Artikel (hreflang) -->
   <url>
     <loc>https://luegendetektor-test-muenchen.de/ratgeber/polygraph-vs-stresstest</loc>
     <lastmod>2026-05-21</lastmod>

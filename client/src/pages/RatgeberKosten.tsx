@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import RelatedContent from "../components/RelatedContent";
 import Breadcrumb from "../components/Breadcrumb";
 import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
@@ -15,7 +16,31 @@ const BORDER = "#e2e8f0";
 
 export default function RatgeberKosten() {
   useEffect(() => {
-    document.title = "Was kostet eine Polygraphuntersuchung? | Ratgeber | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Kosten Polygraph Test – Was kostet ein Lügendetektor? | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Transparente Übersicht der Kosten für Polygraphuntersuchungen in Deutschland, Österreich und der Schweiz. Was ist im Preis enthalten?");
+    setMeta("og:title", "Kosten Polygraph Test – Was kostet ein Lügendetektor? | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Transparente Übersicht der Kosten für Polygraphuntersuchungen in Deutschland, Österreich und der Schweiz. Was ist im Preis enthalten?", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/ratgeber/kosten-polygraph", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Kosten Polygraph Test – Was kostet ein Lügendetektor? | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Transparente Übersicht der Kosten für Polygraphuntersuchungen in Deutschland, Österreich und der Schweiz. Was ist im Preis enthalten?");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/ratgeber/kosten-polygraph");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Welche Faktoren bestimmen den Preis einer Polygraphuntersuchung? Eine sachliche Übersicht zu Leistungsumfang, Qualitätsmerkmalen und Preisgestaltung.");
     window.scrollTo(0, 0);
@@ -137,6 +162,14 @@ export default function RatgeberKosten() {
 
         </div>
       </section>
+            <RelatedContent
+        heading="Weitere Ratgeber-Artikel"
+        items={[
+        { title: "Wie genau ist ein Lügendetektor?", excerpt: "Wissenschaftliche Grundlagen und Aussagekraft moderner Polygraphsysteme.", href: "/ratgeber/luegendetektor-genauigkeit", type: "ratgeber" as const },
+        { title: "Ablauf & Dauer", excerpt: "Detaillierter Ablauf einer Polygraphuntersuchung – Vorgespräch, Test, Auswertung.", href: "/ratgeber/dauer-polygraph-test", type: "ratgeber" as const },
+        { title: "Ist ein Lügendetektor legal?", excerpt: "Rechtliche Einordnung in Deutschland, Österreich und der Schweiz.", href: "/ratgeber/polygraph-legal-deutschland", type: "ratgeber" as const }
+        ]}
+      />
       <SharedFooter />
       <FloatingButtons />
     </div>

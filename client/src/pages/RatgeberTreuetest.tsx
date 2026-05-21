@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import RelatedContent from "../components/RelatedContent";
 import Breadcrumb from "../components/Breadcrumb";
 import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
@@ -15,7 +16,31 @@ const BORDER = "#e2e8f0";
 
 export default function RatgeberTreuetest() {
   useEffect(() => {
-    document.title = "Treuetest mit Polygraph – Was Sie vorab wissen sollten | Ratgeber | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Treuetest Vorbereitung – Was Sie wissen sollten | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Wie bereitet man sich auf einen Treuetest mit dem Polygraphen vor? Ablauf, Rechte, Erwartungen – sachlich erklärt von erfahrenen Experten.");
+    setMeta("og:title", "Treuetest Vorbereitung – Was Sie wissen sollten | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Wie bereitet man sich auf einen Treuetest mit dem Polygraphen vor? Ablauf, Rechte, Erwartungen – sachlich erklärt von erfahrenen Experten.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/ratgeber/treuetest-vorbereitung", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Treuetest Vorbereitung – Was Sie wissen sollten | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Wie bereitet man sich auf einen Treuetest mit dem Polygraphen vor? Ablauf, Rechte, Erwartungen – sachlich erklärt von erfahrenen Experten.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/ratgeber/treuetest-vorbereitung");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Eine sachliche Orientierung für alle, die einen Treuetest in Betracht ziehen: Ablauf, Vorbereitung, Ergebnis und was danach zu bedenken ist.");
     window.scrollTo(0, 0);
@@ -144,6 +169,14 @@ export default function RatgeberTreuetest() {
 
         </div>
       </section>
+            <RelatedContent
+        heading="Verwandte Themen"
+        items={[
+        { title: "Anzeichen Fremdgehen", excerpt: "Sachliche Analyse typischer Anzeichen von Untreue.", href: "/ratgeber/anzeichen-fremdgehen", type: "ratgeber" as const },
+        { title: "Treuetest – Leistungsseite", excerpt: "Professioneller Treuetest mit dem Polygraphen – diskret, zertifiziert, mit offiziellem Gutachten.", href: "/treuetest", type: "leistung" as const },
+        { title: "Wie genau ist ein Lügendetektor?", excerpt: "Wissenschaftliche Grundlagen und Aussagekraft moderner Polygraphsysteme.", href: "/ratgeber/luegendetektor-genauigkeit", type: "ratgeber" as const }
+        ]}
+      />
       <SharedFooter />
       <FloatingButtons />
     </div>

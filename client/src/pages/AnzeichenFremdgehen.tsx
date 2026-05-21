@@ -4,6 +4,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -62,7 +64,31 @@ const signs = [
 
 export default function AnzeichenFremdgehen() {
   useEffect(() => {
-    document.title = "Anzeichen für Fremdgehen – häufigste Hinweise | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Anzeichen Fremdgehen – Treuetest Beratung | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Professionelle Beratung bei Verdacht auf Fremdgehen. Polygraphuntersuchung für Klarheit – diskret, sachlich, ohne Vorwürfe. Täglich 10–22 Uhr.");
+    setMeta("og:title", "Anzeichen Fremdgehen – Treuetest Beratung | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Professionelle Beratung bei Verdacht auf Fremdgehen. Polygraphuntersuchung für Klarheit – diskret, sachlich, ohne Vorwürfe. Täglich 10–22 Uhr.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/anzeichen-fremdgehen", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Anzeichen Fremdgehen – Treuetest Beratung | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Professionelle Beratung bei Verdacht auf Fremdgehen. Polygraphuntersuchung für Klarheit – diskret, sachlich, ohne Vorwürfe. Täglich 10–22 Uhr.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/anzeichen-fremdgehen");
     window.scrollTo(0, 0);
   }, []);
 
@@ -180,6 +206,15 @@ export default function AnzeichenFremdgehen() {
       </section>
 
       {/* Footer */}
+            <RelatedContent
+        heading="Weiterführende Informationen"
+        items={[
+        { title: "Treuetest – Polygraphuntersuchung", excerpt: "Professioneller Treuetest mit dem Polygraphen – diskret, zertifiziert, mit offiziellem Gutachten.", href: "/treuetest", type: "leistung" as const },
+        { title: "Treuetest Vorbereitung", excerpt: "Ablauf, Rechte und Erwartungen vor einer Polygraphuntersuchung.", href: "/ratgeber/treuetest-vorbereitung", type: "ratgeber" as const },
+        { title: "Fremdgehen beweisen", excerpt: "Polygraphuntersuchung zum Nachweis oder Ausschluss von Untreue mit offiziellem Gutachten.", href: "/fremdgehen-beweisen", type: "leistung" as const }
+        ]}
+      />
+      <ContactFormCompact context="Treuetest / Anzeichen Fremdgehen" />
       <SharedFooter />
 
       {/* WhatsApp Float */}

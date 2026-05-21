@@ -4,6 +4,8 @@ import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
 import SharedFooter from "../components/SharedFooter";
+import ContactFormCompact from "../components/ContactFormCompact";
+import RelatedContent from "../components/RelatedContent";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -70,7 +72,31 @@ const methods = [
 
 export default function FremdgehenBeweisen() {
   useEffect(() => {
-    document.title = "Fremdgehen beweisen – legale Möglichkeiten in Deutschland | luegendetektor-test-muenchen.de";
+
+    // Meta tags
+    document.title = "Fremdgehen beweisen – Polygraphtest | luegendetektor-test-muenchen.de";
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Polygraphuntersuchung zum Nachweis oder Ausschluss von Untreue. Offizielles Gutachten als Beweismittel. Diskret, zertifiziert, bundesweit.");
+    setMeta("og:title", "Fremdgehen beweisen – Polygraphtest | luegendetektor-test-muenchen.de", true);
+    setMeta("og:description", "Polygraphuntersuchung zum Nachweis oder Ausschluss von Untreue. Offizielles Gutachten als Beweismittel. Diskret, zertifiziert, bundesweit.", true);
+    setMeta("og:url", "https://luegendetektor-test-muenchen.de/fremdgehen-beweisen", true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("og:image", "https://luegendetektor-test-muenchen.de/og-image.jpg", true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "Fremdgehen beweisen – Polygraphtest | luegendetektor-test-muenchen.de");
+    setMeta("twitter:description", "Polygraphuntersuchung zum Nachweis oder Ausschluss von Untreue. Offizielles Gutachten als Beweismittel. Diskret, zertifiziert, bundesweit.");
+    setLink("canonical", "https://luegendetektor-test-muenchen.de/fremdgehen-beweisen");
     window.scrollTo(0, 0);
   }, []);
 
@@ -258,6 +284,15 @@ export default function FremdgehenBeweisen() {
       </section>
 
       {/* Footer */}
+            <RelatedContent
+        heading="Weiterführende Informationen"
+        items={[
+        { title: "Treuetest – Polygraphuntersuchung", excerpt: "Professioneller Treuetest mit dem Polygraphen – diskret, zertifiziert, mit offiziellem Gutachten.", href: "/treuetest", type: "leistung" as const },
+        { title: "Anzeichen Fremdgehen – Ratgeber", excerpt: "Sachliche Analyse typischer Anzeichen von Untreue.", href: "/ratgeber/anzeichen-fremdgehen", type: "ratgeber" as const },
+        { title: "Ist ein Lügendetektor legal?", excerpt: "Rechtliche Einordnung des Polygraphen in Deutschland, Österreich und der Schweiz.", href: "/ratgeber/polygraph-legal-deutschland", type: "ratgeber" as const }
+        ]}
+      />
+      <ContactFormCompact context="Treuetest / Fremdgehen beweisen" />
       <SharedFooter />
 
       {/* WhatsApp Float */}

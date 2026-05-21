@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
+import SharedFooter from "../components/SharedFooter";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -99,15 +100,7 @@ export default function PolygraphZuerich() {
           </div>
         </div>
       </section>
-
-      <footer style={{ backgroundColor: NAVY, padding: "32px 24px", textAlign: "center" }}>
-        <Link href="/" style={{ color: ORANGE, fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>
-          ← Zurück zur Startseite
-        </Link>
-        <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginTop: "16px" }}>
-          © 2025 luegendetektor-test-muenchen.de · Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SharedFooter />
       <FloatingButtons />
     </div>
   );

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
+import SharedFooter from "../components/SharedFooter";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -257,17 +258,7 @@ export default function FremdgehenBeweisen() {
       </section>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: NAVY, padding: "32px 24px", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-          <div style={{ color: WHITE, fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>luegendetektor-test-muenchen.de</div>
-          <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px", marginBottom: "16px" }}>
-            Marienstr. 4, 80331 München · +49 175 6036003 · beratung@lügendetektortest.com
-          </div>
-          <Link href="/" style={{ color: ORANGE, textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>
-            ← Zurück zur Startseite
-          </Link>
-        </div>
-      </footer>
+      <SharedFooter />
 
       {/* WhatsApp Float */}
       <a href="https://wa.me/4917560360003" target="_blank" rel="noopener noreferrer"

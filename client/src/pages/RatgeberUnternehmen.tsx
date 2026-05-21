@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import FloatingButtons from "../components/FloatingButtons";
+import SharedFooter from "../components/SharedFooter";
 import Breadcrumb from "../components/Breadcrumb";
 import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
@@ -143,12 +144,7 @@ export default function RatgeberUnternehmen() {
 
         </div>
       </section>
-
-      <footer style={{ backgroundColor: NAVY, padding: "28px 24px", textAlign: "center" }}>
-        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px", margin: 0 }}>
-          © 2025 luegendetektor-test-muenchen.de &nbsp;·&nbsp; <a href="tel:+4917560360003" style={{ color: ORANGE, textDecoration: "none" }}>+49 175 6036003</a>
-        </p>
-      </footer>
+      <SharedFooter />
       <FloatingButtons />
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -55,6 +56,11 @@ export default function RatgeberTreuetest() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Ein Polygraphtest ist dann ein geeignetes Instrument, wenn konkrete Verdachtsmomente bestehen, die durch Gespräche nicht aufgelöst werden konnten, und wenn beide Seiten bereit sind, das Ergebnis zu akzeptieren. Er ist kein Instrument der Kontrolle, sondern der Klärung.
           </p>
+          <InlineCTA
+            headline="Diskrete Terminvereinbarung"
+            body="Alle Anfragen werden streng vertraulich behandelt. Wir besprechen Ihr Anliegen telefonisch oder per WhatsApp – ohne Weitergabe von Details."
+          />
+
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Wichtig: Ein Treuetest setzt die freiwillige Zustimmung der zu testenden Person voraus. Eine Untersuchung gegen den Willen des Partners ist rechtlich nicht zulässig und liefert keine verwertbaren Ergebnisse. Wenn die Bereitschaft zur Untersuchung verweigert wird, ist das für sich genommen eine Information – aber keine, die ein Polygraphergebnis ersetzen kann.
           </p>
@@ -124,6 +130,16 @@ export default function RatgeberTreuetest() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/treuetest" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Treuetest anfragen →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Treuetest diskret und professionell"
+            body="Wir begleiten Sie durch den gesamten Prozess – von der ersten Frage bis zum offiziellen Gutachten. Vertraulich, sachlich, ohne Wertung."
+            prevLabel="← Legalität"
+            prevHref="/ratgeber/polygraph-legal-deutschland"
+            nextLabel="Polygraph vs. Stresstest"
+            nextHref="/ratgeber/polygraph-vs-stresstest"
+          />
+
         </div>
       </section>
 

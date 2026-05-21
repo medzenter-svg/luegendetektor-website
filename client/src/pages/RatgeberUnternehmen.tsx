@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -53,6 +54,11 @@ export default function RatgeberUnternehmen() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "36px" }}>
             Die Polygraphie bietet in diesen Situationen eine objektive, wissenschaftlich fundierte Methode zur Klärung spezifischer Fragestellungen. Voraussetzung ist in jedem Fall die freiwillige und informierte Zustimmung der zu testenden Person.
           </p>
+          <InlineCTA
+            headline="Unternehmensspezifische Beratung"
+            body="Wir entwickeln gemeinsam mit Ihnen ein Untersuchungskonzept, das zu den rechtlichen und organisatorischen Anforderungen Ihres Unternehmens passt."
+          />
+
 
           <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "18px", marginTop: "40px" }}>Typische Einsatzbereiche</h2>
 
@@ -124,6 +130,16 @@ export default function RatgeberUnternehmen() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/mitarbeiterdiebstahl" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Mitarbeiterdiebstahl aufklären →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Unternehmensanfrage stellen"
+            body="Wir beraten Unternehmen jeder Größe – von der Einzeluntersuchung bis zur strukturierten Mitarbeiterbefragung. Diskret, rechtssicher, professionell."
+            prevLabel="← Ablauf & Dauer"
+            prevHref="/ratgeber/dauer-polygraph-test"
+            nextLabel="Mitarbeiterdiebstahl"
+            nextHref="/ratgeber/mitarbeiterdiebstahl"
+          />
+
         </div>
       </section>
 

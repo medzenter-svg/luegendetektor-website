@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -58,6 +59,11 @@ export default function RatgeberLegal() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Das Bundesverfassungsgericht hat in seiner Entscheidung von 1998 (BVerfGE 98, 169) festgestellt, dass Polygraphtests im staatlichen Strafprozess nicht als Beweismittel zugelassen sind. Diese Entscheidung wird häufig missverstanden als allgemeines Verbot der Polygraphie in Deutschland – das ist sie nicht.
           </p>
+          <InlineCTA
+            headline="Rechtssichere Untersuchung beauftragen"
+            body="Wir erstellen ein offizielles Gutachten, das in Zivilverfahren verwertbar ist – auf Wunsch mit anwaltlicher Begleitung."
+          />
+
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Die Entscheidung betrifft ausschließlich den Einsatz durch staatliche Strafverfolgungsbehörden im Rahmen eines Strafverfahrens. Sie trifft keine Aussage über die Zulässigkeit privater Polygraphuntersuchungen, die von Privatpersonen oder Unternehmen in Auftrag gegeben werden.
           </p>
@@ -124,6 +130,16 @@ export default function RatgeberLegal() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/treuetest-vorbereitung" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Treuetest: Vorbereitung →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Rechtssichere Polygraphuntersuchung"
+            body="Unser Gutachten entspricht den Anforderungen der deutschen Rechtsprechung. Wir beraten Sie zu den rechtlichen Rahmenbedingungen Ihres konkreten Falls."
+            prevLabel="← Kosten & Preise"
+            prevHref="/ratgeber/kosten-polygraph"
+            nextLabel="Treuetest Vorbereitung"
+            nextHref="/ratgeber/treuetest-vorbereitung"
+          />
+
         </div>
       </section>
 

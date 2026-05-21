@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -58,6 +59,11 @@ export default function RatgeberGenauigkeit() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Ein Polygraph erfasst gleichzeitig vier physiologische Kanäle: die thorakale und abdominale Atemfrequenz, den systolischen Blutdruck sowie den galvanischen Hautwiderstand. Diese Parameter verändern sich unwillkürlich, wenn das autonome Nervensystem auf kognitive Belastung – etwa das Formulieren einer bewussten Unwahrheit – reagiert.
           </p>
+          <InlineCTA
+            headline="Unsicher über die Methodik?"
+            body="Unsere Spezialisten erläutern Ihnen den wissenschaftlichen Hintergrund in einem vertraulichen Erstgespräch – kostenlos und ohne Verpflichtung."
+          />
+
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
             Das Gerät selbst trifft keine Aussage über Wahrheit oder Lüge. Es liefert Rohdaten. Die Interpretation dieser Daten erfordert einen ausgebildeten Spezialisten, der die individuelle physiologische Baseline der zu testenden Person kennt und die Reaktionsmuster im Kontext der gestellten Fragen bewertet.
           </p>
@@ -116,22 +122,15 @@ export default function RatgeberGenauigkeit() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "40px" }}>
             Zum Vergleich: Klassische Befragungen ohne technische Hilfsmittel liegen in ihrer Treffsicherheit bei der Erkennung von Unwahrheiten im Bereich des statistischen Zufalls. Selbst erfahrene Ermittler erreichen in kontrollierten Studien selten mehr als 60 Prozent. Die Polygraphie ist damit – bei sachgemäßer Anwendung – die zuverlässigste verfügbare Methode zur Wahrheitsfindung im privaten und unternehmerischen Bereich.
           </p>
+          <BottomCTA
+            headline="Professionelle Untersuchung anfragen"
+            body="Vereinbaren Sie ein unverbindliches Erstgespräch. Wir erläutern Ihnen die Methodik, klären Ihre Fragen und erstellen ein individuelles Angebot."
+            prevLabel="← Alle Artikel"
+            prevHref="/ratgeber"
+            nextLabel="Kosten & Preise"
+            nextHref="/ratgeber/kosten-polygraph"
+          />
 
-          {/* CTA */}
-          <div style={{ backgroundColor: NAVY, borderRadius: "10px", padding: "36px 32px", marginBottom: "40px" }}>
-            <h3 style={{ color: WHITE, fontSize: "19px", fontWeight: 700, marginBottom: "10px" }}>Fragen zur Methodik?</h3>
-            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "15px", lineHeight: 1.7, marginBottom: "22px" }}>
-              Wir erläutern Ihnen die Vorgehensweise in einem vertraulichen Erstgespräch – ohne Verpflichtung.
-            </p>
-            <a href="tel:+4917560360003" style={{ backgroundColor: ORANGE, color: WHITE, padding: "11px 26px", borderRadius: "5px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
-              <i className="fas fa-phone" /> +49 175 6036003
-            </a>
-          </div>
-
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", borderTop: `1px solid ${BORDER}`, paddingTop: "24px" }}>
-            <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
-            <Link href="/ratgeber/kosten-polygraph" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Kosten & Preise →</Link>
-          </div>
         </div>
       </section>
 

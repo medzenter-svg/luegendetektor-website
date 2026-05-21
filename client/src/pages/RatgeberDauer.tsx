@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -89,6 +90,11 @@ export default function RatgeberDauer() {
                 </div>
                 <div style={{ padding: "22px 24px" }}>
                   <p style={{ color: NAVY, fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>{phase.title}</p>
+          <InlineCTA
+            headline="Termin in Ihrer Stadt vereinbaren"
+            body="Untersuchungen finden in München und bundesweit statt – auch bei Ihnen vor Ort. Terminvereinbarung Mo–So 10–22 Uhr."
+          />
+
                   <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, margin: 0 }}>{phase.text}</p>
                 </div>
               </div>
@@ -145,6 +151,16 @@ export default function RatgeberDauer() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/polygraph-fuer-unternehmen" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Polygraph für Unternehmen →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Termin vereinbaren"
+            body="Eine vollständige Untersuchung dauert 2,5 bis 3,5 Stunden. Wir planen gemeinsam mit Ihnen einen Termin, der zu Ihrem Zeitplan passt."
+            prevLabel="← Polygraph vs. Stresstest"
+            prevHref="/ratgeber/polygraph-vs-stresstest"
+            nextLabel="Polygraph für Unternehmen"
+            nextHref="/ratgeber/polygraph-fuer-unternehmen"
+          />
+
         </div>
       </section>
 

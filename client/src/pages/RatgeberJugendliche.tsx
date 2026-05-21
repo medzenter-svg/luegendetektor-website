@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -56,6 +57,11 @@ export default function RatgeberJugendliche() {
           <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "40px" }}>
             <div style={{ padding: "20px 24px", backgroundColor: LIGHT_BG, borderRadius: "8px", border: `1px solid ${BORDER}` }}>
               <p style={{ color: NAVY, fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>Unter 14 Jahren</p>
+          <InlineCTA
+            headline="Beratung für Eltern"
+            body="Wir besprechen Ihren Fall vertraulich und erläutern, ob und unter welchen Bedingungen eine Untersuchung sinnvoll und möglich ist."
+          />
+
               <p style={{ color: TEXT_MID, fontSize: "15px", lineHeight: 1.8, margin: 0 }}>
                 Wir führen keine Polygraphuntersuchungen bei Kindern unter 14 Jahren durch. In diesem Alter sind die physiologischen Reaktionsmuster noch nicht ausreichend stabil, um zuverlässige Ergebnisse zu erzielen.
               </p>
@@ -117,6 +123,16 @@ export default function RatgeberJugendliche() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/luegendetektor-genauigkeit" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Zur Zuverlässigkeit →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Vertrauliches Elterngespräch"
+            body="Wir nehmen uns Zeit für Ihre Situation und beraten Sie sachlich zu den Möglichkeiten – ohne Druck und ohne vorschnelle Empfehlungen."
+            prevLabel="← Anzeichen Fremdgehen"
+            prevHref="/ratgeber/anzeichen-fremdgehen"
+            nextLabel="← Alle Artikel"
+            nextHref="/ratgeber"
+          />
+
         </div>
       </section>
 

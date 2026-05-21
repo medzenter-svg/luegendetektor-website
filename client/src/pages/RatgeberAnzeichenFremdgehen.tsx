@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -55,6 +56,11 @@ export default function RatgeberAnzeichenFremdgehen() {
             <p style={{ color: NAVY, fontSize: "15px", lineHeight: 1.75, margin: 0 }}>
               <strong>Wichtiger Hinweis:</strong> Verhaltensänderungen können viele Ursachen haben – beruflicher Stress, persönliche Krisen, gesundheitliche Probleme. Die unten genannten Punkte sind keine Beweise, sondern Hinweise, die eine Klärung rechtfertigen können.
             </p>
+          <InlineCTA
+            headline="Vertrauliches Gespräch führen"
+            body="Wenn Sie Klarheit suchen, stehen wir für ein erstes Gespräch zur Verfügung – ohne Druck, ohne Wertung, absolut diskret."
+          />
+
           </div>
 
           <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "18px", marginTop: "40px" }}>Verhaltensänderungen, die Fragen aufwerfen können</h2>
@@ -117,6 +123,16 @@ export default function RatgeberAnzeichenFremdgehen() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/treuetest" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Treuetest anfragen →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Klarheit gewinnen – diskret und sachlich"
+            body="Ein Treuetest schafft Gewissheit, wo Unsicherheit belastet. Wir begleiten Sie durch den Prozess – vertraulich, professionell und ohne Vorwürfe."
+            prevLabel="← Mitarbeiterdiebstahl"
+            prevHref="/ratgeber/mitarbeiterdiebstahl"
+            nextLabel="Polygraph bei Jugendlichen"
+            nextHref="/ratgeber/polygraph-jugendliche"
+          />
+
         </div>
       </section>
 

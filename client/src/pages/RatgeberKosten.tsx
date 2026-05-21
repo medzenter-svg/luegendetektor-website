@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -64,6 +65,11 @@ export default function RatgeberKosten() {
               <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr", gap: "0", backgroundColor: i % 2 === 0 ? LIGHT_BG : WHITE }}>
                 <div style={{ padding: "16px 20px", borderRight: `1px solid ${BORDER}` }}>
                   <p style={{ color: NAVY, fontWeight: 700, fontSize: "14px", margin: 0 }}>{item.factor}</p>
+          <InlineCTA
+            headline="Transparentes Angebot anfordern"
+            body="Wir erstellen Ihnen auf Anfrage ein individuelles Angebot – abhängig von Umfang, Personenanzahl und Untersuchungsort."
+          />
+
                 </div>
                 <div style={{ padding: "16px 20px" }}>
                   <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
@@ -117,6 +123,16 @@ export default function RatgeberKosten() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/polygraph-legal-deutschland" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Rechtliche Grundlagen →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Kostenloses Erstgespräch vereinbaren"
+            body="Schildern Sie uns Ihr Anliegen. Wir nennen Ihnen einen konkreten Preis – ohne versteckte Kosten, ohne Verpflichtung."
+            prevLabel="← Genauigkeit"
+            prevHref="/ratgeber/luegendetektor-genauigkeit"
+            nextLabel="Legalität in Deutschland"
+            nextHref="/ratgeber/polygraph-legal-deutschland"
+          />
+
         </div>
       </section>
 

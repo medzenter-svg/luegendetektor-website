@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -62,6 +63,11 @@ export default function RatgeberPolygraphVsStresstest() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "36px" }}>
             Die Methode ist seit Jahrzehnten Gegenstand wissenschaftlicher Forschung. Standardisierte Protokolle wie die Control Question Technique (CQT) oder die Zone Comparison Technique (ZCT) ermöglichen reproduzierbare Ergebnisse mit einer Genauigkeitsrate von 98–99% bei professioneller Durchführung.
           </p>
+          <InlineCTA
+            headline="Welches Verfahren passt zu Ihrem Fall?"
+            body="Wir beraten Sie, welche Untersuchungsmethode für Ihr konkretes Anliegen geeignet ist – sachlich und ohne Verkaufsdruck."
+          />
+
 
           <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "14px", marginTop: "40px" }}>Stimmstressanalyse (Voice Stress Analysis)</h2>
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
@@ -118,6 +124,16 @@ export default function RatgeberPolygraphVsStresstest() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/ratgeber/dauer-polygraph-test" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Ablauf & Dauer →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Beratungsgespräch vereinbaren"
+            body="Unsere Experten erläutern Ihnen die Unterschiede der Verfahren und empfehlen die für Ihren Fall geeignete Methode."
+            prevLabel="← Treuetest"
+            prevHref="/ratgeber/treuetest-vorbereitung"
+            nextLabel="Ablauf & Dauer"
+            nextHref="/ratgeber/dauer-polygraph-test"
+          />
+
         </div>
       </section>
 

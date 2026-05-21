@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
 import Breadcrumb from "../components/Breadcrumb";
+import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -53,6 +54,11 @@ export default function RatgeberMitarbeiterdiebstahl() {
           <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "36px" }}>
             Klassische Maßnahmen – Videoüberwachung, Inventurprüfungen, interne Befragungen – können Hinweise liefern, aber selten Gewissheit. Die Polygraphie bietet in dieser Situation eine Möglichkeit zur objektiven Klärung, die diskret und ohne öffentliche Verfahren durchgeführt werden kann.
           </p>
+          <InlineCTA
+            headline="Vertrauliche Erstberatung für Unternehmen"
+            body="Wir besprechen Ihren Fall diskret und entwickeln eine strukturierte Vorgehensweise – ohne Eskalation, ohne öffentlichen Druck."
+          />
+
 
           <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "18px", marginTop: "40px" }}>Typische Situationen</h2>
 
@@ -104,6 +110,16 @@ export default function RatgeberMitarbeiterdiebstahl() {
             <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
             <Link href="/interne-ermittlungen" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Interne Ermittlungen →</Link>
           </div>
+        
+          <BottomCTA
+            headline="Interne Ermittlung professionell begleiten"
+            body="Unsere Experten unterstützen Unternehmen bei der sachlichen Aufklärung interner Vorfälle – mit rechtssicherem Gutachten und absoluter Vertraulichkeit."
+            prevLabel="← Polygraph für Unternehmen"
+            prevHref="/ratgeber/polygraph-fuer-unternehmen"
+            nextLabel="Anzeichen Fremdgehen"
+            nextHref="/ratgeber/anzeichen-fremdgehen"
+          />
+
         </div>
       </section>
 

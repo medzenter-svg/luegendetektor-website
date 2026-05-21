@@ -8,6 +8,12 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import AnzeichenFremdgehen from "./pages/AnzeichenFremdgehen";
 import FremdgehenBeweisen from "./pages/FremdgehenBeweisen";
+import LuegendetekorMuenchen from "./pages/LuegendetekorMuenchen";
+import PolygraphWien from "./pages/PolygraphWien";
+import PolygraphZuerich from "./pages/PolygraphZuerich";
+import InterneErmittlungen from "./pages/InterneErmittlungen";
+import Treuetest from "./pages/Treuetest";
+import Mitarbeiterueberpruefung from "./pages/Mitarbeiterueberpruefung";
 
 
 function Router() {
@@ -16,6 +22,12 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/anzeichen-fremdgehen"} component={AnzeichenFremdgehen} />
       <Route path={"/fremdgehen-beweisen"} component={FremdgehenBeweisen} />
+      <Route path={"/luegendetektor-muenchen"} component={LuegendetekorMuenchen} />
+      <Route path={"/polygraph-wien"} component={PolygraphWien} />
+      <Route path={"/polygraph-zuerich"} component={PolygraphZuerich} />
+      <Route path={"/interne-ermittlungen"} component={InterneErmittlungen} />
+      <Route path={"/treuetest"} component={Treuetest} />
+      <Route path={"/mitarbeiterueberpruefung"} component={Mitarbeiterueberpruefung} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

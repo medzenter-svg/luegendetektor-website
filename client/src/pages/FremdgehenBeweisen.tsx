@@ -82,7 +82,7 @@ export default function FremdgehenBeweisen() {
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
             <div style={{ width: "32px", height: "32px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <i className="fas fa-wave-square" style={{ color: WHITE, fontSize: "14px" }} />
+              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
             </div>
             <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "0.5px" }}>luegendetektor-test-muenchen.de</span>
           </Link>

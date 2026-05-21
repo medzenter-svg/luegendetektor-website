@@ -29,7 +29,7 @@ export default function ItSektor() {
       <nav style={{ backgroundColor: NAVY, padding: "0 24px", position: "sticky", top: 0, zIndex: 1000, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
           <Link href="/" style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
-            <i className="fas fa-wave-square" style={{ color: ORANGE }} />
+            <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor München Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
             luegendetektor-test-muenchen.de
           </Link>
           <Link href="/#contact" style={{ backgroundColor: ORANGE, color: WHITE, padding: "9px 20px", borderRadius: "6px", fontWeight: 700, fontSize: "14px", textDecoration: "none" }}>

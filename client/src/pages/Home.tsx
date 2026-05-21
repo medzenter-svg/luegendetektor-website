@@ -37,7 +37,7 @@ const getServices = (lang: string) => [
     title: { de: "Treuetest", en: "Fidelity Test" },
     price: "550 €",
     short: { de: "Klärung bei Verdacht auf Untreue in der Partnerschaft", en: "Clarification when infidelity is suspected in a relationship" },
-    img: "/manus-storage/img_untreue_new_opt_aa63860c.jpg",
+    img: "/manus-storage/img_untreue_new_opt_aa63860c_f8a60d2c.webp",
     features: ["Vertrauliches Vorgespräch", "Professionelle Testdurchführung", "Schriftliches Gutachten", "Nachberatung möglich"],
     sections: [
       {
@@ -57,7 +57,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung vor der Hochzeit", en: "Pre-Wedding Check" },
     price: "auf Anfrage",
     short: { de: "Sicherheit vor dem wichtigsten Tag Ihres Lebens", en: "Security before the most important day of your life" },
-    img: "/manus-storage/img_hochzeit_new_opt_6c3351a2.jpg",
+    img: "/manus-storage/img_hochzeit_new_opt_6c3351a2_3c4a55c2.webp",
     features: ["Absolut vertraulich", "Gegenseitige Tests möglich", "Professionelle Beratung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -82,7 +82,7 @@ const getServices = (lang: string) => [
     title: { de: "Aufklärung von Diebstählen", en: "Theft Investigation" },
     price: "auf Anfrage",
     short: { de: "Klärung von Diebstählen und Verlusten im privaten Umfeld", en: "Clarification of thefts and losses in the private environment" },
-    img: "/manus-storage/img_diebstahl_new_opt_d8da6fb7.jpg",
+    img: "/manus-storage/img_diebstahl_new_opt_d8da6fb7_83edcd49.webp",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -112,7 +112,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Hauspersonal", en: "Domestic Staff Screening" },
     price: "auf Anfrage",
     short: { de: "Planmäßige Überprüfung für Hauspersonal, das bereits in Ihrem Haushalt beschäftigt ist", en: "Scheduled screening for household staff already working in your home" },
-    img: "/manus-storage/hauspersonal_new_3f0d7b62.jpg",
+    img: "/manus-storage/hauspersonal_new_3f0d7b62_de5dcb97.webp",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [
       {
@@ -142,7 +142,7 @@ const getServices = (lang: string) => [
     title: { de: "Probetest am Polygraphen", en: "Trial Polygraph Test" },
     price: "auf Anfrage",
     short: { de: "Kennenlernen des Verfahrens vor der eigentlichen Untersuchung", en: "Getting familiar with the procedure before the actual examination" },
-    img: "/manus-storage/img_probetest2_opt_ebca96e5.jpg",
+    img: "/manus-storage/img_probetest2_opt_ebca96e5_52a8d83b.webp",
     features: ["Ca. 30–45 Minuten", "Keine Auswertung", "Ideal zur Vorbereitung", "Anrechnung auf Volltest möglich"],
     sections: [
       {
@@ -169,7 +169,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Jugendlichen ab 14 Jahren", en: "Testing of Minors (14+)" },
     price: "auf Anfrage",
     short: { de: "Klärung von Verhaltensauffälligkeiten bei Jugendlichen", en: "Clarification of behavioral issues in adolescents" },
-    img: "/manus-storage/img_jugendliche_opt_b0f6ab3a.jpg",
+    img: "/manus-storage/img_jugendliche_opt_b0f6ab3a_ecb61f8c.webp",
     features: ["Elterliche Zustimmung erforderlich", "Einfühlsame Durchführung", "Psychologische Begleitung", "Schriftliches Gutachten"],
     sections: [
       {
@@ -186,7 +186,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung bei der Einstellung", en: "Pre-Employment Screening" },
     price: "auf Anfrage",
     short: { de: "Sicherheit bei der Auswahl neuer Mitarbeiter für sensible Positionen", en: "Security when selecting new employees for sensitive positions" },
-    img: "/manus-storage/img_einstellung_new_opt_640c0e16.jpg",
+    img: "/manus-storage/img_einstellung_new_opt_640c0e16_cee6a492.webp",
     features: ["Schnelle Abwicklung", "Mehrere Bewerber möglich", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
     sections: [
       {
@@ -214,7 +214,7 @@ const getServices = (lang: string) => [
     title: { de: "Planmäßige Überprüfung von Mitarbeitern", en: "Scheduled Employee Screening" },
     price: "auf Anfrage",
     short: { de: "Regelmäßige Überprüfungen zur Sicherung der Unternehmensintegrität", en: "Regular screenings to ensure corporate integrity" },
-    img: "/manus-storage/img_routine_new_opt_5e44dc06.jpg",
+    img: "/manus-storage/img_routine_new_opt_5e44dc06_01ec67d8.webp",
     features: ["Maßgeschneiderte Programme", "Gruppenrabatte möglich", "Vertrauliche Berichte", "Regelmäßige Termine"],
     sections: [
       {
@@ -243,7 +243,7 @@ const getServices = (lang: string) => [
     title: { de: "Interne Ermittlungen", en: "Internal Investigations" },
     price: "auf Anfrage",
     short: { de: "Aufklärung von Vorfällen und Fehlverhalten im Unternehmen", en: "Investigation of incidents and misconduct within the company" },
-    img: "/manus-storage/interne_ermittlungen_new_9a22ff48.jpg",
+    img: "/manus-storage/interne_ermittlungen_new_9a22ff48_f4969296.webp",
     features: ["Diskrete Durchführung", "Mehrere Personen möglich", "Offizielles Gutachten", "Rechtlich verwertbar"],
     sections: [
       {
@@ -272,7 +272,7 @@ const getServices = (lang: string) => [
     title: { de: "Polygraph mit Hausbesuch", en: "Mobile Polygraph Service" },
     price: "auf Anfrage",
     short: { de: "Wir kommen zu Ihnen – in Ihr Büro oder nach Hause", en: "We come to you – to your office or home" },
-    img: "/manus-storage/hausbesuch_new2_dc64ce34.png",
+    img: "/manus-storage/hausbesuch_new2_dc64ce34_017f6c0d.webp",
     features: ["Gesamtes Bayern möglich", "Professionelle Ausrüstung", "Diskrete Anreise", "Flexible Termingestaltung"],
     sections: [
       {
@@ -297,7 +297,7 @@ const getServices = (lang: string) => [
     title: { de: "Schutz von Ehre und Würde", en: "Protection of Honor and Dignity" },
     price: "auf Anfrage",
     short: { de: "Klärung von Verleumdungen und falschen Anschuldigungen", en: "Clarification of defamation and false accusations" },
-    img: "/manus-storage/img_ehre_new_opt_28a5f364.jpg",
+    img: "/manus-storage/img_ehre_new_opt_28a5f364_ab4df92b.webp",
     features: ["Offizielles Gutachten", "Rechtlich verwertbar", "Schnelle Terminvergabe", "Professionelle Beratung"],
     sections: [
       {
@@ -322,7 +322,7 @@ const getServices = (lang: string) => [
     title: { de: "Sicherheit bei großen Geschäften", en: "Security in Major Transactions" },
     price: "auf Anfrage",
     short: { de: "Risiken minimieren bei privaten Transaktionen und Vereinbarungen", en: "Minimizing risks in private transactions and agreements" },
-    img: "/manus-storage/geschaefte_new2_879fcd94.png",
+    img: "/manus-storage/geschaefte_new2_879fcd94_025b7796.webp",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Rechtlich verwertbar", "Diskrete Durchführung"],
     sections: [
       {
@@ -357,7 +357,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Hausmädchen", en: "Housemaid Screening" },
     price: "auf Anfrage",
     short: { de: "Vertrauen Sie nicht dem Zufall – überprüfen Sie Ihr Hauspersonal vor der Einstellung!", en: "Don’t leave it to chance – screen your household staff before hiring!" },
-    img: "/manus-storage/img_hausmaedchen_opt_f3866fbb.jpg",
+    img: "/manus-storage/img_hausmaedchen_opt_f3866fbb_2d3769ce.webp",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
     sections: [
       {
@@ -382,7 +382,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung im IT-Sektor", en: "IT Sector Screening" },
     price: "auf Anfrage",
     short: { de: "Entwickler, Systemadministratoren und IT-Fachkräfte", en: "Developers, system administrators and IT professionals" },
-    img: "/manus-storage/img_it_sektor_opt_435b1468.jpg",
+    img: "/manus-storage/img_it_sektor_opt_435b1468_01f40bba.webp",
     features: ["Datenschutz sicherstellen", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {
@@ -407,7 +407,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Fahrern", en: "Driver Screening" },
     price: "auf Anfrage",
     short: { de: "Privat- und Unternehmensfahrer, Kuriere", en: "Private and corporate drivers, couriers" },
-    img: "/manus-storage/img_lagerarbeiter_ad34a120.jpg",
+    img: "/manus-storage/img_lagerarbeiter_ad34a120_cb73c0c2.webp",
     features: ["Sicherheit gewährleisten", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {
@@ -432,7 +432,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Sicherheitspersonal", en: "Security Personnel Screening" },
     price: "auf Anfrage",
     short: { de: "Wachleute, Sicherheitsbeamte und Bodyguards", en: "Guards, security officers and bodyguards" },
-    img: "/manus-storage/img_sicherheit_opt_b5100c44.jpg",
+    img: "/manus-storage/img_sicherheit_opt_b5100c44_ac93fe2b.webp",
     features: ["Höchste Sicherheit", "Offizielles Gutachten", "Vertraulich", "Schnelle Abwicklung"],
     sections: [
       {
@@ -457,7 +457,7 @@ const getServices = (lang: string) => [
     title: { de: "Überprüfung von Lagerarbeitern", en: "Warehouse Worker Screening" },
     price: "auf Anfrage",
     short: { de: "Lagermitarbeiter, Logistik und Versandpersonal", en: "Warehouse staff, logistics and shipping personnel" },
-    img: "/manus-storage/img_lagerarbeiter2_715773fd.jpg",
+    img: "/manus-storage/img_lagerarbeiter2_715773fd_f63fb438.webp",
     features: ["Diebstahl verhindern", "Offizielles Gutachten", "Diskrete Durchführung", "Schnelle Terminvergabe"],
     sections: [
       {
@@ -516,7 +516,7 @@ function Navbar() {
     <nav className="navbar" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY, fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "60px", gap: "20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer", flexShrink: 0 }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor Test München – Logo" loading="eager" fetchPriority="high" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
+          <img src="/manus-storage/logo_clean_f9c5298d_633ac44d.png" alt="Lügendetektor Test München – Logo" loading="eager" fetchPriority="high" style={{ width: "42px", height: "42px", objectFit: "contain" }} />
           <span style={{ color: WHITE, fontWeight: 700, fontSize: "20px", letterSpacing: "1px" }}>luegendetektor-test-muenchen.de</span>
         </div>
         <div className="hidden lg:flex" style={{ flex: 1, gap: "22px", alignItems: "center" }}>
@@ -666,7 +666,7 @@ function RegionalSection() {
         <h2 style={{ color: NAVY, fontWeight: 900, fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.25, marginBottom: "20px", maxWidth: "820px" }}>
           {lang === "en"
             ? "Exclusive Polygraph Services in Germany, Austria & Switzerland"
-            : "Exklusive Polygraphie-Services in Deutschland, Österreich & der Schweiz"}
+            : "Vertrauliche Polygraph-LÜGENDETEKTOR-TESTS Untersuchungen für Privatpersonen und Unternehmen"}
         </h2>
         {/* Body text */}
         <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.85, marginBottom: "16px", maxWidth: "900px" }}>
@@ -679,22 +679,7 @@ function RegionalSection() {
             ? "We serve private individuals, companies, family offices, law firms and international clients with the highest discretion, flexible scheduling and personalised support."
             : "Wir betreuen Privatpersonen, Unternehmen, Family Offices, Kanzleien und internationale Mandanten mit höchster Diskretion, flexibler Einsatzplanung und individueller Betreuung."}
         </p>
-        {/* SEO city links */}
-        <p style={{ color: "#6b7280", fontSize: "14px", marginBottom: "14px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px" }}>
-          {lang === "en" ? "Available in:" : "Termine möglich in:"}
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "24px" }}>
-          {cities.map(c => (
-            <a key={c.name} href={c.href}
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: NAVY, padding: "7px 16px", borderRadius: "4px", fontSize: "14px", fontWeight: 700, textDecoration: "none", transition: "border-color 0.2s" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = ORANGE; (e.currentTarget as HTMLAnchorElement).style.color = ORANGE; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = BORDER; (e.currentTarget as HTMLAnchorElement).style.color = NAVY; }}
-            >
-              <i className="fas fa-map-pin" style={{ fontSize: "11px", color: ORANGE }}></i>
-              {lang === "en" ? `Lie Detector ${c.name}` : `Lügendetektor ${c.name}`}
-            </a>
-          ))}
-        </div>
+
         {/* SEO sentence */}
         <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.7, fontWeight: 500 }}>
           {lang === "en"
@@ -937,8 +922,8 @@ function AboutSection() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
             {[
-              { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa.jpg" },
-              { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e.jpg" },
+              { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp" },
+              { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
             ].map(s => (
               <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 <div style={{ width: "100%" }}>
@@ -1065,8 +1050,8 @@ function SpecialistsSection() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
-            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa.jpg" },
-            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e.jpg" },
+            { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp" },
+            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "23 Jahre Erfahrung" : "23 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
               <div style={{ width: "100%" }}>
@@ -1416,10 +1401,10 @@ function ContactSection() {
             {/* Contact person card */}
             <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
               <img
-                src="/manus-storage/andreja_schmidt_6fbfb20a.png"
+                src="/manus-storage/andreja_schmidt_6fbfb20a_4ad9a07e.webp"
                 alt="Andreja Schmidt"
                 style={{ width: "90px", height: "90px", borderRadius: "8px", objectFit: "cover", objectPosition: "top", flexShrink: 0, border: `2px solid ${BORDER}` }}
-              />
+               loading="lazy" decoding="async" />
               <div>
                 <div style={{ color: TEXT_MID, fontSize: "14px", marginBottom: "4px" }}>{lang === "de" ? "Ihr Ansprechpartner" : "Your contact person"}</div>
                 <div style={{ color: NAVY, fontWeight: 700, fontSize: "18px", marginBottom: "8px" }}>Andreja Schmidt</div>
@@ -1567,7 +1552,7 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "40px", marginBottom: "36px" }} className="grid-footer">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor Test München – luegendetektor-test-muenchen.de" loading="lazy" decoding="async" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
+              <img src="/manus-storage/logo_clean_f9c5298d_633ac44d.png" alt="Lügendetektor Test München – luegendetektor-test-muenchen.de" loading="lazy" decoding="async" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
               <div>
                 <div style={{ color: WHITE, fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>luegendetektor-test-muenchen.de</div>
               </div>
@@ -1613,6 +1598,36 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
               <button key={d} onClick={() => onLegalOpen(docKeyMap[d])} style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "13px", background: "none", border: "none", cursor: "pointer", padding: "3px 0", textAlign: "left" }}
                 onMouseEnter={e => (e.currentTarget.style.color = ORANGE)}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}>{d}</button>
+            ))}
+          </div>
+        </div>
+        {/* City links row */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "20px", marginBottom: "16px" }}>
+          <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "12px" }}>
+            {lang === "en" ? "Available in:" : "Termine möglich in:"}
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "6px" }}>
+            {[
+              { name: "München", href: "/luegendetektor-muenchen" },
+              { name: "Berlin", href: "/luegendetektor-berlin" },
+              { name: "Hamburg", href: "/luegendetektor-hamburg" },
+              { name: "Frankfurt", href: "/luegendetektor-frankfurt" },
+              { name: "Düsseldorf", href: "/luegendetektor-duesseldorf" },
+              { name: "Stuttgart", href: "/luegendetektor-stuttgart" },
+              { name: "Köln", href: "/luegendetektor-koeln" },
+              { name: "Wien", href: "/polygraph-wien" },
+              { name: "Zürich", href: "/polygraph-zuerich" },
+              { name: "Österreich", href: "/polygraph-oesterreich" },
+              { name: "Schweiz", href: "/polygraph-schweiz" },
+            ].map(c => (
+              <a key={c.name} href={c.href}
+                style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "rgba(255,255,255,0.45)", fontSize: "12px", textDecoration: "none", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "3px", transition: "color 0.2s, border-color 0.2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = ORANGE; (e.currentTarget as HTMLAnchorElement).style.borderColor = ORANGE; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.12)"; }}
+              >
+                <i className="fas fa-map-pin" style={{ fontSize: "9px", color: ORANGE }}></i>
+                {lang === "en" ? `Lie Detector ${c.name}` : `Lügendetektor ${c.name}`}
+              </a>
             ))}
           </div>
         </div>
@@ -1903,8 +1918,8 @@ function SchemaOrg() {
       "alternateName": "luegendetektor-test-muenchen.de",
       "description": "Professionelle Polygraphuntersuchungen und Lügendetektor-Tests in München. Diskret, zertifiziert und rechtssicher. Für Privatpersonen und Unternehmen.",
       "url": BASE,
-      "logo": `${BASE}/manus-storage/logo_clean_f9c5298d.png`,
-      "image": `${BASE}/manus-storage/logo_clean_f9c5298d.png`,
+      "logo": `${BASE}/manus-storage/logo_clean_f9c5298d_633ac44d.png`,
+      "image": `${BASE}/manus-storage/logo_clean_f9c5298d_633ac44d.png`,
       "telephone": "+4917560360003",
       "email": "info@luegendetektor-test-muenchen.de",
       "address": {

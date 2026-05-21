@@ -380,7 +380,7 @@ const getServices = (lang: string) => [
     icon: "fas fa-broom",
     title: { de: "Überprüfung von Hausmädchen", en: "Housemaid Screening" },
     price: "auf Anfrage",
-    short: { de: "Haushälterinnen, Reinigungskräfte und Hauspersonal", en: "Housekeepers, cleaning staff and domestic personnel" },
+    short: { de: "Vertrauen Sie nicht dem Zufall – überprüfen Sie Ihr Hauspersonal vor der Einstellung!", en: "Don’t leave it to chance – screen your household staff before hiring!" },
     img: "/manus-storage/img_hausmaedchen_opt_f3866fbb.jpg",
     features: ["Schnelle Terminvergabe", "Offizielles Gutachten", "Diskrete Durchführung", "Freiwillige Zustimmung"],
     sections: [

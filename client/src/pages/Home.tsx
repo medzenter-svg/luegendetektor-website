@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { legalDocs } from "../data/legalDocs";
 import { useLang } from "../contexts/LanguageContext";
 import { t } from "../data/translations";
@@ -1887,6 +1887,160 @@ function CasesSection() {
   );
 }
 
+// ─────────────────────────────────────────────
+// JSON-LD SCHEMA – LocalBusiness + FAQPage
+// ─────────────────────────────────────────────
+function SchemaOrg() {
+  useEffect(() => {
+    const BASE = "https://luegendetektor-test-muenchen.de";
+
+    // LocalBusiness Schema
+    const localBusiness = {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": `${BASE}/#business`,
+      "name": "Lügendetektor Test München – Polygraph Untersuchungen",
+      "alternateName": "luegendetektor-test-muenchen.de",
+      "description": "Professionelle Polygraphuntersuchungen und Lügendetektor-Tests in München. Diskret, zertifiziert und rechtssicher. Für Privatpersonen und Unternehmen.",
+      "url": BASE,
+      "logo": `${BASE}/manus-storage/logo_clean_f9c5298d.png`,
+      "image": `${BASE}/manus-storage/logo_clean_f9c5298d.png`,
+      "telephone": "+4917560360003",
+      "email": "info@luegendetektor-test-muenchen.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marienstr. 4",
+        "addressLocality": "München",
+        "postalCode": "80331",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.1351,
+        "longitude": 11.5820
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "10:00",
+          "closes": "22:00"
+        }
+      ],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "areaServed": [
+        { "@type": "City", "name": "München" },
+        { "@type": "City", "name": "Berlin" },
+        { "@type": "City", "name": "Hamburg" },
+        { "@type": "City", "name": "Frankfurt" },
+        { "@type": "City", "name": "Düsseldorf" },
+        { "@type": "City", "name": "Stuttgart" },
+        { "@type": "City", "name": "Köln" },
+        { "@type": "Country", "name": "Deutschland" },
+        { "@type": "Country", "name": "Österreich" },
+        { "@type": "Country", "name": "Schweiz" }
+      ],
+      "serviceType": [
+        "Polygraphuntersuchung",
+        "Lügendetektor-Test",
+        "Treuetest",
+        "Mitarbeiterüberprüfung",
+        "Interne Ermittlungen",
+        "Sicherheitsprüfung"
+      ],
+      "sameAs": [
+        "https://wa.me/491756036003"
+      ]
+    };
+
+    // FAQPage Schema
+    const faqPage = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wer kann NICHT am Polygraphtest teilnehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Teilnahme wird nicht empfohlen für: schwangere Frauen, Kinder unter 14 Jahren, Personen mit psychischen Erkrankungen oder schweren Herzerkrankungen, Personen unter Alkohol- oder Drogeneinfluss sowie Personen, die Beruhigungsmittel oder Medikamente einnehmen, die das Nervensystem beeinflussen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Vor- und Nachteile hat der Einsatz eines Lügendetektors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vorteile: Hohe Genauigkeit (98–99%), objektive Ergebnisse, offizielles Gutachten als Beweismittel, schnelle Klärung von Sachverhalten. Nachteile: Ergebnisse können durch bestimmte Medikamente oder Erkrankungen beeinflusst werden, nicht alle Fragen können getestet werden, die Teilnahme muss freiwillig sein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird die Ergebnisqualität sichergestellt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei uns wird jeder Test von mindestens zwei unabhängigen Polygraphologen ausgewertet. Erst wenn beide Experten zum gleichen Ergebnis kommen, wird das Gutachten erstellt. Diese doppelte Prüfung macht unsere Ergebnisse besonders zuverlässig und rechtssicher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist es möglich, den Lügendetektor zu täuschen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moderne Polygraphtechnologie erkennt Versuche, den Test zu manipulieren. Unsere Experten sind speziell geschult, solche Versuche zu identifizieren. Techniken wie kontrolliertes Atmen oder Muskelanspannung werden durch die Kombination mehrerer Sensoren zuverlässig erkannt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie bereitet man sich richtig auf einen Polygraphtest vor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für eine optimale Vorbereitung empfehlen wir: Ausreichend schlafen (mindestens 7–8 Stunden), keinen Alkohol 24 Stunden vor dem Test, keine Beruhigungsmittel ohne ärztliche Notwendigkeit, normale Mahlzeiten einnehmen, bequeme Kleidung tragen und pünktlich erscheinen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie genau ist ein Polygraphtest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moderne Polygraphtests, die von zertifizierten Experten durchgeführt werden, erreichen eine Genauigkeit von 95–99%. Unsere Spezialisten verfügen über jahrzehntelange Erfahrung und nutzen modernste Geräte der neuesten Generation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist der Polygraphtest legal in Deutschland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Polygraphtests sind in Deutschland legal, wenn die Teilnahme freiwillig ist. Das Ergebnis kann als Beweismittel in Zivilverfahren verwendet werden. Wir erstellen ein offizielles Gutachten, das rechtlich verwertbar ist."
+          }
+        }
+      ]
+    };
+
+    // Inject both schemas
+    const injectSchema = (id: string, data: object) => {
+      document.getElementById(id)?.remove();
+      const script = document.createElement("script");
+      script.id = id;
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(data);
+      document.head.appendChild(script);
+    };
+
+    injectSchema("schema-local-business", localBusiness);
+    injectSchema("schema-faq-page", faqPage);
+
+    return () => {
+      document.getElementById("schema-local-business")?.remove();
+      document.getElementById("schema-faq-page")?.remove();
+    };
+  }, []);
+
+  return null;
+}
+
 export default function Home() {
   const [legalDoc, setLegalDoc] = useState<string | null>(null);
 
@@ -1912,6 +2066,7 @@ export default function Home() {
           .grid-footer { grid-template-columns: 1fr !important; }
         }
       `}</style>
+      <SchemaOrg />
       <Navbar />
       <HeroSection />
       <StatsBar />

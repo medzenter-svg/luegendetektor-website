@@ -8,6 +8,25 @@ const DARK_NAVY = "#0f1932";
 const ORANGE = "#e67e00";
 const WHITE = "#ffffff";
 
+const SPECIALISTS = [
+  {
+    name: "Dimitri Razarenov",
+    role: "Leitender Polygraphologe",
+    exp: "12 Jahre Erfahrung",
+    edu: "Höhere Bildung, Praktische Psychologie",
+    photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp",
+    bio: "Dimitri Razarenov ist einer der erfahrensten Polygraphexaminatoren in Deutschland. Er spezialisiert sich auf komplexe Unternehmensermittlungen, Sicherheitsüberprüfungen und Treuetest-Untersuchungen. Seine Ausbildung in praktischer Psychologie ermöglicht ihm eine präzise Einschätzung physiologischer Reaktionsmuster.",
+  },
+  {
+    name: "Tatjana Neubauer",
+    role: "Psychologin & Polygraphologin",
+    exp: "23 Jahre Erfahrung",
+    edu: "Höhere Bildung, Diplompsychologin",
+    photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp",
+    bio: "Tatjana Neubauer bringt über zwei Jahrzehnte Erfahrung in der psychologischen Diagnostik und Polygraphie mit. Als Diplompsychologin versteht sie die emotionalen Hintergründe jeder Untersuchungssituation und sorgt für eine professionelle, einfühlsame Gesprächsführung.",
+  },
+];
+
 export default function ErfahreneExperten() {
   useEffect(() => {
     document.title = "Erfahrene Experten | Polygraph München – Zertifizierte Polygraphexaminatoren";
@@ -23,23 +42,52 @@ export default function ErfahreneExperten() {
 
       {/* Hero */}
       <section style={{ background: DARK_NAVY, padding: "100px 24px 60px" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "960px", margin: "0 auto" }}>
           <Breadcrumb items={[{ label: "Startseite", href: "/" }, { label: "Erfahrene Experten" }]} />
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px", marginTop: "16px" }}>
             <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: ORANGE, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
               <i className="fas fa-user-tie" style={{ color: WHITE, fontSize: "24px" }}></i>
             </div>
-            <h1 style={{ color: WHITE, fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 700, margin: 0 }}>
-              Erfahrene Experten
-            </h1>
+            <div>
+              <h1 style={{ color: WHITE, fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 700, margin: 0 }}>
+                Unsere Experten
+              </h1>
+              <p style={{ color: ORANGE, fontSize: "1rem", fontWeight: 600, margin: "4px 0 0" }}>Zertifizierte Polygraphexaminatoren mit jahrzehntelanger Erfahrung</p>
+            </div>
           </div>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px", lineHeight: 1.7, maxWidth: "700px" }}>
+          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px", lineHeight: 1.7, maxWidth: "720px" }}>
             Ein Polygraphtest ist nur so gut wie der Examinator, der ihn durchführt. Unsere Spezialisten vereinen technisches Wissen, psychologisches Verständnis und jahrelange Praxiserfahrung.
           </p>
         </div>
       </section>
 
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "60px 24px" }}>
+      <section style={{ maxWidth: "960px", margin: "0 auto", padding: "60px 24px" }}>
+
+        {/* Specialist cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", marginBottom: "48px" }}>
+          {SPECIALISTS.map(s => (
+            <div key={s.name} style={{ background: WHITE, borderRadius: "8px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.08)", borderTop: `4px solid ${ORANGE}` }}>
+              <img
+                src={s.photo}
+                alt={s.name}
+                loading="lazy"
+                decoding="async"
+                style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+              />
+              <div style={{ padding: "28px 32px" }}>
+                <h2 style={{ color: DARK_NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h2>
+                <p style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{s.role}</p>
+                <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "12px" }}>
+                  <i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}
+                </p>
+                <p style={{ color: "#555", fontSize: "13px", marginBottom: "14px" }}>
+                  <i className="fas fa-graduation-cap" style={{ color: ORANGE, marginRight: "6px" }}></i>{s.edu}
+                </p>
+                <p style={{ color: "#444", fontSize: "14px", lineHeight: 1.75, margin: 0 }}>{s.bio}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <div style={{ background: WHITE, borderRadius: "8px", padding: "40px", marginBottom: "32px", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
           <h2 style={{ color: DARK_NAVY, fontSize: "1.5rem", fontWeight: 700, marginBottom: "20px" }}>

@@ -873,7 +873,7 @@ function ServicesSection() {
 function AboutSection() {
   const { lang } = useLang();
   return (
-    <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0 40px", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="grid-2col">
           <div>
@@ -961,7 +961,7 @@ function AboutSection() {
 function ProcessSection() {
   const { lang } = useLang();
   return (
-    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "40px 0 80px", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Verfahren" : "Our Process"}</p>

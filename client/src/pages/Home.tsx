@@ -110,7 +110,7 @@ const getServices = (lang: string) => [
     icon: "fas fa-home",
     title: { de: "Überprüfung von Hauspersonal", en: "Domestic Staff Screening" },
     price: "auf Anfrage",
-    short: { de: "Kindermädchen, Haushälterinnen, Fahrer und andere Angestellte", en: "Nannies, housekeepers, drivers and other household employees" },
+    short: { de: "Planmäßige Überprüfung für Hauspersonal, das bereits in Ihrem Haushalt beschäftigt ist", en: "Scheduled screening for household staff already working in your home" },
     img: "/manus-storage/hauspersonal_new_3f0d7b62.jpg",
     features: ["Schnelle Terminvergabe", "Diskrete Durchführung", "Schriftliches Ergebnis", "100% vertraulich"],
     sections: [

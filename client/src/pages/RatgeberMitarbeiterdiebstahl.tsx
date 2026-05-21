@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import FloatingButtons from "../components/FloatingButtons";
 import Breadcrumb from "../components/Breadcrumb";
 import { InlineCTA, BottomCTA } from "../components/ArticleCTA";
 
@@ -128,6 +129,7 @@ export default function RatgeberMitarbeiterdiebstahl() {
           © 2025 luegendetektor-test-muenchen.de &nbsp;·&nbsp; <a href="tel:+4917560360003" style={{ color: ORANGE, textDecoration: "none" }}>+49 175 6036003</a>
         </p>
       </footer>
+      <FloatingButtons />
     </div>
   );
 }

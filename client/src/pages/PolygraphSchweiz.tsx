@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import FloatingButtons from "../components/FloatingButtons";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -113,6 +114,7 @@ export default function PolygraphSchweiz() {
           © 2025 luegendetektor-test-muenchen.de · <a href="tel:+4917560360003" style={{ color: ORANGE, textDecoration: "none" }}>+49 175 6036003</a> · Mo–So 9:00–22:00 Uhr
         </p>
       </footer>
+      <FloatingButtons />
     </div>
   );
 }

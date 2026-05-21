@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import FloatingButtons from "../components/FloatingButtons";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -155,6 +156,7 @@ export default function LuegendetekorMuenchen() {
           © 2025 luegendetektor-test-muenchen.de · Alle Rechte vorbehalten
         </p>
       </footer>
+      <FloatingButtons />
     </div>
   );
 }

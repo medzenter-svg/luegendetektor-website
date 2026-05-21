@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import FloatingButtons from "../components/FloatingButtons";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -128,6 +129,7 @@ export default function Treuetest() {
           © 2025 luegendetektor-test-muenchen.de · Alle Rechte vorbehalten
         </p>
       </footer>
+      <FloatingButtons />
     </div>
   );
 }

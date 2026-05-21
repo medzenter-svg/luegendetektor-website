@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import FloatingButtons from "../components/FloatingButtons";
 import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
@@ -273,6 +274,7 @@ export default function FremdgehenBeweisen() {
         style={{ position: "fixed", bottom: "80px", right: "20px", width: "52px", height: "52px", backgroundColor: "#25D366", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(0,0,0,0.2)", zIndex: 999, textDecoration: "none" }}>
         <i className="fab fa-whatsapp" style={{ color: WHITE, fontSize: "24px" }} />
       </a>
+      <FloatingButtons />
     </div>
   );
 }

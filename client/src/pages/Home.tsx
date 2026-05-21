@@ -691,7 +691,7 @@ function RegionalSection() {
           ))}
         </div>
         {/* SEO sentence */}
-        <p style={{ color: "#6b7280", fontSize: "14px", lineHeight: 1.7, fontStyle: "italic" }}>
+        <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.7, fontWeight: 500 }}>
           {lang === "en"
             ? "On-site appointments are available in Munich, Berlin, Frankfurt, Hamburg, Stuttgart, Düsseldorf, Vienna, Zurich and many other cities upon request."
             : "Termine und diskrete Vor-Ort-Einsätze sind unter anderem in München, Berlin, Frankfurt, Hamburg, Stuttgart, Düsseldorf, Wien, Zürich und weiteren Städten möglich."}

@@ -17,8 +17,8 @@ export const t = {
 
   // ── HERO ──
   hero: {
-    title1:     { de: "LÜGENDETEKTOR-TEST", en: "LIE DETECTOR TEST" },
-    title2:     { de: "IN MÜNCHEN",         en: "IN MUNICH" },
+    title1:     { de: "POLYGRAPH- & LÜGENDETEKTOR-TESTS IN MÜNCHEN", en: "POLYGRAPH & LIE DETECTOR TESTS IN MUNICH" },
+    title2:     { de: "DISKRETE UNTERSUCHUNGEN FÜR PRIVATPERSONEN & UNTERNEHMEN", en: "DISCREET INVESTIGATIONS FOR PRIVATE CLIENTS & COMPANIES" },
     subtitle:   { de: "Premium-Prüfung zum fairen Preis", en: "Premium examination at a fair price" },
     accuracy:   { de: "GENAUIGKEIT 98–99%", en: "ACCURACY 98–99%" },
     anon:       { de: "100% anonym, vertraulich und ohne Weitergabe von Anfragedetails", en: "100% anonymous, confidential and without disclosure of inquiry details" },

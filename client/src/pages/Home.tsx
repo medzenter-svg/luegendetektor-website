@@ -179,32 +179,6 @@ const getServices = (lang: string) => [
   },
   // ── BUSINESS ──
   {
-    id: "hausmaedchen",
-    category: "business",
-    icon: "fas fa-broom",
-    title: { de: "Überprüfung von Hausmädchen", en: "Screening of Household Staff" },
-    price: "auf Anfrage",
-    short: { de: "Zuverlässigkeitsprüfung für Haushaltspersonal vor der Einstellung", en: "Reliability check for household staff before employment" },
-    img: "/manus-storage/img_hauspersonal_opt_a3b2c1d0.jpg",
-    features: ["Diskrete Durchführung", "Schnelle Ergebnisse", "Vertraulicher Bericht", "Rechtssicheres Gutachten"],
-    sections: [
-      {
-        heading: { de: "ÜBERPRÜFUNG VON HAUSMÄDCHEN", en: "SCREENING OF HOUSEHOLD STAFF" },
-        text: lang === "en" ? "When hiring household staff such as housekeepers, nannies or au pairs, trust is the most important factor. You are letting someone into your home and your family's private sphere. A polygraph examination before employment gives you certainty about the honesty and reliability of your future employee.\n\nThe examination covers the following areas:" : `Wenn Sie Haushaltspersonal wie Hausmädchen, Kinderbetreuerinnen oder Au-pairs einstellen, ist Vertrauen der wichtigste Faktor. Sie lassen jemanden in Ihr Zuhause und die Privatsphäre Ihrer Familie. Eine Polygraphuntersuchung vor der Einstellung gibt Ihnen Gewissheit über die Ehrlichkeit und Zuverlässigkeit Ihrer zukünftigen Mitarbeiterin.\n\nDie Untersuchung umfasst folgende Bereiche:`,
-        bullets: [
-          lang === "en" ? "Honesty: No tendency to theft or dishonest behavior" : "Ehrlichkeit: Keine Neigung zu Diebstahl oder unehrlichem Verhalten",
-          lang === "en" ? "Reliability: Verification of information in the application" : "Zuverlässigkeit: Überprüfung der Angaben in der Bewerbung",
-          lang === "en" ? "Safety: No criminal record or concealed risk factors" : "Sicherheit: Kein Vorstrafenregister oder verdeckte Risikofaktoren",
-          lang === "en" ? "Substance use: No alcohol, drug or medication dependency" : "Substanzkonsum: Keine Alkohol-, Drogen- oder Medikamentenabhängigkeit",
-        ],
-      },
-      {
-        heading: { de: "WARUM EINE ÜBERPRÜFUNG VOR DER EINSTELLUNG?", en: "WHY A CHECK BEFORE EMPLOYMENT?" },
-        text: lang === "en" ? "Household staff have access to your home, your valuables and often your children. A professional polygraph examination before employment is the most reliable way to verify the trustworthiness of applicants. Our certified experts conduct the examination discreetly and professionally – with a written report that you can use as documentation." : `Haushaltspersonal hat Zugang zu Ihrem Zuhause, Ihren Wertsachen und oft auch zu Ihren Kindern. Eine professionelle Polygraphuntersuchung vor der Einstellung ist der zuverlässigste Weg, die Vertrauenswürdigkeit von Bewerberinnen zu überprüfen. Unsere zertifizierten Experten führen die Untersuchung diskret und professionell durch – mit einem schriftlichen Gutachten, das Sie als Dokumentation verwenden können.`,
-      },
-    ],
-  },
-  {
     id: "einstellung",
     category: "business",
     icon: "fas fa-user-check",
@@ -377,6 +351,7 @@ const getServices = (lang: string) => [
   },
   {
     id: "hausmaedchen",
+    category: "business",
     icon: "fas fa-broom",
     title: { de: "Überprüfung von Hausmädchen", en: "Housemaid Screening" },
     price: "auf Anfrage",

@@ -1247,7 +1247,7 @@ function FAQSection() {
   const { lang } = useLang();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
-    <section id="faq" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="faq" style={{ backgroundColor: WHITE, padding: "40px 0 80px", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
@@ -1757,7 +1757,7 @@ function CasesSection() {
   const bg = WHITE;
   const cardBg = "#f8fafc";
   return (
-    <div id="cases" style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${BORDER}` }}>
+    <div id="cases" style={{ background: bg, padding: "80px 0 40px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 style={{ color: NAVY, fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{c.heading[L]}</h2>

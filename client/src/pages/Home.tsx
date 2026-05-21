@@ -809,7 +809,7 @@ function ServicesSection() {
   const services = getServices(lang);
 
   return (
-    <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="services" style={{ backgroundColor: LIGHT_BG, padding: "48px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Unsere Leistungen</p>
@@ -873,7 +873,7 @@ function ServicesSection() {
 function AboutSection() {
   const { lang } = useLang();
   return (
-    <section id="about" style={{ backgroundColor: WHITE, padding: "80px 0 40px", fontFamily: "'Lato', sans-serif" }}>
+    <section id="about" style={{ backgroundColor: WHITE, padding: "48px 0 32px", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="grid-2col">
           <div>
@@ -961,7 +961,7 @@ function AboutSection() {
 function ProcessSection() {
   const { lang } = useLang();
   return (
-    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "40px 0 80px", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+    <section id="process" style={{ backgroundColor: "#f8fafc", padding: "32px 0 48px", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Verfahren" : "Our Process"}</p>
@@ -988,7 +988,7 @@ function ProcessSection() {
 function EquipmentSection() {
   const { lang } = useLang();
   return (
-    <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="equipment" style={{ backgroundColor: LIGHT_BG, padding: "48px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Technologie</p>
@@ -1051,7 +1051,7 @@ function CtaBanner() {
 function SpecialistsSection() {
   const { lang } = useLang();
   return (
-    <section id="specialists" style={{ backgroundColor: WHITE, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="specialists" style={{ backgroundColor: WHITE, padding: "48px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{lang === "de" ? "Unser Team" : "Our Team"}</p>
@@ -1178,7 +1178,7 @@ function PricesSection() {
   const { lang } = useLang();
   const L = lang as "de" | "en";
   return (
-    <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif" }}>
+    <section id="prices" style={{ backgroundColor: LIGHT_BG, padding: "48px 0", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{L === "de" ? "Transparente Preise" : "Transparent Prices"}</p>
@@ -1247,7 +1247,7 @@ function FAQSection() {
   const { lang } = useLang();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
-    <section id="faq" style={{ backgroundColor: WHITE, padding: "40px 0 80px", fontFamily: "'Lato', sans-serif" }}>
+    <section id="faq" style={{ backgroundColor: WHITE, padding: "32px 0 48px", fontFamily: "'Lato', sans-serif" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p style={{ color: ORANGE, fontSize: "15px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>Fragen & Antworten</p>
@@ -1296,7 +1296,7 @@ function ContactSection() {
 
   return (
     <>
-    <section id="contact" style={{ backgroundColor: LIGHT_BG, padding: "80px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
+    <section id="contact" style={{ backgroundColor: LIGHT_BG, padding: "48px 0", fontFamily: "'Lato', sans-serif", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
         {/* Two-column layout */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "60px", alignItems: "start" }} className="grid-contact">
@@ -1632,7 +1632,7 @@ function ReportSection() {
   ];
 
   return (
-    <div id="report" style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${BORDER}` }}>
+    <div id="report" style={{ background: bg, padding: "48px 0", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -1757,7 +1757,7 @@ function CasesSection() {
   const bg = WHITE;
   const cardBg = "#f8fafc";
   return (
-    <div id="cases" style={{ background: bg, padding: "80px 0 40px", borderTop: `1px solid ${BORDER}` }}>
+    <div id="cases" style={{ background: bg, padding: "48px 0 32px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 style={{ color: NAVY, fontSize: 32, fontWeight: 800, letterSpacing: 2, margin: 0 }}>{c.heading[L]}</h2>

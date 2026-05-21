@@ -633,6 +633,75 @@ function StatsBar() {
 }
 
 // ─────────────────────────────────────────────
+// REGIONAL COVERAGE SECTION
+// ─────────────────────────────────────────────
+function RegionalSection() {
+  const { lang } = useLang();
+  const cities = [
+    { name: "München", href: "#kontakt" },
+    { name: "Berlin", href: "#kontakt" },
+    { name: "Hamburg", href: "#kontakt" },
+    { name: "Frankfurt", href: "#kontakt" },
+    { name: "Düsseldorf", href: "#kontakt" },
+    { name: "Stuttgart", href: "#kontakt" },
+    { name: "Wien", href: "#kontakt" },
+    { name: "Zürich", href: "#kontakt" },
+  ];
+  return (
+    <section style={{ backgroundColor: "#f8f9fb", borderBottom: `1px solid ${BORDER}`, fontFamily: "'Lato', sans-serif", padding: "52px 24px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        {/* Badge */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
+          <i className="fas fa-map-marker-alt" style={{ color: ORANGE, fontSize: "16px" }}></i>
+          <span style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "2px" }}>
+            {lang === "en" ? "NATIONWIDE SERVICE" : "DEUTSCHLANDWEITE DIENSTLEISTUNG"}
+          </span>
+        </div>
+        {/* Headline */}
+        <h2 style={{ color: NAVY, fontWeight: 900, fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.25, marginBottom: "20px", maxWidth: "820px" }}>
+          {lang === "en"
+            ? "Exclusive Polygraph Services in Germany, Austria & Switzerland"
+            : "Exklusive Polygraphie-Services in Deutschland, Österreich & der Schweiz"}
+        </h2>
+        {/* Body text */}
+        <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.85, marginBottom: "16px", maxWidth: "900px" }}>
+          {lang === "en"
+            ? "Our headquarters in Munich coordinates discreet polygraph examinations and confidential special appointments throughout Germany. Through a specialised network of mobile experts and cooperation locations, appointments can also be arranged in Austria and Switzerland."
+            : "Unsere Zentrale in München koordiniert diskrete Polygraphen-Untersuchungen und vertrauliche Sondertermine deutschlandweit. Durch ein spezialisiertes Netzwerk mobiler Experten und Kooperationsstandorte können Termine auch in Österreich und der Schweiz organisiert werden."}
+        </p>
+        <p style={{ color: TEXT_DARK, fontSize: "17px", lineHeight: 1.85, marginBottom: "28px", maxWidth: "900px" }}>
+          {lang === "en"
+            ? "We serve private individuals, companies, family offices, law firms and international clients with the highest discretion, flexible scheduling and personalised support."
+            : "Wir betreuen Privatpersonen, Unternehmen, Family Offices, Kanzleien und internationale Mandanten mit höchster Diskretion, flexibler Einsatzplanung und individueller Betreuung."}
+        </p>
+        {/* SEO city links */}
+        <p style={{ color: "#6b7280", fontSize: "14px", marginBottom: "14px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px" }}>
+          {lang === "en" ? "Available in:" : "Termine möglich in:"}
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "24px" }}>
+          {cities.map(c => (
+            <a key={c.name} href={c.href}
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: WHITE, border: `1px solid ${BORDER}`, color: NAVY, padding: "7px 16px", borderRadius: "4px", fontSize: "14px", fontWeight: 700, textDecoration: "none", transition: "border-color 0.2s" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = ORANGE; (e.currentTarget as HTMLAnchorElement).style.color = ORANGE; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = BORDER; (e.currentTarget as HTMLAnchorElement).style.color = NAVY; }}
+            >
+              <i className="fas fa-map-pin" style={{ fontSize: "11px", color: ORANGE }}></i>
+              {lang === "en" ? `Lie Detector ${c.name}` : `Lügendetektor ${c.name}`}
+            </a>
+          ))}
+        </div>
+        {/* SEO sentence */}
+        <p style={{ color: "#6b7280", fontSize: "14px", lineHeight: 1.7, fontStyle: "italic" }}>
+          {lang === "en"
+            ? "On-site appointments are available in Munich, Berlin, Frankfurt, Hamburg, Stuttgart, Düsseldorf, Vienna, Zurich and many other cities upon request."
+            : "Termine und diskrete Vor-Ort-Einsätze sind unter anderem in München, Berlin, Frankfurt, Hamburg, Stuttgart, Düsseldorf, Wien, Zürich und weiteren Städten möglich."}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────
 // SERVICE DETAIL PANEL
 // ─────────────────────────────────────────────
 function ServiceDetailPanel({ svc, onClose }: { svc: ReturnType<typeof getServices>[0]; onClose: () => void }) {
@@ -1743,6 +1812,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <StatsBar />
+      <RegionalSection />
       <ServicesSection />
       <AboutSection />
       <ProcessSection />

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
+import SharedNavbar from "../components/SharedNavbar";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -26,17 +27,8 @@ export default function ItSektor() {
 
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
-      <nav style={{ backgroundColor: NAVY, padding: "0 24px", position: "sticky", top: 0, zIndex: 1000, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
-          <Link href="/" style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
-            <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Lügendetektor München Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
-            luegendetektor-test-muenchen.de
-          </Link>
-          <Link href="/#contact" style={{ backgroundColor: ORANGE, color: WHITE, padding: "9px 20px", borderRadius: "6px", fontWeight: 700, fontSize: "14px", textDecoration: "none" }}>
-            Jetzt anfragen
-          </Link>
-        </div>
-      </nav>
+      <SharedNavbar />
+      
 
       <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #1e3a5f 100%)`, padding: "80px 24px 60px", textAlign: "center" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>

@@ -1,6 +1,7 @@
 // Seite: Fremdgehen beweisen – legale Möglichkeiten in Deutschland
 import { useEffect } from "react";
 import { Link } from "wouter";
+import SharedNavbar from "../components/SharedNavbar";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -77,22 +78,9 @@ export default function FremdgehenBeweisen() {
 
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", backgroundColor: WHITE, minHeight: "100vh" }}>
+      <SharedNavbar />
       {/* Navbar */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, backgroundColor: NAVY }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
-            <div style={{ width: "32px", height: "32px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src="/manus-storage/logo_clean_f9c5298d.png" alt="Logo" style={{ width: "38px", height: "38px", objectFit: "contain" }} />
-            </div>
-            <span style={{ color: WHITE, fontWeight: 700, fontSize: "18px", letterSpacing: "0.5px" }}>luegendetektor-test-muenchen.de</span>
-          </Link>
-          <Link href="/" style={{ textDecoration: "none" }}>
-            <button style={{ backgroundColor: ORANGE, color: WHITE, border: "none", borderRadius: "6px", padding: "10px 20px", fontWeight: 700, fontSize: "14px", cursor: "pointer", fontFamily: "'Lato', sans-serif", letterSpacing: "0.5px" }}>
-              ← ZURÜCK ZUR STARTSEITE
-            </button>
-          </Link>
-        </div>
-      </nav>
+      
 
       {/* Hero */}
       <section style={{ backgroundColor: NAVY, paddingTop: "100px", paddingBottom: "60px" }}>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -29,6 +30,14 @@ export default function Treuetest() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Treuetest – Polygraphuntersuchung München"
+        description="Professioneller Treuetest mit dem Polygraphen. Diskrete Untersuchung für Privatpersonen in München und bundesweit. Zertifizierte Experten, offizielles Gutachten."
+        url="/treuetest"
+        serviceType="Treuetest"
+        areaServed={["München", "Berlin", "Hamburg", "Frankfurt", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Polygraphuntersuchung inkl. schriftlichem Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

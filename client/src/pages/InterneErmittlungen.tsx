@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -31,6 +32,14 @@ export default function InterneErmittlungen() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Interne Ermittlungen – Polygraphuntersuchung"
+        description="Diskrete interne Ermittlungen mit dem Polygraphen. Aufklärung von Diebstahl, Datenmissbrauch und Vertrauensbrüchen in Unternehmen."
+        url="/interne-ermittlungen"
+        serviceType="Interne Ermittlungen"
+        areaServed={["München", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Interne Ermittlung mit Polygraph inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -29,6 +30,14 @@ export default function ItSektor() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Polygraphuntersuchung IT-Sektor"
+        description="Spezialisierte Polygraphuntersuchungen für IT-Unternehmen. Überprüfung bei Datenlecks, Industriespionage und Zugangsmissbrauch."
+        url="/it-sektor"
+        serviceType="Polygraphuntersuchung IT"
+        areaServed={["München", "Berlin", "Hamburg", "Frankfurt", "Deutschland"]}
+        offers={{ priceRange: "ab 490 €", description: "Polygraphuntersuchung IT-Sektor inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

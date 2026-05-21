@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -31,6 +32,14 @@ export default function Mitarbeiterueberpruefung() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Mitarbeiterüberprüfung – Polygraph für Unternehmen"
+        description="Professionelle Mitarbeiterüberprüfung mit dem Polygraphen. Für Unternehmen jeder Größe – diskret, rechtssicher und mit offiziellem Gutachten."
+        url="/mitarbeiterueberpruefung"
+        serviceType="Mitarbeiterüberprüfung"
+        areaServed={["München", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Polygraphuntersuchung für Unternehmen inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

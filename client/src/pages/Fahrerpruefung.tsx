@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -36,6 +37,14 @@ export default function Fahrerpruefung() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Fahrerüberprüfung – Polygraphuntersuchung"
+        description="Polygraphbasierte Überprüfung von Fahrern und Chauffeueren. Für Privatpersonen, Unternehmen und Sicherheitsdienste."
+        url="/fahrerpruefung"
+        serviceType="Fahrerüberprüfung"
+        areaServed={["München", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Fahrerüberprüfung mit Polygraph inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

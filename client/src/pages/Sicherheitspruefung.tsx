@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -36,6 +37,14 @@ export default function Sicherheitspruefung() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Sicherheitsprüfung – Polygraphuntersuchung"
+        description="Polygraphbasierte Sicherheitsprüfung für sensible Positionen. Zuverlässige Überprüfung von Vertrauenswürdigkeit und Integrität."
+        url="/sicherheitspruefung"
+        serviceType="Sicherheitsprüfung"
+        areaServed={["München", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Sicherheitsprüfung mit Polygraph inkl. offiziellem Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

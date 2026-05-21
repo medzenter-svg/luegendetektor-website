@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -66,6 +67,14 @@ export default function AnzeichenFremdgehen() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", backgroundColor: WHITE, minHeight: "100vh" }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Anzeichen Fremdgehen – Beratung & Polygraphtest"
+        description="Professionelle Beratung und Polygraphuntersuchung bei Verdacht auf Fremdgehen. Diskret, sachlich und ohne Vorwürfe."
+        url="/anzeichen-fremdgehen"
+        serviceType="Treuetest"
+        areaServed={["München", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Treuetest und Beratung inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

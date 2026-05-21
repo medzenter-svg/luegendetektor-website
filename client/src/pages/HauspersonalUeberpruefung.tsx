@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import ServiceSchema from "../components/ServiceSchema";
 import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
@@ -37,6 +38,14 @@ export default function HauspersonalUeberpruefung() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <ServiceSchema
+        name="Hauspersonal-Überprüfung – Polygraphuntersuchung"
+        description="Diskrete Überprüfung von Hauspersonal, Haushaltshilfen und Pflegepersonal mit dem Polygraphen. Für Privatpersonen und Familien."
+        url="/hauspersonal-ueberpruefung"
+        serviceType="Hauspersonal-Überprüfung"
+        areaServed={["München", "Wien", "Zürich", "Deutschland", "Österreich", "Schweiz"]}
+        offers={{ priceRange: "ab 490 €", description: "Hauspersonal-Überprüfung mit Polygraph inkl. Gutachten" }}
+      />
       <Breadcrumb items={
   [
     { label: "Startseite", href: "/" },

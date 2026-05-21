@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -21,6 +22,13 @@ export default function PolygraphWien() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <Breadcrumb items={
+  [
+    { label: "Startseite", href: "/" },
+    { label: "Polygraph Österreich", href: "/polygraph-oesterreich" },
+    { label: "Wien" }
+  ]
+} />
       {/* Navbar */}
       
 

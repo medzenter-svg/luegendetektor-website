@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -104,6 +105,12 @@ export default function Ratgeber() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
       <SharedNavbar />
+      <Breadcrumb items={
+  [
+    { label: "Startseite", href: "/" },
+    { label: "Ratgeber" }
+  ]
+} />
       
 
       <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #2d4a7a 100%)`, padding: "70px 24px 50px", textAlign: "center" }}>

@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -79,6 +80,12 @@ export default function FremdgehenBeweisen() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", backgroundColor: WHITE, minHeight: "100vh" }}>
       <SharedNavbar />
+      <Breadcrumb items={
+  [
+    { label: "Startseite", href: "/" },
+    { label: "Fremdgehen beweisen" }
+  ]
+} />
       {/* Navbar */}
       
 

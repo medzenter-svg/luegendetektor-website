@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import SharedNavbar from "../components/SharedNavbar";
+import Breadcrumb from "../components/Breadcrumb";
 
 const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
@@ -28,6 +29,13 @@ export default function RatgeberPolygraphVsStresstest() {
   return (
     <div style={{ fontFamily: "'Lato', sans-serif", color: NAVY }}>
       <SharedNavbar />
+      <Breadcrumb items={
+  [
+    { label: "Startseite", href: "/" },
+    { label: "Ratgeber", href: "/ratgeber" },
+    { label: "Polygraph vs. Stresstest" }
+  ]
+} />
       
 
       <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #243d6b 100%)`, padding: "72px 24px 56px" }}>

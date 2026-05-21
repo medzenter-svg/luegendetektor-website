@@ -5,27 +5,19 @@ const NAVY = "#1a2a4a";
 const ORANGE = "#FF8C00";
 const WHITE = "#ffffff";
 const LIGHT_BG = "#f5f7fa";
-const TEXT_DARK = "#1a2a4a";
 const TEXT_MID = "#4a5568";
 const BORDER = "#e2e8f0";
 
 export default function RatgeberKosten() {
   useEffect(() => {
-    document.title = "Was kostet ein Polygraph-Test? Preise erklärt | luegendetektor-test-muenchen.de";
+    document.title = "Was kostet eine Polygraphuntersuchung? | Ratgeber | luegendetektor-test-muenchen.de";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Kosten für einen Lügendetektor-Test: Was beeinflusst den Preis? Welche Pakete gibt es? Alles zu Preisen und Faktoren beim Polygraph-Test erklärt.");
+    if (meta) meta.setAttribute("content", "Welche Faktoren bestimmen den Preis einer Polygraphuntersuchung? Eine sachliche Übersicht zu Leistungsumfang, Qualitätsmerkmalen und Preisgestaltung.");
     window.scrollTo(0, 0);
   }, []);
 
-  const factors = [
-    { icon: "fas fa-clock", title: "Dauer der Untersuchung", text: "Eine vollständige Polygraphuntersuchung dauert 2–3 Stunden. Kürzere Probetest-Pakete sind günstiger als umfangreiche Untersuchungen." },
-    { icon: "fas fa-list-ol", title: "Anzahl der Fragen", text: "Je mehr Themenbereiche abgedeckt werden sollen, desto umfangreicher und damit kostspieliger wird die Untersuchung." },
-    { icon: "fas fa-map-marker-alt", title: "Anreise & Standort", text: "Untersuchungen in unserem Büro in München sind günstiger als Hausbesuche oder Reisen in andere Städte." },
-    { icon: "fas fa-file-alt", title: "Schriftliche Dokumentation", text: "Ein detaillierter schriftlicher Bericht ist optional und erhöht den Preis, bietet aber wertvolle Dokumentation." },
-  ];
-
   return (
-    <div style={{ fontFamily: "'Lato', sans-serif", color: TEXT_DARK }}>
+    <div style={{ fontFamily: "'Lato', sans-serif", color: NAVY }}>
       <nav style={{ backgroundColor: NAVY, padding: "0 24px", position: "sticky", top: 0, zIndex: 1000, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
           <Link href="/" style={{ color: WHITE, fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
@@ -34,85 +26,104 @@ export default function RatgeberKosten() {
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <Link href="/ratgeber" style={{ color: "rgba(255,255,255,0.7)", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>← Ratgeber</Link>
-            <Link href="/#contact" style={{ backgroundColor: ORANGE, color: WHITE, padding: "9px 20px", borderRadius: "6px", fontWeight: 700, fontSize: "14px", textDecoration: "none" }}>
-              Jetzt anfragen
-            </Link>
+            <Link href="/#contact" style={{ backgroundColor: ORANGE, color: WHITE, padding: "9px 20px", borderRadius: "6px", fontWeight: 700, fontSize: "14px", textDecoration: "none" }}>Kontakt</Link>
           </div>
         </div>
       </nav>
 
-      <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #2d4a7a 100%)`, padding: "70px 24px 50px", textAlign: "center" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <div style={{ display: "inline-block", backgroundColor: "rgba(255,140,0,0.15)", border: `1px solid ${ORANGE}`, borderRadius: "4px", padding: "6px 16px", color: ORANGE, fontSize: "13px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "20px" }}>
-            Kosten & Preise · 4 Min. Lesezeit
-          </div>
-          <h1 style={{ color: WHITE, fontSize: "clamp(24px, 4vw, 40px)", fontWeight: 800, lineHeight: 1.2, marginBottom: "16px" }}>
-            Was kostet ein Polygraph-Test? Preise & Pakete erklärt
+      <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #243d6b 100%)`, padding: "72px 24px 56px" }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+          <p style={{ color: ORANGE, fontSize: "12px", fontWeight: 700, letterSpacing: "2.5px", textTransform: "uppercase", marginBottom: "18px" }}>
+            Kosten & Leistungsumfang &nbsp;·&nbsp; 4 Min. Lesezeit
+          </p>
+          <h1 style={{ color: WHITE, fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, lineHeight: 1.18, marginBottom: "20px", letterSpacing: "-0.3px" }}>
+            Was kostet eine Polygraphuntersuchung?
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px", lineHeight: 1.7 }}>
-            Die Kosten für einen Lügendetektor-Test variieren je nach Umfang und Anbieter. Wir erklären, worauf Sie achten sollten.
+          <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "18px", lineHeight: 1.75, maxWidth: "620px" }}>
+            Eine sachliche Übersicht zu den Faktoren, die den Preis bestimmen – und warum die Wahl des Anbieters wichtiger ist als der Preis selbst.
           </p>
         </div>
       </section>
 
-      <section style={{ backgroundColor: WHITE, padding: "60px 24px" }}>
-        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+      <section style={{ backgroundColor: WHITE, padding: "56px 24px 72px" }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
 
-          <h2 style={{ color: NAVY, fontSize: "24px", fontWeight: 700, marginBottom: "16px" }}>Preisrahmen für Polygraphuntersuchungen</h2>
-          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.9, marginBottom: "24px" }}>
-            Die Kosten für eine professionelle Polygraphuntersuchung hängen von verschiedenen Faktoren ab. Als grobe Orientierung: Ein einfacher Probetest beginnt bei einem niedrigeren Preisniveau, während umfangreiche Untersuchungen mit schriftlicher Dokumentation entsprechend mehr kosten.
-          </p>
-          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.9, marginBottom: "32px" }}>
-            Wir empfehlen, immer ein individuelles Angebot anzufordern – denn jede Situation ist anders, und wir passen unsere Leistungen genau an Ihre Bedürfnisse an. Die <strong>Erstberatung ist kostenlos und unverbindlich</strong>.
+          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "28px" }}>
+            Die Kosten einer Polygraphuntersuchung sind kein Standardpreis, der sich pauschal nennen lässt. Sie ergeben sich aus dem konkreten Leistungsumfang, der Komplexität der Fragestellung und dem logistischen Aufwand. Transparenz in diesem Punkt ist uns wichtig – deshalb erläutern wir hier, welche Faktoren die Kalkulation beeinflussen.
           </p>
 
-          <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "20px" }}>Faktoren, die den Preis beeinflussen</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px", marginBottom: "40px" }}>
-            {factors.map((f) => (
-              <div key={f.title} style={{ backgroundColor: LIGHT_BG, borderRadius: "10px", padding: "24px", border: `1px solid ${BORDER}` }}>
-                <i className={f.icon} style={{ color: ORANGE, fontSize: "24px", marginBottom: "12px", display: "block" }} />
-                <h3 style={{ color: NAVY, fontSize: "16px", fontWeight: 700, marginBottom: "8px" }}>{f.title}</h3>
-                <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.7, margin: 0 }}>{f.text}</p>
+          <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "18px", marginTop: "40px" }}>Faktoren, die den Preis bestimmen</h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "40px", border: `1px solid ${BORDER}`, borderRadius: "10px", overflow: "hidden" }}>
+            {[
+              { factor: "Untersuchungsdauer", detail: "Eine vollständige Untersuchung mit Vorbesprechung, Kalibrierung und Auswertung dauert 2,5 bis 3,5 Stunden. Kürzere Formate für spezifische Einzelfragen sind möglich." },
+              { factor: "Anzahl der Themenbereiche", detail: "Jeder zusätzliche Themenblock verlängert die Untersuchung und erhöht den Auswertungsaufwand. Wir empfehlen, sich auf die wesentlichen Fragen zu konzentrieren." },
+              { factor: "Schriftliche Dokumentation", detail: "Ein formelles Gutachten mit detaillierter Auswertung ist optional und wird separat berechnet. Es ist insbesondere für rechtlich relevante Situationen sinnvoll." },
+              { factor: "Anreise und Ort", detail: "Untersuchungen in unseren Räumlichkeiten in München sind in der Regel günstiger als Einsätze vor Ort – in anderen Städten oder im Ausland fallen Reisekosten an." },
+              { factor: "Unternehmensvolumen", detail: "Für Unternehmen, die mehrere Untersuchungen beauftragen, erstellen wir individuelle Rahmenvereinbarungen." },
+            ].map((item, i) => (
+              <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr", gap: "0", backgroundColor: i % 2 === 0 ? LIGHT_BG : WHITE }}>
+                <div style={{ padding: "16px 20px", borderRight: `1px solid ${BORDER}` }}>
+                  <p style={{ color: NAVY, fontWeight: 700, fontSize: "14px", margin: 0 }}>{item.factor}</p>
+                </div>
+                <div style={{ padding: "16px 20px" }}>
+                  <p style={{ color: TEXT_MID, fontSize: "14px", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          <div style={{ backgroundColor: LIGHT_BG, borderRadius: "12px", padding: "32px", marginBottom: "32px", borderLeft: `4px solid ${ORANGE}` }}>
-            <h3 style={{ color: NAVY, fontSize: "20px", fontWeight: 700, marginBottom: "12px" }}>Warum günstige Anbieter riskant sind</h3>
-            <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
-              Ein Polygraphtest ist nur so gut wie der Spezialist, der ihn durchführt. Günstige Anbieter ohne nachgewiesene Qualifikation und Erfahrung liefern oft unzuverlässige Ergebnisse – was in sensiblen Situationen fatale Folgen haben kann.
-            </p>
-            <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.8, margin: 0 }}>
-              Achten Sie auf: zertifizierte Spezialisten, transparente Methodik, klare Kommunikation und nachweisbare Erfahrung. Unser Team erfüllt alle diese Kriterien.
+          <div style={{ borderLeft: `3px solid ${ORANGE}`, paddingLeft: "24px", margin: "36px 0" }}>
+            <p style={{ color: NAVY, fontSize: "17px", lineHeight: 1.85, fontStyle: "italic", margin: 0 }}>
+              „Eine Polygraphuntersuchung ist eine Investition in Klarheit. Der Preis sollte nicht das primäre Auswahlkriterium sein – die Qualifikation des Spezialisten ist entscheidend."
             </p>
           </div>
 
-          <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "16px" }}>Unsere Pakete im Überblick</h2>
-          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.9, marginBottom: "24px" }}>
-            Wir bieten verschiedene Pakete für unterschiedliche Bedürfnisse an – vom einfachen Probetest bis zur umfangreichen Unternehmensüberprüfung. Alle Pakete beinhalten eine kostenlose Erstberatung, die eigentliche Polygraphuntersuchung und eine mündliche Auswertung. Schriftliche Dokumentation ist optional erhältlich.
-          </p>
-          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.9, marginBottom: "32px" }}>
-            Für genaue Preisangaben kontaktieren Sie uns bitte direkt – wir erstellen Ihnen ein maßgeschneidertes Angebot basierend auf Ihrer spezifischen Situation.
+          <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "14px", marginTop: "40px" }}>Worauf Sie bei der Anbieterwahl achten sollten</h2>
+          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "20px" }}>
+            Der Markt für Polygraphdienstleistungen ist in Deutschland wenig reguliert. Das bedeutet, dass Anbieter ohne nachgewiesene Qualifikation tätig sein können. Folgende Kriterien helfen bei der Einschätzung:
           </p>
 
-          <div style={{ backgroundColor: NAVY, borderRadius: "12px", padding: "36px", marginBottom: "40px", textAlign: "center" }}>
-            <h3 style={{ color: WHITE, fontSize: "20px", fontWeight: 700, marginBottom: "12px" }}>Kostenloses Angebot anfragen</h3>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "15px", marginBottom: "20px" }}>Wir beraten Sie kostenlos und erstellen ein individuelles Angebot – Mo–So 9:00–22:00 Uhr.</p>
-            <a href="tel:+4917560360003" style={{ backgroundColor: ORANGE, color: WHITE, padding: "12px 28px", borderRadius: "6px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "40px" }}>
+            {[
+              "Nachweisbare Ausbildung und Zertifizierung des Spezialisten",
+              "Transparente Kommunikation über Methodik und Ablauf",
+              "Klare Datenschutzregelungen und Vertraulichkeitsvereinbarung",
+              "Referenzen oder nachweisbare Erfahrung im jeweiligen Anwendungsbereich",
+              "Bereitschaft zur kostenlosen Erstberatung ohne Verpflichtung",
+            ].map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                <i className="fas fa-check" style={{ color: ORANGE, fontSize: "14px", marginTop: "4px", flexShrink: 0 }} />
+                <p style={{ color: TEXT_MID, fontSize: "16px", lineHeight: 1.7, margin: 0 }}>{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ color: NAVY, fontSize: "22px", fontWeight: 700, marginBottom: "14px", marginTop: "40px" }}>Individuelle Preisauskunft</h2>
+          <p style={{ color: TEXT_MID, fontSize: "17px", lineHeight: 1.95, marginBottom: "36px" }}>
+            Da jede Situation andere Anforderungen stellt, nennen wir Ihnen den genauen Preis nach einem kurzen Erstgespräch. Die Beratung ist kostenlos und unverbindlich. Wir sind täglich von 9 bis 22 Uhr erreichbar.
+          </p>
+
+          <div style={{ backgroundColor: NAVY, borderRadius: "10px", padding: "36px 32px", marginBottom: "40px" }}>
+            <h3 style={{ color: WHITE, fontSize: "19px", fontWeight: 700, marginBottom: "10px" }}>Erstberatung anfragen</h3>
+            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "15px", lineHeight: 1.7, marginBottom: "22px" }}>
+              Wir besprechen Ihren Fall vertraulich und erstellen ein individuelles Angebot.
+            </p>
+            <a href="tel:+4917560360003" style={{ backgroundColor: ORANGE, color: WHITE, padding: "11px 26px", borderRadius: "5px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
               <i className="fas fa-phone" /> +49 175 6036003
             </a>
           </div>
 
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "15px" }}>← Alle Ratgeber-Artikel</Link>
-            <Link href="/ratgeber/polygraph-legal-deutschland" style={{ color: NAVY, fontWeight: 700, textDecoration: "none", fontSize: "15px" }}>→ Ist ein Polygraphtest legal?</Link>
+          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", borderTop: `1px solid ${BORDER}`, paddingTop: "24px" }}>
+            <Link href="/ratgeber" style={{ color: ORANGE, fontWeight: 700, textDecoration: "none", fontSize: "14px" }}>← Alle Artikel</Link>
+            <Link href="/ratgeber/polygraph-legal-deutschland" style={{ color: TEXT_MID, fontWeight: 600, textDecoration: "none", fontSize: "14px" }}>Rechtliche Grundlagen →</Link>
           </div>
         </div>
       </section>
 
-      <footer style={{ backgroundColor: NAVY, padding: "32px 24px", textAlign: "center" }}>
-        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px", margin: 0 }}>
-          © 2025 luegendetektor-test-muenchen.de · <a href="tel:+4917560360003" style={{ color: ORANGE, textDecoration: "none" }}>+49 175 6036003</a> · Mo–So 9:00–22:00 Uhr
+      <footer style={{ backgroundColor: NAVY, padding: "28px 24px", textAlign: "center" }}>
+        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px", margin: 0 }}>
+          © 2025 luegendetektor-test-muenchen.de &nbsp;·&nbsp; <a href="tel:+4917560360003" style={{ color: ORANGE, textDecoration: "none" }}>+49 175 6036003</a>
         </p>
       </footer>
     </div>

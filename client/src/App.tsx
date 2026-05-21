@@ -28,6 +28,17 @@ import RatgeberGenauigkeit from "./pages/RatgeberGenauigkeit";
 import RatgeberKosten from "./pages/RatgeberKosten";
 import RatgeberLegal from "./pages/RatgeberLegal";
 import RatgeberTreuetest from "./pages/RatgeberTreuetest";
+import RatgeberPolygraphVsStresstest from "./pages/RatgeberPolygraphVsStresstest";
+import RatgeberDauer from "./pages/RatgeberDauer";
+import RatgeberUnternehmen from "./pages/RatgeberUnternehmen";
+import RatgeberMitarbeiterdiebstahl from "./pages/RatgeberMitarbeiterdiebstahl";
+import RatgeberAnzeichenFremdgehen from "./pages/RatgeberAnzeichenFremdgehen";
+import RatgeberJugendliche from "./pages/RatgeberJugendliche";
+import LuegendetekorDuesseldorf from "./pages/LuegendetekorDuesseldorf";
+import LuegendetekorStuttgart from "./pages/LuegendetekorStuttgart";
+import LuegendetekorKoeln from "./pages/LuegendetekorKoeln";
+import LuegendetekorLeipzig from "./pages/LuegendetekorLeipzig";
+import LuegendetekorDresden from "./pages/LuegendetekorDresden";
 
 
 function Router() {
@@ -56,6 +67,17 @@ function Router() {
       <Route path={"/ratgeber/kosten-polygraph"} component={RatgeberKosten} />
       <Route path={"/ratgeber/polygraph-legal-deutschland"} component={RatgeberLegal} />
       <Route path={"/ratgeber/treuetest-vorbereitung"} component={RatgeberTreuetest} />
+      <Route path={"/ratgeber/polygraph-vs-stresstest"} component={RatgeberPolygraphVsStresstest} />
+      <Route path={"/ratgeber/dauer-polygraph-test"} component={RatgeberDauer} />
+      <Route path={"/ratgeber/polygraph-fuer-unternehmen"} component={RatgeberUnternehmen} />
+      <Route path={"/ratgeber/mitarbeiterdiebstahl"} component={RatgeberMitarbeiterdiebstahl} />
+      <Route path={"/ratgeber/anzeichen-fremdgehen"} component={RatgeberAnzeichenFremdgehen} />
+      <Route path={"/ratgeber/polygraph-jugendliche"} component={RatgeberJugendliche} />
+      <Route path={"/luegendetektor-duesseldorf"} component={LuegendetekorDuesseldorf} />
+      <Route path={"/luegendetektor-stuttgart"} component={LuegendetekorStuttgart} />
+      <Route path={"/luegendetektor-koeln"} component={LuegendetekorKoeln} />
+      <Route path={"/luegendetektor-leipzig"} component={LuegendetekorLeipzig} />
+      <Route path={"/luegendetektor-dresden"} component={LuegendetekorDresden} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

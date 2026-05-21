@@ -157,6 +157,85 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Neue Stadtseiten -->  
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-duesseldorf</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-stuttgart</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-koeln</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-leipzig</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/luegendetektor-dresden</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Neue Ratgeber-Artikel -->
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/polygraph-vs-stresstest</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/dauer-polygraph-test</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/polygraph-fuer-unternehmen</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/mitarbeiterdiebstahl</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/anzeichen-fremdgehen</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://luegendetektor-test-muenchen.de/ratgeber/polygraph-jugendliche</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Unterseiten -->
   <url>
     <loc>https://luegendetektor-test-muenchen.de/fremdgehen-beweisen</loc>

@@ -33,7 +33,7 @@ export const t = {
   stats: {
     s1v: { de: "98–99%", en: "98–99%" },
     s1l: { de: "Genauigkeit", en: "Accuracy" },
-    s2v: { de: "15+",    en: "15+" },
+    s2v: { de: "12+",    en: "12+" },
     s2l: { de: "Jahre Erfahrung", en: "Years of Experience" },
     s3v: { de: "2.000+", en: "2,000+" },
     s3l: { de: "Abgeschlossene Tests", en: "Completed Tests" },

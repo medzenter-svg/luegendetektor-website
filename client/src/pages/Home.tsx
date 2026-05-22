@@ -895,7 +895,7 @@ function AboutSection() {
               </div>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
-              {[{ val: "95–99%", label: "Genauigkeit" }, { val: "20+", label: "Jahre Erfahrung" }, { val: "500+", label: "Fälle" }, { val: "100%", label: "Vertraulich" }].map(s => (
+              {[{ val: "95–99%", label: "Genauigkeit" }, { val: "12+", label: "Jahre Erfahrung" }, { val: "500+", label: "Fälle" }, { val: "100%", label: "Vertraulich" }].map(s => (
                 <div key={s.val} style={{ textAlign: "center" }}>
                   <div style={{ fontSize: "1.8rem", fontWeight: 700, color: NAVY }}>{s.val}</div>
                   <div style={{ color: TEXT_MID, fontSize: "11px", textTransform: "uppercase", letterSpacing: "1px" }}>{s.label}</div>

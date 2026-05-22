@@ -11,7 +11,7 @@ const WHITE = "#ffffff";
 const SPECIALISTS = [
   {
     name: "Dimitri Razarenov",
-    role: "Leitender Polygraphologe",
+    role: "Leitender Polygraphologe · Berater für Risikomanagement & Verhaltensanalyse",
     exp: "12 Jahre Erfahrung",
     edu: "Höhere Bildung, Praktische Psychologie",
     photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp",

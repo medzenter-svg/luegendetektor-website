@@ -94,7 +94,7 @@ export const t = {
     heading: { de: "UNSERE SPEZIALISTEN", en: "OUR SPECIALISTS" },
     sub:     { de: "Zertifizierte Experten mit internationaler Erfahrung", en: "Certified experts with international experience" },
     s1name:  { de: "Dimitri Razarenov", en: "Dimitri Razarenov" },
-    s1role:  { de: "Leitender Polygraphologe", en: "Senior Polygrapher" },
+    s1role:  { de: "Leitender Polygraphologe · Berater für Risikomanagement & Verhaltensanalyse", en: "Senior Polygrapher · Risk Management & Behavioural Analysis Consultant" },
     s1desc:  { de: "Zertifizierter Polygraphologe mit über 15 Jahren Erfahrung. Ausgebildet nach internationalen Standards (APA). Spezialist für Unternehmens- und Privatuntersuchungen.", en: "Certified polygrapher with over 15 years of experience. Trained to international standards (APA). Specialist in corporate and private examinations." },
     s2name:  { de: "Tatjana Neubauer", en: "Tatjana Neubauer" },
     s2role:  { de: "Psychologin", en: "Psychologist" },

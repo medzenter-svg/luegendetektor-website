@@ -5,10 +5,13 @@
  */
 
 const GREEN_WA = "#25D366";
+const TEAL_SHARE = "#128C7E";
 const ORANGE   = "#FF8C00";
 const WHITE    = "#ffffff";
 
 export default function FloatingButtons() {
+  const shareUrl = encodeURIComponent("https://luegendetektor-test-muenchen.de");
+  const shareText = encodeURIComponent("Lügendetektor Test München – Professionelle Polygraphuntersuchung. Genauigkeit 98–99%. Diskret & vertraulich. ");
   return (
     <div
       style={{
@@ -25,6 +28,7 @@ export default function FloatingButtons() {
         href="https://wa.me/491756036003"
         target="_blank"
         rel="noopener noreferrer"
+        title="WhatsApp schreiben"
         style={{
           width: "52px",
           height: "52px",
@@ -43,7 +47,30 @@ export default function FloatingButtons() {
         <i className="fab fa-whatsapp"></i>
       </a>
       <a
+        href={`https://wa.me/?text=${shareText}${shareUrl}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Website per WhatsApp teilen"
+        style={{
+          width: "52px",
+          height: "52px",
+          backgroundColor: TEAL_SHARE,
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: WHITE,
+          fontSize: "18px",
+          textDecoration: "none",
+          boxShadow: "0 4px 14px rgba(18,140,126,0.4)",
+        }}
+        aria-label="Website per WhatsApp teilen"
+      >
+        <i className="fas fa-share-alt"></i>
+      </a>
+      <a
         href="mailto:info@luegendetektor-test-muenchen.de"
+        title="E-Mail senden"
         style={{
           width: "52px",
           height: "52px",

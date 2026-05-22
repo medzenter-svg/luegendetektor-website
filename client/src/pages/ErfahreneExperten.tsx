@@ -20,10 +20,10 @@ const SPECIALISTS = [
   {
     name: "Tatjana Neubauer",
     role: "Psychologin & Polygraphologin",
-    exp: "23 Jahre Erfahrung",
+    exp: "11 Jahre Erfahrung",
     edu: "Höhere Bildung, Diplompsychologin",
     photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp",
-    bio: "Tatjana Neubauer bringt über zwei Jahrzehnte Erfahrung in der psychologischen Diagnostik und Polygraphie mit. Als Diplompsychologin versteht sie die emotionalen Hintergründe jeder Untersuchungssituation und sorgt für eine professionelle, einfühlsame Gesprächsführung.",
+    bio: "Tatjana Neubauer verfügt über 11 Jahre Erfahrung in der psychologischen Diagnostik und Polygraphie. Als Diplompsychologin versteht sie die emotionalen Hintergründe jeder Untersuchungssituation und sorgt für eine professionelle, einfühlsame Gesprächsführung.",
   },
 ];
 

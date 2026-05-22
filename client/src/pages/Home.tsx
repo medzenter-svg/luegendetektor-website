@@ -1664,26 +1664,58 @@ function Footer({ onLegalOpen, docKeyMap }: { onLegalOpen: (key: string) => void
 // FLOATING WIDGETS
 // ─────────────────────────────────────────────
 function FloatingWidgets() {
-  const shareUrl = encodeURIComponent("https://luegendetektor-test-muenchen.de");
+  const shareUrl  = encodeURIComponent("https://luegendetektor-test-muenchen.de");
   const shareText = encodeURIComponent("Lügendetektor Test München – Professionelle Polygraphuntersuchung. Genauigkeit 98–99%. Diskret & vertraulich. ");
+
+  const ttBase: React.CSSProperties = {
+    position: "absolute", right: "64px", top: "50%", transform: "translateY(-50%)",
+    backgroundColor: "rgba(15,25,50,0.92)", color: WHITE, fontSize: "13px", fontWeight: 600,
+    whiteSpace: "nowrap", padding: "6px 12px", borderRadius: "6px",
+    pointerEvents: "none", opacity: 0, transition: "opacity 0.2s ease",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+  };
+  const ttArrow: React.CSSProperties = {
+    position: "absolute", right: "-6px", top: "50%", transform: "translateY(-50%)",
+    width: 0, height: 0,
+    borderTop: "6px solid transparent", borderBottom: "6px solid transparent",
+    borderLeft: "6px solid rgba(15,25,50,0.92)",
+  };
+
   return (
-    <div style={{ position: "fixed", bottom: "80px", right: "20px", display: "flex", flexDirection: "column", gap: "12px", zIndex: 1000 }}>
-      <a href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer"
-        title="WhatsApp schreiben"
-        style={{ width: "52px", height: "52px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "24px", textDecoration: "none", boxShadow: "0 4px 14px rgba(37,211,102,0.4)" }}>
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <a href={`https://wa.me/?text=${shareText}${shareUrl}`} target="_blank" rel="noopener noreferrer"
-        title="Website per WhatsApp teilen"
-        style={{ width: "52px", height: "52px", backgroundColor: "#128C7E", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "18px", textDecoration: "none", boxShadow: "0 4px 14px rgba(18,140,126,0.4)" }}>
-        <i className="fas fa-share-alt"></i>
-      </a>
-      <a href="mailto:info@luegendetektor-test-muenchen.de"
-        title="E-Mail senden"
-        style={{ width: "52px", height: "52px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "20px", textDecoration: "none", boxShadow: "0 4px 14px rgba(255,140,0,0.4)" }}>
-        <i className="fas fa-envelope"></i>
-      </a>
-    </div>
+    <>
+      <style>{`
+        .fw-wrap:hover .fw-tip { opacity: 1 !important; }
+        .fw-btn { transition: transform 0.15s ease; }
+        .fw-btn:hover { transform: scale(1.1); }
+      `}</style>
+      <div style={{ position: "fixed", bottom: "80px", right: "20px", display: "flex", flexDirection: "column", gap: "12px", zIndex: 1000 }}>
+
+        <div className="fw-wrap" style={{ position: "relative", display: "flex", alignItems: "center" }}>
+          <span className="fw-tip" style={ttBase}>Experten anschreiben<span style={ttArrow} /></span>
+          <a className="fw-btn" href="https://wa.me/491756036003" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp schreiben"
+            style={{ width: "52px", height: "52px", backgroundColor: GREEN_WA, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "24px", textDecoration: "none", boxShadow: "0 4px 14px rgba(37,211,102,0.4)" }}>
+            <i className="fab fa-whatsapp"></i>
+          </a>
+        </div>
+
+        <div className="fw-wrap" style={{ position: "relative", display: "flex", alignItems: "center" }}>
+          <span className="fw-tip" style={ttBase}>Website teilen<span style={ttArrow} /></span>
+          <a className="fw-btn" href={`https://wa.me/?text=${shareText}${shareUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Website teilen"
+            style={{ width: "52px", height: "52px", backgroundColor: "#128C7E", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "18px", textDecoration: "none", boxShadow: "0 4px 14px rgba(18,140,126,0.4)" }}>
+            <i className="fas fa-share-alt"></i>
+          </a>
+        </div>
+
+        <div className="fw-wrap" style={{ position: "relative", display: "flex", alignItems: "center" }}>
+          <span className="fw-tip" style={ttBase}>E-Mail senden<span style={ttArrow} /></span>
+          <a className="fw-btn" href="mailto:info@luegendetektor-test-muenchen.de" aria-label="E-Mail senden"
+            style={{ width: "52px", height: "52px", backgroundColor: ORANGE, borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center", color: WHITE, fontSize: "20px", textDecoration: "none", boxShadow: "0 4px 14px rgba(255,140,0,0.4)" }}>
+            <i className="fas fa-envelope"></i>
+          </a>
+        </div>
+
+      </div>
+    </>
   );
 }
 

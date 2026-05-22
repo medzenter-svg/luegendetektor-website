@@ -934,7 +934,7 @@ function AboutSection() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
             {[
               { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp" },
-              { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "11 Jahre Erfahrung" : "11 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
+              { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: "", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
             ].map(s => (
               <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 <div style={{ width: "100%" }}>
@@ -943,7 +943,7 @@ function AboutSection() {
                 <div style={{ padding: "24px 28px" }}>
                   <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
                   <p style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{s.role}</p>
-                  <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "8px" }}><i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}</p>
+                  {s.exp && <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "8px" }}><i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}</p>}
                   <p style={{ color: TEXT_MID, fontSize: "14px" }}>{s.edu}</p>
                 </div>
               </div>
@@ -1062,7 +1062,7 @@ function SpecialistsSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "28px", maxWidth: "800px", margin: "0 auto" }}>
           {[
             { name: t.specialists.s1name[lang], role: t.specialists.s1role[lang], exp: lang === "de" ? "12 Jahre Erfahrung" : "12 years of experience", edu: lang === "de" ? "Höhere Bildung, Praktische Psychologie" : "Higher Education, Practical Psychology", photo: "/manus-storage/dimitri_large_99d683fa_8d09c7b6.webp" },
-            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: lang === "de" ? "11 Jahre Erfahrung" : "11 years of experience", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
+            { name: t.specialists.s2name[lang], role: t.specialists.s2role[lang], exp: "", edu: lang === "de" ? "Höhere Bildung, Diplompsychologin" : "Higher Education, Graduate Psychologist", photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp" },
           ].map(s => (
             <div key={s.name} style={{ backgroundColor: WHITE, border: `1px solid ${BORDER}`, borderRadius: "8px", overflow: "hidden", borderTop: `4px solid ${ORANGE}`, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
               <div style={{ width: "100%" }}>
@@ -1071,7 +1071,7 @@ function SpecialistsSection() {
               <div style={{ padding: "24px 28px" }}>
                 <h3 style={{ color: NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h3>
                 <p style={{ color: ORANGE, fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{s.role}</p>
-                <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "8px" }}><i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}</p>
+                {s.exp && <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "8px" }}><i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}</p>}
                 <p style={{ color: TEXT_MID, fontSize: "14px" }}>{s.edu}</p>
               </div>
             </div>

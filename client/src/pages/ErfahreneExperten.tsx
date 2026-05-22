@@ -19,11 +19,11 @@ const SPECIALISTS = [
   },
   {
     name: "Tatjana Neubauer",
-    role: "Psychologin & Polygraphologin",
-    exp: "11 Jahre Erfahrung",
+    role: "Psychologin",
+    exp: "",
     edu: "Höhere Bildung, Diplompsychologin",
     photo: "/manus-storage/tatjana_cropped_48b1310e_b8fe7e46.webp",
-    bio: "Tatjana Neubauer verfügt über 11 Jahre Erfahrung in der psychologischen Diagnostik und Polygraphie. Als Diplompsychologin versteht sie die emotionalen Hintergründe jeder Untersuchungssituation und sorgt für eine professionelle, einfühlsame Gesprächsführung.",
+    bio: "Tatjana Neubauer ist Diplompsychologin und versteht die emotionalen Hintergründe jeder Untersuchungssituation. Sie sorgt für eine professionelle, einfühlsame Gesprächsführung.",
   },
 ];
 
@@ -95,9 +95,11 @@ export default function ErfahreneExperten() {
               <div style={{ padding: "28px 32px" }}>
                 <h2 style={{ color: DARK_NAVY, fontWeight: 700, fontSize: "22px", marginBottom: "4px" }}>{s.name}</h2>
                 <p style={{ color: ORANGE, fontWeight: 700, fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "10px" }}>{s.role}</p>
-                <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "12px" }}>
-                  <i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}
-                </p>
+                {s.exp && (
+                  <p style={{ color: "#22c55e", fontWeight: 700, fontSize: "14px", marginBottom: "12px" }}>
+                    <i className="fas fa-award" style={{ marginRight: "6px" }}></i>{s.exp}
+                  </p>
+                )}
                 <p style={{ color: "#555", fontSize: "13px", marginBottom: "14px" }}>
                   <i className="fas fa-graduation-cap" style={{ color: ORANGE, marginRight: "6px" }}></i>{s.edu}
                 </p>

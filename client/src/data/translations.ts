@@ -97,7 +97,7 @@ export const t = {
     s1role:  { de: "Leitender Polygraphologe", en: "Senior Polygrapher" },
     s1desc:  { de: "Zertifizierter Polygraphologe mit über 15 Jahren Erfahrung. Ausgebildet nach internationalen Standards (APA). Spezialist für Unternehmens- und Privatuntersuchungen.", en: "Certified polygrapher with over 15 years of experience. Trained to international standards (APA). Specialist in corporate and private examinations." },
     s2name:  { de: "Tatjana Neubauer", en: "Tatjana Neubauer" },
-    s2role:  { de: "Psychologin & Polygraphologin", en: "Psychologist & Polygraphologist" },
+    s2role:  { de: "Psychologin", en: "Psychologist" },
     s2desc:  { de: "Diplompsychologin mit Spezialisierung auf Stressanalyse und Verhaltenspsychologie. Unterstützt bei sensiblen Untersuchungen.", en: "Graduate psychologist specializing in stress analysis and behavioral psychology. Supports sensitive examinations." },
   },
 

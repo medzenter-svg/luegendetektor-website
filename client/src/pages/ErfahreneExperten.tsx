@@ -29,9 +29,27 @@ const SPECIALISTS = [
 
 export default function ErfahreneExperten() {
   useEffect(() => {
+    const BASE = "https://luegendetektor-test-muenchen.de";
     document.title = "Erfahrene Experten | Polygraph München – Zertifizierte Polygraphexaminatoren";
-    const meta = document.querySelector("meta[name='description']");
-    if (meta) meta.setAttribute("content", "Unsere zertifizierten Polygraphexaminatoren verfügen über jahrelange Erfahrung in der professionellen Lügendetektion. Erfahren Sie mehr über unser Expertenteam.");
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Unsere zertifizierten Polygraphexaminatoren Dimitri Razarenov und Tatjana Neubauer verfügen über jahrelange Erfahrung in der professionellen Lügendetektion.");
+    setMeta("og:title", "Erfahrene Experten | Polygraph München", true);
+    setMeta("og:description", "Zertifizierte Polygraphexaminatoren mit jahrzehntelanger Erfahrung – Dimitri Razarenov & Tatjana Neubauer.", true);
+    setMeta("og:url", `${BASE}/erfahrene-experten`, true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("twitter:card", "summary_large_image");
+    setLink("canonical", `${BASE}/erfahrene-experten`);
     window.scrollTo(0, 0);
   }, []);
 

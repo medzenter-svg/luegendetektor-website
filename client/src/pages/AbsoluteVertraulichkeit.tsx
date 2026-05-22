@@ -11,9 +11,27 @@ const WHITE = "#ffffff";
 
 export default function AbsoluteVertraulichkeit() {
   useEffect(() => {
+    const BASE = "https://luegendetektor-test-muenchen.de";
     document.title = "Absolute Vertraulichkeit | Polygraph München – Diskretion garantiert";
-    const meta = document.querySelector("meta[name='description']");
-    if (meta) meta.setAttribute("content", "Erfahren Sie, wie wir absolute Vertraulichkeit bei jedem Polygraphtest gewährleisten. Keine Datenweitergabe, keine Aufzeichnungen – diskrete Untersuchungen für Privatpersonen und Unternehmen.");
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Erfahren Sie, wie wir absolute Vertraulichkeit bei jedem Polygraphtest gewährleisten. Keine Datenweitergabe, keine Aufzeichnungen – diskrete Untersuchungen für Privatpersonen und Unternehmen.");
+    setMeta("og:title", "Absolute Vertraulichkeit | Polygraph München", true);
+    setMeta("og:description", "Diskrete Polygraphuntersuchungen – keine Datenweitergabe, keine Aufzeichnungen. Vertraulich für Privatpersonen und Unternehmen.", true);
+    setMeta("og:url", `${BASE}/absolute-vertraulichkeit`, true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("twitter:card", "summary_large_image");
+    setLink("canonical", `${BASE}/absolute-vertraulichkeit`);
     window.scrollTo(0, 0);
   }, []);
 

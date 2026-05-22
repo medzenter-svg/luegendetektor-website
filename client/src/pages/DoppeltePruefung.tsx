@@ -10,9 +10,27 @@ const WHITE = "#ffffff";
 
 export default function DoppeltePruefung() {
   useEffect(() => {
+    const BASE = "https://luegendetektor-test-muenchen.de";
     document.title = "Doppelte Prüfung durch 2 Experten | Polygraph München – Maximale Ergebnissicherheit";
-    const meta = document.querySelector("meta[name='description']");
-    if (meta) meta.setAttribute("content", "Jedes Untersuchungsergebnis wird von zwei unabhängigen Polygraphexaminatoren ausgewertet. Das Vier-Augen-Prinzip garantiert maximale Objektivität und Zuverlässigkeit.");
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Jedes Untersuchungsergebnis wird von zwei unabhängigen Polygraphexaminatoren ausgewertet. Das Vier-Augen-Prinzip garantiert maximale Objektivität und Zuverlässigkeit.");
+    setMeta("og:title", "Doppelte Prüfung durch 2 Experten | Polygraph München", true);
+    setMeta("og:description", "Vier-Augen-Prinzip: Jedes Ergebnis wird von zwei unabhängigen Examinatoren geprüft – für maximale Objektivität und Rechtssicherheit.", true);
+    setMeta("og:url", `${BASE}/doppelte-pruefung`, true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("twitter:card", "summary_large_image");
+    setLink("canonical", `${BASE}/doppelte-pruefung`);
     window.scrollTo(0, 0);
   }, []);
 

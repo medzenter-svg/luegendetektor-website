@@ -1900,7 +1900,6 @@ function CasesSection() {
             const body = lines.slice(1).join("\n\n");
             return (
               <div key={idx} style={{ background: cardBg, borderRadius: 10, padding: "28px 24px", borderLeft: `4px solid ${accent}`, border: `1px solid ${BORDER}`, borderLeftWidth: 4, boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}>
-                <div style={{ color: TEXT_MID, fontSize: 12, marginBottom: 10 }}>{c.dates[idx]}</div>
                 <div style={{ color: NAVY, fontWeight: 700, fontSize: 15, marginBottom: 12, lineHeight: 1.4 }}>{title}</div>
                 <p style={{ color: TEXT_DARK, fontSize: 14, lineHeight: 1.7, margin: 0 }}>{body}</p>
               </div>
@@ -1978,7 +1977,33 @@ function SchemaOrg() {
       ],
       "sameAs": [
         "https://wa.me/491756036003"
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "47"
+      }
+    };
+
+    // WebSite Schema with SearchAction
+    const webSite = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${BASE}/#website`,
+      "url": BASE,
+      "name": "L\u00fcgendetektor Test M\u00fcnchen",
+      "description": "Professionelle Polygraphuntersuchungen in M\u00fcnchen, Deutschland, \u00d6sterreich und der Schweiz.",
+      "inLanguage": "de-DE",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${BASE}/?q={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
     };
 
     // FAQPage Schema
@@ -2056,10 +2081,12 @@ function SchemaOrg() {
     };
 
     injectSchema("schema-local-business", localBusiness);
+    injectSchema("schema-website", webSite);
     injectSchema("schema-faq-page", faqPage);
 
     return () => {
       document.getElementById("schema-local-business")?.remove();
+      document.getElementById("schema-website")?.remove();
       document.getElementById("schema-faq-page")?.remove();
     };
   }, []);

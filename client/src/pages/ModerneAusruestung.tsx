@@ -13,9 +13,27 @@ const DIANA_COMPACT = "/manus-storage/diana7_compact_e8d7854c.png";
 
 export default function ModerneAusruestung() {
   useEffect(() => {
+    const BASE = "https://luegendetektor-test-muenchen.de";
     document.title = "Moderne Ausrüstung Diana 7 | Polygraph München – Professionelle Polygraphietechnik";
-    const meta = document.querySelector("meta[name='description']");
-    if (meta) meta.setAttribute("content", "Wir arbeiten mit dem Diana 7 – einem der präzisesten Polygraphsysteme weltweit. Erfahren Sie mehr über unsere professionelle Ausrüstung und warum sie den Unterschied macht.");
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", "Wir arbeiten mit dem Diana 7 – einem der präzisesten Polygraphsysteme weltweit. Erfahren Sie mehr über unsere professionelle Ausrüstung und warum sie den Unterschied macht.");
+    setMeta("og:title", "Moderne Ausrüstung Diana 7 | Polygraph München", true);
+    setMeta("og:description", "Das Diana 7 Polygraphsystem – 7+ physiologische Kanäle, Echtzeit-Auswertung, portabel. Professionelle Ausstättung für maximale Genauigkeit.", true);
+    setMeta("og:url", `${BASE}/moderne-ausruestung`, true);
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", "Lügendetektor Test München", true);
+    setMeta("twitter:card", "summary_large_image");
+    setLink("canonical", `${BASE}/moderne-ausruestung`);
     window.scrollTo(0, 0);
   }, []);
 
